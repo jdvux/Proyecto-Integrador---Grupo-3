@@ -1,0 +1,279 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 5%;
+    background-color: #62C0E8;
+}
+
+nav .logo{
+    font-size: 32px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+nav img{
+    width: 8vw;
+}
+
+nav img:hover{
+    transform: scale(1.2);
+    transition: all 0.3s;
+    color: rgb(45, 52, 54);
+    text-decoration: underline rgb(45, 52, 54);
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+nav ul li a{
+    display: block;
+    margin: 0 10px;
+    color: #000;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+nav ul li a:hover{
+    transform: scale(1.1);
+    transition: all 0.3s;
+    color: rgb(45, 52, 54);
+    text-decoration: underline rgb(45, 52, 54);
+}
+
+nav .icons i{
+    margin-left: 5px;
+}
+
+nav .icons i:hover{
+    transform: scale(1.3);
+    transition: all 0.3s;
+    cursor: pointer;
+    color: rgb(45, 52, 54);
+}
+
+.top-main{
+    display: flex;
+    width: 90vw;
+    margin: 20px auto;
+}
+
+.left{
+    width: 50%;
+}
+
+.right{
+    width: 50%;
+}
+
+.big-img{
+    width: 250px;
+}
+
+.big-img img{
+    width: inherit;
+}
+
+.top-images{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-top: 15px;
+}
+
+.small-img{
+    width: 50px;
+}
+
+.small-img img{
+    width: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.small-img:hover img{
+    transform: scale(2.5)
+}
+
+.category{
+    color: #666;
+    margin: 20px 0;
+}
+
+.product-name{
+    font-size: 24px;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+.price{
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.product-detail{
+    font-size: 13px;
+    font-weight: 600;
+    margin: 25px 0;
+}
+
+.description{
+    font-size: 13px;
+    margin: 20px 0;
+}
+
+.size-selector{
+    font-size: 15px;
+    margin: 20px 0;
+}
+
+.size-selector-box{
+    font-size: 12px;
+    width: 40px;
+    text-align: center;
+}
+
+.quantity{
+    display: flex;
+    margin: 20px 0;
+}
+
+.quantity p{
+    font-size: 15px;
+}
+
+.quantity-counter{
+    font-size: 12px;
+    margin: 0 5px;
+    width: 30px;
+    text-align: center;
+}
+
+.add-to-cart{
+    text-align: center;
+}
+
+.add-to-cart button{
+    padding: 8px;
+    border-radius: 13px;
+    text-align: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    background-color: #39b54a;
+}
+
+.add-to-cart button:hover{
+    background-color: rgb(172, 160, 160);
+}
+
+.bottom-main{
+    display: flex;
+    width: 90vw;
+    margin: 10px auto;
+}
+
+.featured-products{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.featured-products-images{
+    display: flex;
+    width: 90vw;
+    margin: 10px auto;
+}
+
+.bottom-img{
+    margin-right: 15px;
+    width: 20vw;
+}
+
+.bottom-img img{
+    width: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.bottom-img:hover img{
+    transform: scale(1.1)
+}
+
+.bottom-product-name{
+    display: flex;
+    width: 85vw;
+    margin: 0px 5vw;
+    grid-gap: 22px;
+}
+
+.bottom-product-name p{
+    font-size: 16px;
+    margin: 0 30px;
+    width: inherit;
+    font-weight: 600;
+}
+
+.bottom-product-price{
+    display: flex;
+    margin: 20px 82px;
+    justify-content: space-around;
+    grid-gap: 25px;
+}
+
+.bottom-product-price p{
+    font-size: 15px;
+    margin-right: 5vw;
+}
+
+footer{
+    width: 100%;
+    background-color: #62C0E8;
+}
+
+.grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0;
+}
+
+.grupo-1 .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grupo-1 .box figure img{
+    width: 8vw;;
+
+}
+
+.box-nav-list a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+
+
+
