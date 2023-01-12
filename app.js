@@ -5,6 +5,10 @@ const PORT = 3000
 
 app.use(express.static("public"))
 
+app.get('/home', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './views/home.html'))
+});
+
 app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/productDetail.html'))
 });

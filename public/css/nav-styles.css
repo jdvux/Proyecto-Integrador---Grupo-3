@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+header{
+    display: flex;
+}
+
+/*------------TOP-HEADER--------------*/
+
+nav{
+    background-color: #62C0E8;
+    width: 100%;
+}
+
+.top-header{
+    display: flex;
+    flex-direction: row;
+}
+
+.logo{
+    margin: 10px;
+    width: 90%;
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+}
+
+.burger-menu{
+    margin: 10px ;
+    width: 10%;
+}
+
+.cart-icon{
+    margin: 10px;
+}
+
+.fa-bars, .fa-cart-shopping{
+    color: #002D4D;
+}
+
+.horizontal-menu{
+    display: none;
+}
+
+/*----------SEARCH-----------*/
+.button-header{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+form {
+    margin: 10px 0 10px 10px;
+}
+
+.nav-search-input{
+    border: none;
+    box-sizing: border-box;
+}
+
+form label {
+    display: none;
+}
+
+form input{
+    width: 90%;
+    margin: auto;
+}
+
+.glass-search{
+    width: 3%;
+    margin: auto 0 auto 10px;
+}
+.placeholder-search{
+    width: 97%;
+}
+
+/*-------------MEDIA-QUERIES--------------*/
+
+/*TABLET*/
+@media (min-width: 361px){
+    .burger-menu{
+        display: none;
+    }
+    .horizontal-menu{
+        width: 100%;
+        display: flex;
+    }
+    .horizontal-menu .list {
+        display: flex;
+        width: auto;
+        flex-direction: row;
+        margin: auto
+
+    }
+
+    .horizontal-menu .list li {
+        margin: 10px;
+    }
+
+    a {
+        color: #002D4D;
+        outline: none;
+        text-decoration: none;
+        padding: 2px 1px 0;
+      }
+
+      a:active {
+        text-decoration: underline;
+      }
+ 
+}
+
+/*DESK*/
+@media (min-width: 769px){
+    .burger-menu{
+        display: none;
+    }
+    .horizontal-menu{
+        display: flex
+    }
+
+    a {
+        color: #002D4D;
+        outline: none;
+        text-decoration: none;
+        padding: 2px 1px 0;
+      }
+
+      a:focus {
+        border-bottom: 1px solid;
+        background: #bae498;
+      }
+}
