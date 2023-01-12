@@ -7,3 +7,16 @@ Como referentes, podemos señalar a:
 - https://en.afew-store.com/
 - https://www.flightclub.com/
 - https://www.kicksonfire.com/
+
+## Tablero de trabajo
+🌐 https://trello.com/b/GABQyh6K/2do-sprint
+
+## Instalar dependencias
+npm install
+
+## Dependencias utilizadas
+express-nodemon
+
+
+## Iniciar el servidor
+npm run start

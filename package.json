@@ -4,6 +4,7 @@
   "description": "Nuestro e-commerce está orientado hacia la venta de Zapatillas. El público objetivo es, en principio, jóvenes que estén interesados en los deportes o que hagan actividad física con regularidad, así como también cualquier persona que busque darle un giro a su vestuario.",
   "main": "app.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +20,8 @@
   "homepage": "https://github.com/jdvux/Proyecto-Integrador---Grupo-3#readme",
   "dependencies": {
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }

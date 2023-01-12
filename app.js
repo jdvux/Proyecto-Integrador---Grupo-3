@@ -1,13 +1,14 @@
-const express = require("express");
-const path = require("path");
-
+const express = require ('express');
 const app = express();
+const path = require ('path')
+const PORT = 3000
 
-const publicFolderPath = path.resolve(__dirname, "./public")
-app.use(express.static(publicFolderPath));
+app.use(express.static("public"))
 
-app.get("/", function(req, res){
-    res.sendFile(path.resolve(__dirname, "./views/productDetail.html"))
+app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './views/productDetail.html'))
 });
 
-app.listen(3003, () => console.log("Levantando un servidor web con Express"));
+app.listen(PORT, () => {
+    console.log(`server on ${PORT}`);
+})
