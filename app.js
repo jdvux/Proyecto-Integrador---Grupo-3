@@ -10,4 +10,4 @@ app.get("/", function(req, res){
     res.sendFile(path.resolve(__dirname, "./views/productDetail.html"))
 });
 
-app.listen(3000, () => console.log("Levantando un servidor web con Express"));
+app.listen(3003, () => console.log("Levantando un servidor web con Express"));
