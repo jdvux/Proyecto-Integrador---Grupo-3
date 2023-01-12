@@ -1,0 +1,96 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+    
+}
+
+
+body{
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    font-size: 16px;
+    
+}
+
+.form{
+    width: 450px;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    background: #62C0E8 ;
+    border-radius: 5px;
+    
+}
+
+.titulo{
+    color: #002D4D ;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.box{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 2px;
+    border: none;
+    border-left: 10px solid #d9e4ea;
+    transition: all .5s ease;
+    font-size: 12px;
+}
+.box:hover, .box:focus{
+    border-left: 10px solid #002D4D;
+}
+
+.termino1{
+    text-align: center;
+    color: #07020D ;
+    font-size: 12px;
+}
+.termino2{
+    color: #07020D ;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+}
+.termino2:hover{
+    color: #F1E9DB  ;
+}
+
+.button{
+    width: 100%;
+    padding: 15px;
+    border-radius: 2px;
+    border: none;
+    margin: 20px 0;
+    font-size: 16px;
+    background: #002D4D;
+    color: #F1E9DB;
+    cursor: pointer;
+   
+}
+.button:hover{
+    background: #002D4D ;
+}
+
+.redes-sociales{
+    text-align: center;
+    color: #07020D;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+}
+.redes-sociales:hover{
+    color: #F1E9DB;
+}
+
+.boxIcons {
+    display: flex;
+    justify-content:space-around ;
+    font-size: 30px;
+    padding-top: 10px;
+}
