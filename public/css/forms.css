@@ -108,7 +108,7 @@ main {
     text-align: center;
 }
 
-#button-login, #button-register {
+#button-login, #button-register-login {
     display: inline-block;
     width: 20%;
     margin-bottom: 5px;
@@ -119,11 +119,11 @@ main {
     border-style: hidden;
 }
 
-#button-register {
+#button-register-login {
     margin-bottom: 4.5%;
 }
 
-#button-login:hover, #button-register:hover {
+#button-login:hover, #button-register-login:hover {
     background-color: #62C0E8;
     color: black;
     transition: 500ms;
@@ -230,7 +230,7 @@ footer {
     font-size: medium;
 }
 
-#button-register {
+#button-register-login {
     margin-top: 2%;
     font-size: small;
     margin-bottom: 6%;
