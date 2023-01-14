@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Tienda</title>
+    <script src="https://kit.fontawesome.com/7ea488e71c.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/nav-styles.css">
+    <link rel="stylesheet" href="css/forms.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="top-header">
+                <div class="burger-menu">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="logo">
+                    <a href="/"><img src="/images/logo.png" alt="logo"></a>
+                </div>
+                <div class="cart-icon">
+                    <i class="fa-solid fa-user"></i>
+                    <a href="/views/cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+
+                </div>
+            </div>
+            <div class="button-header">
+                <div class="glass-search"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <div class="placeholder-search">
+                    <form class="nav-search" action="/views/home.html" method="GET">
+                        <input type="text" class="nav-search-input" placeholder="Busco productos ">
+                    </form>
+                </div>
+            </div>
+            
+            <div class="horizontal-menu">
+                <ul class="list">
+                    <li type="none"><a href="/">Inicio</a></li>
+                    <li type="none"><a href="#">Ofertas</a></li>
+                    <li type="none"><a href="#">Inicia sesión</a></li>
+                    <li type="none"><a href="/register">Registrate</a></li>
+                </ul>
+            </div>
+            
+           
+        </nav>
+        <div>
+            
+        </div>
+    </header>
+
+    <main>
+        <h2 class="login-text">Iniciar sesión</h2>
+        <form action="/" method="GET" class="login-form">
+            <input type="text" name="username" placeholder="Ingresa tu nombre de usuario" id="input-login" required>
+                  
+            <input type="password" name="password" placeholder="Ingresa tu contraseña" id="input-login" required>
+            <a href="/"></a><button type="submit" id="button-login">Enviar</button></a>
+            </form>
+            
+            <p class="forgot-password"><a href="#">¿Olvidaste tu contraseña?</a></p>
+
+            <h3 class="login-with">También puedes iniciar sesión con:</h3>
+
+            <div class="social-media-login-father">
+
+                <i class="fa fa-facebook" id="login-facebook"></i>
+                <i class="fa fa-instagram" id="login-instagram"></i>
+                <i class="fa fa-twitter" id="login-twitter"></i>
+                <i class="fa fa-google" id="login-google"></i>
+            </div>
+
+            <div class="register-here">
+                <h2 class="login-text">¿No tienes cuenta?</h2>
+                <p class="register-here-text">Si quieres ser miembro y tener descuentos exclusivos:</p>
+                <a href="/register"></a><button type="submit" id="button-register-login">Regístrate</button></a>
+            </div>
+          </main>
+        </body>
+
+    <footer>
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href=""><img src="./images/logo-proyecto.png" alt=""></a>
+                </figure>
+            </div>
+            <div class="box">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, officiis.</p>
+            </div>
+            <div class="box">
+                <h2>Navegación</h2>
+                <div class="box-nav-list">
+                    <a href="/"><p>Inicio</p></a>
+                    <a href="#"><p>Productos</p></a>
+                    <a href="#"><p>Perfil</p></a>
+                    <a href="#"><p>Contactos</p></a>
+                </div>
+            </div>
+            <div class="box">
+                <h2>Seguinos</h2>
+                <div class="media">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2023 <b>Zapatillas</b> -Todos los derechos reservados</small>
+        </div>
+    </footer>
+</html>

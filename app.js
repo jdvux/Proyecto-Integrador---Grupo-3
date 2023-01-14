@@ -5,12 +5,20 @@ const PORT = 3000
 
 app.use(express.static("public"))
 
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/home.html'))
 });
 
-app.get('/', (req, res) => {
+app.get('/productDetail', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/productDetail.html'))
+});
+
+app.get('/login', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './views/login.html'))
+});
+
+app.get('/register', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './views/register.html'))
 });
 
 app.listen(PORT, () => {
