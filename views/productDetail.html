@@ -11,37 +11,34 @@
 </head>
 <body>
     <header class="header">
-        <nav>    
         
+        <div class="container">
+            
             <div class="logo">
-                <a href="/"><img src="./images/logo-proyecto.png" alt="Logo de la marca"></a>
+                <img src="./images/g3-high-resolution-logo-black-on-white-background_low.png" alt="Logo de la marca">
             </div>
 
-            <div>
-                <ul class="navbar">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Productos</a></li>
-                </ul>      
+            <div class="btn">
+                <label for="btn-menu">Menú</label>
             </div>
-        
+            
+            <input type="checkbox" id="btn-menu">
+            
+            <nav class="menu">
+                <input type="text" name="buscar" placeholder="Buscar...">
+                <a href="/">Inicio</a>
+                <a href="/register">Registrarse</a>
+                <a href="/login">Iniciar Sesión</a>
+                <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+            </nav>
 
-            <div class="icons">
-                <i class="fa-solid fa-magnifying-glass"></i> 
-                <i class="fa-solid fa-user"></i>
-                <i class="fa-solid fa-cart-shopping"></i>
-            </div>    
-        </nav>
-
-    </header>
-
+        </div>
+    </header>  
+    
     <main>
 
         <div class="top-main">
             <div class="left">
-                <div class="big-img">
-                    <img class="main-vans-shoes" src="/images/zapas-vans-1.jpg" alt="imagen principal Vans"> 
-                </div>
-                
                 <div class="top-images">
                     <div class="small-img">
                         <img src="/images/zapas-vans-2.jpg" alt="segunda imagen Vans">
@@ -50,25 +47,42 @@
                         <img src="/images/zapas-vans-3.jpg" alt="tercer imagen Vans">
                     </div>
                     <div class="small-img">
-                        <img src="/images/zapas-vans-4.jpg" alt="cuarta imagen Vans">
-                    </div>
-                    <div class="small-img">
                         <img src="/images/zapas-vans-5.jpg" alt="quinta imagen Vans">
                     </div>
                     <div class="small-img">
                         <img src="/images/zapas-vans-6.jpg" alt="sexta imagen Vans">
                     </div>
                 </div>
+                
+                
+                
+                
             </div>
-
+                <div class="center">
+                    <div class="big-img">
+                        <img class="main-vans-shoes" src="/images/zapas-vans-1.jpg" alt="imagen principal Vans"> 
+                </div>  
+            </div> 
             <div class="right">
                 
                 <div class="category">Home > Calzado</div>
                 
                 <div class="product-name">Zapatillas Vans Old Skool</div>
+
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>4.7(21)</span>
+                </div>
                 
                 <div class="price">$25.000</div>
                 
+                <div class="payments">O en hasta 3 cuotas sin interés de $8.333,33</div>
+                
+
                 <div class="size">
                     <form class="size" action="" method="POST">
                         <label class="size-selector">Seleccione un talle:</label>
@@ -94,7 +108,9 @@
                 
                 <div class="product-detail">Detalle de producto</div>
                 
-                <div class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis sint, natus sunt deleniti illum explicabo, at eius ullam nisi sed delectus.</div>
+                <div class="description">
+                    <p>De vuelta con una nueva combinación de colores para la nueva temporada, las Vans Old Skool son un clásico ya probado. Diseñado para manejar cualquier situación que le depare el día, asegurate de tener tu par en G3 hoy. Hasta agotar stock.</p>
+                </div>
                 
                 <div class="quantity">
                     <p>Cantidad: </p>
@@ -139,9 +155,8 @@
             <p>$32.500</p>
         </div> 
     </main>
-    
     <footer>
-        <div class="grupo-1">
+        <div class="group-1">
             <div class="box">
                 <figure>
                     <a href=""><img src="./images/logo-proyecto.png" alt=""></a>
