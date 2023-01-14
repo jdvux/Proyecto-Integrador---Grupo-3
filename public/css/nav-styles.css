@@ -4,6 +4,7 @@
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
 }
+
 header{
     display: flex;
 }
@@ -85,7 +86,7 @@ form input{
 /*-------------MEDIA-QUERIES--------------*/
 
 /*TABLET*/
-@media (min-width: 361px){
+@media (min-width: 361px) {
     .burger-menu{
         display: none;
     }
