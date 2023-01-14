@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+/*HOME*/
+/*----------MAIN------------*/
+
+h1, h4, p{
+    margin: 30px 10px 10px 10px ;
+    text-align: center;
+}
+
+.main-img{
+    display: block;
+}
+.come-run-img{
+    display: block;
+    width: 100%;
+    height: min-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* section ofertas */
+.container-offer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.offer-article{
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center ;
+    background-color: #f3f1f1;
+}
+
+.offer-img{
+    height: min-content;
+    width: 80%;
+}
+
+.offer-article p {
+    width: 80%;
+    margin: auto;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.main-article{
+    display: flex;
+    width: min-content;
+}
+
+
+/*-------------MEDIA-QUERIES--------------*/
+
+/*TABLET*/
+@media (min-width: 361px){
+    .come-run-img{
+        width: 80%;
+    }
+    .offer-article{
+        width: 40%;
+    }
+
+
+     
+}
+
+/*DESK*/
+@media (min-width: 769px){
+    .come-run-img{
+        width: 60%;
+    }
+
+    .offer-article{
+        width: 30%;
+    }
+  
+}
