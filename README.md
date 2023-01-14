@@ -15,7 +15,7 @@ Como referentes, podemos señalar a:
 npm install
 
 ## Dependencias utilizadas
-express-nodemon
+express
 
 
 ## Iniciar el servidor
