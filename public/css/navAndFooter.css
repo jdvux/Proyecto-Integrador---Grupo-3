@@ -194,6 +194,14 @@ footer{
 }
 
 @media (min-width: 320px) and (max-width: 426px){
+    .group-1{
+        flex-direction: column;
+    }
+
+    .box{
+        width: 90%;
+    }
+
     .header{
         height: 60px;
     }
@@ -240,6 +248,18 @@ footer{
     .btn{
         display: block;
     }
+
+    .logo-footer {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    .logo-footer img{
+        width: 75px;
+        height: auto;
+    }
+    
 }
 
 @media (min-width: 426px) and (max-width: 769px){
