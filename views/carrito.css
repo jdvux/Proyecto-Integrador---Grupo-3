@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color:white;
+    padding-top: 80px;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin: 30px 0px;
+    
+}
+
+img {
+    width: 320px;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 10px 10px 0px 0px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35%;
+    height: 70px;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    background-color: coral;
+}
+
+.carrito {
+    filter: invert(100%);
+    width: 65px;
+    height: auto;
+    cursor: pointer;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin: 20px;
+}
+
+.contenedor>div {
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 5, 0.75);
+    background-color: black;
+    border-radius: 20px;
+}
+
+.contenedor>div:hover {
+    background-color: #11294d;
+}
+
+.informacion {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.informacion>p:first-child {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.informacion .precio {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.informacion .precio span {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.informacion button {
+    background-color: bisque;
+    width: 100px;
+    height: 40px;
+    border-radius: 15px;
+    border: none;
+    
+
+    font-size: 15px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.informacion button:hover {
+    background-color: #2d4263;
+}
