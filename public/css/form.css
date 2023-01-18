@@ -16,9 +16,7 @@ body{
     justify-content: space-around;
     margin: 10px 20px 30px;
     font-size: 16px;
-    background: #bdc3c7;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, #778da9, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
 
 }
 
@@ -28,7 +26,9 @@ form{
     margin-bottom: 10px;
 }
 .form{
-    background: #e0e1dd;
+    background: #bdc3c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #778da9, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     margin: auto;
     margin-bottom: 10px;
 }
