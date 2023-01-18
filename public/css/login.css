@@ -3,6 +3,15 @@
     box-sizing: border-box;
 }
 
+body {
+    display: flex;
+    width: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 16px;
+}
+
 main {
     text-align: center;
 }
@@ -31,10 +40,7 @@ a {
     background: #bdc3c7;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom, #778da9, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    width: 50%;
     margin: 150px auto 75px;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
 }
@@ -46,10 +52,12 @@ a {
 }
 
 #input-login { 
-    width: 50%;
-    margin-bottom: 25px;
+    width: 80%;
+    margin: 0 auto 20px;
     line-height: 40px;
-    display: inline-block;
+    display: block;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
     border: #778da9;
     border-radius: 2px;
@@ -58,8 +66,8 @@ a {
 
 #button-login {
     display: block;
-    width: 40%;
-    margin: auto;
+    width: 80%;
+    margin: -20px auto 0;
     line-height: 40px;
     color: #07020D;
     text-align: center;
@@ -77,12 +85,12 @@ a {
 
 .forgot-password {
     padding-bottom: 10px;
-    padding-top: 5px;
-    margin-bottom: 2%;
+    margin-bottom: 20px;
 }
 
 .login-with {
     margin-bottom: 2%;
+    padding: 0 20px;
 }
 
 .social-media-login-father {
@@ -106,7 +114,7 @@ a {
 .register-text {
     display: inline-block;
     padding-bottom: 3%;
-    padding-top: 5px;
+    padding-top: 30px;
 }
 
 /*-------------MEDIA-QUERIES--------------*/
@@ -117,17 +125,5 @@ a {
     
     .login-form-container {
         margin: 120px auto 60px;
-    }
-
-#input-login { 
-    width: 60%;
-}
-
-#button-login {
-    width: 35%;
-    }
-
-.login-with {
-    margin-top: 4.5%;
     }
 }
