@@ -139,10 +139,7 @@ footer{
 
 .box p{
     font-size: 15px;
-}
-
-.box-nav-list p {
-    margin-top: 0;
+    margin: 5px;
 }
 
 .box-nav-list a{
@@ -163,6 +160,7 @@ footer{
     text-decoration: none;
     color: #242423;
     font-size: 15px;
+    margin: 2px;
 }
 
 .contacts a:hover{
@@ -176,7 +174,7 @@ footer{
 
 .media a{
     color: #242423;
-    margin: 10px 0;
+    margin: 5px;
     text-decoration: none;
     margin-right: 1vw;
 }
