@@ -92,7 +92,7 @@ a:focus {
 
 .login-with {
     margin-bottom: 2%;
-    padding: 0 20px;
+    padding: 0 20px 10px;
 }
 
 .social-media-login-father {
@@ -101,7 +101,7 @@ a:focus {
 }
 
 #login-instagram, #login-twitter, #login-google {
-    margin-left: 2%;
+    margin-left: 10%;
 }
 
 #login-facebook, #login-instagram, #login-twitter, #login-google {
