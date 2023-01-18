@@ -1,0 +1,133 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';   
+}
+
+body {
+    display: flex;
+    width: auto;
+    flex-direction: column;
+    height: 750px;
+    align-items: center;
+    justify-content: space-around;
+    margin: 150px auto 0;
+    font-size: 16px;
+}
+
+form {
+    padding: 30px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.form {
+    background: #bdc3c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #778da9, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    margin: auto;
+    margin-bottom: 75px;
+}
+
+.titulo {
+    color: #07020D ;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.box-form {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 2px;
+    display: block;
+    border: none;
+    border-left: 10px solid #d9e4ea;
+    transition: all .5s ease;
+    font-size: 12px;
+}
+
+.box-form:hover, .box-form:focus {
+    border-left: 10px solid #002D4D;
+}
+
+.termino1 {
+    text-align: center;
+    color: #07020D ;
+    font-size: 12px;
+}
+
+.termino2 {
+    color: #07020D ;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.termino2:hover {
+    color: #f3f1f1 ;
+}
+
+.button{
+    display: block;
+    border: none;
+    border-radius: 2px;
+    height: 60px;
+    width: 40%;
+    margin: 20px auto;
+    font-size: 16px;
+    color: #002D4D;
+    cursor: pointer;
+    transition: all .5s ease;
+   
+}
+.button:hover{
+    background: #002D4D;
+    color: #f3f1f1;
+}
+
+.redes-sociales{
+    text-align: center;
+    color: #07020D;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+    
+}
+
+.boxIcons {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 30px;
+    padding-top: 10px;
+}
+
+.icons {
+    transition: all .5s ease;
+    color:#002D4D;
+    padding-top: 5px;
+}
+
+.icons:hover {
+    color: #f3f1f1;
+}
+
+.link {
+    text-decoration: none;
+    color: #002D4D;
+}
+
+/* MEDIA QUERIES */
+
+/* MOBILE & TABLET */
+
+@media (min-width: 320px) and (max-width: 769px) {
+    
+    .form {
+        margin-bottom: 60px;
+    }
+}
+    

@@ -28,7 +28,9 @@ a {
   }
 
 .login-form-container {
-    background-color: #778da9;
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #778da9, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     width: 50%;
     margin: 150px auto 75px;
     display: flex;
@@ -47,10 +49,11 @@ a {
     width: 50%;
     margin-bottom: 25px;
     line-height: 40px;
-    background-color: #f3f1f1;
     display: inline-block;
     text-align: center;
     border: #778da9;
+    border-radius: 2px;
+    font-size: 14px;
 }
 
 #button-login {
@@ -58,15 +61,17 @@ a {
     width: 40%;
     margin: auto;
     line-height: 40px;
-    color: black;
+    color: #07020D;
     text-align: center;
-    background-color: #f3f1f1;
     border: #778da9;
+    border-radius: 2px;
+    transition: all 0.5s ease;
+    font-size: 16px;
 }
 
-#button-login:hover, #button-register-login:hover {
-    background-color: #1b263b;
-    color: white;
+#button-login:hover {
+    background-color: #07020D;
+    color: #f3f1f1;
     transition: 500ms;
 }
 
@@ -90,11 +95,12 @@ a {
 }
 
 #login-facebook, #login-instagram, #login-twitter, #login-google {
-    color: #f3f1f1;
+    color: #07020D;
+    transition: all .5s ease;
 }
 
 #login-facebook:hover, #login-instagram:hover, #login-twitter:hover, #login-google:hover {
-    color: #1b263b;
+    color: #f3f1f1;
 }
 
 .register-text {
