@@ -30,7 +30,7 @@ main {
 .login-text {
     font-size: x-large;
     padding-bottom: 25px;
-    padding-top: 5%;
+    padding-top: 10%;
 }
 
 #input-login { 
@@ -115,7 +115,7 @@ a:focus {
 
 .register-text {
     display: inline-block;
-    padding-bottom: 5%;
+    padding-bottom: 10%;
     padding-top: 30px;
 }
 

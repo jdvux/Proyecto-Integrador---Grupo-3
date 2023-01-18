@@ -105,7 +105,7 @@ footer{
     display: flex;
     justify-content: space-between;
     width: 90vw;
-    margin: 10px auto;
+    margin: auto 10px;
 }
 
 .group-1 .box figure{
