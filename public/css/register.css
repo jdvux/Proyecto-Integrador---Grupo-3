@@ -78,6 +78,8 @@ form {
     margin: 20px auto;
     font-size: 16px;
     color: #002D4D;
+    border: #778da9;
+    border-radius: 2px;
     cursor: pointer;
     transition: all .5s ease;
 }

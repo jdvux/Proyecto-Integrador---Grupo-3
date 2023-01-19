@@ -1,0 +1,104 @@
+body{
+    width: 100%;
+}
+
+main{
+    width: 90%;
+}
+
+section{
+    margin: auto;
+}
+.cart-container{
+    margin-top: 70px;
+    margin-bottom: 70px;
+    margin-left: 20px;
+    width: 100%;
+}
+
+.item-cart img {
+    width: 35%;
+    height: fit-content;
+    margin: 5px;
+    padding: 5px;
+}
+
+p {
+    font-size: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.btn-buy {
+    font-size: 15px;
+    margin: 10px;
+}
+
+.item-cart, .item-cart-info,.quantity-selector, .item-price {
+    width: 50%;
+}
+
+.item-container{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.line {
+    border-top: 1px solid #778da9;
+    height: 2px;
+    width: 100%;
+    padding: 0;
+    margin: 20px auto 5px auto;
+  }
+
+  .ticket-shipping, .ticket-total{
+    display: flex;
+  }
+
+  .ticket-shipping p, .ticket-total p {
+    width: 50%;
+    margin-bottom: 10px;
+  }
+
+  .btn-buy{
+    width: 100%;
+    height: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #07020D;
+    border: #778da9;
+    border-radius: 2px;
+    border-radius: 2px;
+    transition: all 0.5s ease;
+    font-size: 16px;
+  }
+
+  .btn-buy:hover{
+    background-color: #002D4D;
+    color: #f3f1f1;
+    transition: 500ms;
+  }
+
+/*MEDIA QUERIES*/
+
+/*TABLET*/
+@media (min-width: 361px){
+    
+    .cart-container{
+        margin-top: 15%;
+        margin-left: 15%;
+        width: 80%;
+    }
+
+    p{
+        font-size: 16px;
+    }
+     
+}
+
+/*DESK*/
+@media (min-width: 769px){
+   
+  
+}
