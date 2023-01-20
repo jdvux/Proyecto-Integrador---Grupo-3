@@ -69,7 +69,7 @@ form {
     color: #f3f1f1 ;
 }
 
-.button{
+.button {
     display: block;
     border: none;
     border-radius: 2px;
@@ -80,7 +80,7 @@ form {
     color: #002D4D;
     cursor: pointer;
     transition: all .5s ease;
-}
+} 
 
 .button:hover{
     background: #002D4D;
