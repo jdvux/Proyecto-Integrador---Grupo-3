@@ -56,7 +56,7 @@ main {
     text-align: center;
     border: #778da9;
     border-radius: 2px;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
     font-size: 16px;
 }
 
@@ -71,7 +71,7 @@ main {
     outline: none;
     text-decoration: none;
     padding: 2px 1px 0;
-    transition: all .5s ease;
+    transition: all .3s ease;
   }
   
 .link-login-form:hover {
@@ -108,7 +108,7 @@ a:active {
 
 #login-facebook, #login-instagram, #login-twitter, #login-google {
     color: #07020D;
-    transition: all .5s ease;
+    transition: all .3s ease;
 }
 
 #login-facebook:hover, #login-instagram:hover, #login-twitter:hover, #login-google:hover {

@@ -80,7 +80,7 @@ form {
     font-size: 16px;
     color: #002D4D;
     cursor: pointer;
-    transition: all .5s ease;
+    transition: all .3s ease;
 } 
 
 .button:hover{
@@ -104,7 +104,7 @@ form {
 }
 
 .icons {
-    transition: all .5s ease;
+    transition: all .3s ease;
     color:#002D4D;
     padding-top: 5px;
 }
