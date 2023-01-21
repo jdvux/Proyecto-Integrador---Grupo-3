@@ -85,10 +85,14 @@ form {
     transition: all .3s ease;
 } 
 
-.button:hover{
+.button:hover {
     background: #002D4D;
     color: #f3f1f1;
 }
+
+.button:hover > a {
+    color: #f3f1f1;
+} 
 
 .redes-sociales{
     text-align: center;
