@@ -22,7 +22,7 @@ app.get('/register', (req, res) => {
 });
 
 app.get('/productCart', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/productCart.html'))
+    res.sendFile(path.resolve(__dirname, './views/cart.html'))
 });
 
 app.listen(PORT, () => {

@@ -52,7 +52,7 @@ main {
     width: 80%;
     margin: -20px auto 0;
     line-height: 40px;
-    color: #07020D;
+    color: #002D4D;
     text-align: center;
     border: #778da9;
     border-radius: 2px;
@@ -61,7 +61,7 @@ main {
 }
 
 #button-login:hover {
-    background-color: #07020D;
+    background-color: #002D4D;
     color: #f3f1f1;
     transition: 500ms;
 }
