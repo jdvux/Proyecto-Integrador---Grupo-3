@@ -25,6 +25,10 @@ app.get('/productCart', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/cart.html'))
 });
 
+app.get('/terms-conditions', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './views/terms-conditions.html'))
+});
+
 app.listen(PORT, () => {
     console.log(`server on ${PORT}`);
 })
