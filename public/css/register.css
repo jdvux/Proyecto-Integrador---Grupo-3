@@ -63,13 +63,14 @@ form {
     text-decoration: none;
     font-weight: bold;
     font-size: 12px;
+    transition: all .5s ease;
 }
 
 .termino2:hover {
-    color: #f3f1f1 ;
+    color: #f3f1f1;
 }
 
-.button{
+.button {
     display: block;
     border: none;
     border-radius: 2px;
@@ -81,8 +82,8 @@ form {
     border: #778da9;
     border-radius: 2px;
     cursor: pointer;
-    transition: all .5s ease;
-}
+    transition: all .3s ease;
+} 
 
 .button:hover{
     background: #002D4D;
@@ -105,7 +106,7 @@ form {
 }
 
 .icons {
-    transition: all .5s ease;
+    transition: all .3s ease;
     color:#002D4D;
     padding-top: 5px;
 }
