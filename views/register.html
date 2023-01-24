@@ -12,28 +12,47 @@
     <link rel="icon" href="/images/g3-high-resolution-logo-black-on-white-background_low.png">
 </head>
 <body>
-    <header class="header">
-        
-        <div class="container">
-            
-            <div class="logo">
-                <a href="/"><img src="./images/g3-high-resolution-logo-black-on-white-background_low.png" alt="Logo de la marca"></a>
+    <header>
+        <div class="header-container">
+            <div class="promotional-banner">
+                <h4><b>Envíos gratis</b> en compras superiores a $20.000</h4>
             </div>
-
-            <div class="btn">
-                <label for="btn-menu"><i class="fa-solid fa-bars"></i></label>
-            </div>
-            
-            <input type="checkbox" id="btn-menu">
-            
-            <nav class="menu">
-                <input type="text" name="buscar" placeholder="Buscar...">
-                <a href="/">Inicio</a>
-                <a href="/register">Registrarse</a>
-                <a href="/login">Iniciar Sesión</a>
-                <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
-            </nav>
-
+            <div class="header-navbar"> 
+                <div class="left-navbar">
+                    <div class="btn">
+                        <label for="btn-menu"><i class="fa-solid fa-bars"></i></label>
+                        <input type="checkbox" id="btn-menu">
+                        <nav class="menu">
+                            <input type="text" name="buscar" placeholder="Buscar...">
+                            <a href="/">Inicio</a>
+                            <hr>
+                            <a href="/productDetail">Productos</a>
+                            <hr>
+                            <a href="/login">Iniciar Sesión</a>
+                            <hr>
+                            <a href="/register">Registrarse</a>
+                            <hr>
+                            <a href="/productCart">Carrito</a>
+                            <hr>
+                        </nav>
+                    </div>
+                </div>
+                <div class="center-navbar">
+                    <div class="header-logo">
+                        <a href="#">
+                            <img src="/images/logo_small.png" alt="">
+                        </a>
+                    </div>
+                </div>  
+                <div class="right-navbar">                  
+                    <div class="search-bar">
+                        <input type="text" placeholder="Buscar productos, marcas...">
+                        <a href="#">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </a>
+                    </div>
+                </div>    
+            </div> 
         </div>
     </header>  
 
@@ -76,14 +95,9 @@
 </main>
 </body>
 
-<footer>
+<footer class="footer-section">
     <div class="group-1">
-        <div class="logo-footer">
-            <figure>
-                <a href="/"><img src="./images/g3-high-resolution-logo-black-on-white-background_low.png" alt=""></a>
-            </figure>
-        </div>
-
+        
         <div class="box">
             <h2>Navegación</h2>
             <div class="box-nav-list">
@@ -93,18 +107,23 @@
                 <a href="/register"><p>Registrarse</p></a>
             </div>
         </div>
+
+        <hr>
+
         <div class="box">
             <h2>Contactanos</h2>
             <p>Lunes a Viernes de 9 a 20 hs / Sábado de 9 a 17 hs</p>
             <div class="contacts">
-                <a href="#"><i class="fa-solid fa-envelope"></i>Correo Electrónico</a>
-                <a href="https://www.whatsapp.com"><i class="fa-brands fa-square-whatsapp"></i>Whatsapp</a>
-                <a href="#"><i class="fa-solid fa-phone"></i>08000-111-1000</a>
+                <a href="#">Correo Electrónico<i class="fa-solid fa-envelope"></i></a>
+                <a href="https://www.whatsapp.com">Whatsapp<i class="fa-brands fa-square-whatsapp"></i></a>
+                <a href="#">08000-111-1000<i class="fa-solid fa-phone"></i></a>
             </div>
         </div>
         
+        <hr>
+        
         <div class="box">
-            <h2>Redes Sociales</h2>
+            <h2>Seguinos</h2>
             <div class="media">
                 <a href="https://www.facebook.com" class="fa fa-facebook"></a>
                 <a href="https://www.instagram.com" class="fa fa-instagram"></a>
@@ -114,8 +133,10 @@
         </div>
     </div>
 
-    <div class="grupo-2">
-        <small>&copy; 2023 <b>G3 Footwear</b> -Todos los derechos reservados</small>
+    <hr>
+
+    <div class="group-2">
+        <small>&copy; 2023 <b>G3 Footwear</b> -Todos los derechos reservados. Las fotos contenidas en este sitio, el logotipo y las marcas son propiedad de www.wolfargentinadh.com.ar y/o de sus respectivos titulares.</small>
     </div>
 </footer>
 </html>

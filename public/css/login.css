@@ -22,7 +22,7 @@ main {
     background: #bdc3c7;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom, #778da9, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    margin: 150px auto 75px;
+    margin: 130px auto 30px;
     justify-content: center;
     box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
@@ -123,11 +123,12 @@ a:active {
 
 /*-------------MEDIA-QUERIES--------------*/
 
-/* MOBILE & TABLET */
+/* MOBILE */
 
-@media (max-width: 769px) {
+@media (max-width: 360px) {
     
     .login-form-container {
-        margin: 120px auto 60px;
+        margin-top: 100px; 
+        margin-bottom: 30px;
     }
 }
