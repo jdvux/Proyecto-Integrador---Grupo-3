@@ -152,7 +152,7 @@ main p {
   }
 
   .btn-buy:hover, .btn-back:hover {
-    background-color: #07020D;
+    background-color: #353535;
     color: #f3f1f1;
     transition: 300ms;
   }

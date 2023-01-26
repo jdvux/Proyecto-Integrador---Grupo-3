@@ -62,7 +62,7 @@ main {
 }
 
 #button-login:hover {
-    background-color: #080705;
+    background-color: #353535;
     color: #f3f1f1;
     transition: 500ms;
 }
