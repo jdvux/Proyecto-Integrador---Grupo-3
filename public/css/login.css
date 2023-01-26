@@ -21,7 +21,7 @@ main {
 .login-form-container {
     background: #bdc3c7;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #778da9, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to bottom, #3C6E71, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     margin: 130px auto 30px;
     justify-content: center;
     box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
@@ -32,6 +32,7 @@ main {
     font-size: x-large;
     padding-bottom: 25px;
     padding-top: 10%;
+    color: #080705;
 }
 
 #input-login { 
@@ -52,7 +53,7 @@ main {
     width: 80%;
     margin: -20px auto 0;
     line-height: 40px;
-    color: #002D4D;
+    color: #07020D;
     text-align: center;
     border: #778da9;
     border-radius: 2px;
@@ -61,13 +62,13 @@ main {
 }
 
 #button-login:hover {
-    background-color: #002D4D;
+    background-color: #080705;
     color: #f3f1f1;
     transition: 500ms;
 }
 
 .link-login-form {
-    color: #07020D;
+    color: #080705;
     outline: none;
     text-decoration: none;
     padding: 2px 1px 0;
@@ -90,11 +91,13 @@ a:active {
 .forgot-password {
     padding-bottom: 10px;
     margin-bottom: 20px;
+    color: #080705;
 }
 
 .login-with {
     margin-bottom: 2%;
     padding: 0 20px 10px;
+    color: #080705;
 }
 
 .social-media-login-father {
@@ -109,6 +112,7 @@ a:active {
 #login-facebook, #login-instagram, #login-twitter, #login-google {
     color: #07020D;
     transition: all .3s ease;
+    font-size: 20px;
 }
 
 #login-facebook:hover, #login-instagram:hover, #login-twitter:hover, #login-google:hover {
@@ -119,6 +123,7 @@ a:active {
     display: inline-block;
     padding-bottom: 10%;
     padding-top: 30px;
+    color: #080705;
 }
 
 /*-------------MEDIA-QUERIES--------------*/

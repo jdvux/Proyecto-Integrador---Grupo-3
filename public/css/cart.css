@@ -9,7 +9,7 @@ body {
 .fa-cart-arrow-down {
   font-size: 100%;
   margin-right: 10px;
-  color: #002D4D;
+  color: #3C6E71;
 }
 
 .cart-title {
@@ -18,10 +18,9 @@ body {
     padding-top: 30px;
     text-align: left;
     width: 80%;
-    color: #002D4D;
 }
 
-p {
+main p {
     font-size: 95%;
 }
 
@@ -37,7 +36,7 @@ p {
 }
 
 .product-name {
-    color: #002D4D;
+    color: #3C6E71;
     font-weight: bolder;
     text-align: end;
     font-size: 100%;
@@ -76,7 +75,6 @@ p {
 }
 
 .quantity-text {
-    color: #002D4D;
     font-weight: bold;
 }
 
@@ -103,13 +101,11 @@ p {
   }
 
   .shipping-text {
-    color: #002D4D;
     font-weight: bold;
   }
 
   .total-text {
     font-weight: bold;
-    color: #002D4D;
   }
 
   .total-price {
@@ -156,7 +152,8 @@ p {
   }
 
   .btn-buy:hover, .btn-back:hover {
-    background-color: #002D4D;
+    background-color: #07020D;
+    color: #f3f1f1;
     transition: 300ms;
   }
 
