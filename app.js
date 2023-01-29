@@ -2,32 +2,38 @@ const express = require ('express');
 const app = express();
 const path = require ('path')
 const PORT = 3003
+const productRoutes = require ('./routes/products')
+
+// view engine setup
+app.set('view engine', 'ejs');
 
 app.use(express.static("public"))
 
-app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/home.html'))
-});
+app.use('/', productRoutes)
 
-app.get('/productDetail', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/productDetail.html'))
-});
+// app.get('/', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, './views/home.html'))
+// });
 
-app.get('/login', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/login.html'))
-});
+// app.get('/productDetail', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, './views/productDetail.html'))
+// });
 
-app.get('/register', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/register.html'))
-});
+// app.get('/login', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, './views/login.html'))
+// });
 
-app.get('/productCart', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/cart.html'))
-});
+// app.get('/register', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, './views/register.html'))
+// });
 
-app.get('/terms-conditions', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/terms-conditions.html'))
-});
+// app.get('/productCart', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, './views/cart.html'))
+// });
+
+// app.get('/terms-conditions', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, './views/terms-conditions.html'))
+// });
 
 app.listen(PORT, () => {
     console.log(`server on ${PORT}`);
