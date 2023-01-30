@@ -16,49 +16,9 @@
     <link rel="stylesheet" href="css/cart.css" />
     <link rel="stylesheet" href="css/navAndFooter.css">
     <link rel="icon" href="/images/logo_small_black.png">
-    <header>
-        <div class="header-container">
-            <div class="promotional-banner">
-                <h4><b>Envíos gratis</b> en compras superiores a $20.000</h4>
-            </div>
-            <div class="header-navbar">   
-                <div class="left-navbar">
-                    <div class="btn">
-                        <label for="btn-menu"><i class="fa-solid fa-bars"></i></label>
-                        <input type="checkbox" id="btn-menu">
-                        <nav class="menu">
-                            <input type="text" name="buscar" placeholder="Buscar...">
-                            <a href="/">Inicio</a>
-                            <hr>
-                            <a href="/productDetail">Productos</a>
-                            <hr>
-                            <a href="/login">Iniciar Sesión</a>
-                            <hr>
-                            <a href="/register">Registrarse</a>
-                            <hr>
-                            <a href="/productCart">Carrito</a>
-                            <hr>
-                        </nav>
-                    </div>
-                </div> 
-                <div class="center-navbar">
-                    <div class="header-logo">
-                        <a href="/">
-                            <img src="/images/logo_small.png" alt="">
-                        </a>
-                    </div>
-                </div>  
-                <div class="right-navbar">
-                    <div class="search-bar">
-                        <input type="text" placeholder="Buscar productos, marcas...">
-                        <a href="#">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    </head>
+
+    <%- include('./partials/header.ejs') %>
 
     <main>
         <section>
