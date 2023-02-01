@@ -8,8 +8,9 @@ Como referentes, podemos señalar a:
 - https://www.flightclub.com/
 - https://www.kicksonfire.com/
 
-## Tablero de trabajo
+## Tableros de trabajo:
 🌐 https://trello.com/b/GABQyh6K/2do-sprint
+🌐 https://trello.com/invite/b/DMOCwceU/ATTI59e3481237582cf8dc48c9f6cae51dffFD606640/3er-sprint
 
 ## Instalar dependencias
 npm install
