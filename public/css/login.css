@@ -79,15 +79,6 @@ main {
     color: #f3f1f1;
 }
 
-a:focus {
-    border-bottom: 1px solid;
-    background: #bae498;
-}
-
-a:active {
-    text-decoration: underline;
-}
-
 .forgot-password {
     padding-bottom: 10px;
     margin-bottom: 20px;

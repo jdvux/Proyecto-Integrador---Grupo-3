@@ -197,6 +197,7 @@
 .group-2{
     display: flex;
     padding: 15px;
+    justify-content: center;
 }
 
 .group-2 small{

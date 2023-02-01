@@ -159,7 +159,7 @@
 }
 
 .purchase-benefits i{
-    margin: 3vh 3vw 3vh 0;
+    margin: 3vh 2vw 3vh 0;
     color: #5a8559;
 }
 
@@ -397,6 +397,7 @@
 
     .purchase-benefits i{
         font-size: 20px;
+        margin: 3vh 0;
     }
 
     .purchase-benefits hr{
