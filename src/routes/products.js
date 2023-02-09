@@ -10,5 +10,7 @@ router.get('/productCart', productController.productCart)
 
 router.get('/productForm', productController.productForm);
 
+router.get('/', productController.getProducts)
+
 
 module.exports = router

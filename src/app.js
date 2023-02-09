@@ -13,7 +13,7 @@ app.set('views', path.resolve('./src/views'))
 
 app.use(express.static('public'))
 
-app.use(productRoutes)
+app.use('/products',productRoutes)
 app.use(userRoutes)
 app.use(mainRoutes)
 
