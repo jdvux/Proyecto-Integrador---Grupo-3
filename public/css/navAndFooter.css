@@ -272,6 +272,10 @@
 
 @media (min-width: 1024px) {
     /*-----NAVBAR-----*/
+
+    .search-bar:hover input{
+        width: 700px;
+    }
     
     .search-bar input{
         width: 600px;
