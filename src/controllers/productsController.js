@@ -7,8 +7,11 @@ const productController = {
         res.render('cart')
     },
 
-    productForm: (req, res) => {
-        res.render('productForm')
+    createProduct: (req, res) => {
+        res.render('createProduct')
+    },
+    editProduct: (req, res) => {
+        res.render('editProduct')
     }
 }
 
