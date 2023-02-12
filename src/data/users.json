@@ -1,0 +1,40 @@
+{
+    "products": [
+      {
+        "id": "1",
+        "firstName": "Antonella",
+        "lastName": "Rodríguez",
+        "email": "xxxx",
+        "password": "xxxxx",
+        "type": "admin",
+        "Avatar": ""
+      },
+      {
+        "id": "2",
+        "firstName": "Luciano",
+        "lastName": "Gauna",
+        "email": "xxxx",
+        "password": "xxxx",
+        "type": "admin",
+        "Avatar": ""
+      },
+      {
+        "id": "3",
+        "firstName": "Juan",
+        "lastName": "Noailles",
+        "email": "xxxx",
+        "password": "xxxx",
+        "type": "admin",
+        "Avatar": ""
+      },
+      {
+        "id": "4",
+        "firstName": "Juan",
+        "lastName": "Vergara",
+        "email": "xxxx",
+        "password": "xxxx",
+        "type": "admin",
+        "Avatar": ""
+      }
+    ]
+  }
