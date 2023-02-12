@@ -8,7 +8,9 @@ router.get('/productDetail', productController.productDetail)
 
 router.get('/productCart', productController.productCart)
 
-router.get('/productForm', productController.productForm);
+router.get('/createProduct', productController.createProduct);
+
+router.get('/editProduct', productController.editProduct);
 
 router.get('/', productController.getProducts);
 

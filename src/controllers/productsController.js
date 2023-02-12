@@ -32,6 +32,12 @@ const productController = {
         let product = products.find(product => product.id == id)
 
         res.render('productDetailtest', {product})
+    },
+    createProduct: (req, res) => {
+        res.render('createProduct')
+    },
+    editProduct: (req, res) => {
+        res.render('editProduct')
     }
     
 }

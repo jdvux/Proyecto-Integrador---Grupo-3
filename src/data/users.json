@@ -1,0 +1,49 @@
+{
+    "products": [
+      {
+        "id": "1",
+        "firstName": "Antonella",
+        "lastName": "Rodríguez",
+        "email": "rodriguez.antonella.n@gmail.com",
+        "password": "123456",
+        "type": "Admin",
+        "Avatar": "/images/admin-profile.png"
+      },
+      {
+        "id": "2",
+        "firstName": "Luciano",
+        "lastName": "Gauna",
+        "email": "luciano.927@hotmail.com",
+        "password": "123456",
+        "type": "Admin",
+        "Avatar": "/images/admin-profile.png"
+      },
+      {
+        "id": "3",
+        "firstName": "Juan",
+        "lastName": "Noailles",
+        "email": "jpnoailles@gmail.com",
+        "password": "123456",
+        "type": "Admin",
+        "Avatar": "/images/admin-profile.png"
+      },
+      {
+        "id": "4",
+        "firstName": "Juan",
+        "lastName": "Vergara",
+        "email": "xxxx",
+        "password": "123456",
+        "type": "Admin",
+        "Avatar": "/images/admin-profile.png"
+      }, 
+      {
+        "id": "5",
+        "firstName": "Luis",
+        "lastName": "Feldman",
+        "email": "luisfeldman89@hotmail.com",
+        "password": "123456",
+        "type": "Admin",
+        "Avatar": "/images/admin-profile.png"
+      }
+    ]
+  }
