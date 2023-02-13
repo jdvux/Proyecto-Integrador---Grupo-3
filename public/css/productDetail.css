@@ -153,6 +153,27 @@
     width: 150px;
 }
 
+.edit-and-delete{
+    text-align: center;
+    margin: 30px;
+}
+
+.edit-and-delete button{
+    padding: 8px;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    color: white;
+}
+
+.edit-button{
+    background-color: #5a8559;
+}
+
+.delete-button{
+    background-color: #e63946a6;
+}
+
 .purchase-benefits{
     margin: 20px 0;
     font-size: 14px;

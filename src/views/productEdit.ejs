@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/productForm.css">
+    <link rel="stylesheet" href="/css/navAndFooter.css">
+    <script src="https://kit.fontawesome.com/7ea488e71c.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <%- include('./partials/header.ejs') %>
+
+    <div>
+    <form class="product-form">
+        
+        <!--titulo de la pag----->
+        <h1 class="product-form-title">Editar Productos</h1>
+        
+        <!--datos que se piden para el registro en cajas-------->
+        <input class="box-form" type="text" placeholder="Nombre del producto" required>
+        <input class="box-form" type="text" placeholder="Descripción" required>
+        <div>
+            <input type="file" id="files" class="hidden"/>
+            <label for="files" class="select-file">Seleccionar archivo
+                <i class="fa-solid fa-camera-rotate"></i>
+            </label>
+        </div>
+        <select class="size-selector-box" name="talle">
+            <option disabled selected>Seleccioná un talle</option>
+            <option value="talle">35</option>
+            <option value="talle">35,5</option>
+            <option value="talle">36</option>
+            <option value="talle">36,5</option>
+            <option value="talle">37</option>
+            <option value="talle">37,5</option>
+            <option value="talle">38</option>
+            <option value="talle">38,5</option>
+            <option value="talle">39</option>
+            <option value="talle">39,5</option>
+            <option value="talle">40</option>
+            <option value="talle">40,5</option>
+            <option value="talle">41</option>
+            <option value="talle">41,5</option>
+            <option value="talle">42</option>
+            <option value="talle">42,5</option>
+            <option value="talle">43</option>
+            <option value="talle">43,5</option>
+            <option value="talle">44</option>
+        </select>
+        <input class="box-form" type="text" placeholder="Precio" required>
+        
+        <!--Boton-->
+        <input type="submit" class="button" value="Enviar"></input>
+        <input type="reset" class="button" value="Borrar"></input>
+            
+        
+    </form>
+
+    <%- include('./partials/footer'); %>
+    
+</body>
+</html>
