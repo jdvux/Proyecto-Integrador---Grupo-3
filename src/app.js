@@ -11,7 +11,13 @@ const userRoutes = require('./routes/user');
 app.set('view engine', 'ejs');
 app.set('views', path.resolve('./src/views'));
 
-app.use(express.static('public'));
+
+app.use(express.static('public'))
+
+app.use('/products',productRoutes)
+app.use(userRoutes)
+app.use(mainRoutes)
+
 
 app.use(productRoutes);
 app.use(userRoutes);
@@ -19,5 +25,4 @@ app.use(mainRoutes);
 
 app.listen(PORT, () => {
   console.log(`server on ${PORT}`);
-});
-
+})

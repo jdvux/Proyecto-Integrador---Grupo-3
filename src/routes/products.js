@@ -12,5 +12,11 @@ router.get('/createProduct', productController.createProduct);
 
 router.get('/editProduct', productController.editProduct);
 
+router.get('/', productController.getProducts);
+
+router.get('/create', productController.productForm);
+
+router.get('/:id', productController.detail)
+
 
 module.exports = router
