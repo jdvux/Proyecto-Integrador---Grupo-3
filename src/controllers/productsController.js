@@ -4,10 +4,6 @@ const productsFilePath = path.join(__dirname, '../data/products.json');
 
 
 const productController = {
-    productDetail: (req, res) => {
-        res.render('productDetail')
-    },
-
     productCart: (req, res) => {
         res.render('cart')
     },

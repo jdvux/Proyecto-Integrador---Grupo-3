@@ -14,10 +14,14 @@
           rel="stylesheet"
         />
         <link rel="stylesheet" href="css/productForm.css" />
+        <link rel="stylesheet" href="css/navAndFooter.css">
         <link rel="icon" href="/images/logo_small_black.png">
         </head>
 
 <body>
+
+    <%-include('./partials/header.ejs')%>
+
 
     <div>
     <form class="product-form">
@@ -64,5 +68,8 @@
             
         
     </form>
+
+    <%- include('./partials/footer'); %>
+
 </body>
 </html>

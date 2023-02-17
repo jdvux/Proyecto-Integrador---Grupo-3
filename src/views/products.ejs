@@ -45,12 +45,14 @@
                         <a class="article-a" href="/products/<%= products[i].id %>/delete">Eliminar</a>
 
                     </div>
-                <% } %>
-            
-            
-            <!-- <a href="/products/create">Crear producto</a> -->
+                <% } %>  
         </div>
         </section>
+        <section>
+          <div class="container-button-create">
+            <button class="btn-buy" ><a href="/createProduct">Crear producto</a></button>
+        </div>
+       </section>
 
     </main>
     <%- include('./partials/footer'); %>
