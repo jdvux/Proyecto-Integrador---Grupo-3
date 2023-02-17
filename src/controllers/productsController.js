@@ -12,9 +12,10 @@ const productController = {
         res.render('cart')
     },
 
-    productForm: (req, res) => {
-        res.render('productForm')
-    },
+    // Aquí va la antigua propiedad que quedó comentada:
+    // productForm: (req, res) => {
+    //     res.render('productForm')
+    // },
 
     getProducts: (req, res) => {
 
@@ -33,9 +34,11 @@ const productController = {
 
         res.render('productDetailtest', {product})
     },
+
     createProduct: (req, res) => {
         res.render('createProduct')
     },
+
     editProduct: (req, res) => {
         res.render('editProduct')
     }

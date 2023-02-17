@@ -60,7 +60,7 @@ form {
   transition: all 0.3s ease;
 }
 
-.select-file {
+label {
   width: 80%;
   padding: 10px;
   margin: 0 auto 20px;
