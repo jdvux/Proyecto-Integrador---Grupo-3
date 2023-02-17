@@ -14,9 +14,9 @@ app.set('views', path.resolve('./src/views'));
 
 app.use(express.static('public'))
 
+app.use(mainRoutes)
 app.use('/products',productRoutes)
 app.use(userRoutes)
-app.use(mainRoutes)
 
 
 app.use(productRoutes);

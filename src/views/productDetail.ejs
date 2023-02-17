@@ -31,51 +31,46 @@
             <section class="left">
               <div class="images-container">
                 <div class="main-product-image">
-                  <img src="/images/zapas-vans-2.jpg" alt="" />
+                  <img src="/images/<%= product.image[0] %>" alt="<%= product.name %>">
                 </div>
 
                 <div class="main-product-image2">
-                  <img src="/images/zapas-vans-1.jpg" alt="" />
+                  <img src="/images/<%= product.image[1] %>" alt="<%= product.name %>" />
                 </div>
               </div>
 
               <div class="images-container2">
                 <div class="main-product-image3">
-                  <img src="/images/zapas-vans-5.jpg" alt="" />
+                  <img src="/images/<%= product.image[2] %>" alt="<%= product.name %>" />
                 </div>
 
                 <div class="main-product-image4">
-                  <img src="/images/zapas-vans-6.jpg" alt="" />
+                  <img src="/images/<%= product.image[3] %>" alt="<%= product.name %>" />
                 </div>
               </div>
 
               <div class="images-container3">
                 <div class="main-product-image-small">
-                  <img src="/images/zapas-vans-3.jpg" alt="" />
+                  <img src="/images/<%= product.image[4] %>" alt="<%= product.name %>" />
                 </div>
 
                 <div class="main-product-image-small">
-                  <img src="/images/zapas-vans-4.jpg" alt="" />
+                  <img src="/images/<%= product.image[5] %>" alt="<%= product.name %>" />
                 </div>
 
                 <div class="main-product-image-small">
-                  <img src="/images/zapas-vans-7.jpg" alt="" />
+                  <img src="/images/<%= product.image[6] %>" alt="<%= product.name %>" />
                 </div>
 
                 <div class="main-product-image-small">
-                  <img src="/images/zapas-vans-8.jpg" alt="" />
+                  <img src="/images/<%= product.image[7] %>" alt="<%= product.name %>" />
                 </div>
               </div>
             </section>
             <section class="right">
-              <div class="row-path">
-                <a href="#">INICIO /</a>
-                <a href="#">CALZADO /</a>
-                <a href="#">VANS OLD SKOOL</a>
-              </div>
 
               <div class="main-product-name">
-                <h1>ZAPATILLAS VANS OLD SKOOL</h1>
+                <h1><%= product.name %></h1>
               </div>
 
               <div class="product-rating">
@@ -89,7 +84,7 @@
 
               <div class="main-product-prices">
                 <div class="main-product-oldPrice">
-                  <p>$28.500</p>
+                  <%= product.price %>
                 </div>
 
                 <div class="main-product-newPrice">
@@ -144,12 +139,7 @@
               </div>
 
               <div class="product-description">
-                <p>
-                  De vuelta con una nueva combinación de colores para la nueva
-                  temporada, las Vans Old Skool son un clásico ya probado.
-                  Diseñado para manejar cualquier situación que le depare el
-                  día, asegurate de tener tu par en G3 hoy. Hasta agotar stock.
-                </p>
+                <p><%= product.description %></p>
               </div>
 
               <div class="add-to-cart">

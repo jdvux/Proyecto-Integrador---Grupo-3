@@ -1,18 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>G3 Footwear</title>
+    <script
+      src="https://kit.fontawesome.com/7ea488e71c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/navAndFooter.css">
+    <link rel="icon" href="/images/logo_small_black.png">
+    </head>
 
-<h1>Listado de productos</h1>
+    <body>
 
-<% for (let i = 0; i < products.length; i++) { %>
-    <div class="article">
-        <h2 class="article-name"><%= products[i].name %></h2>
-        <p class="price"><%= products[i].description %></p>
-        <p class="price"><%= products[i].price %></p>
-        <img class="article-img" src="images/<%= products[i].image %>" alt="<%= products[i].name %>">
+      <%-include('./partials/header.ejs')%>
 
-        <a href="/products/<%= products[i].id %>">Ver detalle</a>
-        <a href="/products/<%= products[i].id %>/edit">Editar</a>
-        <a href="/products/<%= products[i].id %>/delete">Eliminar</a>
+    <main>
+      <section>
+        <div class="main-banner-container">
+          <img src="/images/banner.jpg" alt="banner" class="img-banner">
+        <div class="banner-text-container"><h1 class="banner-text">Bienvenido a G3 Footwear</h1></div>
+        </div>
+      </section>
 
-    </div>
-<% } %>
+      <section>
+        <h2 class="section-title">LO QUE MARCA TENDENCIA</h2>
+        <div class="container-articles-1">
 
-<a href="/products/create">Crear producto</a>
+                <% for (let i = 0; i < products.length; i++) { %>
+                    <div class="article">
+                        <img class="article-img" src="images/<%= products[i].image[0] %>" alt="<%= products[i].name %>">
+                        <p class="article-name"><%= products[i].name %></p>
+                        <p class="price"><%= products[i].price %></p>
+
+                        <a class="article-a" href="/products/<%= products[i].id %>">Ver más</a>
+                        <a class="article-a" href="/products/<%= products[i].id %>/edit">Editar</a>
+                        <a class="article-a" href="/products/<%= products[i].id %>/delete">Eliminar</a>
+
+                    </div>
+                <% } %>
+            
+            
+            <!-- <a href="/products/create">Crear producto</a> -->
+        </div>
+        </section>
+
+    </main>
+    <%- include('./partials/footer'); %>
+  </body>
+</html>
+

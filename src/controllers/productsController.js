@@ -32,7 +32,7 @@ const productController = {
 
         let product = products.find(product => product.id == id)
 
-        res.render('productDetailtest', {product})
+        res.render('productDetail', {product})
     },
 
     createProduct: (req, res) => {

@@ -77,7 +77,14 @@ main h1, main h2, main p {
 }
 
 .article-name {
+    width: 80%;
     font-weight: bold;
+}
+
+.article-a{
+    width: 80%;
+    text-decoration: none;
+    color: #080705;
 }
 
 .price {
