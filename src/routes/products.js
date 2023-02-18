@@ -4,19 +4,24 @@ const router = express.Router()
 const productController = require('../controllers/productsController')
 
 
+router.get('/', productController.getProducts);
+
+//Renderiza formulario de creacion
+router.get('/createForm', productController.createProductForm);
+
+router.get('/:id', productController.detail)
+
+//crea productos
+// router.get('/', productController.createProduct);
+
 
 router.get('/productCart', productController.productCart)
 
-router.get('/createProduct', productController.createProduct);
 
-router.get('/editProduct', productController.editProduct);
+// router.get('/:id/edit', productController.editProduct);
 
-router.get('/', productController.getProducts);
 
 // Aquí va la ruta antigua que quedó comentada:
-// router.get('/create', productController.productForm);
-
-router.get('/:id', productController.detail)
 
 
 module.exports = router

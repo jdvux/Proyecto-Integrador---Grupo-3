@@ -13,8 +13,8 @@
           href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
           rel="stylesheet"
         />
-        <link rel="stylesheet" href="css/productForm.css" />
-        <link rel="stylesheet" href="css/navAndFooter.css">
+        <link rel="stylesheet" href="../css/productForm.css" />
+        <link rel="stylesheet" href="../css/navAndFooter.css">
         <link rel="icon" href="/images/logo_small_black.png">
         </head>
 
@@ -23,7 +23,7 @@
     <%-include('./partials/header.ejs')%>
 
     <div>
-    <form class="product-form">
+    <form class="product-form" action="/products" method="POST">
         
         <!--titulo de la pag----->
         <h1 class="product-form-title">Añadir Producto</h1>

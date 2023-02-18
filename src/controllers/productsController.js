@@ -22,7 +22,6 @@ const productController = {
     },
 
     detail: (req, res) => {
-
         let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
         const id = req.params.id
 
@@ -31,13 +30,26 @@ const productController = {
         res.render('productDetail', {product})
     },
 
-    createProduct: (req, res) => {
+    createProductForm: (req, res) => {
         res.render('createProduct')
     },
 
     editProduct: (req, res) => {
         res.render('editProduct')
-    }
+    },
+
+    // createProduct: (req, res) => {
+    //     const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
+    //     const product = req.body;
+    //     const newProduct = {
+    //         id: products.lenght > 0 ? products[products.lenght - 1].id + 1 : 1,
+    //         ...data,
+    //         image: req.file ? req.file.filename : 'default-image.png'
+    //     };
+    //     products.push(newProduct)
+    //     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+    //     res.redirect('/products');
+    // }
     
 }
 
