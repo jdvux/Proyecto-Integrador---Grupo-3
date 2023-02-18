@@ -8,11 +8,6 @@ const productController = {
         res.render('cart')
     },
 
-    // Aquí va la antigua propiedad que quedó comentada:
-    // productForm: (req, res) => {
-    //     res.render('productForm')
-    // },
-
     getProducts: (req, res) => {
 
         let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
@@ -38,18 +33,18 @@ const productController = {
         res.render('editProduct')
     },
 
-    // createProduct: (req, res) => {
-    //     const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
-    //     const product = req.body;
-    //     const newProduct = {
-    //         id: products.lenght > 0 ? products[products.lenght - 1].id + 1 : 1,
-    //         ...data,
-    //         image: req.file ? req.file.filename : 'default-image.png'
-    //     };
-    //     products.push(newProduct)
-    //     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-    //     res.redirect('/products');
-    // }
+    createProduct: (req, res) => {
+        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
+        const data = req.body;
+        const newProduct = {
+            id: String(Date.now()),
+            ...data,
+            image: req.file ? req.file.filename : ['default-image.png']
+        };
+        products.push(newProduct)
+        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+        res.redirect('/products');
+    }
     
 }
 

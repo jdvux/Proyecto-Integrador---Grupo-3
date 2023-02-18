@@ -12,7 +12,7 @@ router.get('/createForm', productController.createProductForm);
 router.get('/:id', productController.detail)
 
 //crea productos
-// router.get('/', productController.createProduct);
+router.post('/', productController.createProduct);
 
 
 router.get('/productCart', productController.productCart)
