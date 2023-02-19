@@ -34,7 +34,10 @@ const productController = {
     },
 
     createProduct: (req, res) => {
-        console.log(req.files[0].filename, "imagenes")
+        console.log(req.files[0].filename, "primer img")
+        const files = req.files
+        const filename = files.map(file => file.filename)
+        console.log('filename',filename);
     
         const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
             
@@ -42,7 +45,7 @@ const productController = {
                 'id': String(Date.now()),
                 'name': req.body.name || 'Sin nombre',
                 'description': req.body.description || 'Sin descripcion',
-                'image': [req.files[0].filename],
+                'image': filename,
                 'category': req.body.category || 'Sin categoria',
                 'size': req.body.size || 35,
                 'price': req.body.price || 0
