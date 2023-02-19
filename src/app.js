@@ -2,22 +2,21 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const PORT = 3003;
-
 const mainRoutes = require('./routes/main');
 const productRoutes = require('./routes/products');
 const userRoutes = require('./routes/user');
+const methodOverride = require('method-override');
 
 // view engine setup
 app.set('view engine', 'ejs');
 app.set('views', path.resolve('./src/views'));
 
+app.use(methodOverride('_method'));
+app.use(express.static('public'));
 
-app.use(express.static('public'))
-
-app.use(mainRoutes)
-app.use('/products',productRoutes)
-app.use(userRoutes)
-
+app.use(mainRoutes);
+app.use('/products',productRoutes);
+app.use(userRoutes);
 
 app.use(productRoutes);
 app.use(userRoutes);

@@ -108,6 +108,10 @@ label {
   cursor: pointer;
 }
 
+:disabled {
+  background-color: white;
+}
+
 /* MEDIA QUERIES */
 
 /* MOBILE */
