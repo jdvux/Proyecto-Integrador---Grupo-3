@@ -34,17 +34,25 @@ const productController = {
     },
 
     createProduct: (req, res) => {
+        console.log(req.files[0].filename, "imagenes")
+    
         const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
-        const data = req.body;
-        const newProduct = {
-            id: String(Date.now()),
-            ...data,
-            image: req.file ? req.file.filename : ['default-image.png']
-        };
-        products.push(newProduct)
-        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-        res.redirect('/products');
-    }
+            
+            const newProduct = {
+                'id': String(Date.now()),
+                'name': req.body.name || 'Sin nombre',
+                'description': req.body.description || 'Sin descripcion',
+                'image': [req.files[0].filename],
+                'category': req.body.category || 'Sin categoria',
+                'size': req.body.size || 35,
+                'price': req.body.price || 0
+    
+                // image: req.file ? req.file.filename + path.extname(file.originalname) : ['default-image.png']
+            };
+            products.push(newProduct)
+            fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+            res.redirect('/products');
+        }
     
 }
 

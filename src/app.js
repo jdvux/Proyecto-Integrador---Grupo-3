@@ -11,11 +11,12 @@ const userRoutes = require('./routes/user');
 app.set('view engine', 'ejs');
 app.set('views', path.resolve('./src/views'));
 
+//Middlewares
+app.use(express.static('public'))
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 
-app.use(express.static('public'))
 
 app.use(mainRoutes)
 app.use('/products',productRoutes)

@@ -1,8 +1,7 @@
 const express = require ('express')
 const router = express.Router()
-
-const productController = require('../controllers/productsController')
-
+const productController = require('../controllers/productsController');
+const upload = require ('../middlewares/multer')
 
 router.get('/', productController.getProducts);
 
@@ -12,7 +11,7 @@ router.get('/createForm', productController.createProductForm);
 router.get('/:id', productController.detail)
 
 //crea productos
-router.post('/', productController.createProduct);
+router.post('/', upload.array('imageFile'), productController.createProduct);
 
 
 router.get('/productCart', productController.productCart)

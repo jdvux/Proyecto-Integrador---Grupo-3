@@ -115,16 +115,5 @@
   "category": "Comfort",
   "size": "46",
   "price": "31.000"
- },
- {
-  "id": "1676743859840",
-  "name": "Nano",
-  "description": "tomate fresco",
-  "category": "Comfort",
-  "size": "talle",
-  "price": "49000",
-  "image": [
-   "default-image.png"
-  ]
  }
 ]
