@@ -78,7 +78,7 @@ const productController = {
     let id = req.params.id;
     let product = products.find(product => product.id == id);
     
-    res.render('deleteProduct', {
+    res.render('products/deleteProduct', {
         title: 'Eliminar Producto',
         product
     })

@@ -19,18 +19,7 @@
     </head>
 
     <body>
-
-<<<<<<< HEAD:src/views/products/products.ejs
-<% for (let i = 0; i < products.length; i++) { %>
-    <div class="article">
-        <h2 class="article-name"><%= products[i].name %></h2>
-        <p class="price"><%= products[i].description %></p>
-        <p class="price"><%= products[i].price %></p>
-        <img class="article-img" src="/images/<%= products[i].image %>" alt="<%= products[i].name %>">
-=======
-      <%-include('./partials/header.ejs')%>
->>>>>>> dc247ad2cb16087d0c2b0ab0d4551ba182b89ed9:src/views/products.ejs
-
+      <%- include('../partials/header.ejs') %>
     <main>
       <section>
         <div class="main-banner-container">
@@ -45,30 +34,26 @@
 
                 <% for (let i = 0; i < products.length; i++) { %>
                     <div class="article">
-                        <img class="article-img" src="images/<%= products[i].image[0] %>" alt="<%= products[i].name %>">
+                        <a href="/products/<%=products[i].id%>"><img class="article-img" src="images/<%= products[i].image[0] %>" alt="<%= products[i].name %>"></a>
                         <p class="article-name"><%= products[i].name %></p>
-                        <p class="price"><%= products[i].price %></p>
-
-                        <a class="article-a" href="/products/<%= products[i].id %>">Ver más</a>
-                        <a class="article-a" href="/products/<%= products[i].id %>/edit">Editar</a>
-                        <a class="article-a" href="/products/<%= products[i].id %>/delete">Eliminar</a>
-
+                        <p class="price">$<%= products[i].price %></p>
+                        
+                        <div class="edit-and-delete">
+                          <a class="article-a" href="/products/editProduct/<%= products[i].id %>"><button class="edit-button">Editar</button></a>
+                          <a class="article-a" href="/products/deleteProduct/<%= products[i].id %>"><button class="delete-button">Eliminar</button></a>
+                      </div>  
                     </div>
                 <% } %>  
         </div>
         </section>
         <section>
           <div class="container-button-create">
-            <button class="btn-buy" ><a href="/createProduct">Crear producto</a></button>
-        </div>
-       </section>
+            <button class="btn-buy"><a href="/products/createProduct">Crear producto</a></button>
+        </div>  
+      </section>
 
     </main>
-    <%- include('./partials/footer'); %>
+    <%- include('../partials/footer'); %>
   </body>
 </html>
 
-<<<<<<< HEAD:src/views/products/products.ejs
-<a href="/products/createProduct">Crear producto</a>
-=======
->>>>>>> dc247ad2cb16087d0c2b0ab0d4551ba182b89ed9:src/views/products.ejs
