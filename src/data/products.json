@@ -128,5 +128,35 @@
         "oldPrice": "35.000" ,
         "size": "46",
         "price": "29.000"
+      },
+      {
+        "id": "14",
+        "name": "Reebok Pump Omni Zone II",
+        "description": "Haz que tus enemigos se babeen por cada detalle, desde la jaula de TPU con curvas hasta el perfil de corte medio. Nunca comprometa la comodidad con la amortiguación Hexalite en la entresuela. Podríamos seguir. ¿Pero por qué? Conseguílas hoy en G3 Footwear!",
+        "image": ["/products/reebok-pump-2.avif", "/products/reebok-pump-1.avif", "/products/reebok-pump-3.avif", "/products/reebok-pump-4.avif", "/products/reebok-pump-5.avif", "/products/reebok-pump-6.avif", "/products/reebok-pump-7.avif", "/products/reebok-pump-8.avif"],
+        "category": "Comfort",
+        "oldPrice": "49.000" ,
+        "size": "46",
+        "price": "45.000"
+      },
+      {
+        "id": "15",
+        "name": "Nike Air Huarache Premium",
+        "description": "¿Qué te mueve? Descúbrelo en las Nike Air Huarache.'NIKE MOVING CO.' los detalles celebran la historia de hacer que la gente se mueva. La tela elástica que abraza los pies, la amortiguación liviana y la estructura futurista del talón lo llevan a todos lados con comodidad. ¿Dónde seguir?",
+        "image": ["/products/nike-air-huarache-2.avif", "/products/nike-air-huarache-1.avif", "/products/nike-air-huarache-3.avif", "/products/nike-air-huarache-4.avif", "/products/nike-air-huarache-5.avif", "/products/nike-air-huarache-6.avif", "/products/nike-air-huarache-7.avif", "/products/nike-air-huarache-8.avif"],
+        "category": "Comfort",
+        "oldPrice": "48.500" ,
+        "size": "46",
+        "price": "41.500"
+      },
+      {
+        "id": "16",
+        "name": "Jordan Series ES",
+        "description": "Inspirada en las batallas en el patio trasero de Mike con su hermano mayor Larry, la serie Jordan hace referencia a su legendaria rivalidad entre hermanos en todo el diseño. La suela de goma ofrece más que una tracción impresionante, también cuenta la historia de cómo MJ llegó a ser el número 23. Busque el recordatorio oculto de 'Swing for the Fence', una cita directa de Larry a su hermanito.",
+        "image": ["/products/jordan-ES-2.avif", "/products/jordan-ES-1.avif", "/products/jordan-ES-3.avif", "/products/jordan-ES-4.avif", "/products/jordan-ES-5.avif", "/products/jordan-ES-6.avif", "/products/jordan-ES-7.avif", "/products/jordan-ES-8.avif"],
+        "category": "Comfort",
+        "oldPrice": "32.500" ,
+        "size": "46",
+        "price": "28.000"
       }
     ]

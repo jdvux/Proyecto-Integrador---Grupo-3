@@ -186,7 +186,7 @@ main h1, main h2, main p {
 .container-button-create{
     display: flex;
     justify-content: space-around;
-    margin-bottom: 30px;
+    margin: 30px;
 }
 
 .btn-buy {
