@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrate - G3 Footwear</title>
+    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/navAndFooter.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" 
+    crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/df0fd52d0d.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="/images/logo_small_black.png">
+</head>
+<body>
+
+    <%- include('../partials/header.ejs') %>
+  
+    <main>
+    <!--formulario---->
+    <form class="form">
+        
+        <!--titulo de la pag----->
+        <h1 class="titulo">Registrarse</h1>
+        
+        <!--datos que se piden para el registro en cajas-------->
+        <input class="box-form" type="text" placeholder="Nombre" required>
+        <input class="box-form" type="text" placeholder="Apellido" required>
+        <input class="box-form" type="email" placeholder="Correo electrónico" required>
+        <input class="box-form" type="password" placeholder="Contraseña" required>
+        
+        <!--terminos chequear si al resto le parece ok?------->
+        <p class="termino1"><input type="checkbox">  Estoy de acuerdo con <a class="termino2" href="/terms-conditions">Terminos y Condiciones</a></p>
+        
+        <!--Boton-->
+        <button type="submit" class="button"><a href="/login" class="link">Enviar</a></button>
+            
+        <h3 class="redes-sociales">Registrate con redes sociales</h3>
+
+        <div class="boxIcons">
+
+        <a class="link" href="http://facebook.com"><div class="icons"> 
+        <i class="fa fa-facebook"></i></div></a>
+
+        <a class="link" href="http://instagram.com"><div class="icons"> 
+        <i class="fa fa-instagram"></i></div></a>
+    
+        <a class="link" href="http://twitter.com"><div class="icons"> 
+        <i class="fa fa-twitter"></i></div></a>  
+        
+        <a class="link" href="http://google.com"><div class="icons"> 
+        <i class="fa fa-google"></i></div></a>
+        </div>
+    </form>
+</main>
+<%- include('../partials/footer'); %>
+</body>
+</html>

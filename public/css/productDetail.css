@@ -151,6 +151,7 @@
 
 .add-to-cart p{
     width: 150px;
+    color: #fff;
 }
 
 .edit-and-delete{
@@ -216,7 +217,10 @@
 
 .featured-products{
     font-weight: 500;
-    margin-top: 30px;
+    margin: 40px;
+    font-size: 21px;
+    display: flex;
+    justify-content: center;
 }
 
 .featured-products-images{
@@ -536,6 +540,10 @@
 
     .product-description p {
         font-size: 16px;
+    }
+
+    .add-to-cart{
+        margin-top: 60px;
     }
 
     .add-to-cart p{

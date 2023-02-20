@@ -53,16 +53,20 @@ main h1, main h2, main p {
     width: 100%;
     margin: auto;
     margin-top: 20px;
-    margin-bottom: 20px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+.article a{
+    display: flex;
     justify-content: center;
 }
 
 .article p {
     width: 80%;
     margin: 0 auto;
-    text-align: left;
+    text-align: center;
 }
 
 .article-img {
@@ -82,11 +86,12 @@ main h1, main h2, main p {
 
 .price {
     font-weight: bold;
-    color: #3C6E71;
+    color: #E63946;
 }
 
 .discount {
     font-weight: bold;
+    color: #5a8559;
 }
 
 .container-articles-2 {

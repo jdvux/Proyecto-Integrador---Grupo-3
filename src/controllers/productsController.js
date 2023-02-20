@@ -1,48 +1,98 @@
-const fs = require('fs')
+const fs = require('fs');
 const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/products.json');
 
-
 const productController = {
-    productDetail: (req, res) => {
-        res.render('productDetail')
-    },
+  products: (req, res) => {
+    let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+  
+    res.render('products/products', { products });
+  },
+  productDetail: (req, res) => {
+    let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    let id = req.params.id;
+    let product = products.find(product => product.id === id);
 
-    productCart: (req, res) => {
-        res.render('cart')
-    },
+    res.render('products/productDetail', { product });
+  },
 
-    // Aquí va la antigua propiedad que quedó comentada:
-    // productForm: (req, res) => {
-    //     res.render('productForm')
-    // },
+  productCart: (req, res) => {
+    res.render('products/cart');
+  },
 
-    getProducts: (req, res) => {
+  
+  create: (req, res) => {
+    res.render('products/createProduct');
+  },
 
-        let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
-        
+  store: (req, res) => {
+    let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-        res.render('products', {products})
-    },
-
-    detail: (req, res) => {
-
-        let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
-        const id = req.params.id
-
-        let product = products.find(product => product.id == id)
-
-        res.render('productDetailtest', {product})
-    },
-
-    createProduct: (req, res) => {
-        res.render('createProduct')
-    },
-
-    editProduct: (req, res) => {
-        res.render('editProduct')
+    let newProduct = {
+      "id": Date.now(),
+      "name": req.body.name || "Sin nombre", 
+      "description": req.body.description,
+      "image": req.body.image,
+      "size": req.body.size,
+      "category": req.body.category,
+      "oldPrice": req.body.oldPrice,
+      "price": req.body.price
     }
+
+    products.push(newProduct);
+
+    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+
+    res.redirect('/products')
+  },
+
+  edit: (req, res) => {
+    let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    let id = req.params.id;
+    let product = products.find(product => product.id === id);
     
-}
+    res.render('products/editProduct', { product });
+  },
+  
+  update: (req, res) => {
+    let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    let id = req.params.id;
+
+    products.forEach((product, index) => {
+      if(product.id == id){
+        product.name = req.body.name;
+        product.image = req.body.image;
+        product.size = req.body.size;
+        product.category = req.body.category;
+        product.price = req.body.price;  
+      }
+    })
+
+    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+
+    res.redirect('/products')
+  },
+  
+  delete: (req, res) => {
+    res.render('products/delete')
+  },
+
+  remove: (req, res) => {},
+  
+  // Aquí va la antigua propiedad que quedó comentada:
+  // productForm: (req, res) => {
+  //     res.render('productForm')
+  // },
+  
+  
+  // detail: (req, res) => {
+  //   let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+  //   const id = req.params.id;
+  
+  //   let product = products.find(product => product.id == id);
+  
+  //   res.render('products/productDetailtest', { product });
+  // },
+};
 
 module.exports = productController;

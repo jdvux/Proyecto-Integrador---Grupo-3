@@ -1,10 +1,10 @@
 const mainController = {
     home: (req, res) => {
-        res.render('home')
+        res.render('main/home')
     },
 
     termsAndConditions: (req, res) => {
-        res.render('terms-conditions')
+        res.render('main/terms-conditions')
     }
 }
 

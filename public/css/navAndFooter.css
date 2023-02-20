@@ -225,8 +225,12 @@
 
 
 @media (min-width: 768px) and (max-width: 2500px) {
-
+    
     /*-----HEADER-----*/
+    .search-bar input{
+        width: 500px;
+        padding: 10px;
+    }
     
     .search-bar:hover input{
         width: 500px;
@@ -235,7 +239,7 @@
     .btn label{
         display: none;
     }
-
+    
     .menu{
         height: 25px;
         transition: none;
@@ -264,10 +268,6 @@
         left: 4.5vw;
     }
 
-    .search-bar input{
-        width: 500px;
-        border-radius: 0;
-    }
 }
 
 @media (min-width: 1024px) {
@@ -279,7 +279,6 @@
     
     .search-bar input{
         width: 600px;
-        border-radius: 0;
     }
 
     /*-----FOOTER-----*/
