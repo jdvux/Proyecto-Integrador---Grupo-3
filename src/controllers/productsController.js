@@ -72,12 +72,36 @@ const productController = {
 
     res.redirect('/products')
   },
-  
-  delete: (req, res) => {
-    res.render('products/delete')
-  },
 
-  remove: (req, res) => {},
+  deleteProduct: (req, res) => {
+    let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    let id = req.params.id;
+    let product = products.find(product => product.id == id);
+    
+    res.render('deleteProduct', {
+        title: 'Eliminar Producto',
+        product
+    })
+},
+
+destroyProduct: (req, res) => {
+    let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    let id = req.params.id;
+    let product = products.find(product => product.id == id);
+
+    let newProducts = products.filter(product => product.id !== id); 
+
+    fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
+
+    res.redirect('/products');
+}
+}
+  
+  // delete: (req, res) => {
+  //   res.render('products/delete')
+  // },
+
+  // remove: (req, res) => {},
   
   // Aquí va la antigua propiedad que quedó comentada:
   // productForm: (req, res) => {
@@ -93,6 +117,6 @@ const productController = {
   
   //   res.render('products/productDetailtest', { product });
   // },
-};
+
 
 module.exports = productController;

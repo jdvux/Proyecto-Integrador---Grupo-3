@@ -31,26 +31,43 @@
             <section class="left">
               <div class="images-container">
                 <div class="main-product-image">
+<<<<<<< HEAD:src/views/products/productDetail.ejs
                   <img src="/images/<%=product.image[1]%>" alt="" />
                 </div>
 
                 <div class="main-product-image2">
                   <img src="/images/<%=product.image[0]%>" alt="" />
+=======
+                  <img src="/images/<%= product.image[0] %>" alt="<%= product.name %>">
+                </div>
+
+                <div class="main-product-image2">
+                  <img src="/images/<%= product.image[1] %>" alt="<%= product.name %>" />
+>>>>>>> dc247ad2cb16087d0c2b0ab0d4551ba182b89ed9:src/views/productDetail.ejs
                 </div>
               </div>
 
               <div class="images-container2">
                 <div class="main-product-image3">
+<<<<<<< HEAD:src/views/products/productDetail.ejs
                   <img src="/images/<%=product.image[2]%>" alt="" />
                 </div>
 
                 <div class="main-product-image4">
                   <img src="/images/<%=product.image[3]%>" alt="" />
+=======
+                  <img src="/images/<%= product.image[2] %>" alt="<%= product.name %>" />
+                </div>
+
+                <div class="main-product-image4">
+                  <img src="/images/<%= product.image[3] %>" alt="<%= product.name %>" />
+>>>>>>> dc247ad2cb16087d0c2b0ab0d4551ba182b89ed9:src/views/productDetail.ejs
                 </div>
               </div>
 
               <div class="images-container3">
                 <div class="main-product-image-small">
+<<<<<<< HEAD:src/views/products/productDetail.ejs
                   <img src="/images/<%=product.image[4]%>" alt="" />
                 </div>
 
@@ -64,18 +81,32 @@
 
                 <div class="main-product-image-small">
                   <img src="/images/<%=product.image[7]%>" alt="" />
+=======
+                  <img src="/images/<%= product.image[4] %>" alt="<%= product.name %>" />
+                </div>
+
+                <div class="main-product-image-small">
+                  <img src="/images/<%= product.image[5] %>" alt="<%= product.name %>" />
+                </div>
+
+                <div class="main-product-image-small">
+                  <img src="/images/<%= product.image[6] %>" alt="<%= product.name %>" />
+                </div>
+
+                <div class="main-product-image-small">
+                  <img src="/images/<%= product.image[7] %>" alt="<%= product.name %>" />
+>>>>>>> dc247ad2cb16087d0c2b0ab0d4551ba182b89ed9:src/views/productDetail.ejs
                 </div>
               </div>
             </section>
             <section class="right">
-              <div class="row-path">
-                <a href="#">INICIO /</a>
-                <a href="#">CALZADO /</a>
-                <a href="#">VANS OLD SKOOL</a>
-              </div>
 
               <div class="main-product-name">
+<<<<<<< HEAD:src/views/products/productDetail.ejs
                 <h1><%=product.name%></h1>
+=======
+                <h1><%= product.name %></h1>
+>>>>>>> dc247ad2cb16087d0c2b0ab0d4551ba182b89ed9:src/views/productDetail.ejs
               </div>
 
               <div class="product-rating">
@@ -89,7 +120,11 @@
 
               <div class="main-product-prices">
                 <div class="main-product-oldPrice">
+<<<<<<< HEAD:src/views/products/productDetail.ejs
                   <p>$<%=product.oldPrice%></p>
+=======
+                  <%= product.price %>
+>>>>>>> dc247ad2cb16087d0c2b0ab0d4551ba182b89ed9:src/views/productDetail.ejs
                 </div>
 
                 <div class="main-product-newPrice">
@@ -155,8 +190,13 @@
               </div>
 
               <div class="edit-and-delete">
+<<<<<<< HEAD:src/views/products/productDetail.ejs
                 <a href="../products/editProduct/<%=product.id%>"><button class="edit-button">EDITAR</button></a>
                 <a href="../products/deleteProduct/<%=product.id%>"><button class="delete-button">BORRAR</button></a>
+=======
+                <a href="/editProduct"><button class="edit-button">EDITAR</button></a>
+                <a href="/products/<%= product.id %>/delete"><button class="delete-button">BORRAR</button></a>
+>>>>>>> dc247ad2cb16087d0c2b0ab0d4551ba182b89ed9:src/views/productDetail.ejs
               </div>
             </section>
           </div>

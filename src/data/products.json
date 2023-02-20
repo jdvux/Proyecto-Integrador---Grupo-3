@@ -1,248 +1,92 @@
 [
-    {
-    "id": "1",
-    "name": "Vans Old Skool",
-    "description": "Las Old Skool son las zapatillas clásicas de Vans y el primer modelo en lucir el icónico sidestripe de la marca. Nacieron como un calzado para skaters de los años 70'y con el correr de las décadas se transformó en un modelo básico de lifestyle.",
-    "image": [
-        "/products/zapas-vans-2.jpg",
-        "/products/zapas-vans-1.jpg",
-        "/products/zapas-vans-3.jpg",
-        "/products/zapas-vans-4.jpg",
-        "/products/zapas-vans-5.jpg",
-        "/products/zapas-vans-6.jpg",
-        "/products/zapas-vans-7.jpg",
-        "/products/zapas-vans-8.jpg"
-    ],
-    "category": "Comfort",
-    "size": "36",
-    "oldPrice": "29.000",
-    "price": "24.999"
-    },
-    {
-    "id": "2",
-    "name": "Adidas NMD_V3",
-    "description": "La última versión de Adidas NMD te hará pisar las nubes. El NMD_V3 presenta un cierre de cordones actualizado y un diseño elevado, con la amortiguación BOOST en la entresuela que le brinda un rebote adicional en su paso.",
-    "image": [
-        "/products/adidas-NMD-2.avif",
-        "/products/adidas-NMD-1.avif",
-        "/products/adidas-NMD-3.avif",
-        "/products/adidas-NMD-4.avif",
-        "/products/adidas-NMD-5.avif",
-        "/products/adidas-NMD-6.avif",
-        "/products/adidas-NMD-7.avif",
-        "/products/adidas-NMD-8.avif"
-    ],
-    "category": "Originals",
-    "size": "44",
-    "oldPrice": "46.000",
-    "price": "37.000"
-    },
-    {
-    "id": "3",
-    "name": "Nike Air Jordan 1 Retro HI OG 'Yellow Toe'",
-    "description": "Revive lo retro con el Air Jordan 1 Retro Hi OG, llevado a la calle en una nueva combinación de colores. La parte superior de cuero de primera calidad y las superposiciones lustradas le brindan ese aspecto icónico de la vieja escuela arraigado en la comodidad. Con un cuello acolchado, una marca clásica y un diseño de bloques de colores que se destacará entre la multitud.",
-    "image": [
-        "/products/nike-air-jordan-2.jpg",
-        "/products/nike-air-jordan-1.avif",
-        "/products/nike-air-jordan-3.avif",
-        "/products/nike-air-jordan-4.avif",
-        "/products/nike-air-jordan-5.avif",
-        "/products/nike-air-jordan-2.jpg",
-        "/products/nike-air-jordan-6.avif",
-        "/products/nike-air-jordan-7.avif"
-    ],
-    "category": "Originals",
-    "size": "46",
-    "oldPrice": "45.000",
-    "price": "42.500"
-    },
-    {
-    "id": "4",
-    "name": "Converse Chuck 70 Low Tonal Polyester",
-    "description": "Consigue ese look auténtico de los 70 con las Chuck 70 Low Tonal Polyester. La marca vintage y el retroceso al diseño clásico de la época te permitirán dominarlo en poco tiempo. Las características de diseño elevadas incluyen amortiguación adicional, una parte superior de lona y costuras reforzadas en la lengüeta.",
-    "image": [
-        "/products/converse-chuck70-2.jpg",
-        "/products/converse-chuck70-1.avif",
-        "/products/converse-chuck70-3.avif",
-        "/products/converse-chuck70-4.avif",
-        "/products/converse-chuck70-5.avif",
-        "/products/converse-chuck70-6.avif",
-        "/products/converse-chuck70-7.avif",
-        "/products/converse-chuck70-8.avif"
-    ],
-    "category": "Teens",
-    "size": "38",
-    "oldPrice": "38.000",
-    "price": "32.500"
-    },
-    {
-    "id": "5",
-    "name": "Puma Suede Classic XXI",
-    "description": "Las PUMA Suede Classic XXI son una de las zapatillas PUMA más conocidas y populares y merece su lugar en todos los salones de la fama. Esta gran versión del Suede Classic viene en colores frescos que completarán tu estilo de vida deportivo. Disponible ahora en G3 Footwear.",
-    "image": [
-        "/products/puma-suede-2.jpg",
-        "/products/puma-suede-1.avif",
-        "/products/puma-suede-3.avif",
-        "/products/puma-suede-4.avif",
-        "/products/puma-suede-5.avif",
-        "/products/puma-suede-6.avif",
-        "/products/puma-suede-7.avif",
-        "/products/puma-suede-8.avif"
-    ],
-    "category": "Teens",
-    "size": "36",
-    "oldPrice": "32.000",
-    "price": "28.000"
-    },
-    {
-    "id": "6",
-    "name": "Nike Blazer Low '77 Jumbo",
-    "description": "Para una apariencia audaz, sabe que el Blazer Low '77 Jumbo se presentará. A veces necesitas combinar la energía de tu calce con zapatillas que son igualmente icónicas, y ahí es donde entra Nike con el Blazer Low '77 Jumbo. Terminado con cordones jumbo, detalles de gamuza y un diseño Swoosh de gran tamaño.",
-    "image": [
-        "/products/nike-blazer-low-2.jpg",
-        "/products/nike-blazer-low-1.avif",
-        "/products/nike-blazer-low-3.avif",
-        "/products/nike-blazer-low-4.avif",
-        "/products/nike-blazer-low-5.avif",
-        "/products/nike-blazer-low-6.avif",
-        "/products/nike-blazer-low-7.avif",
-        "/products/nike-blazer-low-8.avif"
-    ],
-    "category": "Teens",
-    "size": "38",
-    "oldPrice": "33.000",
-    "price": "29.000"
-    },
-    {
-    "id": "7",
-    "name": "Saucony Shadow 6000",
-    "description": "El Shadow 6000 le da un guiño a su debut original con una silueta vintage, pero luce con la comodidad de hoy en día. Fabricada con superposiciones de malla y gamuza en la parte superior y suavizada con una entresuela de EVA que absorbe los golpes, esta zapatilla mantiene su clase con su combinación de colores frescos y su fabricación de calidad. ¡Compralas hoy!",
-    "image": [
-        "/products/saucony-shadow-2.jpg",
-        "/products/saucony-shadow-1.avif",
-        "/products/saucony-shadow-3.avif",
-        "/products/saucony-shadow-4.avif",
-        "/products/saucony-shadow-5.avif",
-        "/products/saucony-shadow-6.avif",
-        "/products/saucony-shadow-7.avif",
-        "/products/saucony-shadow-8.avif"
-    ],
-    "category": "Teens",
-    "size": "36",
-    "oldPrice": "35.500",
-    "price": "32.000"
-    },
-    {
-    "id": "8",
-    "name": "Puma Slipstream",
-    "description": "Una de las zapatillas de baloncesto originales de Puma, la Slipstream es un elegante diseño vintage que se presenta en la actualidad. Con paneles de gamuza fresca y una parte superior de cuero resistente, además de una plantilla Softfoam+ para comodidad durante todo el día, estos se convertirán fácilmente en los favoritos en su rotación de zapatillas.",
-    "image": [
-        "/products/puma-slipstream-2.jpg",
-        "/products/puma-slipstream-1.avif",
-        "/products/puma-slipstream-3.avif",
-        "/products/puma-slipstream-4.avif",
-        "/products/puma-slipstream-5.avif",
-        "/products/puma-slipstream-6.avif",
-        "/products/puma-slipstream-7.avif",
-        "/products/puma-slipstream-8.avif"
-    ],
-    "category": "Comfort",
-    "size": "36",
-    "oldPrice": "33.500",
-    "price": "30.000"
-    },
-    {
-    "id": "9",
-    "name": "Adidas Forum MID",
-    "description": "En los 80, las zapatillas adidas Forum demostraron sus cualidades en las canchas de básquet. Desde entonces, han evolucionado para convertirse en un ícono de la música y la cultura urbana. Esta versión de corte medio es una reedición exacta del legendario modelo original diseñada con los mismos materiales, patrones y detalles.",
-    "image": [
-        "/products/adidas-forum.jpg",
-        "/products/adidas-forum-mid-1.avif",
-        "/products/adidas-forum-mid-3.avif",
-        "/products/adidas-forum-mid-4.avif",
-        "/products/adidas-forum-mid-5.avif",
-        "/products/adidas-forum-mid-6.avif",
-        "/products/adidas-forum-mid-7.avif",
-        "/products/adidas-forum-mid-8.avif"
-    ],
-    "category": "Originals",
-    "size": "40",
-    "oldPrice": "39.000",
-    "price": "35.000"
-    },
-    {
-    "id": "10",
-    "name": "Reebok Queston Low",
-    "description": "Las zapatillas Question Low de Reebok son perfectas para los amantes de las zapatillas. Este modelo actualizado presenta toques de color y una puntera de cuero reforzado, lo que le da a los zapatos un aspecto de élite, mientras que la amortiguación hexagonal hexalite y la entresuela de EVA garantizan comodidad y durabilidad. ¡Añadilas a tu colección hoy!",
-    "image": [
-        "/products/reebok-question-low-2.avif",
-        "/products/reebok-question-low-1.avif",
-        "/products/reebok-question-low-3.avif",
-        "/products/reebok-question-low-4.avif",
-        "/products/reebok-question-low-5.avif",
-        "/products/reebok-question-low-6.avif",
-        "/products/reebok-question-low-7.avif",
-        "/products/reebok-question-low-8.avif"
-    ],
-    "category": "Comfort",
-    "size": "46",
-    "oldPrice": "34.200",
-    "price": "31.000"
-    },
-    {
-    "id": "11",
-    "name": "Reebok Club C 85",
-    "description": "Reebok regresa con las icónicas Club C 85. Las características incluyen una parte superior de cuero suave, un perfil de corte bajo y el logotipo de la firma. El aspecto limpio pero sofisticado hace que esta zapatilla sea perfecta para cualquier atuendo y está hecha para durar. ¡Disponible ahora, conseguí el tuyo hoy!",
-    "image": [
-        "/products/reebok-club-2.jpg",
-        "/products/reebok-club-1.avif",
-        "/products/reebok-club-3.avif",
-        "/products/reebok-club-4.avif",
-        "/products/reebok-club-5.avif",
-        "/products/reebok-club-6.avif",
-        "/products/reebok-club-7.avif",
-        "/products/reebok-club-8.avif"
-    ],
-    "category": "Comfort",
-    "size": "43",
-    "oldPrice": "31.000",
-    "price": "28.000"
-    },
-    {
-    "id": "12",
-    "name": "Nike Air Max TW",
-    "description": "Entonces, ¿estás enamorado del estilo clásico de los años 90, pero te gusta la cultura acelerada de hoy? Conocé las Air Max TW. Inspirado en la preciada franquicia que trajo la amortiguación Nike Air al mundo y sentó las bases para la estética de la pista a la calle, su diseño llamativo ofrece un 2x1 de comodidad y moda. Listas para resaltar, su parte superior liviana combina líneas angulares y orgánicas para crear un efecto fascinante. Los colores contrastantes facilitan el estilo. Y si está listo para el siguiente paso, las 5 ventanas debajo de los pies brindan un toque moderno a la amortiguación Air visible. ¡Conseguí el tuyo hoy en G3 Footwear!",
-    "image": [
-        "/products/nike-air-max-2.avif",
-        "/products/nike-air-max-1.avif",
-        "/products/nike-air-max-3.avif",
-        "/products/nike-air-max-4.avif",
-        "/products/nike-air-max-5.avif",
-        "/products/nike-air-max-6.avif",
-        "/products/nike-air-max-7.avif",
-        "/products/nike-air-max-8.avif"
-    ],
-    "category": "Comfort",
-    "oldPrice": "38.000",
-    "price": "34.000"
-    },
-    {
-    "id": "13",
-    "name": "Asics Gel-Quantum 180 VII",
-    "description": "Las zapatillas GEL-QUANTUM 180™ VII combinan una forma futurista con tecnologías de amortiguación avanzadas estudiadas en el Instituto ASICS de Ciencias del Deporte. Su parte superior está reelaborada con una parte de malla jacquard diseñada para una mejor ventilación y comodidad. La estética elegante del diseño también presenta líneas suaves y menos capas para crear un calce más adaptable. ¡Conseguilas hoy mismo!",
-    "image": [
-        "/products/asics-gel-quantum-2.avif",
-        "/products/asics-gel-quantum-1.avif",
-        "/products/asics-gel-quantum-3.avif",
-        "/products/asics-gel-quantum-4.avif",
-        "/products/asics-gel-quantum-5.avif",
-        "/products/asics-gel-quantum-6.avif",
-        "/products/asics-gel-quantum-7.avif",
-        "/products/asics-gel-quantum-8.avif"
-    ],
-    "category": "Comfort",
-    "size": "43",
-    "oldPrice": "33.700",
-    "price": "29.000"   
-    }
-]
+      {
+        "id": "1",
+        "name": "Forum",
+        "description": "Zapatillas versatil para todos los dias",
+        "image": "adidas-forum.jpg",
+        "category": "Originals",
+        "size": "40",
+        "price": "35.000"
+      },
+      {
+        "id": "2",
+        "name": "NMDV3",
+        "description": "Calzado cómodo con suela anti-impacto.",
+        "image": "Adidas-NMDV3.avif",
+        "category": "Originals",
+        "size": "44",
+        "price": "24.999"
+      },
+      {
+        "id": "3",
+        "name": "Jordan",
+        "description": "Calzado aerodinámico para tu día a día.",
+        "image": "nike-jordan.jpg",
+        "category": "Originals",
+        "size": "46",
+        "price": "42.500"
+      },
+      {
+        "id": "4",
+        "name": "Chuck",
+        "description": "Las Zapatillas Converse Chuck Taylor All Star Lift son un clásico que no puede faltar en tu ropero. Su diseño moderno es ideal para lucir hasta en las salidas menos planeadas gracias a su capellada de lona resistente y una plataforma digna de Converse.",
+        "image": "conver-chuck70.jpg",
+        "category": "Teens",
+        "size": "38",
+        "price": "32.500"
+      },
+      {
+        "id": "5",
+        "name": "Zapatillas Puma R78 Trek",
+        "description": "¿Querés sentir que caminás sobre las nubes? Con las Zapatillas Puma R78 Trek gracias a su diseño y mezcla de materiales lo podés lograr, ya que son perfectas para usarlas en cualquier actividad que realices.",
+        "image": "puma-zapas.jpg",
+        "category": "Teens",
+        "size": "36",
+        "price": "24.999"
+      },
+      {
+        "id": "6",
+        "name": "Blazer",
+        "description": "Las Zapatillas Converse Chuck Taylor All Star Lift son un clásico que no puede faltar en tu ropero. Su diseño moderno es ideal para lucir hasta en las salidas menos planeadas gracias a su capellada de lona resistente y una plataforma digna de Converse.",
+        "image": "nike-blazer.jpg",
+        "category": "Teens",
+        "size": "38",
+        "price": "29.000"
+      },
+      {
+        "id": "7",
+        "name": "Saucony",
+        "description": "Las Zapatillas Saucony llevan el clásico del running a tu silueta urbana con una actualización energética y moderna. Su fabricación con un exterior de pana con recortes en sintético y textiles, crean un diseño que completa tu look volviéndote el más canchero del grupo.",
+        "image": "saucony-zapas.jpg",
+        "category": "Teens",
+        "size": "36",
+        "price": "32.000"
+      },
+      {
+        "id": "8",
+        "name": "Slipstream",
+        "description": "Saltá de tus planes deportivos a la plaza con amigos con las Zapatillas adidas Run Falcon 2.0 está confeccionada para brindar estabilidad y amortiguación, te dan mejor tracción sin importar cuántos kilómetros recorras.",
+        "image": "puma-slipstream.jpg",
+        "category": "Comfort",
+        "size": "36",
+        "price": "30.000"
+      },
+      {
+        "id": "9",
+        "name": "Vans",
+        "description": "Las Old Skool son las zapatillas clásicas de Vans y el primer modelo en lucir el icónico sidestripe de la marca. Nacieron como un calzado para skaters de los años 70´y con el correr de las décadas se transformó en un modelo básico de lifestyle.",
+        "image": "zapas-vans-2.jpg",
+        "category": "Comfort",
+        "size": "36",
+        "price": "24.999"
+      },
+      {
+        "id": "10",
+        "name": "ReebokLow",
+        "description": "Supera tus propias marcas con las Zapatillas ReebokLow, diseñadas para lucir un estilo moderno en cualquier ocasión. Empuja tus límites hacia adelante con la tecnología Charged Cushioning.",
+        "image": "reebok-question-low.avif",
+        "category": "Comfort",
+        "size": "46",
+        "price": "31.000"
+      }
+    ]

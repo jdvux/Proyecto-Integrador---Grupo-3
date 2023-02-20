@@ -1,0 +1,42 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/7ea488e71c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/productForm.css" />
+    <link rel="stylesheet" href="/css/navAndFooter.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/images/logo_small_black.png" />
+    <title><%= title %></title>
+<body>
+    <%-include('./partials/header.ejs')%>
+
+    <div>
+    <form class="product-form" method="post" action="/products/<%= product.id %>/delete?_method=DELETE">
+        
+        <!--titulo de la pag----->
+        <h1 class="product-form-title">Eliminar Producto</h1>
+        
+        <!--datos que se piden para el registro en cajas-------->
+        <input class="box-form" type="text" name="name" value="<%= product.name %>" disabled>
+        <input class="box-form" type="text" name="name" value="<%= product.description %>" disabled>
+        <input class="box-form" type="text" name="name" value="<%= product.category %>" disabled>
+        <input class="box-form" type="text" name="name" value="<%= product.size %>" disabled>        
+        <input class="box-form" type="text" name="name" value="<%= product.price %>" disabled>        
+        <!--Boton-->
+        <input type="submit" class="button" value="Eliminar">           
+    </form>
+        
+    <%- include('./partials/footer'); %>
+</body>
+</html>
