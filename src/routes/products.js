@@ -13,12 +13,14 @@ router.get('/:id', productController.detail)
 //crea productos
 router.post('/', upload.array('imageFile'), productController.createProduct);
 
-
 router.get('/productCart', productController.productCart)
 
 
-// router.get('/:id/edit', productController.editProduct);
+//Renderiza formulario de edicion
+router.get('/:id/edit', productController.editProductForm);
 
+//Edita un producto
+router.put('/:id', productController.edit)
 
 // Aquí va la ruta antigua que quedó comentada:
 

@@ -29,10 +29,6 @@ const productController = {
         res.render('createProduct')
     },
 
-    editProduct: (req, res) => {
-        res.render('editProduct')
-    },
-
     createProduct: (req, res) => {
         console.log(req.files[0].filename, "primer img")
         const files = req.files
@@ -54,6 +50,37 @@ const productController = {
             };
             products.push(newProduct)
             fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+            res.redirect('/products');
+        },
+
+        editProductForm: (req, res) => {
+            let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
+            const id = req.params.id
+            const product = products.find(product => product.id == id)
+            res.render('editProduct', {product})
+        },
+
+        edit: (req, res) => {
+            let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
+            const id = req.params.id
+
+            
+            products.forEach((product, index) => {
+                if (product.id == id) {
+                    console.log("producto viejo",product);
+                    product.name = req.body.name;
+                    product.description = req.body.description;
+                    product.category = req.body.category;
+                    product.price = req.body.price;
+
+                    products[index] = product;
+                    console.log("producto nuevo",product);
+
+                }
+            });
+
+            fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+
             res.redirect('/products');
         }
     
