@@ -27,9 +27,11 @@ const productController = {
 
   store: (req, res) => {
     let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
+    let date = Date.now();
+    
     let newProduct = {
-      "id": Date.now(),
+      
+      "id": date.toString(),
       "name": req.body.name || "Sin nombre", 
       "description": req.body.description,
       "image": req.body.image,
