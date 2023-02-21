@@ -51,24 +51,25 @@ const productController = {
     let id = req.params.id;
     products.forEach((product, index) => {
       if (product.id == id) {
+        console.log(typeof(product.image));
         product.name = req.body.name;
+        product.size = req.body.size;
+        product.category = req.body.category;
+        product.price = req.body.price;
         if ((req.body.image).length == 0) {
           product.image += req.body.image;
           let images1 = product.image;
-          product.image = images1.split(",") 
+          product.image = images1.split(","); 
         } else {
-        let images2 = product.image;
-        product.image = images2.split(",") 
-        product.size = req.body.size;
-        product.category = req.body.category;
-        product.price = req.body.price;     
+          product.image = req.body.image;
+          let images2 = product.image;
+          product.image = images2.split(","); 
+        }     
       }
-    }
     });
-
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-    res.redirect('/products')
-  },
+    res.redirect('/products');
+},
 
   deleteProduct: (req, res) => {
     let id = req.params.id;
@@ -82,7 +83,7 @@ const productController = {
 
 destroyProduct: (req, res) => {
     let id = req.params.id;
-    let product = products.find(product => product.id == id);
+    let product = products.find(product => product.id === id);
     let newProducts = products.filter(product => product.id !== id); 
 
     fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
