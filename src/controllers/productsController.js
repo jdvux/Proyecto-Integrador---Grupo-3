@@ -56,8 +56,7 @@ const productController = {
         product.category = req.body.category;
         product.price = req.body.price;
         if ((req.body.image).length !== 0) {
-          product.image = req.body.image;
-          let images1 = product.image;
+          let images1 = req.body.image;
           product.image = images1.split(",");  
         }     
       }
