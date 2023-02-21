@@ -52,11 +52,18 @@ const productController = {
     products.forEach((product, index) => {
       if (product.id == id) {
         product.name = req.body.name;
-        product.image = req.body.image;
+        if ((req.body.image).length == 0) {
+          product.image += req.body.image;
+          let images1 = product.image;
+          product.image = images1.split(",") 
+        } else {
+        let images2 = product.image;
+        product.image = images2.split(",") 
         product.size = req.body.size;
         product.category = req.body.category;
-        product.price = req.body.price;  
+        product.price = req.body.price;     
       }
+    }
     });
 
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
