@@ -13,7 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/home&catalog.css" />
     <link rel="stylesheet" href="css/navAndFooter.css">
     <link rel="icon" href="/images/logo_small_black.png">
     </head>
@@ -22,14 +22,7 @@
       <%- include('../partials/header.ejs') %>
     <main>
       <section>
-        <div class="main-banner-container">
-          <img src="/images/banner.jpg" alt="banner" class="img-banner">
-        <div class="banner-text-container"><h1 class="banner-text">Bienvenido a G3 Footwear</h1></div>
-        </div>
-      </section>
-
-      <section>
-        <h2 class="section-title">NUESTRO CATÁLOGO</h2>
+        <h2 class="product-catalog-title">NUESTRO CATÁLOGO</h2>
         <div class="container-articles-1">
 
                 <% for (let i = 0; i < products.length; i++) { %>

@@ -223,6 +223,14 @@ main h1, main h2, main p {
     margin: 5% 10%;
 }
 
+/* PRODUCT CATALOG */
+
+.product-catalog-title {
+    margin: 130px 5% 10px;
+    font-size: xx-large;
+    font-weight: 2000;
+}
+
 /*-------------MEDIA-QUERIES--------------*/
 
 /* MOBILE */
@@ -236,6 +244,14 @@ main h1, main h2, main p {
     .collection-img, .collection-img-2 {
         padding: 5px 0;
         width: 90%;
+    }
+}
+
+/* PRODUCT CATALOG */
+
+@media (max-width: 426px) {
+    .product-catalog-title {
+        margin-top: 100px;
     }
 }
 
