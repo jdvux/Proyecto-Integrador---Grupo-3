@@ -21,7 +21,7 @@
 <body>
     <%- include('../partials/header.ejs') %>
     <div>
-    <form method ="post" action ="/products/editProduct/<%=product.id%>?_method=PUT" class="product-form">
+    <form method ="post" action ="/products/editProduct/<%=product.id%>?_method=PUT" class="product-form" enctype="multipart/form-data">
         
         <!--titulo de la pag----->
         <h1 class="product-form-title">Editar Producto</h1>
@@ -31,7 +31,7 @@
         
         
         <div>
-            <input type="file" id="files" name="image" class="hidden" value="<%=product.image%>"/ multiple>
+            <input type="file" id="files" name="productImages" class="hidden" value="<%=product.image%>"/ multiple>
             <label for="files">Seleccionar archivo
                 <i class="fa-solid fa-camera-rotate"></i>
             </label>

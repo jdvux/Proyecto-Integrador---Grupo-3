@@ -25,20 +25,21 @@ const productController = {
 
   store: (req, res) => {
     let date = Date.now();
+
     let newProduct = {
       "id": date.toString(),
       "name": req.body.name || "Sin nombre", 
       "description": req.body.description,
-      "image": req.body.image,
+      "image": req.files,
       "size": req.body.size,
       "category": req.body.category,
       "oldPrice": req.body.oldPrice,
       "price": req.body.price
-    }
+    };
 
     products.push(newProduct);
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-    res.redirect('/products')
+    res.redirect('/products');
   },
 
   edit: (req, res) => {
@@ -49,21 +50,22 @@ const productController = {
   
   update: (req, res) => {
     let id = req.params.id;
+
     products.forEach((product, index) => {
       if (product.id == id) {
         product.name = req.body.name;
         product.size = req.body.size;
         product.category = req.body.category;
         product.price = req.body.price;
-        if ((req.body.image).length !== 0) {
-          let images1 = req.body.image;
-          product.image = images1.split(",");  
-        }     
+        if (req.files.length !== 0) {
+          product.image = req.files;
+        } 
       }
     });
+    
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
     res.redirect('/products');
-},
+  },
 
   deleteProduct: (req, res) => {
     let id = req.params.id;
