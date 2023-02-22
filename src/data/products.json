@@ -3,31 +3,15 @@
   "id": "1",
   "name": "Vans Old Skool",
   "description": "Las Old Skool son las zapatillas clásicas de Vans y el primer modelo en lucir el icónico sidestripe de la marca. Nacieron como un calzado para skaters de los años 70'y con el correr de las décadas se transformó en un modelo básico de lifestyle.",
-  "image": [
-   {
-    "filename": "zapas-vans-2.jpg"
-   },
-   {
-    "filename": "zapas-vans-1.jpg"
-   },
-   {
-    "filename": "zapas-vans-3.jpg"
-   },
-   {
-    "filename": "zapas-vans-4.jpg"
-   },
-   {
-    "filename": "zapas-vans-5.jpg"
-   },
-   {
-    "filename": "zapas-vans-6.jpg"
-   },
-   {
-    "filename": "zapas-vans-7.jpg"
-   },
-   {
-    "filename": "zapas-vans-8.jpg"
-   }
+  "image":[
+    "zapas-vans-2.jpg",
+   "zapas-vans-1.jpg",
+   "zapas-vans-3.jpg",
+   "zapas-vans-4.jpg",
+   "zapas-vans-5.jpg",
+   "zapas-vans-6.jpg",
+   "zapas-vans-7.jpg",
+   "zapas-vans-8.jpg"
   ],
   "category": "Comfort",
   "oldPrice": "28.500",
@@ -38,32 +22,15 @@
   "id": "2",
   "name": "Adidas NMD_V3",
   "description": "La vida pasa volando. Pero esto no es un 'parpadea y te lo perdés'. Esto es algo así como 'atate los cordones y disfrutá cada minuto'. Diseñadas sobre el legado de la velocidad, estas zapatillas adidas inspiradas en el running te ayudan a enfrentarte al ritmo de tu rutina diaria. Incorporan amortiguación BOOST suave muy cómodo y estable.",
-  "image": [
-   {
-    "filename": "adidas-NMD-2.avif"
-   },
-   {
-    "filename": "adidas-NMD-1.avif"
-   },
-   {
-    "filename": "adidas-NMD-3.avif"
-   },
-   {
-    "filename": "adidas-NMD-4.avif"
-   },
-   {
-    "filename": "adidas-NMD-5.avif"
-   },
-   {
-    "filename": "adidas-NMD-6.avif"
-   },
-   {
-    "filename": "adidas-NMD-7.avif"
-   },
-   {
-    "filename": "adidas-NMD-8.avif"
-   }
-  ],
+  "image":[
+    "adidas-NMD-2.avif",
+   "adidas-NMD-1.avif",
+   "adidas-NMD-3.avif",
+   "adidas-NMD-4.avif",
+   "adidas-NMD-5.avif",
+   "adidas-NMD-6.avif",
+   "adidas-NMD-7.avif",
+   "adidas-NMD-8.avif"],
   "category": "Originals",
   "oldPrice": "41.000",
   "size": "44",
@@ -73,31 +40,15 @@
   "id": "3",
   "name": "Nike Air Jordan 1 Hi Og 'Yellow Toe'",
   "description": "Revive lo retro con el Air Jordan 1 Retro Hi OG, llevado a la calle en una nueva combinación de colores. La parte superior de cuero de primera calidad y las superposiciones lustradas le brindan ese aspecto icónico de la vieja escuela arraigado en la comodidad. Con un cuello acolchado, una marca clásica y un diseño de bloques de colores que se destacará entre la multitud.",
-  "image": [
-   {
-    "filename": "nike-air-jordan-2.jpg"
-   },
-   {
-    "filename": "nike-air-jordan-1.avif"
-   },
-   {
-    "filename": "nike-air-jordan-3.avif"
-   },
-   {
-    "filename": "nike-air-jordan-4.avif"
-   },
-   {
-    "filename": "nike-air-jordan-5.avif"
-   },
-   {
-    "filename": "nike-air-jordan-2.jpg"
-   },
-   {
-    "filename": "nike-air-jordan-6.avif"
-   },
-   {
-    "filename": "nike-air-jordan-7.avif"
-   }
+  "image":[
+    "nike-air-jordan-2.jpg",
+   "nike-air-jordan-1.avif",
+   "nike-air-jordan-3.avif",
+   "nike-air-jordan-4.avif",
+   "nike-air-jordan-5.avif",
+   "nike-air-jordan-2.jpg",
+   "nike-air-jordan-6.avif",
+   "nike-air-jordan-7.avif"
   ],
   "category": "Originals",
   "oldPrice": "50.000",
@@ -108,31 +59,15 @@
   "id": "4",
   "name": "Converse Chuck 70 Low Tonal",
   "description": "Consigue ese look auténtico de los 70 con las Chuck 70 Low Tonal Polyester. La marca vintage y el retroceso al diseño clásico de la época te permitirán dominarlo en poco tiempo. Las características de diseño elevadas incluyen amortiguación adicional, una parte superior de lona y costuras reforzadas en la lengüeta. Conseguí las tuyas hoy!",
-  "image": [
-   {
-    "filename": "converse-chuck70-2.jpg"
-   },
-   {
-    "filename": "converse-chuck70-1.avif"
-   },
-   {
-    "filename": "converse-chuck70-3.avif"
-   },
-   {
-    "filename": "converse-chuck70-4.avif"
-   },
-   {
-    "filename": "converse-chuck70-5.avif"
-   },
-   {
-    "filename": "converse-chuck70-6.avif"
-   },
-   {
-    "filename": "converse-chuck70-7.avif"
-   },
-   {
-    "filename": "converse-chuck70-8.avif"
-   }
+  "image":[
+    "converse-chuck70-2.jpg",
+   "converse-chuck70-1.avif",
+   "converse-chuck70-3.avif",
+   "converse-chuck70-4.avif",
+   "converse-chuck70-5.avif",
+   "converse-chuck70-6.avif",
+   "converse-chuck70-7.avif",
+   "converse-chuck70-8.avif"
   ],
   "category": "Teens",
   "oldPrice": "38.000",
@@ -143,31 +78,15 @@
   "id": "5",
   "name": "Puma Suede Classic XXI",
   "description": "Las PUMA Suede Classic XXI son unas de las zapatillas PUMA más conocidas y populares y merece su lugar en todos los salones de la fama. Esta gran versión del Suede Classic viene en colores frescos que completarán tu estilo de vida deportivo. Disponible ahora en G3 Footwear.",
-  "image": [
-   {
-    "filename": "puma-suede-2.jpg"
-   },
-   {
-    "filename": "puma-suede-1.avif"
-   },
-   {
-    "filename": "puma-suede-3.avif"
-   },
-   {
-    "filename": "puma-suede-4.avif"
-   },
-   {
-    "filename": "puma-suede-5.avif"
-   },
-   {
-    "filename": "puma-suede-6.avif"
-   },
-   {
-    "filename": "puma-suede-7.avif"
-   },
-   {
-    "filename": "puma-suede-8.avif"
-   }
+  "image":[
+    "puma-suede-2.jpg",
+   "puma-suede-1.avif",
+   "puma-suede-3.avif",
+   "puma-suede-4.avif",
+   "puma-suede-5.avif",
+   "puma-suede-6.avif",
+   "puma-suede-7.avif",
+   "puma-suede-8.avif"
   ],
   "category": "Teens",
   "oldPrice": "34.000",
@@ -178,31 +97,15 @@
   "id": "6",
   "name": "Nike Blazer Low '77 Jumbo",
   "description": "Para una apariencia audaz, sabe que el Blazer Low '77 Jumbo se presentará. A veces necesitas combinar la energía de tu calce con zapatillas que son igualmente icónicas, y ahí es donde entra Nike con el Blazer Low '77 Jumbo. Terminado con cordones jumbo, detalles de gamuza y un diseño Swoosh de gran tamaño.",
-  "image": [
-   {
-    "filename": "nike-blazer-low-2.jpg"
-   },
-   {
-    "filename": "nike-blazer-low-1.avif"
-   },
-   {
-    "filename": "nike-blazer-low-3.avif"
-   },
-   {
-    "filename": "nike-blazer-low-4.avif"
-   },
-   {
-    "filename": "nike-blazer-low-5.avif"
-   },
-   {
-    "filename": "nike-blazer-low-6.avif"
-   },
-   {
-    "filename": "nike-blazer-low-7.avif"
-   },
-   {
-    "filename": "nike-blazer-low-8.avif"
-   }
+  "image":[
+    "nike-blazer-low-2.jpg",
+   "nike-blazer-low-1.avif",
+   "nike-blazer-low-3.avif",
+   "nike-blazer-low-4.avif",
+   "nike-blazer-low-5.avif",
+   "nike-blazer-low-6.avif",
+   "nike-blazer-low-7.avif",
+   "nike-blazer-low-8.avif"
   ],
   "category": "Teens",
   "oldPrice": "35.000",
@@ -213,31 +116,15 @@
   "id": "7",
   "name": "Saucony Shadow 6000",
   "description": "El Shadow 6000 le da un guiño a su debut original con una silueta vintage, pero se ve con la comodidad de hoy en día. Hechas con superposiciones de malla y gamuza en la parte superior y suavizada con una entresuela de EVA que absorbe los golpes, esta zapatilla mantiene su clase con su combinación de colores frescos y su fabricación de calidad. ¡Compralo hoy!",
-  "image": [
-   {
-    "filename": "saucony-shadow-2.jpg"
-   },
-   {
-    "filename": "saucony-shadow-1.avif"
-   },
-   {
-    "filename": "saucony-shadow-3.avif"
-   },
-   {
-    "filename": "saucony-shadow-4.avif"
-   },
-   {
-    "filename": "saucony-shadow-5.avif"
-   },
-   {
-    "filename": "saucony-shadow-6.avif"
-   },
-   {
-    "filename": "saucony-shadow-7.avif"
-   },
-   {
-    "filename": "saucony-shadow-8.avif"
-   }
+  "image":[
+    "saucony-shadow-2.jpg",
+   "saucony-shadow-1.avif",
+   "saucony-shadow-3.avif",
+   "saucony-shadow-4.avif",
+   "saucony-shadow-5.avif",
+   "saucony-shadow-6.avif",
+   "saucony-shadow-7.avif",
+   "saucony-shadow-8.avif"
   ],
   "category": "Teens",
   "oldPrice": "50.000",
@@ -248,31 +135,15 @@
   "id": "8",
   "name": "Puma Slipstream",
   "description": "Una de las zapatillas de baloncesto originales de Puma, la Slipstream es un elegante diseño vintage que se presenta en la actualidad. Con paneles de gamuza fresca y una parte superior de cuero resistente, además de una plantilla Softfoam+ para comodidad durante todo el día, estos se convertirán fácilmente en los favoritos en su rotación de zapatillas.",
-  "image": [
-   {
-    "filename": "puma-slipstream-2.jpg"
-   },
-   {
-    "filename": "puma-slipstream-1.avif"
-   },
-   {
-    "filename": "puma-slipstream-3.avif"
-   },
-   {
-    "filename": "puma-slipstream-4.avif"
-   },
-   {
-    "filename": "puma-slipstream-5.avif"
-   },
-   {
-    "filename": "puma-slipstream-6.avif"
-   },
-   {
-    "filename": "puma-slipstream-7.avif"
-   },
-   {
-    "filename": "puma-slipstream-8.avif"
-   }
+  "image":
+  ["puma-slipstream-2.jpg",
+   "puma-slipstream-1.avif",
+   "puma-slipstream-3.avif",
+   "puma-slipstream-4.avif",
+   "puma-slipstream-5.avif",
+   "puma-slipstream-6.avif",
+   "puma-slipstream-7.avif",
+   "puma-slipstream-8.avif"
   ],
   "category": "Comfort",
   "oldPrice": "50.000",
@@ -284,28 +155,14 @@
   "name": "Adidas Forum MID",
   "description": "Tomemos un momento para rendir homenaje a un ícono. ¿Será la leyenda que desafiaba la gravedad en los años 80? ¿O tal vez las zapatillas que le daban estatus a los pies de raperos? De hecho, ambas. Las zapatillas adidas Forum han dominado las canchas de básquet y las calles, y ahora regresan con una versión de corte medio para llevar tus pasos a otro nivel. Envolvé tus pies con un estilo inconfundible en piel revestida prémium para un look que exude clase.",
   "image": [
-   "adidas-forum.jpg",
-   {
-    "filename": "adidas-forum-mid-1.avif"
-   },
-   {
-    "filename": "adidas-forum-mid-3.avif"
-   },
-   {
-    "filename": "adidas-forum-mid-4.avif"
-   },
-   {
-    "filename": "adidas-forum-mid-5.avif"
-   },
-   {
-    "filename": "adidas-forum-mid-6.avif"
-   },
-   {
-    "filename": "adidas-forum-mid-7.avif"
-   },
-   {
-    "filename": "adidas-forum-mid-8.avif"
-   }
+   "adidas-forum.jpg", 
+   "adidas-forum-mid-1.avif",
+   "adidas-forum-mid-3.avif",
+   "adidas-forum-mid-4.avif",
+   "adidas-forum-mid-5.avif",
+   "adidas-forum-mid-6.avif",
+   "adidas-forum-mid-7.avif",
+   "adidas-forum-mid-8.avif"
   ],
   "category": "Originals",
   "oldPrice": "40.000",
@@ -316,31 +173,15 @@
   "id": "10",
   "name": "Reebok Question Low",
   "description": "Las zapatillas Question Low de Reebok son perfectas para los amantes de las zapatillas. Este modelo actualizado presenta toques de color y una puntera de cuero reforzado, lo que le da a las zapatillas un aspecto de élite, mientras que la amortiguación hexagonal hexalite y la entresuela de EVA garantizan comodidad y durabilidad. ¡Añádilos a tu colección hoy!",
-  "image": [
-   {
-    "filename": "reebok-question-low-2.avif"
-   },
-   {
-    "filename": "reebok-question-low-1.avif"
-   },
-   {
-    "filename": "reebok-question-low-3.avif"
-   },
-   {
-    "filename": "reebok-question-low-4.avif"
-   },
-   {
-    "filename": "reebok-question-low-5.avif"
-   },
-   {
-    "filename": "reebok-question-low-6.avif"
-   },
-   {
-    "filename": "reebok-question-low-7.avif"
-   },
-   {
-    "filename": "reebok-question-low-8.avif"
-   }
+  "image":[
+    "reebok-question-low-2.avif",
+    "reebok-question-low-1.avif",
+    "reebok-question-low-3.avif",
+    "reebok-question-low-4.avif",
+    "reebok-question-low-5.avif",
+    "reebok-question-low-6.avif",
+    "reebok-question-low-7.avif",
+    "reebok-question-low-8.avif"
   ],
   "category": "Comfort",
   "oldPrice": "35.500",
@@ -351,31 +192,15 @@
   "id": "11",
   "name": "Reebok Club C85",
   "description": "Reebok regresa con el icónico Club C 85. Las características incluyen una parte superior de cuero suave, un perfil de corte bajo y el logotipo de la firma. El aspecto limpio pero sofisticado hace que esta zapatilla sea perfecta para cualquier atuendo y está hecha para durar. ¡Disponible ahora, conseguí el tuyo hoy!",
-  "image": [
-   {
-    "filename": "reebok-club-2.jpg"
-   },
-   {
-    "filename": "reebok-club-1.avif"
-   },
-   {
-    "filename": "reebok-club-3.avif"
-   },
-   {
-    "filename": "reebok-club-4.avif"
-   },
-   {
-    "filename": "reebok-club-5.avif"
-   },
-   {
-    "filename": "reebok-club-6.avif"
-   },
-   {
-    "filename": "reebok-club-7.avif"
-   },
-   {
-    "filename": "reebok-club-8.avif"
-   }
+  "image":[
+    "reebok-club-2.jpg",
+    "reebok-club-1.avif",
+    "reebok-club-3.avif",
+    "reebok-club-4.avif",
+    "reebok-club-5.avif",
+    "reebok-club-6.avif",
+    "reebok-club-7.avif",
+    "reebok-club-8.avif"
   ],
   "category": "Comfort",
   "oldPrice": "33.000",
@@ -386,31 +211,15 @@
   "id": "12",
   "name": "Nike Air Max TW",
   "description": "Entonces, ¿estás enamorado del estilo clásico de los años 90, pero te gusta la cultura acelerada de hoy? Conoce las Air Max TW. Inspirado en la preciada franquicia que trajo la amortiguación Nike Air al mundo y sentó las bases para la estética de la pista a la calle, su diseño llamativo ofrece un 2x1 de comodidad y moda. Listas para resaltar, su parte superior liviana combina líneas angulares y orgánicas para crear un efecto háptico fascinante. Los colores contrastantes facilitan el estilo. Y si está listo para el siguiente paso, las 5 ventanas debajo de los pies brindan un toque moderno a la amortiguación Air visible. Conseguí el tuyo hoy en G3 Footwear!",
-  "image": [
-   {
-    "filename": "nike-air-max-2.avif"
-   },
-   {
-    "filename": "nike-air-max-1.avif"
-   },
-   {
-    "filename": "nike-air-max-3.avif"
-   },
-   {
-    "filename": "nike-air-max-4.avif"
-   },
-   {
-    "filename": "nike-air-max-5.avif"
-   },
-   {
-    "filename": "nike-air-max-6.avif"
-   },
-   {
-    "filename": "nike-air-max-7.avif"
-   },
-   {
-    "filename": "nike-air-max-8.avif"
-   }
+  "image":[
+    "nike-air-max-2.avif",
+    "nike-air-max-1.avif",
+    "nike-air-max-3.avif",
+    "nike-air-max-4.avif",
+    "nike-air-max-5.avif",
+    "nike-air-max-6.avif",
+    "nike-air-max-7.avif",
+    "nike-air-max-8.avif"
   ],
   "category": "Comfort",
   "oldPrice": "40.500",
@@ -421,31 +230,15 @@
   "id": "13",
   "name": "Asics Gel-Quantum 180 VII",
   "description": "La zapatilla GEL-QUANTUM 180™ VII combina una forma futurista con tecnologías de amortiguación avanzadas estudiadas en el Instituto ASICS de Ciencias del Deporte. Su parte superior está reelaborada con una parte superior de malla jacquard que está diseñada para una mejor ventilación y comodidad. La estética elegante del diseño también presenta líneas suaves y menos capas para crear un calce más adaptable. ¡Comprá las tuyas hoy mismo!",
-  "image": [
-   {
-    "filename": "asics-gel-quantum-2.avif"
-   },
-   {
-    "filename": "asics-gel-quantum-1.avif"
-   },
-   {
-    "filename": "asics-gel-quantum-3.avif"
-   },
-   {
-    "filename": "asics-gel-quantum-4.avif"
-   },
-   {
-    "filename": "asics-gel-quantum-5.avif"
-   },
-   {
-    "filename": "asics-gel-quantum-6.avif"
-   },
-   {
-    "filename": "asics-gel-quantum-7.avif"
-   },
-   {
-    "filename": "asics-gel-quantum-8.avif"
-   }
+  "image":[
+    "asics-gel-quantum-2.avif",
+    "asics-gel-quantum-1.avif",
+    "asics-gel-quantum-3.avif",
+    "asics-gel-quantum-4.avif",
+    "asics-gel-quantum-5.avif",
+    "asics-gel-quantum-6.avif",
+    "asics-gel-quantum-7.avif",
+    "asics-gel-quantum-8.avif"
   ],
   "category": "Comfort",
   "oldPrice": "35.000",
@@ -456,31 +249,15 @@
   "id": "14",
   "name": "Reebok Pump Omni Zone II",
   "description": "Haz que tus enemigos se babeen por cada detalle, desde la jaula de TPU con curvas hasta el perfil de corte medio. Nunca comprometa la comodidad con la amortiguación Hexalite en la entresuela. Podríamos seguir. ¿Pero por qué? Conseguílas hoy en G3 Footwear!",
-  "image": [
-   {
-    "filename": "reebok-pump-2.avif"
-   },
-   {
-    "filename": "reebok-pump-1.avif"
-   },
-   {
-    "filename": "reebok-pump-3.avif"
-   },
-   {
-    "filename": "reebok-pump-4.avif"
-   },
-   {
-    "filename": "reebok-pump-5.avif"
-   },
-   {
-    "filename": "reebok-pump-6.avif"
-   },
-   {
-    "filename": "reebok-pump-7.avif"
-   },
-   {
-    "filename": "reebok-pump-8.avif"
-   }
+  "image":[
+    "reebok-pump-2.avif",
+   "reebok-pump-1.avif",
+   "reebok-pump-3.avif",
+   "reebok-pump-4.avif",
+   "reebok-pump-5.avif",
+   "reebok-pump-6.avif",
+   "reebok-pump-7.avif",
+   "reebok-pump-8.avif"
   ],
   "category": "Comfort",
   "oldPrice": "49.000",
@@ -491,31 +268,15 @@
   "id": "15",
   "name": "Nike Air Huarache Premium",
   "description": "¿Qué te mueve? Descúbrelo en las Nike Air Huarache.'NIKE MOVING CO.' los detalles celebran la historia de hacer que la gente se mueva. La tela elástica que abraza los pies, la amortiguación liviana y la estructura futurista del talón lo llevan a todos lados con comodidad. ¿Dónde seguir?",
-  "image": [
-   {
-    "filename": "nike-air-huarache-2.avif"
-   },
-   {
-    "filename": "nike-air-huarache-1.avif"
-   },
-   {
-    "filename": "nike-air-huarache-3.avif"
-   },
-   {
-    "filename": "nike-air-huarache-4.avif"
-   },
-   {
-    "filename": "nike-air-huarache-5.avif"
-   },
-   {
-    "filename": "nike-air-huarache-6.avif"
-   },
-   {
-    "filename": "nike-air-huarache-7.avif"
-   },
-   {
-    "filename": "nike-air-huarache-8.avif"
-   }
+  "image":[
+    "nike-air-huarache-2.avif",
+    "nike-air-huarache-1.avif",
+    "nike-air-huarache-3.avif",
+    "nike-air-huarache-4.avif",
+    "nike-air-huarache-5.avif",
+    "nike-air-huarache-6.avif",
+    "nike-air-huarache-7.avif",
+    "nike-air-huarache-8.avif"
   ],
   "category": "Comfort",
   "oldPrice": "48.500",
@@ -526,31 +287,15 @@
   "id": "16",
   "name": "Jordan Series ES",
   "description": "Inspirada en las batallas en el patio trasero de Mike con su hermano mayor Larry, la serie Jordan hace referencia a su legendaria rivalidad entre hermanos en todo el diseño. La suela de goma ofrece más que una tracción impresionante, también cuenta la historia de cómo MJ llegó a ser el número 23. Busque el recordatorio oculto de 'Swing for the Fence', una cita directa de Larry a su hermanito.",
-  "image": [
-   {
-    "filename": "jordan-ES-2.avif"
-   },
-   {
-    "filename": "jordan-ES-1.avif"
-   },
-   {
-    "filename": "jordan-ES-3.avif"
-   },
-   {
-    "filename": "jordan-ES-4.avif"
-   },
-   {
-    "filename": "jordan-ES-5.avif"
-   },
-   {
-    "filename": "jordan-ES-6.avif"
-   },
-   {
-    "filename": "jordan-ES-7.avif"
-   },
-   {
-    "filename": "jordan-ES-8.avif"
-   }
+  "image":[
+    "jordan-ES-2.avif",
+    "jordan-ES-1.avif",
+    "jordan-ES-3.avif",
+    "jordan-ES-4.avif",
+    "jordan-ES-5.avif",
+    "jordan-ES-6.avif",
+    "jordan-ES-7.avif",
+    "jordan-ES-8.avif"
   ],
   "category": "Comfort",
   "oldPrice": "32.500",
