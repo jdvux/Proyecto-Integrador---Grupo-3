@@ -25,17 +25,21 @@ const productController = {
 
   store: (req, res) => {
     let date = Date.now();
+    let images = [];
+    if(req.files){
+      req.files.forEach(file=>{images.push("/products/" + file.filename)})
+    }
     let newProduct = {
       "id": date.toString(),
       "name": req.body.name || "Sin nombre", 
       "description": req.body.description,
-      "image": req.body.image,
+      "image": images,
       "size": req.body.size,
       "category": req.body.category,
       "oldPrice": req.body.oldPrice,
       "price": req.body.price
     }
-
+  
     products.push(newProduct);
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
     res.redirect('/products')
@@ -49,18 +53,22 @@ const productController = {
   
   update: (req, res) => {
     let id = req.params.id;
+    let images = [];
+    if(req.files){
+      req.files.forEach(file=>{images.push("/products/" + file.filename)})
+    }
     products.forEach((product, index) => {
-      if (product.id == id) {
-        product.name = req.body.name;
-        product.size = req.body.size;
-        product.category = req.body.category;
-        product.price = req.body.price;
-        if ((req.body.image).length !== 0) {
-          let images1 = req.body.image;
-          product.image = images1.split(",");  
-        }     
+      if (product.id == id){
+      product.name = req.body.name;
+      product.description = req.body.description;
+      product.size = req.body.size;
+      product.category = req.body.category;
+      product.oldPrice = req.body.oldPrice;
+      product.price = req.body.price;
+      product.image = images; 
       }
     });
+    
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
     res.redirect('/products');
 },

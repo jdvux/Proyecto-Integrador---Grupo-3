@@ -21,44 +21,25 @@
 <body>
     <%- include('../partials/header.ejs') %>
     <div>
-    <form method ="post" action ="/products/editProduct/<%=product.id%>?_method=PUT" class="product-form">
+    <form method ="post" action ="/products/editProduct/<%=product.id%>?_method=PUT" class="product-form" enctype="multipart/form-data">
         
         <!--titulo de la pag----->
         <h1 class="product-form-title">Editar Producto</h1>
         
         <!--datos que se piden para el registro en cajas-------->
         <input class="box-form" type="text" name="name" placeholder="Nombre del producto" value="<%=product.name%>"required>
+        <input class="box-form" type="text" placeholder="Descripción" name="description" value="<%=product.description%>"required>
         
         
         <div>
-            <input type="file" id="files" name="image" class="hidden" value="<%=product.image%>"/ multiple>
+            <input type="file" id="files" name="upload-product" class="hidden" value="<%=product.image%>" multiple/>
             <label for="files">Seleccionar archivo
                 <i class="fa-solid fa-camera-rotate"></i>
             </label>
         </div>
-        <select class="size-selector-box" name="size" value="<%=product.size%>">
-            <option disabled selected>Seleccioná un talle</option>
-            <option value="talle">35</option>
-            <option value="talle">35,5</option>
-            <option value="talle">36</option>
-            <option value="talle">36,5</option>
-            <option value="talle">37</option>
-            <option value="talle">37,5</option>
-            <option value="talle">38</option>
-            <option value="talle">38,5</option>
-            <option value="talle">39</option>
-            <option value="talle">39,5</option>
-            <option value="talle">40</option>
-            <option value="talle">40,5</option>
-            <option value="talle">41</option>
-            <option value="talle">41,5</option>
-            <option value="talle">42</option>
-            <option value="talle">42,5</option>
-            <option value="talle">43</option>
-            <option value="talle">43,5</option>
-            <option value="talle">44</option>
-        </select>
+        <input class="box-form" type="text" placeholder="Talle del producto" name="size" required>
         <input class="box-form" type="text" name="category" placeholder="Categoría" value="<%=product.category%>" required>
+        <input class="box-form" type="text" placeholder="Precio original sin descuento" name="oldPrice" value="<%=product.oldPrice%>"required>
         <input class="box-form" type="text" name="price" placeholder="Precio" value="<%=product.price%>" required>
         
         <!--Boton-->

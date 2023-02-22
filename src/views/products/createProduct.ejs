@@ -21,7 +21,7 @@
 <body>
     <%- include('../partials/header.ejs') %>
     <div>
-    <form class="product-form" method="post" action="/products/createProduct">
+    <form class="product-form" method="post" action="/products/createProduct" enctype="multipart/form-data">
         
         <!--titulo de la pag----->
         <h1 class="product-form-title">Añadir Producto</h1>
@@ -30,34 +30,12 @@
         <input class="box-form" type="text" placeholder="Nombre del producto" name="name" required>
         <input class="box-form" type="text" placeholder="Descripción" name="description" required>
         <div>
-            <input type="file" id="files" name="image" class="hidden" multiple/>
+            <input type="file" id="files" name="upload-product" class="hidden" multiple/>
             <label for="files">Seleccionar archivo
                 <i class="fa-solid fa-camera-rotate"></i>
             </label>
-            <input class="box-form" type="text" placeholder="Talle del producto" name="size" required>
         </div>
-        <!-- <select class="size-selector-box" name="talle" name="size">
-            <option disabled selected>Seleccioná un talle</option>
-            <option value="talle">35</option>
-            <option value="talle">35,5</option>
-            <option value="talle">36</option>
-            <option value="talle">36,5</option>
-            <option value="talle">37</option>
-            <option value="talle">37,5</option>
-            <option value="talle">38</option>
-            <option value="talle">38,5</option>
-            <option value="talle">39</option>
-            <option value="talle">39,5</option>
-            <option value="talle">40</option>
-            <option value="talle">40,5</option>
-            <option value="talle">41</option>
-            <option value="talle">41,5</option>
-            <option value="talle">42</option>
-            <option value="talle">42,5</option>
-            <option value="talle">43</option>
-            <option value="talle">43,5</option>
-            <option value="talle">44</option>
-        </select> -->
+        <input class="box-form" type="text" placeholder="Talle del producto" name="size" required>
         <input class="box-form" type="text" placeholder="Categoría" name="category" required>
         <input class="box-form" type="text" placeholder="Precio original sin descuento" name="oldPrice" required>
         <input class="box-form" type="text" placeholder="Precio final" name="price"required>
