@@ -11,12 +11,14 @@ Como referentes, podemos señalar a:
 ## Tableros de trabajo:
 🌐 https://trello.com/b/GABQyh6K/2do-sprint
 🌐 https://trello.com/invite/b/DMOCwceU/ATTI59e3481237582cf8dc48c9f6cae51dffFD606640/3er-sprint
+🌐 https://trello.com/b/vwvmoDft/4to-sprint
 
 ## Instalar dependencias
 npm install
 
 ## Dependencias utilizadas
 express
+multer
 
 
 ## Iniciar el servidor
