@@ -39,10 +39,13 @@
             <% } %> 
 
         <div>
-            <input type="file" id="files" name="upload-product" class="hidden" multiple/>
+            <input type="file" id="files" name="productImages" class="hidden" value="<% locals.old && old.productImages%>" multiple/>
             <label for="files">Seleccionar archivo
                 <i class="fa-solid fa-camera-rotate"></i>
             </label>
+            <% if (locals.errors && locals.errors.productImages) { %>
+                <p class="feedback"><%=errors.productImages.msg%> </p>
+                <% } %>  
         </div>
 
         <input class="box-form" type="text" placeholder="Talle del producto" name="size" value="<%= locals.old && old.size %>" >

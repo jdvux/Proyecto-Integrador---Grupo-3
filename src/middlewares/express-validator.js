@@ -11,7 +11,7 @@ const validateRegister = [
 
     body('email')
     .notEmpty().withMessage('Debes escribir tu correo electrónico').bail()
-    .isEmail().withMessage('El del correo formato debe ser correo@correo.com'),
+    .isEmail().withMessage('El del correo formato debe ser correo@correo.xxx'),
 
     body('password')
     .isLength({ min: 8 }).withMessage('La contraseña debe contener al menos 8 caracteres').bail()
@@ -35,12 +35,20 @@ const validateCreateProduct = [
     body('description')
     .isLength({ min: 50 }).withMessage('La descripción debe tener al menos 50 caracteres'),
 
-    body('upload-product')
-    .notEmpty().withMessage('Debes subir al menos una imagen para el producto').bail(),
+    body('productImages')
+    .custom((productImages, { req }) => {
+        if ((!req.files) || (req.files).length == 0 || !productImages || productImages.length == 0 ) 
+        { return false } else { return true };
+    }).withMessage("Debes subir al menos una imagen").bail()
+
+    .custom((productImages, { req }) => {
+        if (req.files.mimetype === 'image/jpeg' || 'image/jpeg' || 'image/jpg' || 'image/png' || 'image/gif') 
+        { return true } else { return false }
+    }).withMessage("Sólo puedes subir imágenes o GIFs"),
 
     body('size')
-    .notEmpty().withMessage('Debes ingresar el talle del producto').bail()
-    .isNumeric().withMessage('El talle debe ser ingresado en números'),
+    .isNumeric().withMessage('El talle debe ser ingresado en números').bail()
+    .isLength({ min: 2, max: 2 }).withMessage('El talle debe contener dos números'),
 
     body('category')
     .isAlpha().withMessage('La categoría sólo debe contener letras').bail()
@@ -48,12 +56,16 @@ const validateCreateProduct = [
 
     body('oldPrice')
     .notEmpty().withMessage('Debes ingresar el precio del producto').bail()
-    .isNumeric().withMessage('El precio debe estar expresado en números').bail()
-    .isLength({ min: 5 }).withMessage('El precio no puede ser menor a 10000'),
+    .isNumeric().withMessage('El precio original debe estar expresado en números').bail()
+    .isLength({ min: 5 }).withMessage('El precio original no puede ser menor a 10000'),
     
     body('price')
     .isNumeric().withMessage('El precio en descuento debe estar expresado en números').bail()
-    .isLength({ min: 5 }).withMessage('El precio no puede ser menor a 10000')
+    .isLength({ min: 5 }).withMessage('El precio en descuento no puede ser menor a 10000').bail()
+    .custom((price, { req }) => {
+        if (price >= req.body.oldPrice) { return false };
+    return true;
+    }).withMessage("El precio en descuento no puede ser mayor o igual al precio original")
 ];
 
 const validateEditProduct = [
@@ -64,23 +76,30 @@ const validateEditProduct = [
     .isLength({ min: 50 }).withMessage('La descripción debe tener al menos 50 caracteres'),
     
     body('size')
-    .notEmpty().withMessage('Debes ingresar el talle del producto').bail()
-    .isNumeric().withMessage('El talle debe ser ingresado en números'),
+    .isNumeric().withMessage('El talle debe ser ingresado en números')
+    .isLength({ min: 2, max: 2 }).withMessage('El talle debe contener dos números'),
+
+    body('productImages')
+    .custom((productImages, { req }) => {
+        if (req.files.mimetype === 'image/jpeg' || 'image/jpeg' || 'image/jpg' || 'image/png' || 'image/gif') 
+        { return true } else { return false };
+    }).withMessage("Sólo puedes subir imágenes o GIFs"),
 
     body('category')
     .isAlpha().withMessage('La categoría sólo debe contener letras').bail()
     .isLength({ min: 4 }).withMessage('El nombre de la categoría debe tener al menos 4 caracteres'),
 
     body('oldPrice')
-    .isNumeric().withMessage('El precio debe estar expresado en números').bail()
-    .isLength({ min: 5 }).withMessage('El precio no puede ser menor a 10000'),
+    .isNumeric().withMessage('El precio original debe estar expresado en números').bail()
+    .isLength({ min: 5 }).withMessage('El precio original no puede ser menor a 10000'),
     
     body('price')
     .isNumeric().withMessage('El precio en descuento debe estar expresado en números').bail()
-    .isLength({ min: 5 }).withMessage('El precio no puede ser menor a 10000')
-];
+    .isLength({ min: 5 }).withMessage('El precio en descuento no puede ser menor a 10000').bail()
+    .custom((price, { req }) => {
+        if (price >= req.body.oldPrice) { return false };
+    return true;
+    }).withMessage("El precio en descuento no puede ser mayor o igual al precio original")
+]
 
-module.exports = validateRegister; 
-module.exports = validateLogin;
-module.exports = validateCreateProduct; 
-module.exports = validateEditProduct;
+module.exports = validateRegister, validateLogin, validateCreateProduct, validateEditProduct;

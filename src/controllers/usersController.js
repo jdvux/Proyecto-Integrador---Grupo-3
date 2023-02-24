@@ -39,6 +39,10 @@ const usersController = {
 
     profileView: (req, res) => {
         res.render('users/profile');
+    },
+
+    profileChanges: (req, res) => {
+
     }
 };
 

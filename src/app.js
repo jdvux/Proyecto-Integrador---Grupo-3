@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const PORT = 3003;
+const PORT = 3003 || process.env.PORT;
 
 const methodOverride = require('method-override');
 

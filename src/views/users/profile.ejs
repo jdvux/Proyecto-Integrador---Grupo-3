@@ -22,6 +22,19 @@
     <%-include('../partials/header.ejs')%>
     <main>
 
+      <div>
+        <form method ="post" action ="/users/profile/<%=user.id%>?_method=PUT" class="profile-upload-image" enctype="multipart/form-data">
+            
+            <h1 class="profile-upload-title">Subir Avatar</h1>
+            
+            <input type="file" class="box-image" type="text" name="avatar">
+            <% if (locals.errors && locals.avatar.name) { %>
+                <p class="feedback"><%=errors.avatar.msg%> </p>
+                <% } %>
+            
+            <input type="submit" class="button-form" value="Enviar"></input>
+            <input type="reset" class="button-form" value="Borrar"></input>
+        </form>
     </main>
     <%- include('../partials/footer') %>
 </body>
