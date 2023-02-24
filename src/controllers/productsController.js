@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const { validationResult } = require('express-validator');
 
 const productController = {
   products: (req, res) => {  
@@ -23,7 +24,14 @@ const productController = {
     res.render('products/createProduct');
   },
 
-  store: (req, res) => {  
+  store: (req, res) => {
+    let errors = validationResult(req);
+    if(!errors.isEmpty()) {
+      return res.render('products/createProduct', {
+        errors: errors.mapped(), old: req.body
+      });
+    };
+
     let date = Date.now();
     let images = [];
 
@@ -55,6 +63,14 @@ const productController = {
   
   update: (req, res) => {
     let id = req.params.id;
+
+    let errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.render('products/editProduct', {
+        errors: errors.mapped(), old: req.body
+      });
+    };
+
     
     products.forEach((product, index) => {
       let images = [];
