@@ -37,8 +37,8 @@ const validateCreateProduct = [
 
     body('productImages')
     .custom((productImages, { req }) => {
-        if ((!req.files) || (req.files).length == 0 || !productImages || productImages.length == 0 ) 
-        { return false } else { return true };
+        if (!req.files) return false;
+        return true;
     }).withMessage("Debes subir al menos una imagen").bail()
 
     .custom((productImages, { req }) => {
@@ -102,4 +102,7 @@ const validateEditProduct = [
     }).withMessage("El precio en descuento no puede ser mayor o igual al precio original")
 ]
 
-module.exports = validateRegister, validateLogin, validateCreateProduct, validateEditProduct;
+module.exports = validateRegister;
+module.exports = validateLogin;
+module.exports = validateCreateProduct;
+module.exports = validateEditProduct;
