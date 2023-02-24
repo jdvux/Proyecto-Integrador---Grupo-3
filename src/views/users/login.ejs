@@ -30,8 +30,12 @@
             name="username"
             placeholder="Ingresa tu nombre de usuario"
             id="input-login"
+            value="<%= locals.old && old.username%>"
             required
           />
+          <% if (locals.errors && locals.errors.username) { %>
+            <p class="feedback"><%= locals.errors.username%> </p>
+            <% } %>
 
           <input
             type="password"
@@ -39,6 +43,7 @@
             placeholder="Ingresa tu contraseña"
             id="input-login"
             required/>
+
           <a class="link-login-form" href="/"
             ><button type="submit" id="button-login">Enviar</button></a>
         </form>

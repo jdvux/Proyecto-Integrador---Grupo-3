@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const { validationResult } = require('../middlewares/express-validator');
 
 const productController = {
   products: (req, res) => {  
@@ -24,11 +25,20 @@ const productController = {
   },
 
   store: (req, res) => {
+    let errors = validationResult(req);
+    if(!errors.isEmpty()) {
+      return res.render('products/createProduct', {
+        errors: errors.mapped(), old: req.body
+      });
+    };
+    
     let date = Date.now();
     let images = [];
-    if(req.files){
-      req.files.forEach(file=>{images.push("/products/" + file.filename)})
-    }
+
+    if (req.files) {
+      req.files.forEach(file=>{images.push("/products/" + file.filename)});
+    };
+
     let newProduct = {
       "id": date.toString(),
       "name": req.body.name || "Sin nombre", 
@@ -38,7 +48,7 @@ const productController = {
       "category": req.body.category,
       "oldPrice": req.body.oldPrice,
       "price": req.body.price
-    }
+    };
   
     products.push(newProduct);
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
@@ -52,6 +62,13 @@ const productController = {
   },
   
   update: (req, res) => {
+    let errors = validationResult(req);
+    if(!errors.isEmpty()) {
+      return res.render('products/editProduct', {
+        errors: errors.mapped(), old: req.body
+      });
+    };
+
     let id = req.params.id;
     
     products.forEach((product, index) => {

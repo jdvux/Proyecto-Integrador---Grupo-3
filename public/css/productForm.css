@@ -82,12 +82,12 @@ form label {
   display: none;
 }
 
-.button:hover {
+input[type="submit"]:hover {
   background: #353535;
   color: #f3f1f1;
 }
 
-.button:hover > a {
+input[type="submit"]:hover > a {
   color: #f3f1f1;
 }
 
@@ -108,6 +108,10 @@ form label {
 
 :disabled {
   background-color: white;
+}
+
+.feedback {
+  color:#353535;
 }
 
 /* MEDIA QUERIES */

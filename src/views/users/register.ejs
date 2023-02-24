@@ -23,13 +23,28 @@
         <h1 class="titulo">Registrarse</h1>
         
         <!--datos que se piden para el registro en cajas-------->
-        <input class="box-form" type="text" placeholder="Nombre" required>
-        <input class="box-form" type="text" placeholder="Apellido" required>
-        <input class="box-form" type="email" placeholder="Correo electrónico" required>
-        <input class="box-form" type="password" placeholder="Contraseña" required>
+        <input class="box-form" type="text" placeholder="Nombre" name="name" value="<%= locals.old && old.name %>" required >
+        <% if (locals.errors && locals.errors.name) { %>
+            <p class="feedback"><%= locals.errors.name%> </p>
+            <% } %>
+
+        <input class="box-form" type="text" placeholder="Apellido" name="last-name" value="<%= locals.old && old.last-name %>" required >
+        <% if (locals.errors && locals.errors.last-name) { %>
+            <p class="feedback"><%= locals.errors.last-name%> </p>
+            <% } %>
+
+        <input class="box-form" type="email" placeholder="Correo electrónico" name="email" value="<%= locals.old && old.email %>" required >
+        <% if (locals.errors && locals.errors.email) { %>
+            <p class="feedback"><%= locals.errors.email%> </p>
+            <% } %>
+
+        <input class="box-form" type="password" placeholder="Contraseña" name="password" value="<%= locals.old && old.password %>" required >
+        <% if (locals.errors && locals.errors.password) { %>
+            <p class="feedback"><%= locals.errors.password%> </p>
+            <% } %>
         
         <!--terminos chequear si al resto le parece ok?------->
-        <p class="termino1"><input type="checkbox">  Estoy de acuerdo con <a class="termino2" href="/terms-conditions">Terminos y Condiciones</a></p>
+        <p class="termino1"><input type="checkbox" name="terms-conditions">  Estoy de acuerdo con <a class="termino2" href="/terms-conditions">Terminos y Condiciones</a></p>
         
         <!--Boton-->
         <button type="submit" class="button"><a href="/login" class="link">Enviar</a></button>

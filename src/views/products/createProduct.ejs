@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>G3 Footwear</title>
+        <title>Crear Producto</title>
         <script
           src="https://kit.fontawesome.com/7ea488e71c.js"
           crossorigin="anonymous"
@@ -18,27 +18,52 @@
         <link rel="icon" href="/images/logo_small_black.png">
         </head>
 
-<body>
+    <body>
     <%- include('../partials/header.ejs') %>
+
     <div>
     <form class="product-form" method="post" action="/products/createProduct" enctype="multipart/form-data">
         
         <!--titulo de la pag----->
         <h1 class="product-form-title">Añadir Producto</h1>
-        
+
         <!--datos que se piden para el registro en cajas-------->
-        <input class="box-form" type="text" placeholder="Nombre del producto" name="name" required>
-        <input class="box-form" type="text" placeholder="Descripción" name="description" required>
+        <input class="box-form" type="text" placeholder="Nombre del producto" name="name" value="<%= locals.old && old.name %>" required>
+        <% if (locals.errors && locals.errors.name) { %>
+            <p class="feedback"><%= locals.errors.name%> </p>
+            <% } %> 
+
+        <input class="box-form" type="text" placeholder="Descripción" name="description" value="<%= locals.old && old.description %>" required>
+        <% if (locals.errors && locals.errors.description) { %>
+            <p class="feedback"><%= locals.errors.description%> </p>
+            <% } %> 
+
         <div>
             <input type="file" id="files" name="upload-product" class="hidden" multiple/>
             <label for="files">Seleccionar archivo
                 <i class="fa-solid fa-camera-rotate"></i>
             </label>
         </div>
-        <input class="box-form" type="text" placeholder="Talle del producto" name="size" required>
-        <input class="box-form" type="text" placeholder="Categoría" name="category" required>
-        <input class="box-form" type="text" placeholder="Precio original sin descuento" name="oldPrice" required>
-        <input class="box-form" type="text" placeholder="Precio final" name="price"required>
+
+        <input class="box-form" type="text" placeholder="Talle del producto" name="size" value="<%= locals.old && old.size %>" required>
+        <% if (locals.errors && locals.errors.size) { %>
+            <p class="feedback"><%= locals.errors.size%> </p>
+            <% } %> 
+
+        <input class="box-form" type="text" placeholder="Categoría" name="category" value="<%= locals.old && old.category %>" required>
+        <% if (locals.errors && locals.errors.category) { %>
+            <p class="feedback"><%= locals.errors.category%> </p>
+            <% } %> 
+
+        <input class="box-form" type="text" placeholder="Precio original sin descuento" name="oldPrice" value="<%= locals.old && old.oldprice %>" required>
+        <% if (locals.errors && locals.errors.oldPrice) { %>
+            <p class="feedback"><%= locals.errors.oldPrice%> </p>
+            <% } %> 
+
+        <input class="box-form" type="text" placeholder="Precio final" name="price" value="<%= locals.old && old.price %>" required>
+        <% if (locals.errors && locals.errors.price) { %>
+            <p class="feedback"><%= locals.errors.price%> </p>
+            <% } %> 
         
         <!--Boton-->
         <input type="submit" class="button-form" value="Enviar"></input>
@@ -46,6 +71,7 @@
             
         
     </form>
-    <%- include('../partials/footer'); %>    
-</body>
+
+    <%- include('../partials/footer') %>
+    </body>
 </html>
