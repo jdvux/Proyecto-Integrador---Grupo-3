@@ -25,29 +25,29 @@
         <!--datos que se piden para el registro en cajas-------->
         <input class="box-form" type="text" placeholder="Nombre" name="name" value="<%= locals.old && old.name %>" required >
         <% if (locals.errors && locals.errors.name) { %>
-            <p class="feedback"><%= locals.errors.name%> </p>
+            <p class="feedback"><%= errors.name.msg%> </p>
             <% } %>
 
         <input class="box-form" type="text" placeholder="Apellido" name="last-name" value="<%= locals.old && old.last-name %>" required >
         <% if (locals.errors && locals.errors.last-name) { %>
-            <p class="feedback"><%= locals.errors.last-name%> </p>
+            <p class="feedback"><%= errors.last-name.msg%> </p>
             <% } %>
 
         <input class="box-form" type="email" placeholder="Correo electrónico" name="email" value="<%= locals.old && old.email %>" required >
         <% if (locals.errors && locals.errors.email) { %>
-            <p class="feedback"><%= locals.errors.email%> </p>
+            <p class="feedback"><%= errors.email.msg%> </p>
             <% } %>
 
         <input class="box-form" type="password" placeholder="Contraseña" name="password" value="<%= locals.old && old.password %>" required >
         <% if (locals.errors && locals.errors.password) { %>
-            <p class="feedback"><%= locals.errors.password%> </p>
+            <p class="feedback"><%=errors.password.msg%> </p>
             <% } %>
         
         <!--terminos chequear si al resto le parece ok?------->
         <p class="termino1"><input type="checkbox" name="terms-conditions">  Estoy de acuerdo con <a class="termino2" href="/terms-conditions">Terminos y Condiciones</a></p>
         
         <!--Boton-->
-        <button type="submit" class="button"><a href="/login" class="link">Enviar</a></button>
+        <button type="submit" class="button"><a href="/users/login" class="link">Enviar</a></button>
             
         <h3 class="redes-sociales">Registrate con redes sociales</h3>
 

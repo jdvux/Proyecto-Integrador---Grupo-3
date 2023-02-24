@@ -28,13 +28,13 @@
           <input
             type="text"
             name="username"
-            placeholder="Ingresa tu nombre de usuario"
+            placeholder="Ingresa tu correo electrónico"
             id="input-login"
             value="<%= locals.old && old.username%>"
             required
           />
           <% if (locals.errors && locals.errors.username) { %>
-            <p class="feedback"><%= locals.errors.username%> </p>
+            <p class="feedback"><%=errors.username.msg%> </p>
             <% } %>
 
           <input
@@ -43,6 +43,9 @@
             placeholder="Ingresa tu contraseña"
             id="input-login"
             required/>
+            <% if (locals.errors && locals.errors.password) { %>
+              <p class="feedback"><%=errors.password.msg%> </p>
+              <% } %>
 
           <a class="link-login-form" href="/"
             ><button type="submit" id="button-login">Enviar</button></a>

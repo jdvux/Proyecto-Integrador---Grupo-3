@@ -118,8 +118,11 @@ main {
 }
 
 .feedback {
-    color:#353535;
-}
+    color:#f3f1f1;
+    font-size: smaller;
+    width: 80%;
+    margin: -4% auto 3%;
+  }
 
 /*-------------MEDIA-QUERIES--------------*/
 

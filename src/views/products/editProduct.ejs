@@ -28,14 +28,14 @@
         <h1 class="product-form-title">Editar Producto</h1>
         
         <!--datos que se piden para el registro en cajas-------->
-        <input class="box-form" type="text" name="name" placeholder="Nombre del producto" value="<%=product.name%>" required>
+        <input class="box-form" type="text" name="name" placeholder="Nombre del producto" value="<%=product.name%>" >
         <% if (locals.errors && locals.errors.name) { %>
-            <p class="feedback"><%= locals.errors.name%> </p>
+            <p class="feedback"><%=errors.name.msg%> </p>
             <% } %>
 
-        <input class="box-form" type="text" placeholder="Descripción" name="description" value="<%=product.description%>" required>
+        <input class="box-form" type="text" placeholder="Descripción" name="description" value="<%=product.description%>" >
         <% if (locals.errors && locals.errors.description) { %>
-            <p class="feedback"><%= locals.errors.description%> </p>
+            <p class="feedback"><%=errors.description.msg%> </p>
             <% } %>
         
         <div>
@@ -45,24 +45,24 @@
             </label>
         </div>
 
-        <input class="box-form" type="text" placeholder="Talle del producto" name="size" value="<%=product.size%>" required>
+        <input class="box-form" type="text" placeholder="Talle del producto" name="size" value="<%=product.size%>" >
         <% if (locals.errors && locals.errors.size) { %>
-            <p class="feedback"><%= locals.errors.size%> </p>
+            <p class="feedback"><%=errors.size.msg%> </p>
             <% } %>
 
-        <input class="box-form" type="text" name="category" placeholder="Categoría" value="<%=product.category%>" required>
+        <input class="box-form" type="text" name="category" placeholder="Categoría" value="<%=product.category%>" >
         <% if (locals.errors && locals.errors.category) { %>
-            <p class="feedback"><%= locals.errors.category%> </p>
+            <p class="feedback"><%=errors.category.msg%> </p>
             <% } %>
 
-        <input class="box-form" type="text" placeholder="Precio original sin descuento" name="oldPrice" value="<%=product.oldPrice%>" required>
+        <input class="box-form" type="text" placeholder="Precio original sin descuento" name="oldPrice" value="<%=product.oldPrice%>" >
         <% if (locals.errors && locals.errors.oldPrice) { %>
-            <p class="feedback"><%= locals.errors.oldPrice%> </p>
+            <p class="feedback"><%=errors.oldPrice.msg%> </p>
             <% } %>
 
-        <input class="box-form" type="text" name="price" placeholder="Precio" value="<%=product.price%>" required>
+        <input class="box-form" type="text" name="price" placeholder="Precio" value="<%=product.price%>" >
         <% if (locals.errors && locals.errors.price) { %>
-            <p class="feedback"><%= locals.errors.price%> </p>
+            <p class="feedback"><%=errors.price.msg%> </p>
             <% } %>
         
         <!--Boton-->
