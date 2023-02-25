@@ -13,6 +13,6 @@ router.get('/register', usersController.registerView);
 router.post('/register/:id', validateRegister, usersController.processRegister);
 
 router.get('/profile/:id', usersController.profileView);
-router.put('/profile/id', uploadUserImages, usersController.profileChanges);
+router.put('/profile/id', uploadUserImages.single('avatar'), usersController.profileChanges);
 
 module.exports = router;

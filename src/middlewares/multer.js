@@ -23,8 +23,8 @@ const storageUserImages = multer.diskStorage({
   }
 });
 
-const uploadProductImages = multer({ storage: storageProductImages }).array('productImages');
-const uploadUserImages = multer({ storage: storageUserImages }).single('avatar');
+const uploadProductImages = multer({ storage: storageProductImages });
+const uploadUserImages = multer({ storage: storageUserImages });
 
 module.exports = uploadProductImages;
 module.exports = uploadUserImages;
