@@ -7,7 +7,7 @@ const methodOverride = require('method-override');
 
 const mainRoutes = require('./routes/main');
 const productRoutes = require('./routes/products');
-const userRoutes = require('./routes/user');
+const userRoutes = require('./routes/users');
 
 
 // view engine setup
