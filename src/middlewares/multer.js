@@ -7,7 +7,7 @@ const storageProductImages = multer.diskStorage({
     },
 
     filename: function (req, file, cb) {
-      let name = 'uploadProductImages' + Date.now() + path.extname(file.originalname);
+      let name = 'productImages' + Date.now() + path.extname(file.originalname);
       return cb(null, name);
     }
   })
@@ -18,7 +18,7 @@ const storageUserImages = multer.diskStorage({
   },
 
   filename: function (req, file, cb) {
-    let name = 'uploadUserImages' + Date.now() + path.extname(file.originalname);
+    let name = 'userImages' + Date.now() + path.extname(file.originalname);
     return cb(null, name);
   }
 });

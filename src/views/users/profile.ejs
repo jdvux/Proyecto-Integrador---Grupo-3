@@ -22,7 +22,12 @@
     <%-include('../partials/header.ejs')%>
     <main>
 
+      <div class="image-container">
+        <div class="main-product-image-small">
+          <img src="/images/users/<%=users.id.avatar%>" alt="" />
+        </div>
       <div>
+
         <form method ="post" action ="/users/profile/<%=user.id%>?_method=PUT" class="profile-upload-image" enctype="multipart/form-data">
             
             <h1 class="profile-upload-title">Subir Avatar</h1>
