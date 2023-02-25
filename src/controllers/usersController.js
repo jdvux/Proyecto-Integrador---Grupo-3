@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
+const usersFilePath = path.join(__dirname, '../data/users.json');
+const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8')); 
 
 const usersController = {
 
@@ -38,7 +40,10 @@ const usersController = {
     },
 
     profileView: (req, res) => {
-        res.render('users/profile');
+        let id = req.params.id;
+        let user = users.find(user => user.id === id);
+    
+        res.render('users/profile', {user});
     },
 
     profileChanges: (req, res) => {
