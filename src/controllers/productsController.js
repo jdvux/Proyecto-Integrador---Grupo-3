@@ -63,7 +63,7 @@ const productController = {
       product.category = req.body.category;
       product.oldPrice = req.body.oldPrice;
       product.price = req.body.price;
-      if(req.files) {
+      if ((req.files).length > 0) {
         req.files.forEach(file=>{images.push("/products/" + file.filename)})
         product.image = images 
       };
