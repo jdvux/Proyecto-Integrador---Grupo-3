@@ -1,15 +1,16 @@
 # Proyecto-Integrador---Grupo-3
 
 ## Comenzar a hacer
-Empezar a darle uso a las ramas, de haberlo hecho en este sprint pudimos haber tenido menos problemas al momento de hacer push y pull.
+Se podria sumar la weekly a nuestra reunion de sprint para contar como venimos con nuestras tareas.
 
 ## Hacer más
-Juntarnos un poco más por Discord para poder ultimar detalles de los sprints y también aclarar dudas.
+Sumamos branch y pull resquest. Es importante para revisar tareas de otros compañeros y un excelente punto para aprender a leer codigo. Deberiamos seguir ahondando en eso. 
 
 ## Continuar haciendo
-Siempre estamos atentos al Discord, por si alguno tiene problemas o necesita ayuda con algo. Algunos compañeros han tenido problemas ajenos al curso y lo han comunicado con oportunidad. El resto de los compañeros nos hemos podido hacer cargo de más cosas para cubrir esas ausencias, que también forma parte de lo que significa ser un grupo o equipo. Debemos seguir siendo organizados con el Trello y la distribución de las tareas, así el proyecto fluye y se arma mucho mejor.
+La comunicacion fue mejorando. Estamos presente cuando un compañero tiene una dificultad. Debemos seguir asi como equipo.
 
 ## Hacer menos
-
+Quizas en este punto, podriamos sumar el hecho de no participar en las llamadas. Es importante sumar algo proyecto, o avisar porque no puedo sumar algo al proyecto. Sumar es aprender.
 
 ## Dejar de hacer
+No preguntar. Toda duda o inquietud es importante subirla en el feed. Investigar, leer y sino no encuentro la respuesta preguntar. Somos un equipo estamos para ayudarnos.
