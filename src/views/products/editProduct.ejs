@@ -49,7 +49,7 @@
         </div>
 
         <input class="box-form" type="text" placeholder="Talle del producto" name="productSizeEdit" value="<%=product.size%>" >
-        <% if (locals.errors && locals.productSizeEdit.size) { %>
+        <% if (locals.errors && locals.errors.productSizeEdit) { %>
             <p class="feedback"><%=errors.productSizeEdit.msg%> </p>
             <% } %>
 
