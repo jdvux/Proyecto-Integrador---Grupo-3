@@ -28,44 +28,44 @@
         <h1 class="product-form-title">Añadir Producto</h1>
 
         <!--datos que se piden para el registro en cajas-------->
-        <input class="box-form" type="text" placeholder="Nombre del producto" name="name" value="<%= locals.old && old.name %>" >
-        <% if (locals.errors && locals.errors.name) { %>
-            <p class="feedback"><%= errors.name.msg%> </p>
+        <input class="box-form" type="text" placeholder="Nombre del producto" name="productNameCreate" value="<%= locals.old && old.productNameCreate %>" >
+        <% if (locals.errors && locals.errors.productNameCreate) { %>
+            <p class="feedback"><%= errors.productNameCreate.msg%> </p>
             <% } %> 
 
-        <input class="box-form" type="text" placeholder="Descripción" name="description" value="<%= locals.old && old.description %>" >
-        <% if (locals.errors && locals.errors.description) { %>
-            <p class="feedback"><%=errors.description.msg%> </p>
+        <input class="box-form" type="text" placeholder="Descripción" name="productDescriptionCreate" value="<%= locals.old && old.productDescriptionCreate %>" >
+        <% if (locals.errors && locals.errors.productDescriptionCreate) { %>
+            <p class="feedback"><%=errors.productDescriptionCreate.msg%> </p>
             <% } %> 
 
         <div>
-            <input type="file" id="files" name="productImages" class="hidden" value="<% locals.old && old.productImages%>" multiple/>
+            <input type="file" id="files" name="productImagesCreate" class="hidden" value="<% locals.old && old.productImagesCreate%>" multiple/>
             <label for="files">Seleccionar archivo
                 <i class="fa-solid fa-camera-rotate"></i>
             </label>
-            <% if (locals.errors && locals.errors.productImages) { %>
-                <p class="feedback"><%=errors.productImages.msg%> </p>
+            <% if (locals.errors && locals.errors.productImagesCreate) { %>
+                <p class="feedback"><%=errors.productImagesCreate.msg%> </p>
                 <% } %>  
         </div>
 
-        <input class="box-form" type="text" placeholder="Talle del producto" name="size" value="<%= locals.old && old.size %>" >
-        <% if (locals.errors && locals.errors.size) { %>
-            <p class="feedback"><%= errors.size.msg%> </p>
+        <input class="box-form" type="text" placeholder="Talle del producto" name="productSizeCreate" value="<%= locals.old && old.productSizeCreate %>" >
+        <% if (locals.errors && locals.errors.productSizeCreate) { %>
+            <p class="feedback"><%= errors.productSizeCreate.msg%> </p>
             <% } %> 
 
-        <input class="box-form" type="text" placeholder="Categoría" name="category" value="<%= locals.old && old.category %>" >
-        <% if (locals.errors && locals.errors.category) { %>
-            <p class="feedback"><%= errors.category.msg%> </p>
+        <input class="box-form" type="text" placeholder="Categoría" name="productCateogryCreate" value="<%= locals.old && old.productCateogryCreate %>" >
+        <% if (locals.errors && locals.errors.productCateogryCreate) { %>
+            <p class="feedback"><%= errors.productCateogryCreate.msg%> </p>
             <% } %> 
 
-        <input class="box-form" type="text" placeholder="Precio original sin descuento" name="oldPrice" value="<%= locals.old && old.oldPrice %>" >
-        <% if (locals.errors && locals.errors.oldPrice) { %>
-            <p class="feedback"><%= errors.oldPrice.msg%> </p>
+        <input class="box-form" type="text" placeholder="Precio original sin descuento" name="productOriginalPriceCreate" value="<%= locals.old && old.productOriginalPriceCreate %>" >
+        <% if (locals.errors && locals.errors.productOriginalPriceCreate) { %>
+            <p class="feedback"><%= errors.productOriginalPriceCreate.msg%> </p>
             <% } %> 
 
-        <input class="box-form" type="text" placeholder="Precio final" name="price" value="<%= locals.old && old.price %>" >
-        <% if (locals.errors && locals.errors.price) { %>
-            <p class="feedback"><%= errors.price.msg%> </p>
+        <input class="box-form" type="text" placeholder="Precio final" name="productDiscountPriceCreate" value="<%= locals.old && old.productDiscountPriceCreate %>" >
+        <% if (locals.errors && locals.errors.productDiscountPriceCreate) { %>
+            <p class="feedback"><%= errors.productDiscountPriceCreate.msg%> </p>
             <% } %> 
         
         <!--Boton-->

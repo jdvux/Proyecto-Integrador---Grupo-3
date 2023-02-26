@@ -27,24 +27,24 @@
         <form action="/users/login" method="POST" >
           <input
             type="text"
-            name="username"
+            name="emailLogin"
             placeholder="Ingresa tu correo electrónico"
             id="input-login"
-            value="<%= locals.old && old.username%>"
+            value="<%= locals.old && old.emailLogin%>"
             required
           />
-          <% if (locals.errors && locals.errors.username) { %>
-            <p class="feedback"><%=errors.username.msg%> </p>
+          <% if (locals.errors && locals.errors.emailLogin) { %>
+            <p class="feedback"><%=errors.emailLogin.msg%> </p>
             <% } %>
 
           <input
             type="password"
-            name="password"
+            name="passwordLogin"
             placeholder="Ingresa tu contraseña"
             id="input-login"
             required/>
-            <% if (locals.errors && locals.errors.password) { %>
-              <p class="feedback"><%=errors.password.msg%> </p>
+            <% if (locals.errors && locals.errors.passwordLogin) { %>
+              <p class="feedback"><%=errors.passwordLogin.msg%> </p>
               <% } %>
 
           <a class="link-login-form" href="/"

@@ -41,13 +41,13 @@ const productController = {
 
     let newProduct = {
       "id": date.toString(),
-      "name": req.body.name || "Sin nombre", 
+      "name": req.body.name,
       "description": req.body.description,
-      "image": images,
+      "images": images,
       "size": req.body.size,
       "category": req.body.category,
-      "oldPrice": req.body.oldPrice,
-      "price": req.body.price
+      "originalPrice": req.body.oldPrice,
+      "discountPrice": req.body.price
     };
   
     products.push(newProduct);
@@ -79,11 +79,11 @@ const productController = {
       product.description = req.body.description;
       product.size = req.body.size;
       product.category = req.body.category;
-      product.oldPrice = req.body.oldPrice;
-      product.price = req.body.price;
+      product.originalPrice = req.body.oldPrice;
+      product.discountPrice = req.body.price;
       if((req.files).length > 0) {
         req.files.forEach(file=>{images.push(file.filename)})
-        product.image = images 
+        product.images = images 
       };
     }
   });

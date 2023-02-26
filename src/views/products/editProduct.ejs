@@ -28,44 +28,44 @@
         <h1 class="product-form-title">Editar Producto</h1>
         
         <!--datos que se piden para el registro en cajas-------->
-        <input class="box-form" type="text" name="name" placeholder="Nombre del producto" value="<%=product.name%>" >
-        <% if (locals.errors && locals.errors.name) { %>
-            <p class="feedback"><%=errors.name.msg%> </p>
+        <input class="box-form" type="text" name="productNameEdit" placeholder="Nombre del producto" value="<%=product.name%>" >
+        <% if (locals.errors && locals.errors.productNameEdit) { %>
+            <p class="feedback"><%=errors.productNameEdit.msg%> </p>
             <% } %>
 
-        <input class="box-form" type="text" placeholder="Descripción" name="description" value="<%=product.description%>" >
-        <% if (locals.errors && locals.errors.description) { %>
-            <p class="feedback"><%=errors.description.msg%> </p>
+        <input class="box-form" type="text" placeholder="Descripción" name="productDescriptionEdit" value="<%=product.description%>" >
+        <% if (locals.errors && locals.errors.productDescriptionEdit) { %>
+            <p class="feedback"><%=errors.productDescriptionEdit.msg%> </p>
             <% } %>
         
         <div>
-            <input type="file" id="files" name="productImages" class="hidden" value="<%=product.image%>" multiple/>
+            <input type="file" id="files" name="productImagesEdit" class="hidden" value="<%=product.images%>" multiple/>
             <label for="files">Seleccionar archivo
                 <i class="fa-solid fa-camera-rotate"></i>
             </label>
-            <% if (locals.errors && locals.errors.productImages) { %>
-                <p class="feedback"><%=errors.productImages.msg%> </p>
+            <% if (locals.errors && locals.errors.productImagesEdit) { %>
+                <p class="feedback"><%=errors.productImagesEdit.msg%> </p>
                 <% } %>
         </div>
 
-        <input class="box-form" type="text" placeholder="Talle del producto" name="size" value="<%=product.size%>" >
-        <% if (locals.errors && locals.errors.size) { %>
-            <p class="feedback"><%=errors.size.msg%> </p>
+        <input class="box-form" type="text" placeholder="Talle del producto" name="productSizeEdit" value="<%=product.size%>" >
+        <% if (locals.errors && locals.productSizeEdit.size) { %>
+            <p class="feedback"><%=errors.productSizeEdit.msg%> </p>
             <% } %>
 
-        <input class="box-form" type="text" name="category" placeholder="Categoría" value="<%=product.category%>" >
-        <% if (locals.errors && locals.errors.category) { %>
-            <p class="feedback"><%=errors.category.msg%> </p>
+        <input class="box-form" type="text" name="productCateogryEdit" placeholder="Categoría" value="<%=product.category%>" >
+        <% if (locals.errors && locals.errors.productCateogryEdit) { %>
+            <p class="feedback"><%=errors.productCateogryEdit.msg%> </p>
             <% } %>
 
-        <input class="box-form" type="text" placeholder="Precio original sin descuento" name="oldPrice" value="<%=product.oldPrice%>" >
-        <% if (locals.errors && locals.errors.oldPrice) { %>
-            <p class="feedback"><%=errors.oldPrice.msg%> </p>
+        <input class="box-form" type="text" placeholder="Precio original sin descuento" name="productOriginalPriceEdit" value="<%=product.originalPrice%>" >
+        <% if (locals.errors && locals.errors.productOriginalPriceEdit) { %>
+            <p class="feedback"><%=errors.productOriginalPriceEdit.msg%> </p>
             <% } %>
 
-        <input class="box-form" type="text" name="price" placeholder="Precio" value="<%=product.price%>" >
-        <% if (locals.errors && locals.errors.price) { %>
-            <p class="feedback"><%=errors.price.msg%> </p>
+        <input class="box-form" type="text" name="productDiscountPriceEdit" placeholder="Precio" value="<%=product.discountPrice%>" >
+        <% if (locals.errors && locals.errors.productDiscountPriceEdit) { %>
+            <p class="feedback"><%=errors.productDiscountPriceEdit.msg%> </p>
             <% } %>
         
         <!--Boton-->

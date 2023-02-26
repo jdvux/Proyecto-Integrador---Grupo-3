@@ -1,7 +1,7 @@
 [
   {
     "id": "1",
-    "firstName": "Antonella",
+    "name": "Antonella",
     "lastName": "Rodríguez",
     "email": "rodriguez.antonella.n@gmail.com",
     "password": "123456",
@@ -10,7 +10,7 @@
   },
   {
     "id": "2",
-    "firstName": "Luciano",
+    "name": "Luciano",
     "lastName": "Gauna",
     "email": "luciano.927@hotmail.com",
     "password": "123456",
@@ -19,7 +19,7 @@
   },
   {
     "id": "3",
-    "firstName": "Juan",
+    "name": "Juan",
     "lastName": "Noailles",
     "email": "jpnoailles@gmail.com",
     "password": "123456",
@@ -28,7 +28,7 @@
   },
   {
     "id": "4",
-    "firstName": "Juan",
+    "name": "Juan",
     "lastName": "Vergara",
     "email": "xxxx",
     "password": "123456",
@@ -37,7 +37,7 @@
   },
   {
     "id": "5",
-    "firstName": "Luis",
+    "name": "Luis",
     "lastName": "Feldman",
     "email": "luisfeldman89@hotmail.com",
     "password": "123456",

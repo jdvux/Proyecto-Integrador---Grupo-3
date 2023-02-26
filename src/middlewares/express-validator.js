@@ -1,99 +1,93 @@
 const { body } = require('express-validator');
 
-const validateRegister = [
-    body('name')
+const rules = [
+    body('nameRegister')
     .isAlpha().withMessage('El nombre sólo puede contener letras').bail()
     .isLength({ min: 2 }).withMessage('El nombre debe tener al menos dos caracteres'),
 
-    body('last-name')
+    body('lastNameRegister')
     .isAlpha().withMessage('El apellido sólo puede contener letras').bail()
     .isLength({ min: 2 }).withMessage('El apellido debe tener al menos dos caracteres'),
 
-    body('email')
+    body('emailRegister')
     .notEmpty().withMessage('Debes escribir tu correo electrónico').bail()
     .isEmail().withMessage('El del correo formato debe ser correo@correo.xxx'),
 
-    body('password')
+    body('passwordRegister')
     .isLength({ min: 8 }).withMessage('La contraseña debe contener al menos 8 caracteres').bail()
     .isAlphanumeric().withMessage('La contraseña debe contener al menos una letra y un número'),
 
-    body('terms-conditions')
-];
+    body('termsAndConditions'),
 
-const validateLogin = [
-    body('username')
+    body('passwordLogin')
     .isEmail().withMessage('Debes ingresar tu correo electrónico').bail(),
 
-    body('password')
-    .notEmpty().withMessage('Debes ingresar tu contraseña').bail()
-];
-
-const validateCreateProduct = [
-    body('name')
+    body('passwordLogin')
+    .notEmpty().withMessage('Debes ingresar tu contraseña').bail(),
+    
+    body('productNameCreate')
     .isLength({ min: 8 }).withMessage('El nombre debe tener al menos 8 caracteres'),
     
-    body('description')
+    body('productDescriptionCreate')
     .isLength({ min: 50 }).withMessage('La descripción debe tener al menos 50 caracteres'),
 
-    body('productImages')
-    .custom((productImages, { req }) => {
+    body('productImagesCreate')
+    .custom((productImagesCreate, { req }) => {
         if ((req.files).length < 1) return false;
         return true;
     }).withMessage("Debes subir al menos una imagen").bail()
 
-    .custom((productImages, { req }) => {
+    .custom((productImagesCreate, { req }) => {
         if (req.files.mimetype === 'image/jpeg' || 'image/jpeg' || 'image/jpg' || 'image/png' || 'image/gif') 
         { return true } else { return false }
     }).withMessage("Sólo puedes subir imágenes o GIFs"),
 
-    body('size')
+    body('productSizeCreate')
     .isNumeric().withMessage('El talle debe ser ingresado en números').bail()
     .isLength({ min: 2, max: 2 }).withMessage('El talle debe contener dos números'),
 
-    body('category')
+    body('productCateogryCreate')
     .isAlpha().withMessage('La categoría sólo debe contener letras').bail()
     .isLength({ min: 4 }).withMessage('El nombre de la categoría debe tener al menos 4 caracteres'),
 
-    body('oldPrice')
+    body('productOriginalPriceCreate')
     .notEmpty().withMessage('Debes ingresar el precio del producto').bail()
     .isNumeric().withMessage('El precio original debe estar expresado en números').bail()
     .isLength({ min: 5 }).withMessage('El precio original no puede ser menor a 10000'),
     
-    body('price')
+    body('productDiscountPriceCreate')
     .isNumeric().withMessage('El precio en descuento debe estar expresado en números').bail()
     .isLength({ min: 5 }).withMessage('El precio en descuento no puede ser menor a 10000').bail()
     .custom((price, { req }) => {
         if (price >= req.body.oldPrice) { return false };
     return true;
-    }).withMessage("El precio en descuento no puede ser mayor o igual al precio original")
-];
+    }).withMessage("El precio en descuento no puede ser mayor o igual al precio original"),
 
-const validateEditProduct = [
-    body('name')
+    body('productNameEdit')
     .isLength({ min: 2 }).withMessage('El nombre debe tener al menos dos caracteres'),
 
-    body('description')
+    body('productDescriptionEdit')
     .isLength({ min: 50 }).withMessage('La descripción debe tener al menos 50 caracteres'),
-    
-    body('size')
-    .isNumeric().withMessage('El talle debe ser ingresado en números')
-    .isLength({ min: 2, max: 2 }).withMessage('El talle debe contener dos números'),
 
-    body('productImages')
-    .custom((productImages, { req }) => {
+    body('productImagesEdit')
+    .custom((productImagesEdit, { req }) => {
         if (req.files.mimetype === 'image/jpeg' || 'image/jpeg' || 'image/jpg' || 'image/png' || 'image/gif') 
         { return true } else { return false };
     }).withMessage("Sólo puedes subir imágenes o GIFs"),
 
-    body('category')
+    body('productSizeEdit')
+    .isNumeric().withMessage('El talle debe ser ingresado en números')
+    .isLength({ min: 2, max: 2 }).withMessage('El talle debe contener dos números'),
+
+    body('productCateogryEdit')
     .isAlpha().withMessage('La categoría sólo debe contener letras').bail()
     .isLength({ min: 4 }).withMessage('El nombre de la categoría debe tener al menos 4 caracteres'),
 
-    body('oldPrice')
+    body('productOriginalPriceEdit')
     .isNumeric().withMessage('El precio original debe estar expresado en números').bail()
     .isLength({ min: 5 }).withMessage('El precio original no puede ser menor a 10000'),
     
-    body('price')
+    body('productDiscountPriceEdit')
     .isNumeric().withMessage('El precio en descuento debe estar expresado en números').bail()
     .isLength({ min: 5 }).withMessage('El precio en descuento no puede ser menor a 10000').bail()
     .custom((price, { req }) => {
@@ -102,7 +96,4 @@ const validateEditProduct = [
     }).withMessage("El precio en descuento no puede ser mayor o igual al precio original")
 ];
 
-module.exports = validateRegister;
-module.exports = validateLogin;
-module.exports = validateCreateProduct;
-module.exports = validateEditProduct;
+module.exports = rules;
