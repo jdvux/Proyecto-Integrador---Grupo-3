@@ -1,6 +1,6 @@
 const { body } = require('express-validator');
 
-const rules = [
+const rulesRegister = [
     body('nameRegister')
     .isAlpha().withMessage('El nombre sólo puede contener letras').bail()
     .isLength({ min: 2 }).withMessage('El nombre debe tener al menos dos caracteres'),
@@ -17,19 +17,23 @@ const rules = [
     .isLength({ min: 8 }).withMessage('La contraseña debe contener al menos 8 caracteres').bail()
     .isAlphanumeric().withMessage('La contraseña debe contener al menos una letra y un número'),
 
-    body('termsAndConditions'),
+    body('termsAndConditions')
+];
 
+const rulesLogin = [
     body('passwordLogin')
     .isEmail().withMessage('Debes ingresar tu correo electrónico').bail(),
 
     body('passwordLogin')
-    .notEmpty().withMessage('Debes ingresar tu contraseña').bail(),
-    
+    .notEmpty().withMessage('Debes ingresar tu contraseña').bail()
+];
+
+const rulesCreate = [
     body('productNameCreate')
     .isLength({ min: 8 }).withMessage('El nombre debe tener al menos 8 caracteres'),
     
     body('productDescriptionCreate')
-    .isLength({ min: 50 }).withMessage('La descripción debe tener al menos 50 caracteres'),
+    .isLength({ min: 10 }).withMessage('La descripción debe tener al menos 10 caracteres'),
 
     body('productImagesCreate')
     .custom((productImagesCreate, { req }) => {
@@ -61,13 +65,16 @@ const rules = [
     .custom((price, { req }) => {
         if (price >= req.body.oldPrice) { return false };
     return true;
-    }).withMessage("El precio en descuento no puede ser mayor o igual al precio original"),
+    }).withMessage("El precio en descuento no puede ser mayor o igual al precio original")
+];
+
+const rulesEdit = [
 
     body('productNameEdit')
     .isLength({ min: 2 }).withMessage('El nombre debe tener al menos dos caracteres'),
 
     body('productDescriptionEdit')
-    .isLength({ min: 50 }).withMessage('La descripción debe tener al menos 50 caracteres'),
+    .isLength({ min: 10 }).withMessage('La descripción debe tener al menos 10 caracteres'),
 
     body('productImagesEdit')
     .custom((productImagesEdit, { req }) => {
@@ -96,4 +103,4 @@ const rules = [
     }).withMessage("El precio en descuento no puede ser mayor o igual al precio original")
 ];
 
-module.exports = rules;
+module.exports = rulesCreate, rulesEdit, rulesLogin, rulesRegister;

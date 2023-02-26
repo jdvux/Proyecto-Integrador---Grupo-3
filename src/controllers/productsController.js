@@ -67,6 +67,15 @@ const productController = {
   update: (req, res) => {
     let id = req.params.id;
     let product = products.find(product => product.id === id);
+    let errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      console.log(errors);
+      return res.render('products/editProduct', {
+        product,
+        errors: errors.mapped(), 
+        old: req.body
+      });
+    };
 
     let images = [];
 
