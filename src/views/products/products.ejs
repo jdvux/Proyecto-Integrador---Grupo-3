@@ -29,7 +29,7 @@
                     <div class="article">
                         <a href="/products/<%=products[i].id%>"><img class="article-img" src="images/products/<%= products[i].images[1] %>" alt="<%= products[i].name %>"></a>
                         <p class="article-name"><%= products[i].name %></p>
-                        <p class="price">$<%= products[i].price %></p>
+                        <p class="price">$<%= products[i].discountPrice %></p>
                         
                         <div class="edit-and-delete">
                           <a class="article-a" href="/products/editProduct/<%= products[i].id %>"><button class="edit-button">Editar</button></a>
