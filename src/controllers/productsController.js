@@ -26,9 +26,10 @@ const productController = {
 
   store: (req, res) => {
     let errors = validationResult(req);
-    if(!errors.isEmpty()) {
+    if (!errors.isEmpty()) {
       return res.render('products/createProduct', {
-        errors: errors.mapped(), old: req.body
+        errors: errors.mapped(), 
+        old: req.body
       });
     };
 
@@ -36,7 +37,9 @@ const productController = {
     let images = [];
 
     if (req.files) {
-      req.files.forEach(file=>{images.push("/products/" + file.filename)});
+      req.files.forEach(file => {
+        images.push(file.filename)
+      });
     };
 
     let newProduct = {
@@ -46,8 +49,8 @@ const productController = {
       "images": images,
       "size": req.body.size,
       "category": req.body.category,
-      "originalPrice": req.body.oldPrice,
-      "discountPrice": req.body.price
+      "originalPrice": req.body.originalPrice,
+      "discountPrice": req.body.discountPrice
     };
   
     products.push(newProduct);
@@ -62,21 +65,21 @@ const productController = {
   },
   
   update: (req, res) => {
-    let id = req.params.id;
-    let product = products.find(product => product.id === id);
-    let images = [];
-
     let errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.render('products/editProduct', {
         product,
-        errors: errors.mapped(), 
+        errors: errors.mapped(),
         old: req.body
       });
     };
 
-    products.forEach((product, index) => {
-      if (product.id == id){
+    let id = req.params.id;
+    let product = products.find(product => product.id === id);
+    let images = [];
+
+    products.forEach(product => {
+      if (product.id == id) {
       product.name = req.body.name;
       product.description = req.body.description;
       product.size = req.body.size;
@@ -84,8 +87,10 @@ const productController = {
       product.originalPrice = req.body.originalPrice;
       product.discountPrice = req.body.discountPrice;
       if((req.files).length > 0) {
-        req.files.forEach(file=>{images.push(file.filename)})
-        product.images = images 
+        req.files.forEach(file => {
+          images.push(file.filename) 
+        });
+      product.images = images;
       };
     }
   });
@@ -113,27 +118,5 @@ destroyProduct: (req, res) => {
     res.redirect('/products');
   }
 }
-  
-  // delete: (req, res) => {
-  //   res.render('products/delete')
-  // },
-
-  // remove: (req, res) => {},
-  
-  // Aquí va la antigua propiedad que quedó comentada:
-  // productForm: (req, res) => {
-  //     res.render('productForm')
-  // },
-  
-  
-  // detail: (req, res) => {
-  //   let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-  //   const id = req.params.id;
-  
-  //   let product = products.find(product => product.id == id);
-  
-  //   res.render('products/productDetailtest', { product });
-  // },
-
 
 module.exports = productController;
