@@ -49,8 +49,8 @@ const productController = {
       "images": images,
       "size": req.body.productSizeCreate,
       "category": req.body.productCategoryCreate,
-      "originalPrice": req.body.originalPriceCreate,
-      "discountPrice": req.body.discountPriceCreate
+      "originalPrice": req.body.productOriginalPriceCreate,
+      "discountPrice": req.body.productDiscountPriceCreate
     };
   
     products.push(newProduct);
@@ -67,14 +67,6 @@ const productController = {
   update: (req, res) => {
     let id = req.params.id;
     let product = products.find(product => product.id === id);
-    let errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.render('products/editProduct', {
-        product,
-        errors: errors.mapped(),
-        old: req.body
-      });
-    };
 
     let images = [];
 
@@ -84,8 +76,8 @@ const productController = {
       product.description = req.body.productDescriptionEdit;
       product.size = req.body.productSizeEdit;
       product.category = req.body.productCateogryEdit;
-      product.originalPrice = req.body.originalPriceEdit;
-      product.discountPrice = req.body.discountPriceEdit;
+      product.originalPrice = req.body.productOriginalPriceEdit;
+      product.discountPrice = req.body.productDiscountPriceEdit;
       if ((req.files).length > 0) {
         req.files.forEach(file => {
           images.push(file.filename);
