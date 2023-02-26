@@ -42,8 +42,8 @@
 
                         <a class="article-a" href="/products/<%= products[i].id %>">Ver más</a>
                         <a class="article-a" href="/products/<%= products[i].id %>/edit">Editar</a>
-                        <a class="article-a" href="/products/<%= products[i].id %>/delete">Eliminar</a>
-
+                        <form class="article-a" action="/products/<%= products[i].id %>?_method=DELETE" method="POST">
+                          <button type="submit">Eliminar</button></form> 
                     </div>
                 <% } %>  
         </div>

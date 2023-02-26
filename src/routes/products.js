@@ -22,6 +22,8 @@ router.get('/:id/edit', productController.editProductForm);
 //Edita un producto
 router.put('/:id', productController.edit)
 
+router.delete('/:id', productController.delete)
+
 // Aquí va la ruta antigua que quedó comentada:
 
 

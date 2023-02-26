@@ -1,18 +1,7 @@
 [
  {
-  "id": "1",
-  "name": "Forum 8X",
-  "description": "Zapatillas versatil para todos los dias",
-  "image": [
-   "adidas-forum.jpg"
-  ],
-  "category": "Originals",
-  "size": "40",
-  "price": "35.000"
- },
- {
   "id": "2",
-  "name": "NMDV3",
+  "name": "NMDV187",
   "description": "Calzado cómodo con suela anti-impacto.",
   "image": [
    "Adidas-NMDV3.avif"

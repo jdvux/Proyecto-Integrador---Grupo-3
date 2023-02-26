@@ -64,7 +64,6 @@ const productController = {
             let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
             const id = req.params.id
 
-            
             products.forEach((product, index) => {
                 if (product.id == id) {
                     console.log("producto viejo",product);
@@ -82,8 +81,17 @@ const productController = {
             fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
 
             res.redirect('/products');
+        },
+        delete: (req, res) => {
+            let id = req.params.id;
+            let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
+            
+            let newProducts = products.filter(product => product.id !== id)
+
+            fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
+
+            res.redirect('/products');
         }
-    
 }
 
 module.exports = productController;
