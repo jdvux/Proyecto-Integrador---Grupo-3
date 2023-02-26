@@ -44,13 +44,13 @@ const productController = {
 
     let newProduct = {
       "id": date.toString(),
-      "name": req.body.name,
-      "description": req.body.description,
+      "name": req.body.productNameCreate,
+      "description": req.body.productDescriptionCreate,
       "images": images,
-      "size": req.body.size,
-      "category": req.body.category,
-      "originalPrice": req.body.originalPrice,
-      "discountPrice": req.body.discountPrice
+      "size": req.body.productSizeCreate,
+      "category": req.body.productCategoryCreate,
+      "originalPrice": req.body.originalPriceCreate,
+      "discountPrice": req.body.discountPriceCreate
     };
   
     products.push(newProduct);
@@ -67,7 +67,6 @@ const productController = {
   update: (req, res) => {
     let id = req.params.id;
     let product = products.find(product => product.id === id);
-
     let errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.render('products/editProduct', {
@@ -81,15 +80,15 @@ const productController = {
 
     products.forEach(product => {
       if (product.id == id) {
-      product.name = req.body.name;
-      product.description = req.body.description;
-      product.size = req.body.size;
-      product.category = req.body.category;
-      product.originalPrice = req.body.originalPrice;
-      product.discountPrice = req.body.discountPrice;
+      product.name = req.body.productNameEdit;
+      product.description = req.body.productDescriptionEdit;
+      product.size = req.body.productSizeEdit;
+      product.category = req.body.productCateogryEdit;
+      product.originalPrice = req.body.originalPriceEdit;
+      product.discountPrice = req.body.discountPriceEdit;
       if ((req.files).length > 0) {
         req.files.forEach(file => {
-          images.push(file.filename) 
+          images.push(file.filename);
         });
       product.images = images;
       };
