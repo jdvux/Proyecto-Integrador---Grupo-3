@@ -34,6 +34,7 @@ const userValidations = (req, res, next) => {
         body("passwordLogin")
             .notEmpty().withMessage("Debes ingresar tu contraseña").bail()
     }
+    next();
 }
 
 const productValidations = (req, res, next) => {
@@ -136,6 +137,7 @@ const productValidations = (req, res, next) => {
                 return true;
             }).withMessage("El precio en descuento no puede ser mayor o igual al precio original")  
     }
+    next();
 }
 
 module.exports = userValidations;
