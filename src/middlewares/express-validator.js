@@ -2,105 +2,109 @@ const { body } = require("express-validator");
 
 const validations = function(req, res, next) {
     switch (req.params.action) {
-        case "":
-            body("nameRegister")
-            .isAlpha().withMessage("El nombre sólo puede contener letras").bail()
-            .isLength({ min: 2 }).withMessage("El nombre debe tener al menos dos caracteres"),
+        case "/users/register/:id":
+            return [
+                body("nameRegister")
+                .isAlpha().withMessage("El nombre sólo puede contener letras").bail()
+                .isLength({ min: 2 }).withMessage("El nombre debe tener al menos dos caracteres"),
 
-            body("lastNameRegister")
-            .isAlpha().withMessage("El apellido sólo puede contener letras").bail()
-            .isLength({ min: 2 }).withMessage("El apellido debe tener al menos dos caracteres"),
+                body("lastNameRegister")
+                .isAlpha().withMessage("El apellido sólo puede contener letras").bail()
+                .isLength({ min: 2 }).withMessage("El apellido debe tener al menos dos caracteres"),
 
-            body("emailRegister")
-            .notEmpty().withMessage("Debes escribir tu correo electrónico").bail()
-            .isEmail().withMessage("El del correo formato debe ser correo@correo.xxx"),
+                body("emailRegister")
+                .notEmpty().withMessage("Debes escribir tu correo electrónico").bail()
+                .isEmail().withMessage("El del correo formato debe ser correo@correo.xxx"),
 
-            body("passwordRegister")
-            .isLength({ min: 8 }).withMessage("La contraseña debe contener al menos 8 caracteres").bail()
-            .isAlphanumeric().withMessage("La contraseña debe contener al menos una letra y un número")
-        break;
+                body("passwordRegister")
+                .isLength({ min: 8 }).withMessage("La contraseña debe contener al menos 8 caracteres").bail()
+                .isAlphanumeric().withMessage("La contraseña debe contener al menos una letra y un número")
+            ];
 
-        case "":
-            body("passwordLogin")
-            .isEmail().withMessage("Debes ingresar tu correo electrónico").bail(),
+        case "/users/login/:id":
+            return [
+                body("passwordLogin")
+                .isEmail().withMessage("Debes ingresar tu correo electrónico").bail(),
 
-            body("passwordLogin")
-            .notEmpty().withMessage("Debes ingresar tu contraseña").bail()
-        break;
+                body("passwordLogin")
+                .notEmpty().withMessage("Debes ingresar tu contraseña").bail()
+            ];
 
-        case "":
-            body("productNameCreate")
-            .isLength({ min: 8 }).withMessage("El nombre debe tener al menos 8 caracteres"),
+        case "/products/createProduct/":
+            return [
+                body("productNameCreate")
+                .isLength({ min: 8 }).withMessage("El nombre debe tener al menos 8 caracteres"),
 
-            body("productDescriptionCreate")
-            .isLength({ min: 10 }).withMessage("La descripción debe tener al menos 10 caracteres"),
+                body("productDescriptionCreate")
+                .isLength({ min: 10 }).withMessage("La descripción debe tener al menos 10 caracteres"),
 
-            body("productImagesCreate")
-            .custom((productImagesCreate, { req }) => {
-                if (req.files.length < 1) return false;
-                return true;
-            }).withMessage("Debes subir al menos una imagen").bail()
+                body("productImagesCreate")
+                .custom((productImagesCreate, { req }) => {
+                    if (req.files.length < 1) return false;
+                    return true;
+                }).withMessage("Debes subir al menos una imagen").bail()
 
-            .custom((productImagesCreate, { req }) => {
-                if (req.files.mimetype === "image/jpeg" || "image/jpeg" || "image/jpg" || "image/png" || "image/gif") 
-                { return true } else { return false };
-            }).withMessage("Sólo puedes subir imágenes o GIFs"),
+                .custom((productImagesCreate, { req }) => {
+                    if (req.files.mimetype === "image/jpeg" || "image/jpeg" || "image/jpg" || "image/png" || "image/gif") 
+                    { return true } else { return false };
+                }).withMessage("Sólo puedes subir imágenes o GIFs"),
 
-            body("productSizeCreate")
-            .isNumeric().withMessage("El talle debe ser ingresado en números").bail()
-            .isLength({ min: 2, max: 2 }).withMessage("El talle debe contener dos números"),
+                body("productSizeCreate")
+                .isNumeric().withMessage("El talle debe ser ingresado en números").bail()
+                .isLength({ min: 2, max: 2 }).withMessage("El talle debe contener dos números"),
 
-            body("productCateogryCreate")
-            .isAlpha().withMessage("La categoría sólo debe contener letras").bail()
-            .isLength({ min: 4 }).withMessage("El nombre de la categoría debe tener al menos 4 caracteres"),
+                body("productCateogryCreate")
+                .isAlpha().withMessage("La categoría sólo debe contener letras").bail()
+                .isLength({ min: 4 }).withMessage("El nombre de la categoría debe tener al menos 4 caracteres"),
 
-            body("productOriginalPriceCreate")
-            .notEmpty().withMessage("Debes ingresar el precio del producto").bail()
-            .isNumeric().withMessage("El precio original debe estar expresado en números").bail()
-            .isLength({ min: 5 }).withMessage("El precio original no puede ser menor a 10000"),
+                body("productOriginalPriceCreate")
+                .notEmpty().withMessage("Debes ingresar el precio del producto").bail()
+                .isNumeric().withMessage("El precio original debe estar expresado en números").bail()
+                .isLength({ min: 5 }).withMessage("El precio original no puede ser menor a 10000"),
 
-            body("productDiscountPriceCreate")
-            .isNumeric().withMessage("El precio en descuento debe estar expresado en números").bail()
-            .isLength({ min: 5 }).withMessage("El precio en descuento no puede ser menor a 10000").bail()
-            .custom((price, { req }) => {
-                if (price >= req.body.oldPrice) { return false };
-                return true;
-            }).withMessage("El precio en descuento no puede ser mayor o igual al precio original")
-        break;
+                body("productDiscountPriceCreate")
+                .isNumeric().withMessage("El precio en descuento debe estar expresado en números").bail()
+                .isLength({ min: 5 }).withMessage("El precio en descuento no puede ser menor a 10000").bail()
+                .custom((price, { req }) => {
+                    if (price >= req.body.oldPrice) { return false };
+                    return true;
+                }).withMessage("El precio en descuento no puede ser mayor o igual al precio original")
+            ];
         
-        case "":
-            body("productNameEdit")
-            .isLength({ min: 2 }).withMessage("El nombre debe tener al menos dos caracteres"),
+        case "/products/editProduct/product.id?_method=PUT":
+            return [
+                body("productNameEdit")
+                .isLength({ min: 2 }).withMessage("El nombre debe tener al menos dos caracteres"),
 
-            body("productDescriptionEdit")
-            .isLength({ min: 10 }).withMessage("La descripción debe tener al menos 10 caracteres"),
+                body("productDescriptionEdit")
+                .isLength({ min: 10 }).withMessage("La descripción debe tener al menos 10 caracteres"),
 
-            body("productImagesEdit")
-            .custom((productImagesEdit, { req }) => {
-                if (req.files.mimetype === "image/jpeg" || "image/jpeg" || "image/jpg" || "image/png" || "image/gif") 
-                { return true } else { return false };
-            }).withMessage("Sólo puedes subir imágenes o GIFs"),
+                body("productImagesEdit")
+                .custom((productImagesEdit, { req }) => {
+                    if (req.files.mimetype === "image/jpeg" || "image/jpeg" || "image/jpg" || "image/png" || "image/gif") 
+                    { return true } else { return false };
+                }).withMessage("Sólo puedes subir imágenes o GIFs"),
 
-            body("productSizeEdit")
-            .isNumeric().withMessage("El talle debe ser ingresado en números")
-            .isLength({ min: 2, max: 2 }).withMessage("El talle debe contener dos números"),
+                body("productSizeEdit")
+                .isNumeric().withMessage("El talle debe ser ingresado en números")
+                .isLength({ min: 2, max: 2 }).withMessage("El talle debe contener dos números"),
 
-            body("productCateogryEdit")
-            .isAlpha().withMessage("La categoría sólo debe contener letras").bail()
-            .isLength({ min: 4 }).withMessage("El nombre de la categoría debe tener al menos 4 caracteres"),
+                body("productCateogryEdit")
+                .isAlpha().withMessage("La categoría sólo debe contener letras").bail()
+                .isLength({ min: 4 }).withMessage("El nombre de la categoría debe tener al menos 4 caracteres"),
 
-            body("productOriginalPriceEdit")
-            .isNumeric().withMessage("El precio original debe estar expresado en números").bail()
-            .isLength({ min: 5 }).withMessage("El precio original no puede ser menor a 10000"),
+                body("productOriginalPriceEdit")
+                .isNumeric().withMessage("El precio original debe estar expresado en números").bail()
+                .isLength({ min: 5 }).withMessage("El precio original no puede ser menor a 10000"),
 
-            body("productDiscountPriceEdit")
-            .isNumeric().withMessage("El precio en descuento debe estar expresado en números").bail()
-            .isLength({ min: 5 }).withMessage("El precio en descuento no puede ser menor a 10000").bail()
-            .custom((price, { req }) => {
-                if (price >= req.body.oldPrice) { return false };
-                return true;
-            }).withMessage("El precio en descuento no puede ser mayor o igual al precio original")
-        break;
+                body("productDiscountPriceEdit")
+                .isNumeric().withMessage("El precio en descuento debe estar expresado en números").bail()
+                .isLength({ min: 5 }).withMessage("El precio en descuento no puede ser menor a 10000").bail()
+                .custom((price, { req }) => {
+                    if (price >= req.body.oldPrice) { return false };
+                    return true;
+                }).withMessage("El precio en descuento no puede ser mayor o igual al precio original")
+            ];
 
         default: "Nada que validar";
   }
