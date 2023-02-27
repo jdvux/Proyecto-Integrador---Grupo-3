@@ -27,11 +27,11 @@ const upload = multer({ storage: storage }).fields([
     maxCount: 1
   },
   {
-    name: "productCateogryCreate",
+    name: "productImagesCreate",
     maxCount: 8
   },
   {
-    name: "productCateogryEdit",
+    name: "productImagesEdit",
     maxCount: 8
   }
 ]);
