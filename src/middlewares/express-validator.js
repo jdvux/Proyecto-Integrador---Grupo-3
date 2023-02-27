@@ -1,6 +1,6 @@
 const { body } = require("express-validator");
 
-const validations = function() {
+const validations = function(req, res, next) {
     switch (req.params.action) {
         case "":
             body("nameRegister")
@@ -104,6 +104,7 @@ const validations = function() {
 
         default: "Nada que validar";
   }
+  next();
 }
 
 module.exports = validations;
