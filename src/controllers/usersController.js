@@ -5,19 +5,11 @@ const usersFilePath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8')); 
 
 const usersController = {
-
     registerView: (req, res) => {
         res.render('users/register');
     },
 
     processRegister: (req, res) => {
-        let errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            return res.render('users/register', { 
-                errors: errors.mapped(), old: req.body 
-            });
-        }
-
         let date = Date.now();
         let newUser = {
         "id": date.toString(),

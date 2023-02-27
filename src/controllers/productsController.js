@@ -4,7 +4,7 @@ const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const { validationResult } = require('express-validator');
 
-const productController = {
+const productsController = {
   products: (req, res) => {  
     res.render('products/products', { products });
   },
@@ -120,4 +120,4 @@ destroyProduct: (req, res) => {
   }
 }
 
-module.exports = productController;
+module.exports = productsController;

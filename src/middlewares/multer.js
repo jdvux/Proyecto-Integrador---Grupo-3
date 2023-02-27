@@ -3,7 +3,7 @@ const path = require('path');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      if (file.fieldname === "productCateogryCreate" || file.fieldname === "productCateogryEdit") {
+      if (file.fieldname === "productImagesCreate" || file.fieldname === "productImagesEdit") {
         cb(null, path.join(__dirname, '../../public/images/products'));
       } else if (file.fieldname === "avatar") {
         cb(null, path.join(__dirname, '../../public/images/users'));
@@ -12,7 +12,7 @@ const storage = multer.diskStorage({
 
     filename: function (req, file, cb) {
       let name;
-      if (file.fieldname === "productCateogryCreate" || file.fieldname === "productCateogryEdit") {
+      if (file.fieldname === "productImagesCreate" || file.fieldname === "productImagesEdit") {
         name = 'productImages' + Date.now() + path.extname(file.originalname);
       } else if (file.fieldname === "avatar") {
         name = 'usersImages' + Date.now() + path.extname(file.originalname);

@@ -1,22 +1,23 @@
 const express = require ('express');
 const router = express.Router();
 const upload = require('../middlewares/multer');
-const productValidations = require('../middlewares/express-validator');
-const productController = require('../controllers/productsController');
+const createValidations = require('../middlewares/express-validator');
+const editValidations = require('../middlewares/express-validator');
+const productsController = require('../controllers/productsController');
 
-router.get('/productCart', productController.productCart);
+router.get('/productCart', productsController.productCart);
 
-router.get('/createProduct', productController.create);
-router.post('/createProduct', upload, productValidations, productController.store);
+router.get('/createProduct', productsController.create);
+router.post('/createProduct', upload, createValidations, productsController.store);
 
-router.get('/editProduct/:id', productController.edit);
-router.put('/editProduct/:id', upload, productValidations, productController.update);
+router.get('/editProduct/:id', productsController.edit);
+router.put('/editProduct/:id', upload, editValidations, productsController.update);
 
-router.get('/deleteProduct/:id', productController.deleteProduct);
-router.delete('/deleteProduct/:id', productController.destroyProduct);
+router.get('/deleteProduct/:id', productsController.deleteProduct);
+router.delete('/deleteProduct/:id', productsController.destroyProduct);
 
-router.get('/', productController.products);
-router.get('/:id', productController.productDetail);
+router.get('/', productsController.products);
+router.get('/:id', productsController.productDetail);
 
-module.exports = router
+module.exports = router;
 
