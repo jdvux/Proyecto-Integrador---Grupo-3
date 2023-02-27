@@ -36,7 +36,7 @@ const productController = {
     let date = Date.now();
     let images = [];
 
-    if (req.files) {
+    if ((req.files).length > 0) {
       req.files.forEach(file => {
         images.push(file.filename)
       });
