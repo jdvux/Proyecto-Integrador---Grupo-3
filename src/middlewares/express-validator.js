@@ -1,6 +1,7 @@
 const { body } = require("express-validator");
 
-const validations = function(req, res, next) {
+const validations = (req, res, next) => {
+    console.log("validating...");
     switch (req.params.action) {
         case "/users/register/:id":
             return [
