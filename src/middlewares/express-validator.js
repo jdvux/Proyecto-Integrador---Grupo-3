@@ -107,7 +107,7 @@ const validations = (req, res, next) => {
                 }).withMessage("El precio en descuento no puede ser mayor o igual al precio original")
             ];
 
-        default: "Nada que validar";
+        default: console.log("Nada que validar");
   }
   next();
 }
