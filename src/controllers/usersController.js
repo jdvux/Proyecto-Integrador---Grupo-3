@@ -11,6 +11,7 @@ const usersController = {
 
     processRegister: (req, res) => {
         let date = Date.now();
+        
         let newUser = {
         "id": date.toString(),
         "name": req.body.nameRegister,

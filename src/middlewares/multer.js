@@ -21,7 +21,16 @@ const storage = multer.diskStorage({
     }
   });
 
-const upload = multer({ storage: storage }).fields([
+const upload = multer({ 
+  storage,
+  fileFilter: function (req, file, cb) {
+    let mimetype = file.mimetype;
+        if (mimetype !== 'image/png' || mimetype !== 'image/jpg' || mimetype !== 'image/gif' || mimetype !== 'image/jpeg' || mimetype !== 'image/avif') {
+            return cb(new Error('Sólo puedes subir imágenes'), false);
+        }
+        callback(null, true);
+  }
+}).fields([
   {
     name: "avatar",
     maxCount: 1

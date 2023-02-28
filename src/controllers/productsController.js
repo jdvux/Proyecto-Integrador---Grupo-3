@@ -26,7 +26,6 @@ const productsController = {
 
   store: (req, res) => {
     let errors = validationResult(req);
-    console.log(errors);
     if (!errors.isEmpty()) {
       return res.render('products/createProduct', {
         errors: errors.mapped(), 
@@ -96,9 +95,9 @@ const productsController = {
       };
     }
   });
-      
-    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-    res.redirect('/products');
+  
+  fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+  res.redirect('/products');
   },
 
   deleteProduct: (req, res) => {
