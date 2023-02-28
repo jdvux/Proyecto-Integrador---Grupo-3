@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
-const { validationResult } = require('express-validator');
 const usersFilePath = path.join(__dirname, '../data/users.json');
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8')); 
+const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+const { validationResult } = require('express-validator');
 
 const usersController = {
     registerView: (req, res) => {
@@ -10,6 +10,14 @@ const usersController = {
     },
 
     processRegister: (req, res) => {
+        let errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.render('users/register', {
+                errors: errors.mapped(), 
+                old: req.body
+            });
+        };
+        
         let date = Date.now();
         
         let newUser = {

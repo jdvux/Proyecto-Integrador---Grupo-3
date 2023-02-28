@@ -23,22 +23,22 @@
         <h1 class="titulo">Registrarse</h1>
         
         <!--datos que se piden para el registro en cajas-------->
-        <input class="box-form" type="text" placeholder="Nombre" name="nameRegister" value="<%= locals.old && old.nameRegister %>" required >
+        <input class="box-form" type="text" placeholder="Nombre" name="nameRegister" value="<%= locals.old && old.nameRegister %>" >
         <% if (locals.errors && locals.errors.nameRegister) { %>
             <p class="feedback"><%= errors.nameRegister.msg%> </p>
             <% } %>
 
-        <input class="box-form" type="text" placeholder="Apellido" name="lastNameRegister" value="<%= locals.old && old.lastNameRegister %>" required >
+        <input class="box-form" type="text" placeholder="Apellido" name="lastNameRegister" value="<%= locals.old && old.lastNameRegister %>" >
         <% if (locals.errors && locals.errors.lastNameRegister) { %>
             <p class="feedback"><%= errors.lastNameRegister.msg%> </p>
             <% } %>
 
-        <input class="box-form" type="email" placeholder="Correo electrónico" name="emailRegister" value="<%= locals.old && old.emailRegister %>" required >
+        <input class="box-form" type="email" placeholder="Correo electrónico" name="emailRegister" value="<%= locals.old && old.emailRegister %>" >
         <% if (locals.errors && locals.errors.emailRegister) { %>
             <p class="feedback"><%= errors.emailRegister.msg%> </p>
             <% } %>
 
-        <input class="box-form" type="password" placeholder="Contraseña" name="passwordRegister" value="<%= locals.old && old.passwordRegister %>" required >
+        <input class="box-form" type="password" placeholder="Contraseña" name="passwordRegister" value="<%= locals.old && old.passwordRegister %>" >
         <% if (locals.errors && locals.errors.passwordRegister) { %>
             <p class="feedback"><%=errors.passwordRegister.msg%> </p>
             <% } %>
