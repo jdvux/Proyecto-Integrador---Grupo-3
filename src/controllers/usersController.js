@@ -6,7 +6,7 @@ const { validationResult } = require('express-validator');
 
 const usersController = {
     registerView: (req, res) => {
-        res.render('users/register');
+        res.render('/register');
     },
 
     processRegister: (req, res) => {
@@ -32,11 +32,11 @@ const usersController = {
   
     users.push(newUser);
     fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
-    res.redirect("users/login");
+    res.redirect("/login");
     },
 
     loginView: (req, res) => {
-        res.render('users/login');
+        res.render('/login');
     },
 
     processLogin: (req, res) => {
@@ -57,13 +57,13 @@ const usersController = {
                     {maxAge: 1000 * 60 * 60 * 24 }
                 )
             }
-            res.redirect('/profile/:name', { user }) 
+            res.redirect('/profile/', { user }) 
         }
     },  
 
     profileView: (req, res) => {
         let user = req.session.userLogged;
-        res.render('users/profile/:name', { user });
+        res.render('/profile/', { user });
     },
 
     profileChanges: (req, res) => {
