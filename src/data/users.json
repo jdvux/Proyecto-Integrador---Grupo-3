@@ -4,7 +4,7 @@
     "name": "Antonella",
     "lastName": "Rodríguez",
     "email": "rodriguez.antonella.n@gmail.com",
-    "password": "123456",
+    "password": "123456ab",
     "type": "Admin",
     "avatar": "admin-profile.png"
   },
@@ -13,7 +13,7 @@
     "name": "Luciano",
     "lastName": "Gauna",
     "email": "luciano.927@hotmail.com",
-    "password": "123456",
+    "password": "123456ab",
     "type": "Admin",
     "avatar": "admin-profile.png"
   },
@@ -22,7 +22,7 @@
     "name": "Juan",
     "lastName": "Noailles",
     "email": "jpnoailles@gmail.com",
-    "password": "123456",
+    "password": "123456ab",
     "type": "Admin",
     "avatar": "/admin-profile.png"
   },
@@ -31,7 +31,7 @@
     "name": "Juan",
     "lastName": "Vergara",
     "email": "xxxx",
-    "password": "123456",
+    "password": "123456ab",
     "type": "Admin",
     "avatar": "/admin-profile.png"
   },
@@ -40,7 +40,7 @@
     "name": "Luis",
     "lastName": "Feldman",
     "email": "luisfeldman89@hotmail.com",
-    "password": "123456",
+    "password": "123456ab",
     "type": "Admin",
     "avatar": "admin-profile.png"
   }

@@ -1,7 +1,7 @@
 const { body } = require('express-validator');
 
 const loginValidations = [
-    body("passwordLogin")
+    body("emailLogin")
         .isEmail().withMessage("Debes ingresar tu correo electrónico").bail(),
 
     body("passwordLogin")

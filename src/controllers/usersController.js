@@ -46,17 +46,34 @@ const usersController = {
                 errors: errors.mapped(), old: req.body 
             });
         }
+        
+        let user = users.find(user => user.email == req.body.email);
+        if (user) {
+            req.session.userLogged = user;
+            if(req.body.remember) {
+                res.cookie(
+                    'userLogged',
+                    user,
+                    {maxAge: 1000 * 60 * 60 * 24 }
+                )
+            }
+            res.redirect('/profile/:name', { user }) 
+        }
     },  
 
     profileView: (req, res) => {
-        let id = req.params.id;
-        let user = users.find(user => user.id === id);
-    
-        res.render('users/profile', {user});
+        let user = req.session.userLogged;
+        res.render('users/profile/:name', { user });
     },
 
     profileChanges: (req, res) => {
 
+    },
+
+    processLogout: (req, res) => {
+        req.session.destroy();
+        res.clearCookie('userLogged');
+        return res.redirect('/');
     }
 };
 

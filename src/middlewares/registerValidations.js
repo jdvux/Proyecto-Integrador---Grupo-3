@@ -2,12 +2,12 @@ const { body } = require('express-validator');
 
 const registerValidations = [
     body("nameRegister")
-        .isAlpha().withMessage("El nombre sólo puede contener letras").bail()
-        .isLength({ min: 2 }).withMessage("El nombre debe tener al menos dos caracteres"),
+        .isLength({ min: 2 }).withMessage("El nombre debe tener al menos dos caracteres").bail()
+        .isAlpha().withMessage("El nombre sólo puede contener letras"),
     
     body("lastNameRegister")
-        .isAlpha().withMessage("El apellido sólo puede contener letras").bail()
-        .isLength({ min: 2 }).withMessage("El apellido debe tener al menos dos caracteres"),
+        .isLength({ min: 2 }).withMessage("El apellido debe tener al menos dos caracteres").bail()
+        .isAlpha().withMessage("El apellido sólo puede contener letras"),
 
     body("emailRegister")
         .notEmpty().withMessage("Debes escribir tu correo electrónico").bail()
