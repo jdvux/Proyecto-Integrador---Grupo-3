@@ -26,6 +26,7 @@ const productsController = {
 
   store: (req, res) => {
     let errors = validationResult(req);
+    console.log(errors);
     if (!errors.isEmpty()) {
       return res.render('products/createProduct', {
         errors: errors.mapped(), 
