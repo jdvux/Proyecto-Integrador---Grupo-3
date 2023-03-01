@@ -13,7 +13,7 @@ const usersController = {
     processRegister: (req, res) => {
         let errors = validationResult(req);
         if (!errors.isEmpty()) {
-            return res.render('users/register', {
+            return res.render('/register', {
                 errors: errors.mapped(), 
                 old: req.body
             });
@@ -33,7 +33,7 @@ const usersController = {
   
     users.push(newUser);
     fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
-    res.redirect("/login");
+    res.redirect('/login');
     },
 
     loginView: (req, res) => {
@@ -43,7 +43,7 @@ const usersController = {
     processLogin: (req, res) => {
         let errors = validationResult(req);
         if (!errors.isEmpty()) {
-            return res.render('users/login', { 
+            return res.render('/login', { 
                 errors: errors.mapped(), old: req.body 
             });
         }
@@ -60,13 +60,13 @@ const usersController = {
                 req.body.email,
                 { maxAge : 1000 * 60 * 60 * 24 });
             }
-        return res.redirect('/profile/', { user }) 
+        return res.redirect('/profile', { user }) 
         }
     },  
 
     profileView: (req, res) => {
         let user = req.session.userLogged;
-        res.render('/profile/', { user });
+        res.render('/profile', { user });
     },
 
     profileChanges: (req, res) => {
