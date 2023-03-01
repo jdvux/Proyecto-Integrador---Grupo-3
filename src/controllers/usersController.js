@@ -3,6 +3,7 @@ const path = require('path');
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const { validationResult } = require('express-validator');
+const bcryptjs = require('bcryptjs');
 
 const usersController = {
     registerView: (req, res) => {
@@ -48,16 +49,16 @@ const usersController = {
         }
         
         let user = users.find(user => user.email == req.body.email);
-        if (user) {
-            req.session.userLogged = user;
-            if(req.body.remember) {
-                res.cookie(
-                    'userLogged',
-                    user,
-                    {maxAge: 1000 * 60 * 60 * 24 }
-                )
-            }
-            res.redirect('/profile/', { user }) 
+        let comparePasswords = bcryptjs.compareSync( req.body.password, user.password);
+            if (comparePasswords) {
+                delete user.password;
+                req.session.userLogged = user;
+                if (req.body.remember) {
+                    res.cookie('userLogged', 
+                    req.body.email,
+                    { maxAge : 1000 * 60 * 60 * 24 });
+                }
+           return res.redirect('/profile/', { user }) 
         }
     },  
 
