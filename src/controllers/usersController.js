@@ -49,16 +49,18 @@ const usersController = {
         }
         
         let user = users.find(user => user.email == req.body.email);
-        let comparePasswords = bcryptjs.compareSync( req.body.password, user.password);
-            if (comparePasswords) {
-                delete user.password;
-                req.session.userLogged = user;
-                if (req.body.remember) {
-                    res.cookie('userLogged', 
-                    req.body.email,
-                    { maxAge : 1000 * 60 * 60 * 24 });
-                }
-           return res.redirect('/profile/', { user }) 
+        let encryptedPassword = bcryptjs.hashSync(req.body.password, 12);
+        let comparePasswords = bcryptjs.compareSync(req.body.password, encryptedPassword);
+        
+        if (comparePasswords) {
+            delete user.password;
+            req.session.userLogged = user;
+            if (req.body.remember) {
+                res.cookie('userLogged', 
+                req.body.email,
+                { maxAge : 1000 * 60 * 60 * 24 });
+            }
+        return res.redirect('/profile/', { user }) 
         }
     },  
 
