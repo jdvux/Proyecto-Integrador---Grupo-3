@@ -28,12 +28,12 @@
         <h1 class="product-form-title">Añadir Producto</h1>
 
         <!--datos que se piden para el registro en cajas-------->
-        <input class="box-form" type="text" placeholder="Nombre del producto" name="productNameCreate" >
+        <input class="box-form" type="text" placeholder="Nombre del producto" name="productNameCreate" value="<%=locals.old && locals.old.productNameCreate%>" >
         <% if (locals.errors && locals.errors.productNameCreate) { %>
             <p class="feedback"><%= errors.productNameCreate.msg%> </p>
             <% } %> 
 
-        <input class="box-form" type="text" placeholder="Descripción" name="productDescriptionCreate" >
+        <input class="box-form" type="text" placeholder="Descripción" name="productDescriptionCreate" value="<%=locals.old && locals.old.productDescriptionCreate%>" >
         <% if (locals.errors && locals.errors.productDescriptionCreate) { %>
             <p class="feedback"><%=errors.productDescriptionCreate.msg%> </p>
             <% } %> 
@@ -48,22 +48,22 @@
                 <% } %>  
         </div>
 
-        <input class="box-form" type="text" placeholder="Talle del producto" name="productSizeCreate" >
+        <input class="box-form" type="text" placeholder="Talle del producto" name="productSizeCreate" value="<%=locals.old && locals.old.productSizeCreate%>" >
         <% if (locals.errors && locals.errors.productSizeCreate) { %>
             <p class="feedback"><%= errors.productSizeCreate.msg%> </p>
             <% } %> 
 
-        <input class="box-form" type="text" placeholder="Categoría" name="productCateogryCreate" >
+        <input class="box-form" type="text" placeholder="Categoría" name="productCateogryCreate" value="<%=locals.old && locals.old.productCateogryCreate%>" >
         <% if (locals.errors && locals.errors.productCateogryCreate) { %>
             <p class="feedback"><%= errors.productCateogryCreate.msg%> </p>
             <% } %> 
 
-        <input class="box-form" type="text" placeholder="Precio original sin descuento" name="productOriginalPriceCreate" >
+        <input class="box-form" type="text" placeholder="Precio original sin descuento" name="productOriginalPriceCreate" value="<%=locals.old && locals.old.productOriginalPriceCreate%>" >
         <% if (locals.errors && locals.errors.productOriginalPriceCreate) { %>
             <p class="feedback"><%= errors.productOriginalPriceCreate.msg%> </p>
             <% } %> 
 
-        <input class="box-form" type="text" placeholder="Precio final" name="productDiscountPriceCreate" >
+        <input class="box-form" type="text" placeholder="Precio final" name="productDiscountPriceCreate" value="<%=locals.old && locals.old.productDiscountPriceCreate%>" >
         <% if (locals.errors && locals.errors.productDiscountPriceCreate) { %>
             <p class="feedback"><%= errors.productDiscountPriceCreate.msg%> </p>
             <% } %> 
