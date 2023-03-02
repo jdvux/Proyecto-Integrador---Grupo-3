@@ -46,22 +46,21 @@ const usersController = {
             return res.render('users/login', { 
                 errors: errors.mapped(), old: req.body 
             });
-        }
+        };
         
-        let user = users.find(user => user.email == req.body.email);
-        let encryptedPassword = user.password;
+        let user = users.forEach(user => user.email == req.body.emailLogin);
+         let encryptedPassword = user.password;
         let comparePasswords = bcryptjs.compareSync(req.body.passwordLogin, encryptedPassword);
         
         if (comparePasswords) {
-            delete user.password;
             req.session.userLogged = user;
             if (req.body.remember) {
                 res.cookie('userLogged', 
                 req.body.email,
                 { maxAge : 1000 * 60 * 60 * 24 });
             }
-        return res.redirect('profile', { user }) 
-        }
+            return res.redirect('profile', { user });
+        };
     },  
 
     profileView: (req, res) => {
