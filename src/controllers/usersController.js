@@ -33,7 +33,7 @@ const usersController = {
 
     users.push(newUser);
     fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
-    res.redirect('users/login');
+    res.redirect('login');
     },
 
     loginView: (req, res) => {
@@ -60,7 +60,7 @@ const usersController = {
                 req.body.email,
                 { maxAge : 1000 * 60 * 60 * 24 });
             }
-        return res.redirect('users/profile', { user }) 
+        return res.redirect('profile', { user }) 
         }
     },  
 
