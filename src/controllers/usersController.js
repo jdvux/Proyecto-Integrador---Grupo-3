@@ -26,11 +26,11 @@ const usersController = {
         "name": req.body.nameRegister,
         "lastName": req.body.lastNameRegister,
         "email": req.body.emailRegister,
-        "password": req.body.passwordRegister,
+        "password": bcryptjs.hashSync(req.body.passwordRegister, 12),
         "type": "user",
         "avatar": ""
     };
-  
+
     users.push(newUser);
     fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
     res.redirect('/login');
@@ -49,8 +49,8 @@ const usersController = {
         }
         
         let user = users.find(user => user.email == req.body.email);
-        let encryptedPassword = bcryptjs.hashSync(req.body.password, 12);
-        let comparePasswords = bcryptjs.compareSync(req.body.password, encryptedPassword);
+        let encryptedPassword = user.password;
+        let comparePasswords = bcryptjs.compareSync(req.body.passwordLogin, encryptedPassword);
         
         if (comparePasswords) {
             delete user.password;
