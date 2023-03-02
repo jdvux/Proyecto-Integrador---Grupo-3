@@ -13,7 +13,7 @@ const usersController = {
     processRegister: (req, res) => {
         let errors = validationResult(req);
         if (!errors.isEmpty()) {
-            return res.render('/users/register', {
+            return res.render('users/register', {
                 errors: errors.mapped(), 
                 old: req.body
             });
