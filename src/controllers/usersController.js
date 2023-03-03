@@ -48,8 +48,12 @@ const usersController = {
             });
         };
         
-        let user = users.forEach(user => user.email == req.body.emailLogin);
-         let encryptedPassword = user.password;
+        let user = users.find(user => user.email == req.body.emailLogin);
+        if (user == undefined) {
+            throw new Error('Correo electrónico no se encuentra registrado');
+        };
+
+        let encryptedPassword = user.password;
         let comparePasswords = bcryptjs.compareSync(req.body.passwordLogin, encryptedPassword);
         
         if (comparePasswords) {
@@ -60,7 +64,9 @@ const usersController = {
                 { maxAge : 1000 * 60 * 60 * 24 });
             }
             return res.redirect('profile', { user });
-        };
+        } else {
+            throw new Error('Contraseña incorrecta');
+        }
     },  
 
     profileView: (req, res) => {
