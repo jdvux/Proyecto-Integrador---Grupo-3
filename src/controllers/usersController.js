@@ -12,6 +12,7 @@ const usersController = {
 
     processRegister: (req, res) => {
         let errors = validationResult(req);
+        console.log(errors);
         if (!errors.isEmpty()) {
             return res.render('users/register', {
                 errors: errors.mapped(), 
@@ -52,7 +53,8 @@ const usersController = {
         if (user == undefined) {
             throw new Error({
                 msg: 'Correo electrónico no se encuentra registrado',
-                location: req.body.emailLogin
+                param: 'req.body.emailLogin',
+                location: 'body'
             });
         };
 
@@ -70,8 +72,10 @@ const usersController = {
         } else {
             throw new Error({
                 msg: 'Contraseña incorrecta',
-                location: req.body.passwordLogin});
-            };
+                param: 'req.body.passwordLogin',
+                location: 'body'
+            });
+        };
     },  
 
     profileView: (req, res) => {
