@@ -48,33 +48,14 @@ const usersController = {
             });
         };
         
-        let user = users.find(user => user.email == req.body.emailLogin);
-        if (user == undefined) {
-            throw new Error({
-                msg: 'Correo electrónico no se encuentra registrado',
-                param: 'req.body.emailLogin',
-                location: 'body'
-            });
+        let user = users.find(user => user.email == req.body.emailLogin);        
+        req.session.userLogged = user;
+        if (req.body.remember) {
+            res.cookie('userLogged', 
+            req.body.email,
+            { maxAge : 1000 * 60 * 60 * 24 });
         };
-
-        let encryptedPassword = user.password;
-        let comparePasswords = bcryptjs.compareSync(req.body.passwordLogin, encryptedPassword);
-        
-        if (comparePasswords) {
-            req.session.userLogged = user;
-            if (req.body.remember) {
-                res.cookie('userLogged', 
-                req.body.email,
-                { maxAge : 1000 * 60 * 60 * 24 });
-            };
-            return res.redirect('profile', { user });
-        } else {
-            throw new Error({
-                msg: 'Contraseña incorrecta',
-                param: 'req.body.passwordLogin',
-                location: 'body'
-            });
-        };
+        return res.redirect('profile', { user });
     },  
 
     profileView: (req, res) => {

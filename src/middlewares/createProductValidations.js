@@ -9,17 +9,13 @@ const createProductValidations = [
     
     body("productImagesCreate")
         .custom((value, { req }) => {
-            if (!req.files || req.files === undefined) {
-                throw new Error ("Debes subir al menos una imagen")
-            }
+            if (!req.files || req.files === undefined) { throw new Error ("Debes subir al menos una imagen") };
             return true;
         })
         .custom((value, { req }) => {
-            if (req.files.mimetype === "image/jpeg" || req.files.mimetype === "image/jpg" || req.files.mimetype === "image/png" || req.files.mimetype === "image/gif" || req.files.mimetype === "image/avif") {
-                return true;
-            } else {
-                throw new Error("Sólo puedes subir imágenes");
-            }
+            if (req.files.mimetype !== "image/jpeg" || req.files.mimetype !== "image/jpg" || req.files.mimetype !== "image/png" || req.files.mimetype !== "image/gif" || req.files.mimetype !== "image/avif") {
+                throw new Error("Sólo puedes subir imágenes") };
+            return true; 
         }),
 
     body("productSizeCreate")
@@ -41,7 +37,7 @@ const createProductValidations = [
         .custom((productDiscountPriceCreate, { req }) => {
             if (productDiscountPriceCreate >= req.body.productOriginalPriceCreate) {
                 throw new Error("El precio en descuento no puede ser mayor o igual al precio original");
-            }
+            };
             return true;
         })
 ];
