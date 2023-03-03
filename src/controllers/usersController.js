@@ -50,7 +50,10 @@ const usersController = {
         
         let user = users.find(user => user.email == req.body.emailLogin);
         if (user == undefined) {
-            throw new Error('Correo electrónico no se encuentra registrado');
+            throw new Error({
+                msg: 'Correo electrónico no se encuentra registrado',
+                location: req.body.emailLogin
+            });
         };
 
         let encryptedPassword = user.password;
@@ -62,11 +65,13 @@ const usersController = {
                 res.cookie('userLogged', 
                 req.body.email,
                 { maxAge : 1000 * 60 * 60 * 24 });
-            }
+            };
             return res.redirect('profile', { user });
         } else {
-            throw new Error('Contraseña incorrecta');
-        }
+            throw new Error({
+                msg: 'Contraseña incorrecta',
+                location: req.body.passwordLogin});
+            };
     },  
 
     profileView: (req, res) => {
