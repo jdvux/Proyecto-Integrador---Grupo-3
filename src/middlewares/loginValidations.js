@@ -20,7 +20,7 @@ const loginValidations = [
         .custom((value, { req }) => {
             let encryptedPassword;
             let user = users.find(user => user.email == req.body.emailLogin);
-            if (user == undefined) { throw new Error(' ') } else { encryptedPassword = user.password };
+            if (user == undefined) { throw new Error('Regístrate primero') } else { encryptedPassword = user.password };
             let comparePasswords = bcryptjs.compareSync(req.body.passwordLogin, encryptedPassword);
             if (!comparePasswords) { throw new Error('Contraseña incorrecta') }
             return true; 
