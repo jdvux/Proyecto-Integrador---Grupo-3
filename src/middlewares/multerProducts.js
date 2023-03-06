@@ -18,10 +18,11 @@ const uploadProducts = multer({
   fileFilter: function (req, file, cb) {
     const fileTypes = /jpeg|jpg|png|gif|avif/;
     const mimetype = fileTypes.test(file.mimetype);
-    if (mimetype) { 
+    const extname = fileTypes.test(path.extname(file.originalname));
+    if (mimetype && extname) { 
       return cb(null, true);
     }
-    return cb("Error: Sólo puedes subir imágenes");
+    return cb("Sólo puedes subir imágenes válidas");
   }
 });
 
