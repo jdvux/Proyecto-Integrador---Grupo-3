@@ -48,14 +48,14 @@ const usersController = {
             });
         };
         
-        let user = users.find(user => user.email == req.body.emailLogin);        
+        let user = users.find(user => user.email == req.body.emailLogin);
         req.session.userLogged = user;
         if (req.body.remember) {
             res.cookie('userLogged', 
             req.body.emailLogin,
             { maxAge : 1000 * 60 * 60 * 24 });
         };
-        res.redirect('profile', { user });
+        res.redirect('profile');
     },  
 
     profileView: (req, res) => {

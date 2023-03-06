@@ -7,7 +7,7 @@ const usersController = require('../controllers/usersController');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 
-router.get('/register', usersController.registerView);
+router.get('/register', authMiddleware, usersController.registerView);
 router.post('/register', registerValidations, usersController.processRegister);
 
 router.get('/login', authMiddleware, usersController.loginView);
@@ -15,7 +15,7 @@ router.post('/login', loginValidations, usersController.processLogin);
 
 router.get('/logout', authMiddleware, usersController.processLogout);
 
-router.get('/profile', usersController.profileView);
+router.get('/profile', guestMiddleware, usersController.profileView);
 router.put('/profile', upload, usersController.profileChanges);
 
 module.exports = router;
