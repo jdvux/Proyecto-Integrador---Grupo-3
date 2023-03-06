@@ -36,11 +36,9 @@ const productsController = {
     let date = Date.now();
     let images = [];
 
-    if ((req.files).length > 0) {
-      req.files.forEach(file => {
-        images.push(file.filename)
-      });
-    };
+    req.files.forEach(file => {
+      images.push(file.filename)
+    });
 
     let newProduct = {
       "id": date.toString(),
@@ -69,7 +67,6 @@ const productsController = {
     let product = products.find(product => product.id === id);
     let errors = validationResult(req);
     if (!errors.isEmpty()) {
-      console.log(errors);
       return res.render('products/editProduct', {
         product,
         errors: errors.mapped(), 
@@ -87,7 +84,7 @@ const productsController = {
       product.category = req.body.productCateogryEdit;
       product.originalPrice = req.body.productOriginalPriceEdit;
       product.discountPrice = req.body.productDiscountPriceEdit;
-      if ((req.files).length > 0) {
+      if (req.files !== undefined) {
         req.files.forEach(file => {
           images.push(file.filename);
         });
