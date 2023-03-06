@@ -25,9 +25,13 @@
         <div class="welcomeMessage">
           <h2>Hola, <%=user.name%></h2>
         </div>
-        
+
         <div class="profileImg">
-          <input type="file"><img src="/images/users/<%=user.image%>" alt="Imagen de perfil">
+          <input type="file" class="hidden-files" id="avatar">
+          <label for="avatar">
+            <i class="fa-solid fa-camera-rotate"></i>
+          </label>
+          <img src="/images/users/<%=user.avatar%>" alt="Imagen de perfil">
         </div>
 
         <div class="userData">

@@ -1,4 +1,4 @@
-main{
+main {
     display: flex;
     justify-content: center;
 }
@@ -38,6 +38,20 @@ main{
 .profileImg{
     margin-bottom: 20px;
 }
+
+.hidden-files {
+    display: none;
+}
+
+.fa-camera-rotate {
+    font-weight: 900;
+    position: relative;
+    top: 1em;
+    left: 2.8em;
+    padding-top: 1em;
+    padding-bottom: 5px;
+    font-size: 1.3em;
+} 
 
 .userData{
     width: 80%;
