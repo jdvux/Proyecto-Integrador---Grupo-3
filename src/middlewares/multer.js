@@ -26,8 +26,7 @@ const upload = multer({
   fileFilter: function (req, file, cb) {
     const fileTypes = /jpeg|jpg|png|gif|avif/;
     const mimetype = fileTypes.test(file.mimetype);
-    const extname = fileTypes.test(path.extname(file.originalname));
-    if (mimetype && extname) {
+    if (mimetype) {
       return cb(null, true);
     } 
     cb("Error: Sólo puedes subir imágenes");

@@ -11,11 +11,6 @@ const createProductValidations = [
         .custom((value, { req }) => {
             if (!req.files || req.files == undefined) { throw new Error ("Debes subir al menos una imagen") };
             return true;
-        })
-        .custom((value, { req }) => {
-            if (req.files.mimetype !== "image/jpeg" || req.files.mimetype !== "image/jpg" || req.files.mimetype !== "image/png" || req.files.mimetype !== "image/gif" || req.files.mimetype !== "image/avif") {
-                throw new Error("Sólo puedes subir imágenes") };
-            return true; 
         }),
 
     body("productSizeCreate")
