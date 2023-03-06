@@ -23,11 +23,11 @@
     <main>
       <div class="mainProfileSection">
         <div class="welcomeMessage">
-          <h2>Hola, Luciano</h2>
+          <h2>Hola, <%=user.name%></h2>
         </div>
         
         <div class="profileImg">
-          <input type="file"><img src="/images/users/admin-profile.png" alt="Imagen de perfil">
+          <input type="file"><img src="/images/users/<%=user.image%>" alt="Imagen de perfil">
         </div>
 
         <div class="userData">

@@ -3,6 +3,7 @@ const path = require('path');
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const { validationResult } = require('express-validator');
+const session = require('express-session');
 const bcryptjs = require('bcryptjs');
 
 const usersController = {
@@ -55,7 +56,7 @@ const usersController = {
             req.body.emailLogin,
             { maxAge : 1000 * 60 * 60 * 24 });
         };
-        return res.redirect('users/profile', { user });
+        res.redirect('profile', { user });
     },  
 
     profileView: (req, res) => {
