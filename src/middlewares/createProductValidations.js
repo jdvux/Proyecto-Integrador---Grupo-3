@@ -9,7 +9,7 @@ const createProductValidations = [
     
     body("productImagesCreate")
         .custom((value, { req }) => {
-            if (!req.files || req.files === undefined) { throw new Error ("Debes subir al menos una imagen") };
+            if (!req.files || req.files == undefined) { throw new Error ("Debes subir al menos una imagen") };
             return true;
         })
         .custom((value, { req }) => {

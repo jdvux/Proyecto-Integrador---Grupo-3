@@ -24,11 +24,13 @@ const storage = multer.diskStorage({
 const upload = multer({ 
   storage,
   fileFilter: function (req, file, cb) {
-    let mimetype = file.mimetype;
-        if (mimetype !== 'image/png' || mimetype !== 'image/jpg' || mimetype !== 'image/gif' || mimetype !== 'image/jpeg' || mimetype !== 'image/avif') {
-            return cb(new Error('Sólo puedes subir imágenes'), false);
-        }
-        callback(null, true);
+    const fileTypes = /jpeg|jpg|png|gif|avif/;
+    const mimetype = fileTypes.test(file.mimetype);
+    const extname = fileTypes.test(path.extname(file.originalname));
+    if (mimetype && extname) {
+      return cb(null, true);
+    } 
+    cb("Error: Sólo puedes subir imágenes");
   }
 }).fields([
   {
