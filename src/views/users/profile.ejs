@@ -21,26 +21,33 @@
 <body>
     <%-include('../partials/header.ejs')%>
     <main>
-
-      <div class="image-container">
-        <h1>Hola! <%=users.firstName%></h1>
-        <div class="main-product-image-small">
-          <img src="<%=users.avatar%>" alt="" />
+      <div class="mainProfileSection">
+        <div class="welcomeMessage">
+          <h2>Hola, Luciano</h2>
         </div>
-      <div>
+        
+        <div class="profileImg">
+          <input type="file"><img src="/images/users/admin-profile.png" alt="Imagen de perfil">
+        </div>
 
-        <form method ="post" action ="/users/profile/<%=user.id%>?_method=PUT" class="profile-upload-image" enctype="multipart/form-data">
-            
-            <h1 class="profile-upload-title">Subir Avatar</h1>
-            
-            <input type="file" class="box-image" type="text" name="avatar">
-            <% if (locals.errors && locals.avatar.name) { %>
-                <p class="feedback"><%=errors.avatar.msg%> </p>
-                <% } %>
-            
-            <input type="submit" class="button-form" value="Enviar"></input>
-            <input type="reset" class="button-form" value="Borrar"></input>
-        </form>
+        <div class="userData">
+          <form class="userDataForm" action="" method="">
+            <p>Datos de cuenta  </p>
+            <input type="text" placeholder="ID de Usuario">
+            <input type="text" placeholder="Tipo de Usuario">
+            <p>Datos personales</p>
+            <input type="text" placeholder="Nombre  ">
+            <input type="text" placeholder="Apellido">
+            <input type="password" placeholder="Contraseña">
+            <input type="email" placeholder="Email">
+          </form>
+
+        </div>
+        <div class="buttons">
+          <button class="cancelButton">Cancelar</button>
+          <button class="saveButton">Guardar</button>
+        </div>
+      </div>
     </main>
     <%- include('../partials/footer') %>
 </body>

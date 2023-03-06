@@ -15,7 +15,7 @@ router.post('/login/', loginValidations, usersController.processLogin);
 
 router.get('/logout', authMiddleware, usersController.processLogout);
 
-router.get('/profile/', guestMiddleware, usersController.profileView);
-router.put('/profile/', upload, usersController.profileChanges);
+router.get('/profile', usersController.profileView);
+router.put('/profile', upload, usersController.profileChanges);
 
 module.exports = router;
