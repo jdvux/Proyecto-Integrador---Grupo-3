@@ -36,9 +36,11 @@ const productsController = {
     let date = Date.now();
     let images = [];
 
-    req.files.forEach(file => {
+    if (req.files) {
+      req.files.forEach(file => {
       images.push(file.filename)
-    });
+      });
+    };
 
     let newProduct = {
       "id": date.toString(),
