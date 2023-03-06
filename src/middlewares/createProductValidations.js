@@ -13,7 +13,7 @@ const createProductValidations = [
             if (!(req.files).length || (req.files).length === 0) { throw new Error ("Debes subir al menos una imagen") };
             return true;
         }),
-
+    
     body("productSizeCreate")
         .isLength({ min: 2, max: 2 }).withMessage("El talle debe contener dos números").bail()
         .isNumeric().withMessage("El talle debe ser ingresado en números"),
