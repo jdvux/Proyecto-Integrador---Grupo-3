@@ -1,4 +1,5 @@
 const { body } = require('express-validator');
+const { parse } = require('path');
 
 const createProductValidations = [
     body("productNameCreate")
@@ -9,7 +10,7 @@ const createProductValidations = [
     
     body("productImagesCreate")
         .custom((value, { req }) => {
-            if (!req.files || req.files == undefined) { throw new Error ("Debes subir al menos una imagen") };
+            if (!(req.files).length || (req.files).length === 0) { throw new Error ("Debes subir al menos una imagen") };
             return true;
         }),
 
@@ -30,7 +31,8 @@ const createProductValidations = [
         .isNumeric().withMessage("El precio en descuento debe estar expresado en números").bail()
         .isLength({ min: 5 }).withMessage("El precio en descuento no puede ser menor a 10000").bail()
         .custom((productDiscountPriceCreate, { req }) => {
-            if (productDiscountPriceCreate >= req.body.productOriginalPriceCreate) {
+            if (parseInt(productDiscountPriceCreate) >= parseInt(req.body.productOriginalPriceCreate)) {
+                console.log(productDiscountPriceCreate, req.body.productOriginalPriceCreate)
                 throw new Error("El precio en descuento no puede ser mayor o igual al precio original");
             };
             return true;

@@ -58,12 +58,12 @@
             <p class="feedback"><%=errors.productCateogryEdit.msg%> </p>
             <% } %>
 
-        <input class="box-form" type="text" placeholder="Precio original sin descuento" name="productOriginalPriceEdit" value="<%=product.originalPrice%>" >
+        <input class="box-form" type="number" placeholder="Precio original sin descuento" name="productOriginalPriceEdit" value="<%=product.originalPrice%>" >
         <% if (locals.errors && locals.errors.productOriginalPriceEdit) { %>
             <p class="feedback"><%=errors.productOriginalPriceEdit.msg%> </p>
             <% } %>
 
-        <input class="box-form" type="text" name="productDiscountPriceEdit" placeholder="Precio" value="<%=product.discountPrice%>" >
+        <input class="box-form" type="number" name="productDiscountPriceEdit" placeholder="Precio" value="<%=product.discountPrice%>" >
         <% if (locals.errors && locals.errors.productDiscountPriceEdit) { %>
             <p class="feedback"><%=errors.productDiscountPriceEdit.msg%> </p>
             <% } %>

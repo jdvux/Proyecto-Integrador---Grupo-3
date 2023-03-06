@@ -36,10 +36,8 @@ const productsController = {
     let date = Date.now();
     let images = [];
 
-    if (req.files) {
-      req.files.forEach(file => {
-      images.push(file.filename)
-      });
+    if (req.files !== "undefined") {
+      req.files.forEach(file=>{images.push(file.filename)});
     };
 
     let newProduct = {
@@ -86,11 +84,11 @@ const productsController = {
       product.category = req.body.productCateogryEdit;
       product.originalPrice = req.body.productOriginalPriceEdit;
       product.discountPrice = req.body.productDiscountPriceEdit;
-      if (req.files !== undefined) {
+      if ((req.files).length) {
         req.files.forEach(file => {
           images.push(file.filename);
         });
-      product.images = images;
+       product.images = images;
       };
     }
   });

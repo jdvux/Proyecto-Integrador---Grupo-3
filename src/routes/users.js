@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const upload = require('../middlewares/multer');
+const uploadUsers = require('../middlewares/multerUsers');
 const registerValidations = require('../middlewares/registerValidations');
 const loginValidations = require('../middlewares/loginValidations');
 const usersController = require('../controllers/usersController');
@@ -16,6 +16,6 @@ router.post('/login', loginValidations, usersController.processLogin);
 router.get('/logout', authMiddleware, usersController.processLogout);
 
 router.get('/profile', guestMiddleware, usersController.profileView);
-router.put('/profile', upload, usersController.profileChanges);
+router.put('/profile', uploadUsers.single('avatar'), usersController.profileChanges);
 
 module.exports = router;

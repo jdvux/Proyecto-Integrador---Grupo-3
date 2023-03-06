@@ -23,7 +23,7 @@ const editProductValidations = [
         .isNumeric().withMessage("El precio en descuento debe estar expresado en números").bail()
         .isLength({ min: 5 }).withMessage("El precio en descuento no puede ser menor a 10000").bail()
         .custom((productDiscountPriceEdit, { req }) => {
-            if (productDiscountPriceEdit >= req.body.productOriginalPriceEdit) {
+            if (parseInt(productDiscountPriceEdit) >= parseInt(req.body.productOriginalPriceEdit)) {
                 throw new Error("El precio en descuento no puede ser mayor o igual al precio original");
             }
             return true;
