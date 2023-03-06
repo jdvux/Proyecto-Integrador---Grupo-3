@@ -55,7 +55,7 @@ const usersController = {
             req.body.emailLogin,
             { maxAge : 1000 * 60 * 60 * 24 });
         };
-        return res.redirect('profile', { user });
+        return res.redirect('users/profile', { user });
     },  
 
     profileView: (req, res) => {
