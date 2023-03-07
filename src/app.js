@@ -20,13 +20,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(express.static('public'));
+app.use(userSessionMiddleware);
 app.use(cookieParser());
 app.use(session({ 
   secret: "secret",
   resave: false,
   saveUninitialized: true,
 }));
-app.use(userSessionMiddleware);
 app.use(mainRoutes);
 app.use('/users', userRoutes);
 app.use('/products',productRoutes);
