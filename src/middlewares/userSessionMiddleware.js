@@ -1,5 +1,3 @@
-const session = require('express-session');
-
 const userSessionMiddleware = (req, res, next) => {
     if (req.cookies && req.cookies.userLogged) {
         res.locals.userLogged = req.cookies.userLogged;
