@@ -6,6 +6,8 @@ const editProductValidations = require('../middlewares/editProductValidations');
 const productsController = require('../controllers/productsController');
 const uploadProducts = require('../middlewares/multerProducts');
 
+router.get('/', productsController.products);
+router.get('/:id', productsController.productDetail);
 router.get('/productCart', productsController.productCart);
 
 router.get('/createProduct', productsController.create);
@@ -16,9 +18,6 @@ router.put('/editProduct/:id', uploadProducts.array('productImagesEdit'), editPr
 
 router.get('/deleteProduct/:id', productsController.deleteProduct);
 router.delete('/deleteProduct/:id', productsController.destroyProduct);
-
-router.get('/', productsController.products);
-router.get('/:id', productsController.productDetail);
 
 module.exports = router;
 

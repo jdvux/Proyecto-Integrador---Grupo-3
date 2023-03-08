@@ -28,7 +28,7 @@ const usersController = {
         "email": req.body.emailRegister,
         "password": bcryptjs.hashSync(req.body.passwordRegister, 12),
         "type": "user",
-        "avatar": ""
+        "avatar": "/admin-profile.png"
     };
 
     users.push(newUser);
@@ -64,6 +64,7 @@ const usersController = {
     },
 
     profileChanges: (req, res) => {
+        let user = req.session.userLogged;
         let errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.render('users/profile', {
@@ -72,26 +73,22 @@ const usersController = {
             });
         };
 
-        let newUser = {
-            "id": req.body.userId,
-            "type": req.body.userType,
-            "name": req.body.userName,
-            "lastName": req.body.userLastName,
-            "email": req.body.userEmail,
-            "password": bcryptjs.hashSync(req.body.userPassword, 12),
-            "avatar": req.file || "/admin-profile.png"
-        };
+        if (user && user !== undefined) {
+            user.name = req.body.userName,
+            user.lastName = req.body.userLastName,
+            user.email = req.body.userEmail,
+            user.password = bcryptjs.hashSync(req.body.userPassword, 12) || req.body.userPassword,
+            user.avatar = req.file || "/admin-profile.png"
+        }
 
-        users.push(newUser);
-            fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
-            res.redirect('login');
-
+        fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
+        res.redirect('/');
     },
 
     processLogout: (req, res) => {
         req.session.destroy();
         res.clearCookie('userLogged');
-        res.redirect('/');
+        return res.redirect('/');
     }
 };
 
