@@ -31,25 +31,25 @@
           <label for="avatar">
             <i class="fa-solid fa-camera-rotate"></i>
           </label>
-          <img src="/images/users/<%=user.avatar%>" alt="Imagen de perfil">
+          <img src="/images/users/<%=user.avatar%>" name="userImage"  alt="Imagen de perfil">
         </div>
 
         <div class="userData">
-          <form class="userDataForm" action="" method="">
+          <form class="userDataForm" action="/users/profile/<%=user.id%>?_method=PUT" method="post" enctype="multipart/form-data">
             <p>Datos de cuenta  </p>
-            <input type="text" placeholder="ID de Usuario">
-            <input type="text" placeholder="Tipo de Usuario">
+            <input type="text" name="userId" placeholder="ID de Usuario" value="<%= user.id %>" disabled>
+            <input type="text" name="userType" placeholder="Tipo de Usuario" value="<%= user.type %>" disabled>
             <p>Datos personales</p>
-            <input type="text" placeholder="Nombre  ">
-            <input type="text" placeholder="Apellido">
-            <input type="password" placeholder="Contraseña">
-            <input type="email" placeholder="Email">
+            <input type="text" name="userName" placeholder="Nombre  " value="<%= user.name %>">
+            <input type="text" name="userLastName" placeholder="Apellido" value="<%= user.lastName %>">
+            <input type="password" name="userPassword" placeholder="Contraseña" value="<%= user.password %>">
+            <input type="email" name="userEmail" placeholder="Email" value="<%= user.email %>">
           </form>
 
         </div>
         <div class="buttons">
-          <button class="cancelButton">Cancelar</button>
-          <button class="saveButton">Guardar</button>
+          <input type="submit" class="button-form1" value="Enviar"></input>
+          <input type="reset" class="button-form" value="Borrar"></input>
         </div>
       </div>
     </main>

@@ -17,6 +17,44 @@
     margin-top: 100px;
     display: block;
     width: 100%;
+    transition: all .5s ease;
+}
+
+.img-banner:hover{
+    transform: scale(1.01);
+}
+
+.homePageExtraInfoContainer{
+    margin: 40px 20px
+}
+
+.homePageExtraInfo{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+.homePageExtraInfo a{
+    display: flex;
+    text-decoration: none;
+    color: #000;
+    width: 250px;
+}
+
+.homePageExtraInfo span{
+    font-size: 10px;
+    margin: 10px;
+    padding-left: 5px;
+}
+
+.homePageExtraInfo i{
+    display: flex;
+    align-items: center;
+}
+
+.homePageExtraInfo br{
+    display: none;
 }
 
 .banner-text {
@@ -238,7 +276,7 @@ main h1, main h2, main p {
 @media (max-width: 360px) {
     
     .img-banner {
-        margin-top: 75px;
+        margin-top: 80px;
     }
 
     .collection-img, .collection-img-2 {
@@ -266,10 +304,28 @@ main h1, main h2, main p {
 
 /*DESK*/
 
-@media (min-width: 769px){
+@media (min-width: 768px){
 
     .article{
         width: 25%;
+    }
+
+    .mainContainer{
+        margin-top: 125px;
+    }
+
+    .homePageExtraInfo{
+        flex-direction: row;
+    }
+
+    .homePageExtraInfo span{
+        font-size: 10px;
+        border-left: 1px solid #000;
+        letter-spacing: 1px;
+    }
+
+    .img-banner{
+        margin-top: 125px;
     }
 }
 
@@ -279,5 +335,12 @@ main h1, main h2, main p {
 
     .view-all-button {
         bottom: 12%;
+    }
+}
+
+
+@media (min-width: 1024px){
+    .homePageExtraInfo span{
+        font-size: 12px;
     }
 }

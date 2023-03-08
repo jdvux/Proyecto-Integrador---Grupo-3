@@ -64,13 +64,34 @@ const usersController = {
     },
 
     profileChanges: (req, res) => {
+        let errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.render('users/profile', {
+        errors: errors.mapped(), 
+        old: req.body
+            });
+        };
+
+        let newUser = {
+            "id": req.body.userId,
+            "type": req.body.userType,
+            "name": req.body.userName,
+            "lastName": req.body.userLastName,
+            "email": req.body.userEmail,
+            "password": bcryptjs.hashSync(req.body.userPassword, 12),
+            "avatar": req.file || "/admin-profile.png"
+        };
+
+        users.push(newUser);
+            fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
+            res.redirect('login');
 
     },
 
     processLogout: (req, res) => {
         req.session.destroy();
         res.clearCookie('userLogged');
-        return res.redirect('/');
+        res.redirect('/');
     }
 };
 

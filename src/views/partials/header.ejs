@@ -14,10 +14,17 @@
                         <hr>
                         <a href="/products">Productos</a>
                         <hr>
+                        <% if (!locals.userLogged) { %>
+                        <a href="/users/profile">Mi perfil</a>
+                        <hr>
+                        <a href="/users/logout">Cerrar Sesión</a>
+                        <hr>
+                        <%  } else {%>
                         <a href="/users/login">Iniciar Sesión</a>
                         <hr>
                         <a href="/users/register">Registrarse</a>
                         <hr>
+                        <% } %>
                         <a href="/products/productCart">Carrito</a>
                         <hr>
                     </nav>
