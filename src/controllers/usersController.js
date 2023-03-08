@@ -73,16 +73,16 @@ const usersController = {
             });
         };
 
-        if (user && user !== undefined) {
+        if (user) {
             user.name = req.body.userName,
             user.lastName = req.body.userLastName,
             user.email = req.body.userEmail,
-            user.password = bcryptjs.hashSync(req.body.userPassword, 12) || req.body.userPassword,
-            user.avatar = req.file || "/admin-profile.png"
+            user.password = bcryptjs.hashSync(req.body.userPassword, 12),
+            user.avatar = req.file || user.avatar
         }
 
         fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
-        res.redirect('/');
+        res.redirect('profile');
     },
 
     processLogout: (req, res) => {
