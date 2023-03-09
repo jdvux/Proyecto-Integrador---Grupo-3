@@ -30,12 +30,12 @@
         <!--datos que se piden para el registro en cajas-------->
         <input class="box-form" type="text" name="productNameEdit" placeholder="Nombre del producto" value="<%=product.name%>" >
         <% if (locals.errors && locals.errors.productNameEdit) { %>
-            <p class="feedback"><%=errors.productNameEdit.msg%> </p>
+            <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%=errors.productNameEdit.msg%> </p>
             <% } %>
 
         <input class="box-form" type="text" placeholder="Descripción" name="productDescriptionEdit" value="<%=product.description%>" >
         <% if (locals.errors && locals.errors.productDescriptionEdit) { %>
-            <p class="feedback"><%=errors.productDescriptionEdit.msg%> </p>
+            <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%=errors.productDescriptionEdit.msg%> </p>
             <% } %>
         
         <div>
@@ -44,28 +44,28 @@
                 <i class="fa-solid fa-camera-rotate"></i>
             </label>
             <% if (locals.errors && locals.errors.productImagesEdit) { %>
-                <p class="feedback"><%=errors.productImagesEdit.msg%> </p>
+                <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%=errors.productImagesEdit.msg%> </p>
                 <% } %>
         </div>
 
         <input class="box-form" type="text" placeholder="Talle del producto" name="productSizeEdit" value="<%=product.size%>" >
         <% if (locals.errors && locals.errors.productSizeEdit) { %>
-            <p class="feedback"><%=errors.productSizeEdit.msg%> </p>
+            <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%=errors.productSizeEdit.msg%> </p>
             <% } %>
 
         <input class="box-form" type="text" name="productCateogryEdit" placeholder="Categoría" value="<%=product.category%>" >
         <% if (locals.errors && locals.errors.productCateogryEdit) { %>
-            <p class="feedback"><%=errors.productCateogryEdit.msg%> </p>
+            <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%=errors.productCateogryEdit.msg%> </p>
             <% } %>
 
         <input class="box-form" type="text" placeholder="Precio original sin descuento" name="productOriginalPriceEdit" value="<%=product.originalPrice%>" >
         <% if (locals.errors && locals.errors.productOriginalPriceEdit) { %>
-            <p class="feedback"><%=errors.productOriginalPriceEdit.msg%> </p>
+            <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%=errors.productOriginalPriceEdit.msg%> </p>
             <% } %>
 
         <input class="box-form" type="text" name="productDiscountPriceEdit" placeholder="Precio" value="<%=product.discountPrice%>" >
         <% if (locals.errors && locals.errors.productDiscountPriceEdit) { %>
-            <p class="feedback"><%=errors.productDiscountPriceEdit.msg%> </p>
+            <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%=errors.productDiscountPriceEdit.msg%> </p>
             <% } %>
         
         <!--Boton-->

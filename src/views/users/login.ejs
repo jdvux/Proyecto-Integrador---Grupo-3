@@ -34,7 +34,7 @@
             required
           />
           <% if (locals.errors && locals.errors.emailLogin) { %>
-            <p class="feedback"><%=errors.emailLogin.msg%> </p>
+            <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%=errors.emailLogin.msg%> </p> 
             <% } %>
 
           <input
@@ -44,7 +44,7 @@
             id="input-login"
             required/>
             <% if (locals.errors && locals.errors.passwordLogin) { %>
-              <p class="feedback"><%=errors.passwordLogin.msg%> </p>
+              <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%=errors.passwordLogin.msg%> </p>
               <% } %>
 
           <a class="link-login-form" href="/"

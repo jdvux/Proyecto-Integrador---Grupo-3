@@ -25,22 +25,22 @@
         <!--datos que se piden para el registro en cajas-------->
         <input class="box-form" type="text" placeholder="Nombre" name="nameRegister" value="<%= locals.old && old.nameRegister %>" >
         <% if (locals.errors && locals.errors.nameRegister) { %>
-            <p class="feedback"><%= errors.nameRegister.msg%> </p>
+            <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%= errors.nameRegister.msg%> </p>
             <% } %>
 
         <input class="box-form" type="text" placeholder="Apellido" name="lastNameRegister" value="<%= locals.old && old.lastNameRegister %>" >
         <% if (locals.errors && locals.errors.lastNameRegister) { %>
-            <p class="feedback"><%= errors.lastNameRegister.msg%> </p>
+            <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%= errors.lastNameRegister.msg%> </p>
             <% } %>
 
         <input class="box-form" type="email" placeholder="Correo electrónico" name="emailRegister" value="<%= locals.old && old.emailRegister %>" >
         <% if (locals.errors && locals.errors.emailRegister) { %>
-            <p class="feedback"><%= errors.emailRegister.msg%> </p>
+            <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%= errors.emailRegister.msg%> </p>
             <% } %>
 
         <input class="box-form" type="password" placeholder="Contraseña" name="passwordRegister" value="<%= locals.old && old.passwordRegister %>" >
         <% if (locals.errors && locals.errors.passwordRegister) { %>
-            <p class="feedback"><%=errors.passwordRegister.msg%> </p>
+            <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%=errors.passwordRegister.msg%> </p>
             <% } %>
         
         <!--terminos chequear si al resto le parece ok?------->

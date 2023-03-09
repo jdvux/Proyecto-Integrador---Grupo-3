@@ -117,6 +117,10 @@ input[type="submit"]:hover > a {
   margin: -4% auto 3%;
 }
 
+.fa-circle-exclamation{
+  margin-right: 3px;
+} 
+
 /* MEDIA QUERIES */
 
 /* MOBILE */
