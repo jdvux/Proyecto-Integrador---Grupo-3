@@ -15,19 +15,11 @@ const profileChangesValidations = [
 
     body("userEmail")
         .notEmpty().withMessage("Debes escribir tu correo electrónico").bail()
-        .isEmail().withMessage("El del correo formato debe ser correo@correo.xxx")
-        .custom((userEmail, {req}) => {
-            let user = req.session.userLogged;
-            users.forEach(element => {
-                if (userEmail == element.email && userEmail !== user.email) {
-                    throw new Error('Este correo electrónico ya se encuentra en uso');
-                }
-                });
-            }),
+        .isEmail().withMessage("El del correo formato debe ser correo@correo.xxx"),
 
     body("userPassword")
         .isLength({ min: 8 }).withMessage("La contraseña debe contener al menos 8 caracteres").bail()
-        .isAlphanumeric().withMessage("La contraseña debe contener al menos una letra y un número")
+        // .isAlphanumeric().withMessage("La contraseña debe contener al menos una letra y un número")
 ];
 
 module.exports = profileChangesValidations;

@@ -41,9 +41,21 @@
             <input type="text" name="userType" placeholder="Tipo de Usuario" value="<%= user.type %>" disabled>
             <p>Datos personales</p>
             <input type="text" name="userName" placeholder="Nombre  " value="<%= user.name %>">
+            <% if (locals.errors && locals.errors.userName) { %>
+              <p class="feedback"><%= errors.userName.msg%> </p>
+              <% } %>
             <input type="text" name="userLastName" placeholder="Apellido" value="<%= user.lastName %>">
+            <% if (locals.errors && locals.errors.lastName) { %>
+              <p class="feedback"><%= errors.lastName.msg%> </p>
+              <% } %>
             <input type="password" name="userPassword" placeholder="Contraseña" value="<%= user.password %>">
+            <% if (locals.errors && locals.errors.userPassword) { %>
+              <p class="feedback"><%= errors.userPassword.msg%> </p>
+              <% } %>
             <input type="email" name="userEmail" placeholder="Email" value="<%= user.email %>">
+            <% if (locals.errors && locals.errors.userEmail) { %>
+              <p class="feedback"><%= errors.userEmail.msg%> </p>
+              <% } %>
           </div>
           <div class="buttons">
             <input type="submit" class="button-form1" value="Enviar">
