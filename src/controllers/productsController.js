@@ -109,7 +109,6 @@ const productsController = {
 
 destroyProduct: (req, res) => {
     let id = req.params.id;
-    let product = products.find(product => product.id === id);
     let newProducts = products.filter(product => product.id !== id); 
 
     fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));

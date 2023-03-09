@@ -1,16 +1,16 @@
 # Proyecto-Integrador---Grupo-3
 
 ## Comenzar a hacer
-Se podria sumar la weekly a nuestra reunion de sprint para contar como venimos con nuestras tareas.
+Podríamos comenzar con las weeklies para contarnos cómo venimos con el sprint.
 
 ## Hacer más
-Sumamos branch y pull resquest. Es importante para revisar tareas de otros compañeros y un excelente punto para aprender a leer codigo. Deberiamos seguir ahondando en eso. 
+Comenzar a ser más activos en cuanto a tomar las riendas del proyecto, sin esperar que los otros compañeros deban organizar punto por punto. Todos debemos poner de nuestra parte.
 
 ## Continuar haciendo
-La comunicacion fue mejorando. Estamos presente cuando un compañero tiene una dificultad. Debemos seguir asi como equipo.
+Usar las otras branches, este sprint se hizo en otra branch y luego se hizo merge con main al final, para evitar conflictos.
 
 ## Hacer menos
-Quizas en este punto, podriamos sumar el hecho de no participar en las llamadas. Es importante sumar algo proyecto, o avisar porque no puedo sumar algo al proyecto. Sumar es aprender.
+Esperar a que los demás nos digan qué hacer, todos debemos tomar la iniciativa, sumar es aprender.
 
 ## Dejar de hacer
-No preguntar. Toda duda o inquietud es importante subirla en el feed. Investigar, leer y sino no encuentro la respuesta preguntar. Somos un equipo estamos para ayudarnos.
+No preguntar. Toda duda o inquietud es importante subirla en el feed. Investigar, leer y, si no se encuentra la respuesta, preguntar. Somos un equipo, estamos para ayudarnos.
