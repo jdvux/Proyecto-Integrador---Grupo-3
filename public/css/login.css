@@ -16,6 +16,7 @@ body {
 
 main {
     text-align: center;
+    margin: 0 15px;
 }
 
 .login-form-container {
