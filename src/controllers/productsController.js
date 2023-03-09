@@ -2,8 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const { validationResult } = require('express-validator');
 
-const productController = {
+const productsController = {
   products: (req, res) => {  
     res.render('products/products', { products });
   },
@@ -24,21 +25,31 @@ const productController = {
   },
 
   store: (req, res) => {
+    let errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.render('products/createProduct', {
+        errors: errors.mapped(), 
+        old: req.body
+      });
+    };
+
     let date = Date.now();
     let images = [];
-    if(req.files){
-      req.files.forEach(file=>{images.push("/products/" + file.filename)})
-    }
+
+    if (req.files !== "undefined") {
+      req.files.forEach(file=>{images.push(file.filename)});
+    };
+
     let newProduct = {
       "id": date.toString(),
-      "name": req.body.name || "Sin nombre", 
-      "description": req.body.description,
-      "image": images,
-      "size": req.body.size,
-      "category": req.body.category,
-      "oldPrice": req.body.oldPrice,
-      "price": req.body.price
-    }
+      "name": req.body.productNameCreate,
+      "description": req.body.productDescriptionCreate,
+      "images": images,
+      "size": req.body.productSizeCreate,
+      "category": req.body.productCategoryCreate,
+      "originalPrice": req.body.productOriginalPriceCreate,
+      "discountPrice": req.body.productDiscountPriceCreate
+    };
   
     products.push(newProduct);
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
@@ -53,25 +64,37 @@ const productController = {
   
   update: (req, res) => {
     let id = req.params.id;
-    
-    products.forEach((product, index) => {
-      let images = [];
-      if (product.id == id){
-      product.name = req.body.name;
-      product.description = req.body.description;
-      product.size = req.body.size;
-      product.category = req.body.category;
-      product.oldPrice = req.body.oldPrice;
-      product.price = req.body.price;
-      if ((req.files).length > 0) {
-        req.files.forEach(file=>{images.push("/products/" + file.filename)})
-        product.image = images 
+    let product = products.find(product => product.id === id);
+    let errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.render('products/editProduct', {
+        product,
+        errors: errors.mapped(), 
+        old: req.body
+      });
+    };
+
+    let images = [];
+
+    products.forEach(product => {
+      if (product.id == id) {
+      product.name = req.body.productNameEdit;
+      product.description = req.body.productDescriptionEdit;
+      product.size = req.body.productSizeEdit;
+      product.category = req.body.productCateogryEdit;
+      product.originalPrice = req.body.productOriginalPriceEdit;
+      product.discountPrice = req.body.productDiscountPriceEdit;
+      if ((req.files).length) {
+        req.files.forEach(file => {
+          images.push(file.filename);
+        });
+       product.images = images;
       };
     }
   });
-    
-    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-    res.redirect('/products');
+  
+  fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+  res.redirect('/products');
   },
 
   deleteProduct: (req, res) => {
@@ -86,34 +109,11 @@ const productController = {
 
 destroyProduct: (req, res) => {
     let id = req.params.id;
-    let product = products.find(product => product.id === id);
     let newProducts = products.filter(product => product.id !== id); 
 
     fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
     res.redirect('/products');
   }
 }
-  
-  // delete: (req, res) => {
-  //   res.render('products/delete')
-  // },
 
-  // remove: (req, res) => {},
-  
-  // Aquí va la antigua propiedad que quedó comentada:
-  // productForm: (req, res) => {
-  //     res.render('productForm')
-  // },
-  
-  
-  // detail: (req, res) => {
-  //   let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-  //   const id = req.params.id;
-  
-  //   let product = products.find(product => product.id == id);
-  
-  //   res.render('products/productDetailtest', { product });
-  // },
-
-
-module.exports = productController;
+module.exports = productsController;

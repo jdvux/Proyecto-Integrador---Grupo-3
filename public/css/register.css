@@ -5,6 +5,10 @@
     font-family: 'Roboto';   
 }
 
+main{
+    margin: 0 15px;
+}
+
 body {
     display: flex;
     width: auto;
@@ -122,6 +126,13 @@ form {
     text-decoration: none;
     color: #080705;
 }
+
+.feedback {
+    color:#f3f1f1;
+    font-size: smaller;
+    text-align: left;
+    margin: -4% auto 3%;
+  }
 
 /* MEDIA QUERIES */
 

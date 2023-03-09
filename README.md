@@ -12,6 +12,8 @@ Como referentes, podemos señalar a:
 🌐 https://trello.com/b/GABQyh6K/2do-sprint
 🌐 https://trello.com/invite/b/DMOCwceU/ATTI59e3481237582cf8dc48c9f6cae51dffFD606640/3er-sprint
 🌐 https://trello.com/b/vwvmoDft/4to-sprint
+🌐 https://trello.com/b/4J7FztP1/5to-sprint
+
 
 ## Instalar dependencias
 npm install
@@ -19,6 +21,10 @@ npm install
 ## Dependencias utilizadas
 express
 multer
+express-validator
+cookie-parser
+nodemon
+express-session
 
 
 ## Iniciar el servidor

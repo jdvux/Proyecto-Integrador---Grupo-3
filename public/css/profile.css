@@ -1,0 +1,119 @@
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.mainProfileSection{
+    margin: 120px 20px;
+    width: 75vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #3C6E71, #bdc3c7);
+    box-shadow: 0px 0px 2px 2px rgb(0 0 0 / 20%);
+}
+
+.mainProfileSection h2{
+    font-size: 7vw;
+    margin: 2vh;
+}
+
+.mainProfileSection img{
+    width: 90px;
+    border: 1px solid #7e7e7e;
+    border-radius: 50%;
+    background-color: lightskyblue;
+}
+
+.welcomeMessage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFA;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.profileImg{
+    margin-bottom: 20px;
+}
+
+.hidden-files {
+    display: none;
+}
+
+.fa-camera-rotate {
+    font-weight: 900;
+    position: relative;
+    top: 1em;
+    left: 2.8em;
+    padding-top: 1em;
+    padding-bottom: 5px;
+    font-size: 1.3em;
+} 
+
+.userData{
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.userDataForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.userDataForm p{
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.userDataForm input{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    display: block;
+    border: none;
+    border-left: 10px solid #d9e4ea;
+    transition: all .5s ease;
+    font-size: 12px;
+}
+
+.buttons input{
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.buttons button:hover{
+    background-color: #06771d;
+}
+
+.button-form1{
+    background-color: #284B63;
+    color: white;
+}
+
+.button-form{
+    background-color: #e63946a6;
+    color: white;
+}
+
+:disabled {
+background-color: white;
+}
+
+@media (min-width: 769px) and (max-width: 2500px) {
+    .mainProfileSection{
+        width: 60vw;
+    }
+
+    .mainProfileSection h2{
+        font-size: 5vw;
+    }
+}
