@@ -70,7 +70,7 @@ main {
     padding-bottom: 10px;
 }
 
-.userDataForm input{
+.formTextInput {
     width: 100%;
     padding: 15px;
     margin-bottom: 10px;
