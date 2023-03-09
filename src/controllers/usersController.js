@@ -65,21 +65,11 @@ const usersController = {
 
     profileChanges: (req, res) => {
         let user = req.session.userLogged;
-        let errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            return res.render('users/profile', {
-        errors: errors.mapped(), 
-        old: req.body
-            });
-        };
-
         if (user) {
-            user.name = req.body.userName,
-            user.lastName = req.body.userLastName,
-            user.email = req.body.userEmail,
-            user.password = bcryptjs.hashSync(req.body.userPassword, 12),
-            user.avatar = req.file || user.avatar
-        }
+            if (req.file && req.file.filename) {
+            user.avatar = req.file.filename;
+            };
+        };
 
         fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
         res.redirect('profile');

@@ -104,7 +104,9 @@ main {
     color: white;
 }
 
-
+:disabled {
+background-color: white;
+}
 
 @media (min-width: 769px) and (max-width: 2500px) {
     .mainProfileSection{

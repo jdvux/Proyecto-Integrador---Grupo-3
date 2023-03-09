@@ -40,19 +40,19 @@
             <input type="text" name="userId" placeholder="ID de Usuario" value="<%= user.id %>" disabled>
             <input type="text" name="userType" placeholder="Tipo de Usuario" value="<%= user.type %>" disabled>
             <p>Datos personales</p>
-            <input type="text" name="userName" placeholder="Nombre  " value="<%= user.name %>">
+            <input type="text" name="userName" placeholder="Nombre  " value="<%= user.name %>" disabled>
             <% if (locals.errors && locals.errors.userName) { %>
               <p class="feedback"><%= errors.userName.msg%> </p>
               <% } %>
-            <input type="text" name="userLastName" placeholder="Apellido" value="<%= user.lastName %>">
+            <input type="text" name="userLastName" placeholder="Apellido" value="<%= user.lastName %>" disabled>
             <% if (locals.errors && locals.errors.lastName) { %>
               <p class="feedback"><%= errors.lastName.msg%> </p>
               <% } %>
-            <input type="password" name="userPassword" placeholder="Contraseña" value="<%= user.password %>">
+            <input type="password" name="userPassword" placeholder="Contraseña" value="<%= user.password %>" disabled>
             <% if (locals.errors && locals.errors.userPassword) { %>
               <p class="feedback"><%= errors.userPassword.msg%> </p>
               <% } %>
-            <input type="email" name="userEmail" placeholder="Email" value="<%= user.email %>">
+            <input type="email" name="userEmail" placeholder="Email" value="<%= user.email %>" disabled>
             <% if (locals.errors && locals.errors.userEmail) { %>
               <p class="feedback"><%= errors.userEmail.msg%> </p>
               <% } %>
