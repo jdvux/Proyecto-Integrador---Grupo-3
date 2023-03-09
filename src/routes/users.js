@@ -16,6 +16,6 @@ router.post('/login', loginValidations, usersController.processLogin);
 router.get('/logout', usersController.processLogout);
 
 router.get('/profile', guestMiddleware, usersController.profileView);
-router.put('/profile', uploadUsers.single('userImage'), usersController.profileChanges);
+router.put('/profile', uploadUsers.single('avatar'), usersController.profileChanges);
 
 module.exports = router;

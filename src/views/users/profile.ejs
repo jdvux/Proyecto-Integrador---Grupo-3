@@ -26,33 +26,32 @@
           <h2>Hola, <%=user.name%></h2>
         </div>
 
-        <div class="profileImg">
-          <input type="file" class="hidden-files" id="avatar">
-          <label for="avatar">
-            <i class="fa-solid fa-camera-rotate"></i>
-          </label>
-          <img src="/images/users/<%=user.avatar%>" name="userImage"  alt="Imagen de perfil">
-        </div>
-
         <div class="userData">
           <form class="userDataForm" action="/users/profile?_method=PUT" method="post" enctype="multipart/form-data">
+            <div class="profileImg">
+              <input type="file" class="hidden-files" id="avatar" name="avatar">
+              <label for="avatar">
+                <i class="fa-solid fa-camera-rotate"></i>
+              </label>
+              <img src="/images/users/<%=user.avatar%>" name="userImage"  alt="Imagen de perfil">
+            </div>
             <p>Datos de cuenta  </p>
-            <input type="text" name="userId" placeholder="ID de Usuario" value="<%= user.id %>" disabled>
-            <input type="text" name="userType" placeholder="Tipo de Usuario" value="<%= user.type %>" disabled>
+            <input type="text" name="userId" placeholder="ID de Usuario" value="<%= user.id %>" class="formTextInput" disabled>
+            <input type="text" name="userType" placeholder="Tipo de Usuario" value="<%= user.type %>" class="formTextInput" disabled>
             <p>Datos personales</p>
-            <input type="text" name="userName" placeholder="Nombre  " value="<%= user.name %>" disabled>
+            <input type="text" name="userName" placeholder="Nombre  " value="<%= user.name %>" class="formTextInput" disabled>
             <% if (locals.errors && locals.errors.userName) { %>
               <p class="feedback"><%= errors.userName.msg%> </p>
               <% } %>
-            <input type="text" name="userLastName" placeholder="Apellido" value="<%= user.lastName %>" disabled>
+            <input type="text" name="userLastName" placeholder="Apellido" value="<%= user.lastName %>" class="formTextInput" disabled>
             <% if (locals.errors && locals.errors.lastName) { %>
               <p class="feedback"><%= errors.lastName.msg%> </p>
               <% } %>
-            <input type="password" name="userPassword" placeholder="Contraseña" value="<%= user.password %>" disabled>
+            <input type="password" name="userPassword" placeholder="Contraseña" value="<%= user.password %>" class="formTextInput" disabled>
             <% if (locals.errors && locals.errors.userPassword) { %>
               <p class="feedback"><%= errors.userPassword.msg%> </p>
               <% } %>
-            <input type="email" name="userEmail" placeholder="Email" value="<%= user.email %>" disabled>
+            <input type="email" name="userEmail" placeholder="Email" value="<%= user.email %>" class="formTextInput" disabled>
             <% if (locals.errors && locals.errors.userEmail) { %>
               <p class="feedback"><%= errors.userEmail.msg%> </p>
               <% } %>
