@@ -1,49 +1,47 @@
-{
-    "products": [
-      {
-        "id": "1",
-        "firstName": "Antonella",
-        "lastName": "Rodríguez",
-        "email": "rodriguez.antonella.n@gmail.com",
-        "password": "123456",
-        "type": "Admin",
-        "Avatar": "/images/admin-profile.png"
-      },
-      {
-        "id": "2",
-        "firstName": "Luciano",
-        "lastName": "Gauna",
-        "email": "luciano.927@hotmail.com",
-        "password": "123456",
-        "type": "Admin",
-        "Avatar": "/images/admin-profile.png"
-      },
-      {
-        "id": "3",
-        "firstName": "Juan",
-        "lastName": "Noailles",
-        "email": "jpnoailles@gmail.com",
-        "password": "123456",
-        "type": "Admin",
-        "Avatar": "/images/admin-profile.png"
-      },
-      {
-        "id": "4",
-        "firstName": "Juan",
-        "lastName": "Vergara",
-        "email": "xxxx",
-        "password": "123456",
-        "type": "Admin",
-        "Avatar": "/images/admin-profile.png"
-      }, 
-      {
-        "id": "5",
-        "firstName": "Luis",
-        "lastName": "Feldman",
-        "email": "luisfeldman89@hotmail.com",
-        "password": "123456",
-        "type": "Admin",
-        "Avatar": "/images/admin-profile.png"
-      }
-    ]
+[
+  {
+    "id": "1677802874262",
+    "name": "Antonella",
+    "lastName": "Rodriguez",
+    "email": "rodriguez.antonella.n@gmail.com",
+    "password": "$2a$12$4hTjss.1HdoJd3J0gIwRdODga.VasqTS3xgcBsZbQ3VKU/P6Er2Wi",
+    "type": "admin",
+    "avatar": "/admin-profile.png"
+  },
+  {
+    "id": "1677802968597",
+    "name": "Luciano",
+    "lastName": "Gauna",
+    "email": "luciano.927@hotmail.com",
+    "password": "$2a$12$JTRaeAiPmPlKGxYnDG1zleNeXQp.ekzQKtNT7.r7oWzE7vx3/GhMO",
+    "type": "admin",
+    "avatar": "/admin-profile.png"
+  },
+  {
+    "id": "1677803112595",
+    "name": "Juan",
+    "lastName": "Noailles",
+    "email": "jpnoailles@gmail.com",
+    "password": "$2a$12$N1V/k7HAE8UV1UFt7c6Bdu40qk5WuZG2w09mdJm2qKe5svFvX81iC",
+    "type": "admin",
+    "avatar": "/admin-profile.png"
+  },
+  {
+    "id": "1677803144423",
+    "name": "Juan",
+    "lastName": "Vergara",
+    "email": "abgjvergara@gmail.com",
+    "password": "$2a$12$w3d7BW8hCKb.cgf.DUHEoer4HfYPz4vLqCqILYnFtjg5J7vRUyjja",
+    "type": "admin",
+    "avatar": "/admin-profile.png"
+  },
+  {
+    "id": "1677803294461",
+    "name": "Luis",
+    "lastName": "Feldman",
+    "email": "luisfeldman89@hotmail.com",
+    "password": "$2a$12$mC8qgN0cLizVJbk6XweBDOp96kK0hZo9c9/q2HTP.zAkXUu8OBCm2",
+    "type": "admin",
+    "avatar": "admin-profile.png"
   }
+]

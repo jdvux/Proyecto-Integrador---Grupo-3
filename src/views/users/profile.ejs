@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi perfil</title>
+    <script
+      src="https://kit.fontawesome.com/7ea488e71c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/navAndFooter.css">
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="icon" href="/images/logo_small_black.png">
+    </head>
+
+<body>
+    <%-include('../partials/header.ejs')%>
+    <main>
+      <div class="mainProfileSection">
+        <div class="welcomeMessage">
+          <h2>Hola, <%=user.name%></h2>
+        </div>
+
+        <div class="profileImg">
+          <input type="file" class="hidden-files" id="avatar">
+          <label for="avatar">
+            <i class="fa-solid fa-camera-rotate"></i>
+          </label>
+          <img src="/images/users/<%=user.avatar%>" name="userImage"  alt="Imagen de perfil">
+        </div>
+
+        <div class="userData">
+          <form class="userDataForm" action="/users/profile?_method=PUT" method="post" enctype="multipart/form-data">
+            <p>Datos de cuenta  </p>
+            <input type="text" name="userId" placeholder="ID de Usuario" value="<%= user.id %>" disabled>
+            <input type="text" name="userType" placeholder="Tipo de Usuario" value="<%= user.type %>" disabled>
+            <p>Datos personales</p>
+            <input type="text" name="userName" placeholder="Nombre  " value="<%= user.name %>" disabled>
+            <% if (locals.errors && locals.errors.userName) { %>
+              <p class="feedback"><%= errors.userName.msg%> </p>
+              <% } %>
+            <input type="text" name="userLastName" placeholder="Apellido" value="<%= user.lastName %>" disabled>
+            <% if (locals.errors && locals.errors.lastName) { %>
+              <p class="feedback"><%= errors.lastName.msg%> </p>
+              <% } %>
+            <input type="password" name="userPassword" placeholder="Contraseña" value="<%= user.password %>" disabled>
+            <% if (locals.errors && locals.errors.userPassword) { %>
+              <p class="feedback"><%= errors.userPassword.msg%> </p>
+              <% } %>
+            <input type="email" name="userEmail" placeholder="Email" value="<%= user.email %>" disabled>
+            <% if (locals.errors && locals.errors.userEmail) { %>
+              <p class="feedback"><%= errors.userEmail.msg%> </p>
+              <% } %>
+          </div>
+          <div class="buttons">
+            <input type="submit" class="button-form1" value="Enviar">
+            <input type="reset" class="button-form" value="Borrar">
+          </div>
+        </div>
+          </form>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>
