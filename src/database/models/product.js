@@ -6,8 +6,6 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        // created_at: dataTypes.TIMESTAMP,
-        // updated_at: dataTypes.TIMESTAMP,
         name: {
             type: dataTypes.STRING(50),
             allowNull: false
@@ -41,21 +39,23 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         }
     };
+
     let config = {
         timestamps: false,
         tableName: 'products'
-    }
+    };
+
     const Product = sequelize.define(alias, cols, config); 
 
     Product.associate = function (models) {
         Product.belongsToMany(models.User, {
             as: "users",
             through: 'users-products',
-            foreignKey: 'user_id',
-            otherKey: 'product_id',
+            foreignKey: 'product_id',
+            otherKey: 'user_id',
             timestamps: false
         });
-    }
+    };
 
-    return Product
+    return Product;
 };

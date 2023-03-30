@@ -4,16 +4,14 @@ const path = require('path');
 // const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 // const { validationResult } = require('express-validator');
 const db = require('../database/models');
-const sequelize = db.sequelize;
 
 const productsController = {
   products: (req, res) => {  
     db.Product.findAll()
-      .then(function(products) {
-        return res.render('products', {products: products});
+      .then(function(productList) {
+        return res.render('products', {productList});
       });
-    // res.render('products/products', { products });
-  }
+    }
 
 //   productDetail: (req, res) => {
 //     let id = req.params.id;

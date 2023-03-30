@@ -6,27 +6,27 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        // created_at: dataTypes.TIMESTAMP,
-        // updated_at: dataTypes.TIMESTAMP,
         name: {
             type: dataTypes.STRING(50),
             allowNull: false
         }
     };
+    
     let config = {
         timestamps: false,
         underscored: true,
         tableName: 'product_brands'
-    }
+    };
+
     const ProductBrands = sequelize.define(alias, cols, config); 
 
     ProductBrands.associate = function (models) {
         ProductBrands.hasMany(models.Product, {
-            as: "ProductBrands",
-            foreignKey: 'product_id',
+            as: "brands",
+            foreignKey: 'brand_id',
             timestamps: false
-        })
-    }
+        });
+    };
 
-    return ProductBrands
+    return ProductBrands;
 };

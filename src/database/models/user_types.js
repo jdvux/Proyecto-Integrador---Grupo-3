@@ -6,8 +6,6 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        // created_at: dataTypes.TIMESTAMP,
-        // updated_at: dataTypes.TIMESTAMP,
         name: {
             type: dataTypes.STRING(50),
             allowNull: false
@@ -17,16 +15,17 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false,
         underscored: true,
         tableName: 'user_types'
-    }
+    };
+
     const UserTypes = sequelize.define(alias, cols, config); 
 
     UserTypes.associate = function (models) {
         UserTypes.hasMany(models.User, {
-            as: "UserTypes",
+            as: "types",
             foreignKey: 'user_id',
             timestamps: false
-        })
-    }
+        });
+    };
 
-    return UserTypes
+    return UserTypes;
 };

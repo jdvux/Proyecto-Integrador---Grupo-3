@@ -6,8 +6,6 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        // created_at: dataTypes.TIMESTAMP,
-        // updated_at: dataTypes.TIMESTAMP,
         user_id: {
             type: dataTypes.INTEGER(11).UNSIGNED,
             allowNull: false
@@ -17,11 +15,13 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         }
     };
+
     let config = {
         timestamps: false,
         underscored: true,
         tableName: 'user-product'
-    }
+    };
+
     const UserProduct = sequelize.define(alias, cols, config); 
 
     UserProduct.associate = function (models) {
@@ -30,8 +30,8 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'product_id',
             otherKey: 'user_id',
             timestamps: false
-        })
-    }
+        });
+    };
 
-    return UserProduct
+    return UserProduct;
 };
