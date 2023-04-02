@@ -14,16 +14,12 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.TEXT,
             allowNull: false
         },
-        images: {
-            type: dataTypes.STRING(255),
-            allowNull: false
-        },
         size: {
             type: dataTypes.DOUBLE,
             allowNull: false
         },
         price: {
-            type: dataTypes.DOUBLE,
+            type: dataTypes.INTEGER,
             allowNull: false
         },
         discount_percentage: {
@@ -41,21 +37,44 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     let config = {
-        timestamps: false,
-        tableName: 'products'
+        timestamps: true,
+        underscored: true,
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        deletedAt: 'deleted_at',
+        paranoid: true
     };
 
     const Product = sequelize.define(alias, cols, config); 
 
     Product.associate = function (models) {
-        Product.belongsToMany(models.User, {
-            as: "users",
-            through: 'users-products',
+        Product.hasMany(models.Image, {
+            as: 'images',
             foreignKey: 'product_id',
-            otherKey: 'user_id',
-            timestamps: false
-        });
-    };
+            timestamps: true
+        })
+
+        Product.belongsTo(models.ProductBrands, {
+            as: 'brands',
+            foreignKey: 'brand_id',
+            timestamps: true
+        })
+
+        Product.belongsTo(models.ProductCategories, {
+            as: 'categories',
+            foreignKey: 'category_id',
+            timestamps: true
+        })
+    }
+
+        //     Product.belongsToMany(models.User, {
+    //         as: "users",
+    //         through: 'users-products',
+    //         foreignKey: 'product_id',
+    //         otherKey: 'user_id',
+    //         timestamps: false
+    //     });
+    // };
 
     return Product;
 };

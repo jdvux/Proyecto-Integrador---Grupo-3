@@ -19,13 +19,13 @@ module.exports = (sequelize, dataTypes) => {
 
     const UserTypes = sequelize.define(alias, cols, config); 
 
-    UserTypes.associate = function (models) {
-        UserTypes.hasMany(models.User, {
-            as: "types",
-            foreignKey: 'user_id',
-            timestamps: false
-        });
-    };
+    // UserTypes.associate = function (models) {
+    //     UserTypes.hasMany(models.User, {
+    //         as: "types",
+    //         foreignKey: 'user_id',
+    //         timestamps: false
+    //     });
+    // };
 
     return UserTypes;
 };

@@ -38,20 +38,21 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
         timestamps: false,
-        tableName: 'users'
+        tableName: 'users',
+        underscored: true
     };
 
     const User = sequelize.define(alias, cols, config); 
 
-    User.associate = function (models) {
-        User.belongsToMany(models.Product, {
-            as: "products",
-            through: 'users-products',
-            foreignKey: 'user_id',
-            otherKey: 'product_id',
-            timestamps: false
-        });
-    };
+    // User.associate = function (models) {
+    //     User.belongsToMany(models.Product, {
+    //         as: "products",
+    //         through: 'users-products',
+    //         foreignKey: 'user_id',
+    //         otherKey: 'product_id',
+    //         timestamps: false
+    //     });
+    // };
 
     return User;
 };

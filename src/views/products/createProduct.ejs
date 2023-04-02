@@ -53,21 +53,29 @@
             <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%= errors.productSizeCreate.msg%> </p>
             <% } %> 
 
-        <input class="box-form" type="text" placeholder="Categoría" name="productCateogryCreate" value="<%=locals.old && locals.old.productCateogryCreate%>" >
-        <% if (locals.errors && locals.errors.productCateogryCreate) { %>
-            <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%= errors.productCateogryCreate.msg%> </p>
-            <% } %> 
-
         <input class="box-form" type="number" placeholder="Precio original sin descuento" name="productOriginalPriceCreate" value="<%=locals.old && locals.old.productOriginalPriceCreate%>" >
         <% if (locals.errors && locals.errors.productOriginalPriceCreate) { %>
             <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%= errors.productOriginalPriceCreate.msg%> </p>
             <% } %> 
 
-        <input class="box-form" type="number" placeholder="Precio final" name="productDiscountPriceCreate" value="<%=locals.old && locals.old.productDiscountPriceCreate%>" >
+        <input class="box-form" type="number" placeholder="Porcentaje de descuento" name="productDiscountPercentageCreate" value="<%=locals.old && locals.old.productDiscountPriceCreate%>" >
         <% if (locals.errors && locals.errors.productDiscountPriceCreate) { %>
             <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%= errors.productDiscountPriceCreate.msg%> </p>
             <% } %> 
-        
+
+        <select class="box-form" name="productBrandIdCreate" id="">
+            <option value="">Selecciona una opción</option>
+            <% brands.forEach(brand => { %>
+                <option value="<%= brand.id %>"><%= brand.name %></option>
+            <% }) %>
+        </select>    
+
+        <select class="box-form" name="productCategoryIdCreate" id="">
+            <option value="">Selecciona una opción</option>
+            <% categories.forEach(category => { %>
+                <option value="<%= category.id %>"><%= category.name %></option>
+            <% }) %>
+        </select> 
         <!--Boton-->
         <input type="submit" class="button-form" value="Enviar">
         <input type="reset" class="button-form" value="Borrar">

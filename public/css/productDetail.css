@@ -230,6 +230,10 @@
 
 .featured-products-images p{
     font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0 3vw;
 }
 
 .bottom-img{
