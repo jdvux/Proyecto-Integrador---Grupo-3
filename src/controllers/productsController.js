@@ -191,7 +191,7 @@ destroyProduct: async(req, res) => {
     let productId = req.params.id;
     console.log(productId);
     let imageDestroy = await Image.destroy({
-      where: {id: productId},
+      where: {product_id: productId},
       force: true
     })
     console.log(imageDestroy);
