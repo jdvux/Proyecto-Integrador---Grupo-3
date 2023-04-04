@@ -4,51 +4,51 @@ const usersFilePath = path.join(__dirname, '../database/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const { validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs');
+const { log } = require('console');
 
 const usersController = {
     registerView: (req, res) => {
         res.render('users/register');
     },
 
-    processRegister: (req, res) => {
-        let errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            return res.render('users/register', {
-                errors: errors.mapped(), 
-                old: req.body
-            });
-        };
-        
-        let date = Date.now();
-        
-        let newUser = {
-        "id": date.toString(),
-        "name": req.body.nameRegister,
-        "lastName": req.body.lastNameRegister,
-        "email": req.body.emailRegister,
-        "password": bcryptjs.hashSync(req.body.passwordRegister, 12),
-        "type": "user",
-        "avatar": "/admin-profile.png"
-    };
+    processRegister: async (req, res) => {
+        // let errors = validationResult(req);
+        // if (!errors.isEmpty()) {
+            // return res.render('users/register', {
+                // errors: errors.mapped(), 
+                // old: req.body
+                // });
+                // };
 
-    users.push(newUser);
-    fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
-    res.redirect('login');
+        try {
+            const newUser = await User.create({
+                name: req.body.nameRegister,
+                lastName: req.body.lastNameRegister,
+                email: req.body.emailRegister,
+                password: hashSync(req.body.passwordRegister, 10),
+                type: "user",
+                avatar: req.file.filename || "",
+            });        
+            res.redirect('login');
+        } catch (error) {
+            console.log(error);
+        };
     },
 
     loginView: (req, res) => {
         res.render('users/login');
     },
 
-    processLogin: (req, res) => {
-        let errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            return res.render('users/login', { 
-                errors: errors.mapped(), old: req.body 
-            });
-        };
+    processLogin: async (req, res) => {
+        // let errors = validationResult(req);
+        // if (!errors.isEmpty()) {
+        //     return res.render('users/login', { 
+        //         errors: errors.mapped(), old: req.body 
+        //     });
+        // };
         
-        let user = users.find(user => user.email == req.body.emailLogin);
+        try {
+        let user = User.findbyPk(req.body.emailLogin);
         req.session.userLogged = user;
         if (req.body.remember) {
             res.cookie('userLogged', 
@@ -56,6 +56,9 @@ const usersController = {
             { maxAge : 1000 * 60 });
         };
         res.redirect('profile');
+        } catch (error) {
+            console.log(error);
+        }
     },  
 
     profileView: (req, res) => {
@@ -63,16 +66,18 @@ const usersController = {
         res.render('users/profile', { user });
     },
 
-    profileChanges: (req, res) => {
-        let user = req.session.userLogged;
-        if (user) {
-            if (req.file && req.file.filename) {
-            user.avatar = req.file.filename;
-            };
+    profileChanges: async (req, res) => {
+        try {
+            let user = req.session.userLogged;
+            await User.update({
+                avatar: req.file.filename || ""
+            }, {
+                where: {email: user.email}
+            });
+            res.redirect('profile');
+        } catch (error) {
+            console.log(error);
         };
-
-        fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
-        res.redirect('profile');
     },
 
     processLogout: (req, res) => {
