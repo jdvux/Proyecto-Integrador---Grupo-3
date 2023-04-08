@@ -43,7 +43,7 @@
             <% if (locals.errors && locals.errors.userName) { %>
               <p class="feedback"><%= errors.userName.msg%> </p>
               <% } %>
-            <input type="text" name="userLastName" placeholder="Apellido" value="<%= user.lastName %>" class="formTextInput" disabled>
+            <input type="text" name="userLastName" placeholder="Apellido" value="<%= user.last_name %>" class="formTextInput" disabled>
             <% if (locals.errors && locals.errors.lastName) { %>
               <p class="feedback"><%= errors.lastName.msg%> </p>
               <% } %>

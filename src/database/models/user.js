@@ -30,29 +30,37 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER(11),
             allowNull: false
         },
-        product_id: {
-            type: dataTypes.INTEGER(11),
-            allowNull: false
-        }
+        // product_id: {
+        //     type: dataTypes.INTEGER(11),
+        //     allowNull: true
+        // }
     };
 
     let config = {
-        timestamps: false,
-        tableName: 'users',
-        underscored: true
+        timestamps: true,
+        underscored: true,
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        deletedAt: 'deleted_at',
+        paranoid: true
     };
 
     const User = sequelize.define(alias, cols, config); 
 
-    // User.associate = function (models) {
-    //     User.belongsToMany(models.Product, {
-    //         as: "products",
-    //         through: 'users-products',
-    //         foreignKey: 'user_id',
-    //         otherKey: 'product_id',
-    //         timestamps: false
-    //     });
-    // };
+    User.associate = function (models) {
+        User.belongsToMany(models.Product, {
+            as: "products",
+            through: 'users-products',
+            foreignKey: 'user_id',
+            otherKey: 'product_id',
+            timestamps: true
+        });
+        User.belongsTo(models.UserTypes, {
+            as: 'user_types',
+            foreignKey: 'user_type_id',
+            timestamps: true
+        });
+    };
 
     return User;
 };

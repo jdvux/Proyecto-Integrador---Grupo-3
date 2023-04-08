@@ -14,18 +14,17 @@ module.exports = (sequelize, dataTypes) => {
     let config = {
         timestamps: false,
         underscored: true,
-        tableName: 'user_types'
+        tableName: 'users_types'
     };
 
     const UserTypes = sequelize.define(alias, cols, config); 
 
-    // UserTypes.associate = function (models) {
-    //     UserTypes.hasMany(models.User, {
-    //         as: "types",
-    //         foreignKey: 'user_id',
-    //         timestamps: false
-    //     });
-    // };
+    UserTypes.associate = function (models) {
+        UserTypes.hasMany(models.User, {
+            as: "users",
+            timestamps: true
+        });
+    };
 
     return UserTypes;
 };

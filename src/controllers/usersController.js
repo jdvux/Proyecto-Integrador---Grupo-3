@@ -5,6 +5,7 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const { validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs');
 const { log } = require('console');
+const {User, UserProduct, UserTypes} = require('../database/models')
 
 const usersController = {
     registerView: (req, res) => {
@@ -21,13 +22,13 @@ const usersController = {
                 // };
 
         try {
-            const newUser = await User.create({
+            await User.create({
                 name: req.body.nameRegister,
-                lastName: req.body.lastNameRegister,
+                last_name: req.body.lastNameRegister,
                 email: req.body.emailRegister,
-                password: hashSync(req.body.passwordRegister, 10),
-                type: "user",
-                avatar: req.file.filename || "",
+                password: bcryptjs.hashSync(req.body.passwordRegister, 10),
+                user_type_id: 2,
+                avatar: "admin-profile.png",
             });        
             res.redirect('login');
         } catch (error) {
@@ -48,7 +49,10 @@ const usersController = {
         // };
         
         try {
-        let user = User.findbyPk(req.body.emailLogin);
+        let user = await User.findOne( {
+            //include: ['users_types', 'users-products'],
+            //where: {email: req.body.email}
+        });
         req.session.userLogged = user;
         if (req.body.remember) {
             res.cookie('userLogged', 
@@ -63,6 +67,10 @@ const usersController = {
 
     profileView: (req, res) => {
         let user = req.session.userLogged;
+        User.findAll({
+            where: {email: user.email}
+        })
+        console.log(user);
         res.render('users/profile', { user });
     },
 
@@ -70,7 +78,7 @@ const usersController = {
         try {
             let user = req.session.userLogged;
             await User.update({
-                avatar: req.file.filename || ""
+                avatar: req.file.filename || "admin-profile.png"
             }, {
                 where: {email: user.email}
             });
