@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-04-2023 a las 17:52:47
+-- Tiempo de generación: 12-04-2023 a las 02:41:29
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -274,17 +274,22 @@ CREATE TABLE `users` (
   `email` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL,
   `avatar` varchar(255) NOT NULL,
-  `user_type_id` int(11) NOT NULL
+  `user_type_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `last_name`, `email`, `password`, `avatar`, `user_type_id`) VALUES
-(1, 'Luciano', 'Gauna', 'luciano.927@hotmail.com', '123456ab', '', 1),
-(2, 'Juan', 'Noailles', 'jpnoailles@gmail.com', '123456ab', '', 1),
-(3, 'Juan', 'Vergara', 'abgjvergara@gmail.com', '123456ab', '', 1);
+INSERT INTO `users` (`id`, `name`, `last_name`, `email`, `password`, `avatar`, `user_type_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Luciano', 'Gauna', 'luciano.927@hotmail.com', '123456ab', 'usersImages1680920332130.jpg', 1, '2023-04-08 02:18:52', '2023-04-08 02:18:52', NULL),
+(2, 'Juan', 'Noailles', 'jpnoailles@gmail.com', '123456ab', 'admin-profile.png', 1, '2023-04-08 01:41:32', NULL, NULL),
+(3, 'Juan', 'Vergara', 'abgjvergara@gmail.com', '123456ab', 'admin-profile.png', 1, '2023-04-08 01:41:32', NULL, NULL),
+(4, 'Luciano', 'Gomez', 'luciano@example.com', '$2a$10$pTPxQHkCXTSy0jTZlxOPQur.KaRzI8xln5KARESOz8fMWFjuArFCO', 'admin-profile.png', 2, '2023-04-08 02:04:02', '2023-04-08 02:04:02', NULL),
+(5, 'Luciano', 'Gomez', 'luciano@hotline.com', '$2a$10$jKzUt1YOri01j9Nj.C8jie.49qH4/1zeYe2D2LRXI3zTX8tDm7BMC', 'admin-profile.png', 2, '2023-04-08 02:06:36', '2023-04-08 02:06:36', NULL);
 
 -- --------------------------------------------------------
 
@@ -377,13 +382,13 @@ ALTER TABLE `users_types`
 -- AUTO_INCREMENT de la tabla `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=293;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=365;
 
 --
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de la tabla `products_brands`
@@ -401,7 +406,7 @@ ALTER TABLE `products_categories`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `users-products`
@@ -436,7 +441,7 @@ ALTER TABLE `products`
 -- Filtros para la tabla `users`
 --
 ALTER TABLE `users`
-  ADD CONSTRAINT `fk_users_types` FOREIGN KEY (`user_type_id`) REFERENCES `users_types` (`id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_users_types` FOREIGN KEY (`user_type_id`) REFERENCES `users_types` (`id`);
 
 --
 -- Filtros para la tabla `users-products`

@@ -51,7 +51,7 @@ const usersController = {
         try {
         let user = await User.findOne( {
             //include: ['users_types', 'users-products'],
-            //where: {email: req.body.email}
+            where: {email: req.body.emailLogin}
         });
         req.session.userLogged = user;
         if (req.body.remember) {
