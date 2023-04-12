@@ -70,7 +70,6 @@ const usersController = {
         User.findAll({
             where: {email: user.email}
         })
-        console.log(user);
         res.render('users/profile', { user });
     },
 

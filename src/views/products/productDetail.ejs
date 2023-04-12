@@ -148,11 +148,12 @@
                   <i class="fa-solid fa-arrow-right"></i>
                 </button>
               </div>
-
+              <% if (locals.userLogged && locals.userLogged.user_type_id === 1) { %>
               <div class="edit-and-delete">
                 <a href="../products/editProduct/<%=products.id%>"><button class="edit-button">EDITAR</button></a>
                 <a href="../products/deleteProduct/<%=products.id%>"><button class="delete-button">BORRAR</button></a>
               </div>
+              <% } %>
             </section>
           </div>
 

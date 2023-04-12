@@ -30,21 +30,26 @@
                         <a href="/products/<%=products[i].id%>"><img class="article-img" src="images/products/<%= products[i].images[0].name %>" alt="<%= products[i].name %>"></a>
                         <p class="article-name"><%= products[i].name %></p>
                         <p class="price">$<%= products[i].price %></p>
-                        
+                        <% if (locals.userLogged && locals.userLogged.user_type_id === 1) { %>
                         <div class="edit-and-delete">
                           <a class="article-a" href="/products/editProduct/<%= products[i].id %>"><button class="edit-button">Editar</button></a>
                           <a class="article-a" href="/products/deleteProduct/<%= products[i].id %>"><button class="delete-button">Eliminar</button></a>
-                      </div>  
+                      </div>
+                      <% } %>  
                     </div>
                 <% } %>  
         </div>
         </section>
         <section>
+          <% if (locals.userLogged && locals.userLogged.user_type_id === 1) { %>
           <div class="container-button-create">
             <button class="btn-buy"><a href="/products/createProduct">Crear producto</a></button>
         </div>  
+        <% } else { %>
+          <br>
+          <br>
+        <%} %>
       </section>
-
     </main>
     <%- include('../partials/footer'); %>
   </body>
