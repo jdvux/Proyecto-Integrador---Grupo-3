@@ -53,14 +53,14 @@
             <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%= errors.productSizeCreate.msg%> </p>
             <% } %> 
 
-        <input class="box-form" type="number" placeholder="Precio original sin descuento" name="productOriginalPriceCreate" value="<%=locals.old && locals.old.productOriginalPriceCreate%>" >
-        <% if (locals.errors && locals.errors.productOriginalPriceCreate) { %>
-            <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%= errors.productOriginalPriceCreate.msg%> </p>
+        <input class="box-form" type="number" placeholder="Precio original sin descuento" name="priceWithNoDiscount" value="<%=locals.old && locals.old.priceWithNoDiscount%>" >
+        <% if (locals.errors && locals.errors.priceWithNoDiscount) { %>
+            <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%= errors.priceWithNoDiscount.msg%> </p>
             <% } %> 
 
-        <input class="box-form" type="number" placeholder="Porcentaje de descuento" name="productDiscountPercentageCreate" value="<%=locals.old && locals.old.productDiscountPriceCreate%>" >
-        <% if (locals.errors && locals.errors.productDiscountPriceCreate) { %>
-            <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%= errors.productDiscountPriceCreate.msg%> </p>
+        <input class="box-form" type="number" placeholder="Precio final" name="price" value="<%=locals.old && locals.old.price%>" >
+        <% if (locals.errors && locals.errors.price) { %>
+            <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%= errors.price.msg%> </p>
             <% } %> 
 
         <select class="box-form" name="productBrandIdCreate" id="">

@@ -56,8 +56,8 @@ const productsController = {
       name: req.body.productNameCreate,
       description: req.body.productDescriptionCreate,
       size: req.body.productSizeCreate,
-      price: req.body.productOriginalPriceCreate,
-      discount_percentage: req.body.productDiscountPercentageCreate,
+      price: req.body.price,
+      price_with_no_discount: req.body.priceWithNoDiscount,
       category_id: req.body.productCategoryIdCreate,
       brand_id: req.body.productBrandIdCreate
       })
@@ -108,8 +108,8 @@ const productsController = {
         name: req.body.productNameEdit,
         description: req.body.productDescriptionEdit,
         size: req.body.productSizeEdit,
-        price: req.body.productOriginalPriceEdit,
-        discount_percentage: req.body.productDiscountPercentageEdit,
+        price: req.body.price,
+        price_with_do_discount: req.body.priceWithNoDiscount,
         category_id: req.body.productCategoryEdit,
         brand_id: req.body.productBrandEdit
       },

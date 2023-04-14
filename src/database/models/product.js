@@ -22,9 +22,9 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER,
             allowNull: false
         },
-        discount_percentage: {
+        price_with_no_discount: {
             type: dataTypes.INTEGER(11),
-            allowNull: false
+            allowNull: true
         },
         category_id: {
             type: dataTypes.INTEGER(11),
