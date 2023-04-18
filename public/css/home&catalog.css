@@ -112,8 +112,8 @@ main h1, main h2, main p {
 
 .article-img {
     width: 80%;
-    box-shadow: 0px 0px 7px rgb(152 152 152);
-    transition: all .2s ease;
+    box-shadow: 0px 0px 3px rgb(152 152 152 / 76%);;
+    transition: all .6s ease;
     margin-bottom: 5px;
 }
 
@@ -122,8 +122,12 @@ main h1, main h2, main p {
 }
 
 .article-name {
-    width: 80%;
+    width: 90%;
+    text-align: center;
     font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .article-a{
@@ -177,48 +181,30 @@ main h1, main h2, main p {
     position: relative;
 }
 
+
 .collection-first, .collection-second, .collection-third, .collection-fourth {
     display: inline-block;
     position: inherit;
 }
 
+.collection-first{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
 .collection-img, .collection-img-2 {
     margin: 0 5%;
     width: 90%;
     padding: 0 0 35px;
 }
 
-.view-all-button {
-    position: absolute;
-    bottom: 8%;
-    right: 7%;
-    width: 25%;
-    line-height: 40px;
-    color: #080705;
-    border: #778da9;
-    border-radius: 5px;
-    transition: all 0.2s ease;
-    font-size: 16px;
+.collection-img-2{
+    display: flex;
 }
 
-.view-all-button {
-    position: absolute;
-    bottom: 8%;
-    right: 7%;
-    width: 25%;
-    line-height: 40px;
-    color: #080705;
-    border: #778da9;
-    border-radius: 5px;
-    transition: all 0.2s ease;
-    font-size: 16px;
-}
-
-.view-all-button:hover {
-    background-color: #353535;
-    color: #f3f1f1;
-    transition: .2s;
-
+.third-and-fourth-collection{
+    display: flex;
+    width: 95%;
 }
 
 .container-button-create{
@@ -274,6 +260,10 @@ main h1, main h2, main p {
 /* MOBILE */
 
 @media (max-width: 360px) {
+
+    .article {
+        width: 50%;
+    }
     
     .img-banner {
         margin-top: 80px;
