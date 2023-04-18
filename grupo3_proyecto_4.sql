@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-04-2023 a las 02:41:29
+-- Tiempo de generación: 14-04-2023 a las 22:53:24
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -184,7 +184,7 @@ CREATE TABLE `products` (
   `description` text NOT NULL,
   `size` double NOT NULL,
   `price` int(11) NOT NULL,
-  `discount_percentage` int(11) NOT NULL,
+  `price_with_no_discount` int(11) DEFAULT NULL,
   `category_id` int(11) NOT NULL,
   `brand_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
@@ -196,23 +196,23 @@ CREATE TABLE `products` (
 -- Volcado de datos para la tabla `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `description`, `size`, `price`, `discount_percentage`, `category_id`, `brand_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Vans Old Skool', 'Las Old Skool son las zapatillas clásicas de Vans y el primer modelo en lucir el icónico sidestripe de la marca. Nacieron como un calzado para skaters de los años 70\'y con el correr de las décadas se transformó en un modelo básico de lifestyle', 36, 28500, 15, 2, 3, '2023-04-01 22:23:56', NULL, NULL),
-(2, 'Adidas NMD_V3', 'La vida pasa volando. Pero esto no es un \'parpadea y te lo perdés\'. Esto es algo así como \'atate los cordones y disfrutá cada minuto\'. Diseñadas sobre el legado de la velocidad, estas zapatillas adidas inspiradas en el running te ayudan a enfrentarte al ritmo de tu rutina diaria. Incorporan amortiguación BOOST suave muy cómodo y estable', 44, 41000, 20, 1, 2, '2023-04-01 22:23:56', NULL, NULL),
-(3, 'Nike Air Jordan 1 Hi Og \'Yellow Toe\'', 'Revive lo retro con el Air Jordan 1 Retro Hi OG, llevado a la calle en una nueva combinación de colores. La parte superior de cuero de primera calidad y las superposiciones lustradas le brindan ese aspecto icónico de la vieja escuela arraigado en la comodidad. Con un cuello acolchado, una marca clásica y un diseño de bloques de colores que se destacará entre la multitud', 46, 42500, 15, 4, 1, '2023-04-02 22:28:48', NULL, NULL),
-(4, 'Converse Chuck 70 Low Tonal', 'Consigue ese look auténtico de los 70 con las Chuck 70 Low Tonal Polyester. La marca vintage y el retroceso al diseño clásico de la época te permitirán dominarlo en poco tiempo. Las características de diseño elevadas incluyen amortiguación adicional, una parte superior de lona y costuras reforzadas en la lengüeta. Conseguí las tuyas hoy!', 38, 32500, 20, 2, 7, '2023-04-01 22:23:56', NULL, NULL),
-(5, 'Puma Suede Classic XXI', 'Las PUMA Suede Classic XXI son unas de las zapatillas PUMA más conocidas y populares y merece su lugar en todos los salones de la fama. Esta gran versión del Suede Classic viene en colores frescos que completarán tu estilo de vida deportivo. Disponible ahora en G3 Footwear', 36, 28000, 20, 2, 5, '2023-04-01 22:23:56', NULL, NULL),
-(6, 'Nike Blazer Low \'77 Jumbo', 'Para una apariencia audaz, sabe que el Blazer Low \'77 Jumbo se presentará. A veces necesitas combinar la energía de tu calce con zapatillas que son igualmente icónicas, y ahí es donde entra Nike con el Blazer Low \'77 Jumbo. Terminado con cordones jumbo, detalles de gamuza y un diseño Swoosh de gran tamaño.', 38, 29000, 15, 2, 1, '2023-04-01 22:23:56', NULL, NULL),
-(7, 'Saucony Shadow 6000', 'El Shadow 6000 le da un guiño a su debut original con una silueta vintage, pero se ve con la comodidad de hoy en día. Hechas con superposiciones de malla y gamuza en la parte superior y suavizada con una entresuela de EVA que absorbe los golpes, esta zapatilla mantiene su clase con su combinación de colores frescos y su fabricación de calidad. ¡Compralo hoy!', 36, 32000, 0, 3, 6, '2023-04-01 22:23:56', NULL, NULL),
-(8, 'Puma Slipstream', 'Una de las zapatillas de baloncesto originales de Puma, la Slipstream es un elegante diseño vintage que se presenta en la actualidad. Con paneles de gamuza fresca y una parte superior de cuero resistente, además de una plantilla Softfoam+ para comodidad durante todo el día, estos se convertirán fácilmente en los favoritos en su rotación de zapatillas', 36, 30000, 30, 3, 5, '2023-04-01 22:23:56', NULL, NULL),
-(9, 'Adidas Forum MID', 'Tomemos un momento para rendir homenaje a un ícono. ¿Será la leyenda que desafiaba la gravedad en los años 80? ¿O tal vez las zapatillas que le daban estatus a los pies de raperos? De hecho, ambas. Las zapatillas adidas Forum han dominado las canchas de básquet y las calles, y ahora regresan con una versión de corte medio para llevar tus pasos a otro nivel. Envolvé tus pies con un estilo inconfundible en piel revestida prémium para un look que exude clase', 0, 35000, 10, 4, 2, '2023-04-01 22:23:56', NULL, NULL),
-(10, 'Reebok Question Low', 'Las zapatillas Question Low de Reebok son perfectas para los amantes de las zapatillas. Este modelo actualizado presenta toques de color y una puntera de cuero reforzado, lo que le da a las zapatillas un aspecto de élite, mientras que la amortiguación hexagonal hexalite y la entresuela de EVA garantizan comodidad y durabilidad. ¡Añádilos a tu colección hoy!', 46, 31000, 10, 1, 8, '2023-04-01 22:23:56', NULL, NULL),
-(11, 'Reebok Club C85', 'Reebok regresa con el icónico Club C 85. Las características incluyen una parte superior de cuero suave, un perfil de corte bajo y el logotipo de la firma. El aspecto limpio pero sofisticado hace que esta zapatilla sea perfecta para cualquier atuendo y está hecha para durar. ¡Disponible ahora, conseguí el tuyo hoy!', 46, 28000, 15, 2, 8, '2023-04-01 22:23:56', NULL, NULL),
-(12, 'Nike Air Max TW', 'Entonces, ¿estás enamorado del estilo clásico de los años 90, pero te gusta la cultura acelerada de hoy? Conoce las Air Max TW. Inspirado en la preciada franquicia que trajo la amortiguación Nike Air al mundo y sentó las bases para la estética de la pista a la calle, su diseño llamativo ofrece un 2x1 de comodidad y moda. Listas para resaltar, su parte superior liviana combina líneas angulares y orgánicas para crear un efecto háptico fascinante. Los colores contrastantes facilitan el estilo. Y si está listo para el siguiente paso, las 5 ventanas debajo de los pies brindan un toque moderno a la amortiguación Air visible. Conseguí el tuyo hoy en G3 Footwear!', 46, 34000, 15, 3, 1, '2023-04-01 22:23:56', NULL, NULL),
-(13, 'Asics Gel-Quantum 180 VII', 'La zapatilla GEL-QUANTUM 180™ VII combina una forma futurista con tecnologías de amortiguación avanzadas estudiadas en el Instituto ASICS de Ciencias del Deporte. Su parte superior está reelaborada con una parte superior de malla jacquard que está diseñada para una mejor ventilación y comodidad. La estética elegante del diseño también presenta líneas suaves y menos capas para crear un calce más adaptable. ¡Comprá las tuyas hoy mismo!', 46, 29000, 15, 1, 4, '2023-04-01 22:23:56', NULL, NULL),
-(14, 'Reebok Pump Omni Zone II', 'Haz que tus enemigos se babeen por cada detalle, desde la jaula de TPU con curvas hasta el perfil de corte medio. Nunca comprometa la comodidad con la amortiguación Hexalite en la entresuela. Podríamos seguir. ¿Pero por qué? Conseguílas hoy en G3 Footwear!', 46, 45000, 10, 3, 8, '2023-04-01 22:23:56', NULL, NULL),
-(15, 'Nike Air Huarache Premium', '¿Qué te mueve? Descúbrelo en las Nike Air Huarache.\'NIKE MOVING CO.\' los detalles celebran la historia de hacer que la gente se mueva. La tela elástica que abraza los pies, la amortiguación liviana y la estructura futurista del talón lo llevan a todos lados con comodidad. ¿Dónde seguir?', 46, 41500, 20, 3, 1, '2023-04-01 22:23:56', NULL, NULL),
-(16, 'Jordan Series ES', 'Inspirada en las batallas en el patio trasero de Mike con su hermano mayor Larry, la serie Jordan hace referencia a su legendaria rivalidad entre hermanos en todo el diseño. La suela de goma ofrece más que una tracción impresionante, también cuenta la historia de cómo MJ llegó a ser el número 23. Busque el recordatorio oculto de \'Swing for the Fence\', una cita directa de Larry a su hermanito.', 46, 28000, 10, 2, 9, '2023-04-01 22:23:56', NULL, NULL);
+INSERT INTO `products` (`id`, `name`, `description`, `size`, `price`, `price_with_no_discount`, `category_id`, `brand_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Vans Old Skool', 'Las Old Skool son las zapatillas clásicas de Vans y el primer modelo en lucir el icónico sidestripe de la marca. Nacieron como un calzado para skaters de los años 70\'y con el correr de las décadas se transformó en un modelo básico de lifestyle', 36, 28500, 33500, 2, 3, '2023-04-14 19:57:07', NULL, NULL),
+(2, 'Adidas NMD_V3', 'La vida pasa volando. Pero esto no es un \'parpadea y te lo perdés\'. Esto es algo así como \'atate los cordones y disfrutá cada minuto\'. Diseñadas sobre el legado de la velocidad, estas zapatillas adidas inspiradas en el running te ayudan a enfrentarte al ritmo de tu rutina diaria. Incorporan amortiguación BOOST suave muy cómodo y estable', 44, 37000, 45000, 1, 2, '2023-04-14 20:16:55', NULL, NULL),
+(3, 'Nike Air Jordan 1 Hi Og \'Yellow Toe\'', 'Revive lo retro con el Air Jordan 1 Retro Hi OG, llevado a la calle en una nueva combinación de colores. La parte superior de cuero de primera calidad y las superposiciones lustradas le brindan ese aspecto icónico de la vieja escuela arraigado en la comodidad. Con un cuello acolchado, una marca clásica y un diseño de bloques de colores que se destacará entre la multitud', 46, 42500, NULL, 4, 1, '2023-04-14 20:14:03', NULL, NULL),
+(4, 'Converse Chuck 70 Low Tonal', 'Consigue ese look auténtico de los 70 con las Chuck 70 Low Tonal Polyester. La marca vintage y el retroceso al diseño clásico de la época te permitirán dominarlo en poco tiempo. Las características de diseño elevadas incluyen amortiguación adicional, una parte superior de lona y costuras reforzadas en la lengüeta. Conseguí las tuyas hoy!', 38, 32500, NULL, 2, 7, '2023-04-14 20:14:28', NULL, NULL),
+(5, 'Puma Suede Classic XXI', 'Las PUMA Suede Classic XXI son unas de las zapatillas PUMA más conocidas y populares y merece su lugar en todos los salones de la fama. Esta gran versión del Suede Classic viene en colores frescos que completarán tu estilo de vida deportivo. Disponible ahora en G3 Footwear', 36, 28000, NULL, 2, 5, '2023-04-14 20:14:55', NULL, NULL),
+(6, 'Nike Blazer Low \'77 Jumbo', 'Para una apariencia audaz, sabe que el Blazer Low \'77 Jumbo se presentará. A veces necesitas combinar la energía de tu calce con zapatillas que son igualmente icónicas, y ahí es donde entra Nike con el Blazer Low \'77 Jumbo. Terminado con cordones jumbo, detalles de gamuza y un diseño Swoosh de gran tamaño.', 38, 29000, NULL, 2, 1, '2023-04-14 20:14:41', NULL, NULL),
+(7, 'Saucony Shadow 6000', 'El Shadow 6000 le da un guiño a su debut original con una silueta vintage, pero se ve con la comodidad de hoy en día. Hechas con superposiciones de malla y gamuza en la parte superior y suavizada con una entresuela de EVA que absorbe los golpes, esta zapatilla mantiene su clase con su combinación de colores frescos y su fabricación de calidad. ¡Compralo hoy!', 36, 32000, NULL, 3, 6, '2023-04-14 19:56:05', NULL, NULL),
+(8, 'Puma Slipstream', 'Una de las zapatillas de baloncesto originales de Puma, la Slipstream es un elegante diseño vintage que se presenta en la actualidad. Con paneles de gamuza fresca y una parte superior de cuero resistente, además de una plantilla Softfoam+ para comodidad durante todo el día, estos se convertirán fácilmente en los favoritos en su rotación de zapatillas', 36, 30000, NULL, 3, 5, '2023-04-14 20:15:18', NULL, NULL),
+(9, 'Adidas Forum MID', 'Tomemos un momento para rendir homenaje a un ícono. ¿Será la leyenda que desafiaba la gravedad en los años 80? ¿O tal vez las zapatillas que le daban estatus a los pies de raperos? De hecho, ambas. Las zapatillas adidas Forum han dominado las canchas de básquet y las calles, y ahora regresan con una versión de corte medio para llevar tus pasos a otro nivel. Envolvé tus pies con un estilo inconfundible en piel revestida prémium para un look que exude clase', 0, 35000, NULL, 4, 2, '2023-04-14 19:56:21', NULL, NULL),
+(10, 'Reebok Question Low', 'Las zapatillas Question Low de Reebok son perfectas para los amantes de las zapatillas. Este modelo actualizado presenta toques de color y una puntera de cuero reforzado, lo que le da a las zapatillas un aspecto de élite, mientras que la amortiguación hexagonal hexalite y la entresuela de EVA garantizan comodidad y durabilidad. ¡Añádilos a tu colección hoy!', 46, 31000, NULL, 1, 8, '2023-04-14 20:15:29', NULL, NULL),
+(11, 'Reebok Club C85', 'Reebok regresa con el icónico Club C 85. Las características incluyen una parte superior de cuero suave, un perfil de corte bajo y el logotipo de la firma. El aspecto limpio pero sofisticado hace que esta zapatilla sea perfecta para cualquier atuendo y está hecha para durar. ¡Disponible ahora, conseguí el tuyo hoy!', 46, 28000, 34500, 2, 8, '2023-04-14 20:18:33', NULL, NULL),
+(12, 'Nike Air Max TW', 'Entonces, ¿estás enamorado del estilo clásico de los años 90, pero te gusta la cultura acelerada de hoy? Conoce las Air Max TW. Inspirado en la preciada franquicia que trajo la amortiguación Nike Air al mundo y sentó las bases para la estética de la pista a la calle, su diseño llamativo ofrece un 2x1 de comodidad y moda. Listas para resaltar, su parte superior liviana combina líneas angulares y orgánicas para crear un efecto háptico fascinante. Los colores contrastantes facilitan el estilo. Y si está listo para el siguiente paso, las 5 ventanas debajo de los pies brindan un toque moderno a la amortiguación Air visible. Conseguí el tuyo hoy en G3 Footwear!', 46, 34000, 40000, 3, 1, '2023-04-14 20:18:51', NULL, NULL),
+(13, 'Asics Gel-Quantum 180 VII', 'La zapatilla GEL-QUANTUM 180™ VII combina una forma futurista con tecnologías de amortiguación avanzadas estudiadas en el Instituto ASICS de Ciencias del Deporte. Su parte superior está reelaborada con una parte superior de malla jacquard que está diseñada para una mejor ventilación y comodidad. La estética elegante del diseño también presenta líneas suaves y menos capas para crear un calce más adaptable. ¡Comprá las tuyas hoy mismo!', 46, 29000, 38500, 1, 4, '2023-04-14 20:13:12', NULL, NULL),
+(14, 'Reebok Pump Omni Zone II', 'Haz que tus enemigos se babeen por cada detalle, desde la jaula de TPU con curvas hasta el perfil de corte medio. Nunca comprometa la comodidad con la amortiguación Hexalite en la entresuela. Podríamos seguir. ¿Pero por qué? Conseguílas hoy en G3 Footwear!', 46, 45000, 50000, 3, 8, '2023-04-14 20:15:58', NULL, NULL),
+(15, 'Nike Air Huarache Premium', '¿Qué te mueve? Descúbrelo en las Nike Air Huarache.\'NIKE MOVING CO.\' los detalles celebran la historia de hacer que la gente se mueva. La tela elástica que abraza los pies, la amortiguación liviana y la estructura futurista del talón lo llevan a todos lados con comodidad. ¿Dónde seguir?', 46, 40000, 50000, 3, 1, '2023-04-14 20:17:48', NULL, NULL),
+(16, 'Jordan Series ES', 'Inspirada en las batallas en el patio trasero de Mike con su hermano mayor Larry, la serie Jordan hace referencia a su legendaria rivalidad entre hermanos en todo el diseño. La suela de goma ofrece más que una tracción impresionante, también cuenta la historia de cómo MJ llegó a ser el número 23. Busque el recordatorio oculto de \'Swing for the Fence\', una cita directa de Larry a su hermanito.', 46, 28000, 31500, 2, 9, '2023-04-14 20:19:11', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -288,8 +288,7 @@ INSERT INTO `users` (`id`, `name`, `last_name`, `email`, `password`, `avatar`, `
 (1, 'Luciano', 'Gauna', 'luciano.927@hotmail.com', '123456ab', 'usersImages1680920332130.jpg', 1, '2023-04-08 02:18:52', '2023-04-08 02:18:52', NULL),
 (2, 'Juan', 'Noailles', 'jpnoailles@gmail.com', '123456ab', 'admin-profile.png', 1, '2023-04-08 01:41:32', NULL, NULL),
 (3, 'Juan', 'Vergara', 'abgjvergara@gmail.com', '123456ab', 'admin-profile.png', 1, '2023-04-08 01:41:32', NULL, NULL),
-(4, 'Luciano', 'Gomez', 'luciano@example.com', '$2a$10$pTPxQHkCXTSy0jTZlxOPQur.KaRzI8xln5KARESOz8fMWFjuArFCO', 'admin-profile.png', 2, '2023-04-08 02:04:02', '2023-04-08 02:04:02', NULL),
-(5, 'Luciano', 'Gomez', 'luciano@hotline.com', '$2a$10$jKzUt1YOri01j9Nj.C8jie.49qH4/1zeYe2D2LRXI3zTX8tDm7BMC', 'admin-profile.png', 2, '2023-04-08 02:06:36', '2023-04-08 02:06:36', NULL);
+(6, 'Harry', 'Potter', 'harry.potter@hotmail.com', '$2a$10$9qlxTLFg8lMQE2AcWXN3GejAXaC.7yIaVmD7sG5bBZzmq9JHdlDfu', 'admin-profile.png', 2, '2023-04-14 19:49:50', '2023-04-14 19:49:50', NULL);
 
 -- --------------------------------------------------------
 
@@ -382,13 +381,13 @@ ALTER TABLE `users_types`
 -- AUTO_INCREMENT de la tabla `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=365;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=389;
 
 --
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT de la tabla `products_brands`
@@ -406,7 +405,7 @@ ALTER TABLE `products_categories`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `users-products`
