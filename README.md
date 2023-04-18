@@ -13,6 +13,7 @@ Como referentes, podemos señalar a:
 🌐 https://trello.com/invite/b/DMOCwceU/ATTI59e3481237582cf8dc48c9f6cae51dffFD606640/3er-sprint
 🌐 https://trello.com/b/vwvmoDft/4to-sprint
 🌐 https://trello.com/b/4J7FztP1/5to-sprint
+🌐 https://trello.com/b/i5kp8xa2/6to-sprint
 
 
 ## Instalar dependencias
