@@ -3,10 +3,10 @@ const { parse } = require('path');
 
 const createProductValidations = [
     body("productNameCreate")
-        .isLength({ min: 8 }).withMessage("El nombre debe tener al menos 8 caracteres"),
+        .isLength({ min: 5 }).withMessage("El nombre debe tener al menos 5 caracteres"),
     
     body("productDescriptionCreate")
-        .isLength({ min: 10 }).withMessage("La descripción debe tener al menos 10 caracteres"),
+        .isLength({ min: 20 }).withMessage("La descripción debe tener al menos 20 caracteres"),
     
     body("productImagesCreate")
         .custom((value, { req }) => {
@@ -18,21 +18,23 @@ const createProductValidations = [
         .isLength({ min: 2, max: 2 }).withMessage("El talle debe contener dos números").bail()
         .isNumeric().withMessage("El talle debe ser ingresado en números"),
         
-    body("productCateogryCreate")
-        .isLength({ min: 4 }).withMessage("El nombre de la categoría debe tener al menos 4 caracteres").bail()
-        .isAlpha().withMessage("La categoría sólo debe contener letras"),
+    body("productCategoryIdCreate")
+    .notEmpty().withMessage("Debes escoger una categoría para el producto").bail(),
+
+    body("productBrandIdCreate")
+    .notEmpty().withMessage("Debes escoger una marca para el producto").bail(),
         
-    body("productOriginalPriceCreate")
+    body("priceWithNoDiscount")
         .notEmpty().withMessage("Debes ingresar el precio del producto").bail()
         .isNumeric().withMessage("El precio original debe estar expresado en números").bail()
         .isLength({ min: 5 }).withMessage("El precio original no puede ser menor a 10000"),
         
-    body("productDiscountPriceCreate")
+    body("price")
         .isNumeric().withMessage("El precio en descuento debe estar expresado en números").bail()
         .isLength({ min: 5 }).withMessage("El precio en descuento no puede ser menor a 10000").bail()
-        .custom((productDiscountPriceCreate, { req }) => {
-            if (parseInt(productDiscountPriceCreate) >= parseInt(req.body.productOriginalPriceCreate)) {
-                console.log(productDiscountPriceCreate, req.body.productOriginalPriceCreate)
+        .custom((price, { req }) => {
+            if (parseInt(price) >= parseInt(req.body.productOriginalPriceCreate)) {
+                console.log(productDiscountPriceCreate, req.body.priceWithNoDiscount)
                 throw new Error("El precio en descuento no puede ser mayor o igual al precio original");
             };
             return true;

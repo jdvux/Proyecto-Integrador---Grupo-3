@@ -1,8 +1,4 @@
-// const fs = require('fs');
-// const path = require('path');
-// const productsFilePath = path.join(__dirname, '../data/products.json');
-// const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-// const { validationResult } = require('express-validator');
+const { validationResult } = require('express-validator');
 const {Product, Image, ProductBrands, ProductCategories} = require('../database/models');
 
 const productsController = {
@@ -49,6 +45,13 @@ const productsController = {
     },
 
   store: async (req, res) => {
+    let errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.render('products/createProduct', {
+        errors: errors.mapped(), 
+        old: req.body
+      });
+    }
     
     try {
       
@@ -73,13 +76,6 @@ const productsController = {
   } catch (error) {
     console.log(error);
   }
-  // let errors = validationResult(req);
-  // if (!errors.isEmpty()) {
-  //   return res.render('products/createProduct', {
-  //     errors: errors.mapped(), 
-  //     old: req.body
-  //   });
-  // }
 },
 
   edit: async(req, res) => {
@@ -100,6 +96,14 @@ const productsController = {
   },
   
   update: async(req, res) => {
+    let errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.render('products/editProduct', {
+        errors: errors.mapped(), 
+        old: req.body
+      });
+    }
+
     try {
       let productId = req.params.id;
       console.log(productId);
@@ -133,41 +137,6 @@ const productsController = {
     } catch (error) {
       console.log(error);
     }
-
-    
-  
-    // let id = req.params.id;
-    // let product = products.find(product => product.id === id);
-    // let errors = validationResult(req);
-    // if (!errors.isEmpty()) {
-    //   return res.render('products/editProduct', {
-    //     product,
-    //     errors: errors.mapped(), 
-    //     old: req.body
-    //   });
-    // };
-
-  //   let images = [];
-
-  //   products.forEach(product => {
-  //     if (product.id == id) {
-  //     product.name = req.body.productNameEdit;
-  //     product.description = req.body.productDescriptionEdit;
-  //     product.size = req.body.productSizeEdit;
-  //     product.category = req.body.productCateogryEdit;
-  //     product.originalPrice = req.body.productOriginalPriceEdit;
-  //     product.discountPrice = req.body.productDiscountPriceEdit;
-  //     if ((req.files).length) {
-  //       req.files.forEach(file => {
-  //         images.push(file.filename);
-  //       });
-  //      product.images = images;
-  //     };
-  //   }
-  // });
-  
-  // fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-  // res.redirect('/products');
   },
 
   deleteProduct: (req, res) => {
@@ -179,12 +148,8 @@ const productsController = {
         return res.render('products/deleteProduct', {
           products,
           title: 'Eliminar producto'});
-      })
-    // let id = req.params.id;
-    // let product = products.find(product => product.id == id);
-    
+      });
     },
-// },
 
 destroyProduct: async(req, res) => {
   try {
@@ -198,20 +163,14 @@ destroyProduct: async(req, res) => {
     let deletedProduct = await Product.destroy({
       where: {id: productId}, 
       force: true
-    })
+    });
       console.log(deletedProduct);
       return res.redirect('/products');
       
     } catch (error) {
       console.log(error);
-    }
-    
-    
-    // let newProducts = products.filter(product => product.id !== id); 
-
-    // fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
-    // res.redirect('/products');
+    };
   }
-}
+};
 
 module.exports = productsController;

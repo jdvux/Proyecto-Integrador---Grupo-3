@@ -1,10 +1,5 @@
-const fs = require('fs');
-const path = require('path');
-const usersFilePath = path.join(__dirname, '../database/users.json');
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const { validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs');
-const { log } = require('console');
 const {User, UserProduct, UserTypes} = require('../database/models')
 
 const usersController = {
@@ -13,13 +8,13 @@ const usersController = {
     },
 
     processRegister: async (req, res) => {
-        // let errors = validationResult(req);
-        // if (!errors.isEmpty()) {
-            // return res.render('users/register', {
-                // errors: errors.mapped(), 
-                // old: req.body
-                // });
-                // };
+        let errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.render('users/register', {
+                errors: errors.mapped(), 
+                old: req.body
+                });
+                };
 
         try {
             await User.create({
@@ -41,12 +36,12 @@ const usersController = {
     },
 
     processLogin: async (req, res) => {
-        // let errors = validationResult(req);
-        // if (!errors.isEmpty()) {
-        //     return res.render('users/login', { 
-        //         errors: errors.mapped(), old: req.body 
-        //     });
-        // };
+        let errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.render('users/login', { 
+                errors: errors.mapped(), old: req.body 
+            });
+        };
         
         try {
         let user = await User.findOne( {
