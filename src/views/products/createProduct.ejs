@@ -28,12 +28,12 @@
         <h1 class="product-form-title">Añadir Producto</h1>
 
         <!--datos que se piden para el registro en cajas-------->
-        <input class="box-form" type="text" placeholder="Nombre del producto" name="productNameCreate" value="<%=locals.old && locals.old.productNameCreate%>" >
+        <input class="box-form name-field" type="text" placeholder="Nombre del producto" name="productNameCreate" value="<%=locals.old && locals.old.productNameCreate%>" >
         <% if (locals.errors && locals.errors.productNameCreate) { %>
             <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%= errors.productNameCreate.msg%> </p>
             <% } %> 
 
-        <input class="box-form" type="text" placeholder="Descripción" name="productDescriptionCreate" value="<%=locals.old && locals.old.productDescriptionCreate%>" >
+        <input class="box-form description-field" type="text" placeholder="Descripción" name="productDescriptionCreate" value="<%=locals.old && locals.old.productDescriptionCreate%>" >
         <% if (locals.errors && locals.errors.productDescriptionCreate) { %>
             <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%=errors.productDescriptionCreate.msg%> </p>
             <% } %> 
@@ -75,7 +75,12 @@
             <% categories.forEach(category => { %>
                 <option value="<%= category.id %>"><%= category.name %></option>
             <% }) %>
-        </select> 
+        </select>
+        
+        <div class="errors">
+            <ul></ul>
+        </div>
+        <br>
         <!--Boton-->
         <input type="submit" class="button-form" value="Enviar">
         <input type="reset" class="button-form" value="Borrar">
@@ -84,5 +89,6 @@
     </form>
 
     <%- include('../partials/footer') %>
+    <script src="/js/createProductValidations.js"></script>
     </body>
 </html>

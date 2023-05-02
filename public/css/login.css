@@ -36,7 +36,7 @@ main {
     color: #080705;
 }
 
-#input-login { 
+#input-login, #input-password { 
     width: 80%;
     margin: 0 auto 20px;
     line-height: 40px;

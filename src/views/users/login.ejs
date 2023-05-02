@@ -15,18 +15,18 @@
     />
     <link rel="stylesheet" href="/css/navAndFooter.css" />
     <link rel="stylesheet" href="/css/login.css" />
-    <link rel="icon" href="/images/logo_small_black.png">
+    <link rel="icon" href="/images/logo_small_black.png" />
   </head>
   <body>
-    
     <%- include('../partials/header.ejs') %>
 
     <main>
       <div class="login-form-container">
         <h2 class="login-text">Iniciar sesión</h2>
-        <form action="/users/login" method="POST" >
+        <form action="/users/login" method="POST">
           <input
             type="text"
+            class="email-field"
             name="emailLogin"
             placeholder="Ingresa tu correo electrónico"
             id="input-login"
@@ -34,25 +34,43 @@
             required
           />
           <% if (locals.errors && locals.errors.emailLogin) { %>
-            <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%=errors.emailLogin.msg%> </p> 
-            <% } %>
+          <p class="feedback">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <%=errors.emailLogin.msg%>
+          </p>
+          <% } %>
 
           <input
             type="password"
+            class="password-field"
             name="passwordLogin"
             placeholder="Ingresa tu contraseña"
-            id="input-login"
-            required/>
-            <% if (locals.errors && locals.errors.passwordLogin) { %>
-              <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%=errors.passwordLogin.msg%> </p>
-              <% } %>
+            id="input-password"
+            required
+          />
+          <% if (locals.errors && locals.errors.passwordLogin) { %>
+          <p class="feedback">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <%=errors.passwordLogin.msg%>
+          </p>
+          <% } %>
+
+          <div class="errors">
+            <ul></ul>
+          </div>
 
           <a class="link-login-form" href="/"
-            ><button type="submit" id="button-login">Iniciar Sesión</button></a>
+            ><button type="submit" id="button-login">Iniciar Sesión</button></a
+          >
 
-            <li class="li-checkbox"><input type="checkbox" id="remember" name="remember"><p class="remember-text">Recuérdame</p></li>
+          <li class="li-checkbox">
+            <input type="checkbox" id="remember" name="remember" />
+            <p class="remember-text">Recuérdame</p>
+          </li>
         </form>
-        <p class="forgot-password"><a class="link-login-form" href="#">¿Olvidaste tu contraseña?</a></p>
+        <p class="forgot-password">
+          <a class="link-login-form" href="#">¿Olvidaste tu contraseña?</a>
+        </p>
 
         <h3 class="login-with">También podés iniciar sesión con:</h3>
 
@@ -64,10 +82,12 @@
         </div>
 
         <p class="register-text">
-          Sos nuevo? <a class="link-login-form" href="/users/register">Registrate aquí</a>
+          Sos nuevo?
+          <a class="link-login-form" href="/users/register">Registrate aquí</a>
         </p>
       </div>
     </main>
     <%- include('../partials/footer'); %>
+    <script src="/js/loginValidations.js"></script>
   </body>
 </html>
