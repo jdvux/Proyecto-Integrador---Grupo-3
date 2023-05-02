@@ -90,11 +90,17 @@
         <!--terminos chequear si al resto le parece ok?------->
         <p class="termino1">
           <input type="checkbox" name="termsAndConditions" /> Estoy de acuerdo
-          con
+          con los
           <a class="termino2" href="/terms-conditions"
             >Terminos y Condiciones</a
           >
         </p>
+        <% if (locals.errors && locals.errors.termsAndConditions) { %>
+          <p class="feedback-tac">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <%=errors.termsAndConditions.msg%>
+          </p>
+          <% } %>
 
         <!--Boton-->
         <button type="submit" class="button"><p>Enviar</p></button>

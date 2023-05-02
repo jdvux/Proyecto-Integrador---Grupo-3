@@ -127,11 +127,20 @@ form {
     color: #080705;
 }
 
-.feedback {
+.feedback, .feedback-tac {
     color:#f3f1f1;
+  }
+
+  .feedback {
     font-size: smaller;
-    text-align: left;
     margin: -4% auto 3%;
+    text-align: left;
+  }
+
+  .feedback-tac {
+    font-size: x-small;
+    margin: 4% auto 2%;
+    text-align: center;
   }
 
 .fa-circle-exclamation{

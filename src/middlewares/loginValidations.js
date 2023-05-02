@@ -25,9 +25,6 @@ const loginValidations = [
                     email: req.body.emailLogin
                 }
             });
-            if (!user) {
-                throw new Error ('Registrate primero');
-            };
 
             if (user && !bcryptjs.compareSync(user.password, req.body.passwordLogin)) {
                 throw new Error('La contraseña no es correcta');
