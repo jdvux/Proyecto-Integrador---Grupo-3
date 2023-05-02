@@ -1,4 +1,5 @@
 const { body } = require('express-validator');
+const { User } = require('../database/models');
 
 const registerValidations = [
     body("nameRegister")
@@ -11,7 +12,17 @@ const registerValidations = [
 
     body("emailRegister")
         .notEmpty().withMessage("Debes escribir tu correo electrónico").bail()
-        .isEmail().withMessage("El del correo formato debe ser correo@correo.xxx"),
+        .isEmail().withMessage("El del correo formato debe ser correo@correo.xxx").bail()
+        .custom(async value => {
+            const user = await User.findOne({
+                where: {
+                    email: value
+                }
+            });
+            if (user) {
+                throw new Error('El email indicado ya se encuentra en uso')
+            }
+        }),
 
     body("passwordRegister")
         .isLength({ min: 8 }).withMessage("La contraseña debe contener al menos 8 caracteres").bail()
