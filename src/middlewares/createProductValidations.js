@@ -33,7 +33,7 @@ const createProductValidations = [
         .isNumeric().withMessage("El precio en descuento debe estar expresado en números").bail()
         .isLength({ min: 5 }).withMessage("El precio en descuento no puede ser menor a 10000").bail()
         .custom((price, { req }) => {
-            if (parseInt(price) >= parseInt(req.body.productOriginalPriceCreate)) {
+            if (parseInt(price) >= parseInt(req.body.priceWithNoDiscount)) {
                 console.log(productDiscountPriceCreate, req.body.priceWithNoDiscount)
                 throw new Error("El precio en descuento no puede ser mayor o igual al precio original");
             };
