@@ -26,7 +26,7 @@ const loginValidations = [
                 }
             });
 
-            if (user && !bcryptjs.compareSync(user.password, req.body.passwordLogin)) {
+            if (user && !bcryptjs.compareSync(req.body.passwordLogin, user.password)) {
                 throw new Error('La contraseña no es correcta');
             }; 
         })
