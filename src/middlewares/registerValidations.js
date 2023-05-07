@@ -26,14 +26,7 @@ const registerValidations = [
 
     body("passwordRegister")
         .isLength({ min: 8 }).withMessage("La contraseña debe contener al menos 8 caracteres").bail()
-        .isAlphanumeric().withMessage("La contraseña debe contener al menos una letra y un número"),
-
-    body('termsAndConditions')
-        .custom(value => {
-            if (!value) {
-                throw new Error('Debes aceptar los términos y condiciones');
-            }
-        })
+        .isAlphanumeric().withMessage("La contraseña debe contener al menos una letra y un número")
 ];
 
 module.exports = registerValidations;

@@ -38,6 +38,10 @@ window.addEventListener('load', () => {
             errorsArray.push('El campo contraseña debe tener como mínimo 8 caracteres')
         }
 
+        let terms = document.getElementById('terms');
+        if(!terms.checked){
+            errorsArray.push('Debes aceptar los términos y condiciones');
+        }
 
         if(errorsArray.length > 0){
             e.preventDefault();
