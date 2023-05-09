@@ -67,12 +67,12 @@
                 <% }) %>
             </select>
 
-        <input class="box-form" type="text" placeholder="Precio sin descuento" name="priceWithNoDiscount" value="Precio sin descuento: $<%=products.price_with_no_discount%>" >
+        <input class="box-form" type="text" placeholder="Precio sin descuento" name="priceWithNoDiscount" value="<%=products.price_with_no_discount%>" >
         <% if (locals.errors && locals.errors.priceWithNoDiscount) { %>
             <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%=errors.priceWithNoDiscount.msg%> </p>
             <% } %>
 
-        <input class="box-form" type="text" name="price" placeholder="Precio" value="Precio final: $<%=products.price%>" >
+        <input class="box-form" type="text" name="price" placeholder="Precio" value="<%=products.price%>" >
         <% if (locals.errors && locals.errors.productDiscountPercentageEdit) { %>
             <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%=errors.productDiscountPercentageEdit.msg%> </p>
             <% } %>
