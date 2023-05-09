@@ -36,8 +36,12 @@
               <img src="/images/users/<%=user.avatar%>" name="userImage"  alt="Imagen de perfil">
             </div>
             <p>Datos de cuenta  </p>
-            <input type="text" name="userId" placeholder="ID de Usuario" value="<%= user.id %>" class="formTextInput" disabled>
-            <input type="text" name="userType" placeholder="Tipo de Usuario" value="<%= user.type %>" class="formTextInput" disabled>
+            <input type="text" name="userId" placeholder="ID de Usuario" value="ID: <%= user.id %>" class="formTextInput" disabled>
+            <% if (user.UserTypeId == 1) { %>
+              <input type="text" name="userType" placeholder="Tipo de Usuario" value="Admin" class="formTextInput" disabled>
+            <% } else { %>
+              <input type="text" name="userType" placeholder="Tipo de Usuario" value="Estándar" class="formTextInput" disabled>
+            <% } %>
             <p>Datos personales</p>
             <input type="text" name="userName" placeholder="Nombre  " value="<%= user.name %>" class="formTextInput" disabled>
             <% if (locals.errors && locals.errors.userName) { %>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-04-2023 a las 22:53:24
+-- Tiempo de generación: 08-05-2023 a las 03:33:28
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `grupo3_proyecto`
 --
-CREATE DATABASE IF NOT EXISTS `grupo3_proyecto` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `grupo3_proyecto`;
 
 -- --------------------------------------------------------
 
@@ -285,9 +283,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `last_name`, `email`, `password`, `avatar`, `user_type_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Luciano', 'Gauna', 'luciano.927@hotmail.com', '123456ab', 'usersImages1680920332130.jpg', 1, '2023-04-08 02:18:52', '2023-04-08 02:18:52', NULL),
-(2, 'Juan', 'Noailles', 'jpnoailles@gmail.com', '123456ab', 'admin-profile.png', 1, '2023-04-08 01:41:32', NULL, NULL),
-(3, 'Juan', 'Vergara', 'abgjvergara@gmail.com', '123456ab', 'admin-profile.png', 1, '2023-04-08 01:41:32', NULL, NULL),
+(1, 'Luciano', 'Gauna', 'luciano.927@hotmail.com', '$2a$10$9qlxTLFg8lMQE2AcWXN3GejAXaC.7yIaVmD7sG5bBZzmq9JHdlDfu', 'usersImages1680920332130.jpg', 1, '2023-05-07 00:24:03', '2023-04-08 02:18:52', NULL),
+(2, 'Juan', 'Noailles', 'jpnoailles@gmail.com', '$2a$10$9qlxTLFg8lMQE2AcWXN3GejAXaC.7yIaVmD7sG5bBZzmq9JHdlDfu', 'admin-profile.png', 1, '2023-05-07 00:23:54', NULL, NULL),
+(3, 'Juan', 'Vergara', 'abgjvergara@gmail.com', '$2a$10$9qlxTLFg8lMQE2AcWXN3GejAXaC.7yIaVmD7sG5bBZzmq9JHdlDfu', 'admin-profile.png', 1, '2023-05-07 00:23:38', NULL, NULL),
 (6, 'Harry', 'Potter', 'harry.potter@hotmail.com', '$2a$10$9qlxTLFg8lMQE2AcWXN3GejAXaC.7yIaVmD7sG5bBZzmq9JHdlDfu', 'admin-profile.png', 2, '2023-04-14 19:49:50', '2023-04-14 19:49:50', NULL);
 
 -- --------------------------------------------------------
@@ -405,7 +403,7 @@ ALTER TABLE `products_categories`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `users-products`
