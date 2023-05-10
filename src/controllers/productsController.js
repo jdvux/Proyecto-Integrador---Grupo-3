@@ -122,6 +122,8 @@ const productsController = {
       })
       let newProduct = await Product.findByPk(productId)
       console.log(newProduct);
+
+      if (req.files.value) {
       const files = (req.files).map(file => ({  
         name: file.filename,
         product_id: newProduct.id
@@ -132,6 +134,7 @@ const productsController = {
         }
       })
       await Image.bulkCreate(files)
+    };
       
       res.redirect('/products')
     } catch (error) {

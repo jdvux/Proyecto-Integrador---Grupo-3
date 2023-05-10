@@ -48,12 +48,12 @@
                 <% } %>  
         </div>
 
-        <input class="box-form" type="text" placeholder="Talle del producto" name="productSizeCreate" value="<%=locals.old && locals.old.productSizeCreate%>" >
+        <input class="box-form size-field" type="number" placeholder="Talle del producto" name="productSizeCreate" value="<%=locals.old && locals.old.productSizeCreate%>" >
         <% if (locals.errors && locals.errors.productSizeCreate) { %>
             <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%= errors.productSizeCreate.msg%> </p>
             <% } %> 
 
-        <input class="box-form" type="number" placeholder="Precio original sin descuento" name="priceWithNoDiscount" value="<%=locals.old && locals.old.priceWithNoDiscount%>" >
+        <input class="box-form price-field" type="number" placeholder="Precio original sin descuento" name="priceWithNoDiscount" value="<%=locals.old && locals.old.priceWithNoDiscount%>" >
         <% if (locals.errors && locals.errors.priceWithNoDiscount) { %>
             <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%= errors.priceWithNoDiscount.msg%> </p>
             <% } %> 
@@ -63,14 +63,14 @@
             <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%= errors.price.msg%> </p>
             <% } %> 
 
-        <select class="box-form" name="productBrandIdCreate" id="">
+        <select class="box-form" name="productBrandIdCreate" id="brand-selector">
             <option value="">Selecciona una opción</option>
             <% brands.forEach(brand => { %>
                 <option value="<%= brand.id %>"><%= brand.name %></option>
             <% }) %>
         </select>    
 
-        <select class="box-form" name="productCategoryIdCreate" id="">
+        <select class="box-form" name="productCategoryIdCreate" id="category-selector">
             <option value="">Selecciona una opción</option>
             <% categories.forEach(category => { %>
                 <option value="<%= category.id %>"><%= category.name %></option>
@@ -82,7 +82,7 @@
         </div>
         <br>
         <!--Boton-->
-        <input type="submit" class="button-form" value="Enviar">
+        <button type="submit" class="button-form">Enviar</button>
         <input type="reset" class="button-form" value="Borrar">
             
         

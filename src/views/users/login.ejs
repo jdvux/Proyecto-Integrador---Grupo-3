@@ -31,7 +31,7 @@
             placeholder="Ingresa tu correo electrónico"
             id="input-login"
             value="<%= locals.old && old.emailLogin%>"
-            required
+            
           />
           <% if (locals.errors && locals.errors.emailLogin) { %>
           <p class="feedback">
@@ -46,7 +46,7 @@
             name="passwordLogin"
             placeholder="Ingresa tu contraseña"
             id="input-password"
-            required
+            
           />
           <% if (locals.errors && locals.errors.passwordLogin) { %>
           <p class="feedback">

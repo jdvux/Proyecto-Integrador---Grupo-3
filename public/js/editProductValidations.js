@@ -1,30 +1,26 @@
 window.addEventListener('load', () => {
     const form = document.querySelector('form');
+
     form.addEventListener('submit', e => {
         let errorsArray = [];
 
         let nameField = document.querySelector('.name-field');
-        if (nameField.value == ''){
+        if (nameField.value == '') {
             errorsArray.push('El campo de nombre tiene que estar completo');
-        } else if (nameField.value.length < 5) {
-            errorsArray.push('El campo nombre debe tener como mínimo 5 caracteres')
+        } else if (nameField.value.length < 5){
+            errorsArray.push('El campo nombre debe tener como mínimo 5 caracteres');
         };
 
         let descriptionField = document.querySelector('.description-field');
         if (descriptionField.value.length < 20) {
-            errorsArray.push('El campo descripción debe tener como mínimo 20 caracteres')
-        };
-
-        let imageField = document.getElementById('files');
-        if (imageField.value == "" || !imageField.value.length) {
-            errorsArray.push('Debes subir al menos una imagen');
+            errorsArray.push('El campo descripción debe tener como mínimo 20 caracteres');
         };
 
         let brandField = document.getElementById('brand-selector');
         if (brandField.value == "Selecciona una opción" || brandField.value == "" || !brandField.value) {
             errorsArray.push('Debes elegir una marca para el producto');
         };
-
+        
         let categoryField = document.getElementById('category-selector');
         if (categoryField.value == "Selecciona una opción" || categoryField.value == "" || !categoryField.value) {
             errorsArray.push('Debes elegir una categoría para el producto');
@@ -54,6 +50,6 @@ window.addEventListener('load', () => {
             ulErrors.style.fontSize = "smaller";
             ulErrors.style.width = "80%";
             ulErrors.style.margin = "-4% auto 3%"; 
-        }; 
+        };
     });
 });

@@ -82,12 +82,12 @@ form label {
   display: none;
 }
 
-input[type="submit"]:hover {
+button:hover, input[type="reset"]:hover {
   background: #353535;
   color: #f3f1f1;
 }
 
-input[type="submit"]:hover > a {
+input[type="reset"]:hover > a {
   color: #f3f1f1;
 }
 

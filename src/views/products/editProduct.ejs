@@ -28,12 +28,12 @@
         <h1 class="product-form-title">Editar Producto</h1>
         
         <!--datos que se piden para el registro en cajas-------->
-        <input class="box-form" type="text" name="productNameEdit" placeholder="Nombre del producto" value="<%=products.name%>" >
+        <input class="box-form name-field" type="text" name="productNameEdit" placeholder="Nombre del producto" value="<%=products.name%>" >
         <% if (locals.errors && locals.errors.productNameEdit) { %>
             <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%=errors.productNameEdit.msg%> </p>
             <% } %>
 
-        <input class="box-form" type="text" placeholder="Descripción" name="productDescriptionEdit" value="<%=products.description%>" >
+        <input class="box-form description-field" type="text" placeholder="Descripción" name="productDescriptionEdit" value="<%=products.description%>" >
         <% if (locals.errors && locals.errors.productDescriptionEdit) { %>
             <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%=errors.productDescriptionEdit.msg%> </p>
             <% } %>
@@ -48,26 +48,26 @@
                 <% } %>
         </div>
 
-        <input class="box-form" type="text" placeholder="Talle del producto" name="productSizeEdit" value="<%=products.size%>" >
+        <input class="box-form size-field" type="number" placeholder="Talle del producto" name="productSizeEdit" value="<%=products.size%>" >
         <% if (locals.errors && locals.errors.productSizeEdit) { %>
             <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%=errors.productSizeEdit.msg%> </p>
             <% } %>
 
-            <select class="box-form" name="productBrandEdit" id="">
+            <select class="box-form" name="productBrandEdit" id="brand-selector">
                 <option value="">Selecciona una marca</option>
                 <% brands.forEach(brand => { %>
                     <option value="<%= brand.id %>"><%= brand.name %></option>
                 <% }) %>
             </select>    
     
-            <select class="box-form" name="productCategoryEdit" id="">
+            <select class="box-form" name="productCategoryEdit" id="category-selector">
                 <option value="">Selecciona una categoría</option>
                 <% categories.forEach(category => { %>
                     <option value="<%= category.id %>"><%= category.name %></option>
                 <% }) %>
             </select>
 
-        <input class="box-form" type="text" placeholder="Precio sin descuento" name="priceWithNoDiscount" value="<%=products.price_with_no_discount%>" >
+        <input class="box-form price-field" type="text" placeholder="Precio sin descuento" name="priceWithNoDiscount" value="<%=products.price_with_no_discount%>" >
         <% if (locals.errors && locals.errors.priceWithNoDiscount) { %>
             <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%=errors.priceWithNoDiscount.msg%> </p>
             <% } %>
@@ -78,12 +78,13 @@
             <% } %>
         
         <!--Boton-->
-        <input type="submit" class="button-form" value="Enviar">
+        <button type="submit" class="button-form">Enviar</button>
         <input type="reset" class="button-form" value="Borrar">
             
         
     </form>
 
     <%- include('../partials/footer') %>
+    <script src="/js/editProductValidations.js"></script>
 </body>
 </html>
