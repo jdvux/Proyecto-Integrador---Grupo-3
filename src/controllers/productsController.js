@@ -113,7 +113,7 @@ const productsController = {
         description: req.body.productDescriptionEdit,
         size: req.body.productSizeEdit,
         price: req.body.price,
-        price_with_do_discount: req.body.priceWithNoDiscount,
+        price_with_no_discount: req.body.priceWithNoDiscount,
         category_id: req.body.productCategoryEdit,
         brand_id: req.body.productBrandEdit
       },
