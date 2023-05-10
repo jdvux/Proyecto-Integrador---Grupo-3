@@ -76,7 +76,10 @@ const usersController = {
             }, {
                 where: {email: user.email}
             });
-            user.avatar = req.file.filename || "admin-profile.png";
+            
+            if (req.file && req.file.filename) {
+                user.avatar = req.file.filename
+            };
             res.redirect('profile');
         } catch (error) {
             console.log(error);
