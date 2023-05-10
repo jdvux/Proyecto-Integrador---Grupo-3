@@ -45,15 +45,20 @@ window.addEventListener('load', () => {
         if (errorsArray.length > 0) {
             e.preventDefault();
 
+            let errorsContainer = document.querySelector('.errors');
+            errorsContainer.style.paddingTop = "2%";
+
             let ulErrors = document.querySelector('div.errors ul')
-            for (let i=0; i < errorsArray.length; i++) {
+            for (let i = 0; i < errorsArray.length; i++) {
                 ulErrors.innerHTML += "<li>" + errorsArray[i] + "</li> <br>"
             };
 
             ulErrors.style.color = "#f3f1f1";
+            ulErrors.style.listStyle = "none";
             ulErrors.style.fontSize = "smaller";
-            ulErrors.style.width = "80%";
-            ulErrors.style.margin = "-4% auto 3%"; 
+            ulErrors.style.margin = "0 10% 2% 10%";
+            ulErrors.style.textAlign = "justify";
+            ulErrors.style.textJustify = "inter-word";
         }; 
     });
 });
