@@ -1,40 +1,47 @@
 window.addEventListener('load', () => {
     const form = document.querySelector('form');
     form.addEventListener('submit', e => {
-        let errorsArray = [];
-
         let emailField = document.querySelector('.email-field');
-        const emailRegEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (emailField.value == '') {
-            errorsArray.push('Debes ingresar tu correo electrónico');
-        };
-
-        if (!emailRegEx.test(emailField.value) && emailField.value > 0) {
-            errorsArray.push('El correo electrónico no es válido');
-        };
-
         let passwordField = document.querySelector('.password-field');
-        if (passwordField.value == '') {
-            errorsArray.push('Debes ingresar tu contraseña');
-        };
+        let errors = document.getElementsByClassName('errors');
+        let validForm = true;
 
-        if (errorsArray.length > 0) {
-            e.preventDefault();
-            
-            let errorsContainer = document.querySelector('.errors');
-            errorsContainer.style.paddingTop = "2%";
+        const emailRegEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (emailField.value.trim() == '') {
+            validForm = false;
+            errors[0].innerHTML = 'Debes ingresar tu correo electrónico';
+        } else if (!emailRegEx.test(emailField.value) && emailField.value > 0) {
+            validForm = false;
+            errors[0].innerHTML = 'El correo electrónico no es válido';
+        }else {
+            errors[0].innerHTML = '';
+        }
 
-            let ulErrors = document.querySelector('div.errors ul');
-            for (let i = 0; i < errorsArray.length; i++) {
-                ulErrors.innerHTML += "<li>" + errorsArray[i] + "</li> <br>"
-            };
-            
-            ulErrors.style.color = "#f3f1f1";
-            ulErrors.style.listStyle = "none";
-            ulErrors.style.fontSize = "smaller";
-            ulErrors.style.margin = "0 10% 2% 10%";
-            ulErrors.style.textAlign = "justify";
-            ulErrors.style.textJustify = "inter-word"; 
+
+        if (passwordField.value.trim() == '') {
+            validForm = false;
+            errors[1].innerHTML = 'Debes ingresar una contraseña';
+        } else if (passwordField.value.length < 8){
+            validForm = false;
+            errors[1].innerHTML = 'El campo debe tener como mínimo 8 caracteres';
+        } else {
+            errors[1].innerHTML = '';
+        }
+
+        if (!validForm) {
+            e.preventDefault(); // Evitar que el formulario se envíe si hay errores
+        }
+
+
+        for (let i = 0; i < errors.length; i++) {
+            errors[i].style.color = "#f3f1f1";
+            errors[i].style.listStyle = "none";
+            errors[i].style.fontSize = "smaller";
+            errors[i].style.margin = "0 10% 2% 10%";
+            errors[i].style.textAlign = "justify";
+            errors[i].style.textJustify = "inter-word";
+            errors[i].style.marginTop = "-15px";
+            emailField.style.border = "3px solid red"
         };
     });
 });

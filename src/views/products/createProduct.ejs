@@ -29,11 +29,13 @@
 
         <!--datos que se piden para el registro en cajas-------->
         <input class="box-form name-field" type="text" placeholder="Nombre del producto" name="productNameCreate" value="<%=locals.old && locals.old.productNameCreate%>" >
+        <div class="errors"></div>
         <% if (locals.errors && locals.errors.productNameCreate) { %>
             <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%= errors.productNameCreate.msg%> </p>
             <% } %> 
 
         <input class="box-form description-field" type="text" placeholder="Descripción" name="productDescriptionCreate" value="<%=locals.old && locals.old.productDescriptionCreate%>" >
+        <div class="errors"></div>
         <% if (locals.errors && locals.errors.productDescriptionCreate) { %>
             <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%=errors.productDescriptionCreate.msg%> </p>
             <% } %> 
@@ -43,22 +45,26 @@
             <label for="files">Seleccionar archivo
                 <i class="fa-solid fa-camera-rotate"></i>
             </label>
+            <div class="errors"></div>
             <% if (locals.errors && locals.errors.productImagesCreate) { %>
                 <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%=errors.productImagesCreate.msg%> </p>
                 <% } %>  
         </div>
 
         <input class="box-form size-field" type="number" placeholder="Talle del producto" name="productSizeCreate" value="<%=locals.old && locals.old.productSizeCreate%>" >
+        <div class="errors"></div>
         <% if (locals.errors && locals.errors.productSizeCreate) { %>
             <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%= errors.productSizeCreate.msg%> </p>
             <% } %> 
 
         <input class="box-form price-field" type="number" placeholder="Precio original sin descuento" name="priceWithNoDiscount" value="<%=locals.old && locals.old.priceWithNoDiscount%>" >
+        <div class="errors"></div>
         <% if (locals.errors && locals.errors.priceWithNoDiscount) { %>
             <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%= errors.priceWithNoDiscount.msg%> </p>
             <% } %> 
 
-        <input class="box-form" type="number" placeholder="Precio final" name="price" value="<%=locals.old && locals.old.price%>" >
+        <input class="box-form final-price" type="number" placeholder="Precio final" name="price" value="<%=locals.old && locals.old.price%>" >
+        <div class="errors"></div>
         <% if (locals.errors && locals.errors.price) { %>
             <p class="feedback"><i class="fa-solid fa-circle-exclamation"></i> <%= errors.price.msg%> </p>
             <% } %> 
@@ -68,7 +74,8 @@
             <% brands.forEach(brand => { %>
                 <option value="<%= brand.id %>"><%= brand.name %></option>
             <% }) %>
-        </select>    
+        </select>
+        <div class="errors"></div>    
 
         <select class="box-form" name="productCategoryIdCreate" id="category-selector">
             <option value="">Selecciona una opción</option>
@@ -76,10 +83,8 @@
                 <option value="<%= category.id %>"><%= category.name %></option>
             <% }) %>
         </select>
+        <div class="errors"></div>
         
-        <div class="errors">
-            <ul></ul>
-        </div>
         
         <!--Boton-->
         <button type="submit" class="button-form">Enviar</button>

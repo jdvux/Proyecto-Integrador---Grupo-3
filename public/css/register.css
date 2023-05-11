@@ -147,6 +147,10 @@ form {
     margin-right: 3px;
  } 
 
+.errors i { 
+    display: none;
+}
+
 /* MEDIA QUERIES */
 
 /* MOBILE */

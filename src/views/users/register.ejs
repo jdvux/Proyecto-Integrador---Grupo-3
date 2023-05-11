@@ -35,6 +35,7 @@
           name="nameRegister"
           value="<%= locals.old && old.nameRegister %>"
         />
+        <div class="errors"><i class="fa-solid fa-circle-exclamation"></i></div>
         <% if (locals.errors && locals.errors.nameRegister) { %>
         <p class="feedback">
           <i class="fa-solid fa-circle-exclamation"></i> <%=
@@ -49,6 +50,7 @@
           name="lastNameRegister"
           value="<%= locals.old && old.lastNameRegister %>"
         />
+        <div class="errors"><i class="fa-solid fa-circle-exclamation"></i></div>
         <% if (locals.errors && locals.errors.lastNameRegister) { %>
         <p class="feedback">
           <i class="fa-solid fa-circle-exclamation"></i> <%=
@@ -63,6 +65,7 @@
           name="emailRegister"
           value="<%= locals.old && old.emailRegister %>"
         />
+        <div class="errors"><i class="fa-solid fa-circle-exclamation"></i></div>
         <% if (locals.errors && locals.errors.emailRegister) { %>
         <p class="feedback">
           <i class="fa-solid fa-circle-exclamation"></i> <%=
@@ -77,6 +80,7 @@
           name="passwordRegister"
           value="<%= locals.old && old.passwordRegister %>"
         />
+        <div class="errors"><i class="fa-solid fa-circle-exclamation"></i></div>
         <% if (locals.errors && locals.errors.passwordRegister) { %>
         <p class="feedback">
           <i class="fa-solid fa-circle-exclamation"></i>
@@ -84,9 +88,7 @@
         </p>
         <% } %>
 
-        <div class="errors">
-          <ul></ul>
-        </div>
+        
         <!--terminos chequear si al resto le parece ok?------->
         <p class="termino1">
           <input type="checkbox" name="termsAndConditions" id="terms" /> Estoy de acuerdo
@@ -101,7 +103,8 @@
             <%=errors.termsAndConditions.msg%>
           </p>
           <% } %>
-
+        
+        <div class="errors"></div>
         <!--Boton-->
         <button type="submit" class="button"><p>Enviar</p></button>
 

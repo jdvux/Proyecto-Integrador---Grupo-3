@@ -33,6 +33,7 @@
             value="<%= locals.old && old.emailLogin%>"
             
           />
+          <div class="errors"></div>
           <% if (locals.errors && locals.errors.emailLogin) { %>
           <p class="feedback">
             <i class="fa-solid fa-circle-exclamation"></i>
@@ -48,6 +49,7 @@
             id="input-password"
             
           />
+          <div class="errors"></div>
           <% if (locals.errors && locals.errors.passwordLogin) { %>
           <p class="feedback">
             <i class="fa-solid fa-circle-exclamation"></i>
@@ -55,9 +57,6 @@
           </p>
           <% } %>
 
-          <div class="errors">
-            <ul></ul>
-          </div>
 
           <a class="link-login-form" href="/"
             ><button type="submit" id="button-login">Iniciar Sesión</button></a

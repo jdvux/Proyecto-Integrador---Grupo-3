@@ -45,6 +45,7 @@ main {
     justify-content: center;
     text-align: center;
     border: #778da9;
+    border-left: 10px solid #d9e4ea;
     border-radius: 2px;
     font-size: 14px;
 }
@@ -140,9 +141,9 @@ main {
     margin: -4% auto 3%;
   }
 
- .fa-circle-exclamation{
+.fa-circle-exclamation{
     margin-right: 3px;
- } 
+}
 
 /*-------------MEDIA-QUERIES--------------*/
 
