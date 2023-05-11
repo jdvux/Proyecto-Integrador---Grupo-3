@@ -41,7 +41,6 @@ window.addEventListener('load', () => {
             errors[i].style.textAlign = "justify";
             errors[i].style.textJustify = "inter-word";
             errors[i].style.marginTop = "-15px";
-            emailField.style.border = "3px solid red"
         };
     });
 });
