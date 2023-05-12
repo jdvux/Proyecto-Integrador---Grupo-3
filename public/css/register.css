@@ -73,6 +73,11 @@ form {
     color: #f3f1f1;
 }
 
+[type="checkbox"] {
+    vertical-align: middle;
+    accent-color: #353535;
+}
+
 .button {
     display: block;
     border: none;
@@ -86,7 +91,7 @@ form {
     border-radius: 2px;
     cursor: pointer;
     transition: all .3s ease;
-} 
+}
 
 .button:hover {
     background: #353535;
@@ -140,7 +145,7 @@ form {
   .feedback-tac {
     font-size: x-small;
     margin: 4% auto 2%;
-    text-align: center;
+    text-align: left;
   }
 
 .fa-circle-exclamation{

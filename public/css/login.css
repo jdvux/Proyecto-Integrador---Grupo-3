@@ -48,6 +48,11 @@ main {
     border-left: 10px solid #d9e4ea;
     border-radius: 2px;
     font-size: 14px;
+    transition: all .5s ease;
+}
+
+#input-login:hover, #input-login:focus, #input-password:focus, #input-password:hover {
+    border-left: 10px solid #3C6E71;
 }
 
 #button-login {
@@ -88,6 +93,7 @@ main {
 
 [type="checkbox"] {
     vertical-align: middle;
+    accent-color: #353535;
 }
 
 .remember-text {
@@ -139,9 +145,10 @@ main {
     font-size: smaller;
     width: 80%;
     margin: -4% auto 3%;
+    text-align: left;
   }
 
-.fa-circle-exclamation{
+.fa-circle-exclamation {
     margin-right: 3px;
 }
 
