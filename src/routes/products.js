@@ -5,8 +5,9 @@ const editProductValidations = require('../middlewares/editProductValidations');
 const productsController = require('../controllers/productsController');
 const uploadProducts = require('../middlewares/multerProducts');
 const adminMiddleware = require('../middlewares/adminMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 
-router.get('/productCart', productsController.productCart);
+router.get('/productCart', authMiddleware, productsController.productCart);
 
 router.get('/createProduct', adminMiddleware, productsController.create);
 router.post('/createProduct', uploadProducts.array('productImagesCreate'), createProductValidations, productsController.store);

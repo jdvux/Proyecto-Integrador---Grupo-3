@@ -35,7 +35,8 @@
               </label>
               <img src="/images/users/<%=user.avatar%>" name="userImage"  alt="Imagen de perfil">
             </div>
-            <p>Datos de cuenta  </p>
+            <div class="errors"></div>
+            <p class="firstp">Datos de cuenta  </p>
             <input type="text" name="userId" placeholder="ID de Usuario" value="ID: <%= user.id %>" class="formTextInput" disabled>
             <% if (user.UserTypeId == 1) { %>
               <input type="text" name="userType" placeholder="Tipo de Usuario" value="Admin" class="formTextInput" disabled>
@@ -68,5 +69,6 @@
           </form>
     </main>
     <%- include('../partials/footer') %>
+    <script src="/js/profileValidations.js"></script>
 </body>
 </html>

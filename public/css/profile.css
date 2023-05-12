@@ -37,6 +37,7 @@ main {
 
 .profileImg{
     margin-bottom: 20px;
+    margin-left: -5%;
 }
 
 .hidden-files {
@@ -47,11 +48,11 @@ main {
     font-weight: 900;
     position: relative;
     top: 1em;
-    left: 2.8em;
+    left: 2.9em;
     padding-top: 1em;
     padding-bottom: 5px;
     font-size: 1.3em;
-} 
+}
 
 .userData{
     width: 80%;
@@ -116,4 +117,15 @@ background-color: white;
     .mainProfileSection h2{
         font-size: 5vw;
     }
+}
+
+@media (max-width: 320px) {
+    .profileImg {
+        margin-left: -12%; 
+    }
+
+    .firstp {
+        margin-top: 8px;
+    }
+
 }
