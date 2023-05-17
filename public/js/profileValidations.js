@@ -21,11 +21,11 @@ window.addEventListener('load', () => {
         };
 
         for (let i = 0; i < errors.length; i++) {
-            errors.style.color = "#f3f1f1";
-            errors.style.fontSize = "smaller";
-            errors.style.margin = "5px 0 10px 0";
-            errors.style.textAlign = "justify";
-            errors.style.textJustify = "inter-word";
+            errors[i].style.color = "#f3f1f1";
+            errors[i].style.fontSize = "smaller";
+            errors[i].style.margin = "5px 0 10px 0";
+            errors[i].style.textAlign = "justify";
+            errors[i].style.textJustify = "inter-word";
         };
     });
 });
