@@ -5,6 +5,8 @@ const PORT = 3003 || process.env.PORT;
 const mainRoutes = require('./routes/main');
 const productRoutes = require('./routes/products');
 const userRoutes = require('./routes/users');
+const productsAPI = require('./routes/api/products');
+const usersAPI = require('./routes/api/users');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const userSessionMiddleware = require('./middlewares/userSessionMiddleware');
@@ -30,6 +32,8 @@ app.use(userSessionMiddleware);
 app.use(mainRoutes);
 app.use('/users', userRoutes);
 app.use('/products',productRoutes);
+app.use('/api/products', productsAPI, usersAPI);
+app.use('/api/users', usersAPI);
 
 app.listen(PORT, () => {
   console.log(`server on ${PORT}`);
