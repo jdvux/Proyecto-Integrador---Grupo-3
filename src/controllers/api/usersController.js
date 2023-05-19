@@ -2,10 +2,14 @@ const {User, UserProduct, UserTypes} = require('../../database/models');
 
 const usersController = {
     list: (req, res) => {
-        User.findAll().then(users => {
+        User.findAll({
+            attributes: ['id', 'name', 'last_name', 'email']
+        }).then(users => {
               return res.json({
-                count: users.length,
-                users
+                info: {
+                    count: users.length
+                },
+                results: users
              });
             });
     },
@@ -20,7 +24,7 @@ const usersController = {
                 name: user.name,
                 last_name: user.last_name,
                 email: user.email,
-                avatar: "../../public/images/" + user.avatar,
+                avatar: "http://localhost:3003/images/users/" + user.avatar,
             });
         });
     }

@@ -11,7 +11,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const userSessionMiddleware = require('./middlewares/userSessionMiddleware');
 const cookieParser = require('cookie-parser');
-
+const cors = require('cors');
 
 // view engine setup
 app.set('view engine', 'ejs');
@@ -22,13 +22,19 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(express.static('public'));
-app.use(cookieParser());
+
+// session
 app.use(session({ 
   secret: "secret",
   resave: false,
   saveUninitialized: true,
 }));
+app.use(cookieParser());
 app.use(userSessionMiddleware);
+
+app.use(cors());
+
+// rutas
 app.use(mainRoutes);
 app.use('/users', userRoutes);
 app.use('/products',productRoutes);

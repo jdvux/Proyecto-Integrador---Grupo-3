@@ -4,12 +4,17 @@ const productsController = {
   list: (req, res) => {  
     Product.findAll(
       {
-        include: ['images', 'brands']
+        include: ['brands', 'categories'],
+        attributes: ['id', 'name', 'description']
       }
     ).then(products => {
         return res.json({ 
-            count: products.length,
-            products });
+            info: {
+              count: products.length,
+              countByCategory: "",
+            },
+            results: products 
+          });
       });
     },
 
@@ -18,8 +23,8 @@ const productsController = {
       {
         include: ['images']
       })
-      .then(products => {
-        return res.json({ products });
+      .then(product => {
+        return res.json({ product });
       })
   }
 };
