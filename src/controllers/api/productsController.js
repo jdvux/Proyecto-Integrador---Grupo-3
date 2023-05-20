@@ -9,6 +9,19 @@ const productsController = {
         attributes: ['id', 'name', 'description']
       }
     ).then(products => {
+      const categories = {};
+      products.forEach(product => {
+        let category = product.categories.name;
+
+        if (categories[category]) {
+          categories[category].push(product);        
+        } else {
+          categories[category] = [product]; 
+        };
+      });
+
+      console.log(categories);
+
       const modifiedProducts = products.map(product => {
         return {
             ...product.toJSON(),
@@ -19,6 +32,10 @@ const productsController = {
             info: {
               count: modifiedProducts.length,
               countByCategory: {
+                Sport: categories.Sport.length,
+                Comfort: categories.Comfort.length,
+                Lifestyle: categories.Lifestyle.length,
+                Boots: categories.Boots.length
               },
             },
             results: modifiedProducts 
