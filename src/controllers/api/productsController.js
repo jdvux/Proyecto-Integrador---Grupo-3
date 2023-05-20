@@ -9,13 +9,19 @@ const productsController = {
         attributes: ['id', 'name', 'description']
       }
     ).then(products => {
+      const modifiedProducts = products.map(product => {
+        return {
+            ...product.toJSON(),
+            details: 'http://localhost:3003/api/products/' + product.id // Aquí puedes asignar el valor que desees para la propiedad "details"
+        };
+    });
         return res.json({ 
             info: {
-              count: products.length,
+              count: modifiedProducts.length,
               countByCategory: {
               },
             },
-            results: products 
+            results: modifiedProducts 
           });
       });
     },
@@ -38,9 +44,9 @@ const productsController = {
           price_with_no_discount: product.price_with_no_discount,
           category_id: product.category_id,
           brand_id: product.brand_id,
-          image: "http://localhost:3003/images/products/" + product.images[0].name
+          image: "http://localhost:3003/images/products/" + product.images[1].name
         });
-      })
+      });
   }
 };
 

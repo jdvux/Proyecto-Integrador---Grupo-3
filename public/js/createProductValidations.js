@@ -3,10 +3,9 @@ window.addEventListener('load', () => {
     form.addEventListener('submit', e => {
         let nameField = document.querySelector('.name-field');
         let descriptionField = document.querySelector('.description-field');
-        let imageField = document.getElementById('files');
-        let images = imageField.files;
+        let fileInput = document.getElementById('files');
         let allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif|\.avif|\.webip|\.bmp)$/i;
-        let filePath = images.value;
+        let filePath = fileInput.value;
         let brandField = document.getElementById('brand-selector');
         let categoryField = document.getElementById('category-selector');
         let sizeField = document.querySelector('.size-field');
@@ -32,7 +31,7 @@ window.addEventListener('load', () => {
             errors[1].innerHTML = '';
         };
 
-        if (images.length !== 8) {
+        if (fileInput.files.length !== 8) {
             validForm = false;
             errors[2].innerHTML = 'El producto debe tener 8 imágenes';
         } else if (!allowedExtensions.exec(filePath)) {
