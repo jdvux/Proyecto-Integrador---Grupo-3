@@ -5,13 +5,20 @@ const usersController = {
         User.findAll({
             attributes: ['id', 'name', 'last_name', 'email']
         }).then(users => {
-              return res.json({
-                info: {
-                    count: users.length
-                },
-                results: users
-             });
+            const modifiedUsers = users.map(user => {
+                return {
+                    ...user.toJSON(),
+                    details: 'http://localhost:3003/api/users/' + user.id // Aquí puedes asignar el valor que desees para la propiedad "details"
+                };
             });
+
+            return res.json({
+                info: {
+                    count: modifiedUsers.length
+                },
+                results: modifiedUsers
+            });
+        });
     },
 
     detail: (req, res) => {
