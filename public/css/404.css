@@ -1,0 +1,111 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    margin: 12% 5% 5% 5%;
+    justify-content: space-between;
+}
+
+.image {
+    width: 45%;
+}
+
+main img {
+    width: 100%;
+}
+
+.text {
+    width: 45%;
+}
+
+.sorry {
+    font-size: 3em;
+    margin: 20% 0 5% 0%;
+    color: #3C6E71;
+}
+
+.message {
+    font-size: medium;
+    color: #353535;
+    font-weight: bold;
+    margin-bottom: 5%;
+}
+
+button {
+    background-color: #353535;
+    color: white;
+    height: 10%;
+    width: 50%;
+    font-size: medium;
+    padding: 1.5% 0;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+/* MEDIA QUERIES  */
+
+/* MOBILE */
+
+@media (max-width: 576px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        margin: 30% 0 12% 0;
+    }
+
+    .image {
+        width: 90%;
+    }
+
+    .text {
+        width: 90%;
+    }
+
+    .sorry {
+        font-size: 2em;
+    }
+
+    button {
+        font-size: small;
+    }
+}
+
+/* TABLET */
+
+@media (min-width: 577px) and (max-width: 961px) {
+    .container {
+        margin: 20% 0 12% 5%;
+    }
+
+    .image {
+        width: 90%;
+    }
+
+    .text {
+        margin-top: -5%;
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .sorry {
+        font-size: 2em;
+    }
+
+    button {
+        width: 60%;
+        font-size: small;
+    }
+}
+
+/* DESKTOP */
+
+@media (min-width: 962px) and (max-width: 1101px) {
+    .container {
+        margin-top: 15%;
+    }
+}

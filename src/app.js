@@ -19,6 +19,7 @@ app.set('views', path.resolve('./src/views'));
 
 // soportar lo que envíe el usuario
 app.use(express.urlencoded({ extended: true }));
+
 app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(express.static('public'));
@@ -32,14 +33,20 @@ app.use(session({
 app.use(cookieParser());
 app.use(userSessionMiddleware);
 
+// para la API
 app.use(cors());
 
 // rutas
 app.use(mainRoutes);
 app.use('/users', userRoutes);
 app.use('/products',productRoutes);
-app.use('/api/products', productsAPI, usersAPI);
+app.use('/api/products', productsAPI);
 app.use('/api/users', usersAPI);
+
+// not found
+app.get('*', (req, res) => {
+  res.status(404).render('main/404');
+});
 
 app.listen(PORT, () => {
   console.log(`server on ${PORT}`);

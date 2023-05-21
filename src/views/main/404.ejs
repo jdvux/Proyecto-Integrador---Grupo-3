@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Página no encontrada</title>
+    <link rel="stylesheet" href="/css/404.css">
+    <link rel="stylesheet" href="css/navAndFooter.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" 
+    crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/df0fd52d0d.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="/images/logo_small_black.png">
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <div class="container">
+            <div class="image">
+        <img src="/images/404.png" alt="404 error">
+            </div>
+        <div class="text">
+                <h1 class="sorry">¡Lo sentimos!</h1>
+                <p class="message">No encontramos la página que estás buscando.</p>
+                <a href="/"><button>Volver a la página principal</button></a>
+            </div>      
+        </div>
+    </main>
+<%- include('../partials/footer'); %>
+</body>
+</html>
