@@ -5,8 +5,8 @@ const productsController = {
   list: (req, res) => {  
     Product.findAll(
       {
-        include: ['categories'],
-        attributes: ['id', 'name', 'description']
+        include: ['categories', 'images'],
+        attributes: ['id', 'name', 'description', 'price']
       }
     ).then(products => {
       const categories = {};
@@ -20,7 +20,6 @@ const productsController = {
         };
       });
 
-      console.log(categories);
 
       const modifiedProducts = products.map(product => {
         return {
