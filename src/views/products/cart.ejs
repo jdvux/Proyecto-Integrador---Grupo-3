@@ -27,81 +27,45 @@
             <div class="cart-container">
                 <!-- <label for="">Carrito</label> -->
                 <div class="tab-panel">
-                        <div class="item-row">
-                            <article class="item-container">
+                    <div class="item-row">
+                        <% if (cartProducts.length > 0) { %>
+                            <% cartProducts.forEach(product => { %>
+                              <article class="item-container">
                                 <div class="item-cart">
-                                    <img class="offer-img" src="/images/products/zapas-vans-1.jpg" alt="" />
+                                  <% if (product.images && product.images.length > 0) { %>
+                                    <img class="offer-img" src="/images/products/<%= product.images[0].name %>" alt="" />
+                                  <% } %>
                                 </div>
                                 <div class="item-cart-info">
-                                    <p class="product-name">ZAPATILLAS VANS OLD SKOOL</p>
+                                  <p class="product-name"><%= product.name %></p>
                                 </div>
                                 <div class="add-item">
-                                    <p class="add-item-text"><i class="fa-solid fa-plus"></i><i class="fa-solid fa-minus"></i></p>
+                                    <button class="add-item-text" onclick="increaseQuantity('<%= product.id %>')">
+                                      <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                    <button onclick="decreaseQuantity('<%= product.id %>')">
+                                      <i class="fa-solid fa-minus"></i>
+                                    </button>
+                                  </div>
+                                  <div class="quantity-selector">
+                                    <div class="quantity-selector-box" id="quantity-selector-box-<%= product.id %>">
+                                      <p class="quantity-text" data-price="<%= product.price %>">Cantidad: 1</p>
+                                    </div>
                                 </div>
-                                <div class="quantity-selector">
-                                    <div class="quantity-selector-box"><p class="quantity-text">Cantidad: 1</p></div>
+                                <div class="item-remove">
+                                    <p class="item-remove-text"><a href="#">Eliminar</a></p>
                                 </div>
-                                <div class="item-price"><p class="item-price-p">$25.000</p></div>
-                                <div class="item-remove"><p class="item-remove-text"><a href="#">Eliminar</a></p></div>
-                            </article>   
+                                <div class="item-price">
+                                    <p class="item-price-p" id="total-price-<%= product.id %>">$<%= product.price %></p>
+                                  </div>
+                              </article>
+                              <div class="line"></div>
+                            <% }) %>
+                          <% } else { %>
+                            <p>No hay productos en el carrito.</p>
+                          <% } %>
                         </div>
-                        <div class="line"></div>
-                        <div class="item-row" >
-                            <article class="item-container">
-                                <div class="item-cart">
-                                    <img class="offer-img" src="/images/products/converse-chuck70-2.jpg" alt="" />
-                                </div>
-                                <div class="item-cart-info">
-                                    <p class="product-name">CONVERSE CHUCK 70 LOW TONAL POLYESTER</p>
-                                </div>
-                                <div class="add-item">
-                                    <p class="add-item-text"><i class="fa-solid fa-plus"></i><i class="fa-solid fa-minus"></i></p>
-                                </div>
-                                <div class="quantity-selector">
-                                    <div class="quantity-selector-box"><p class="quantity-text">Cantidad: 1</p></div>
-                                </div>
-                                <div class="item-price"><p class="item-price-p">$32.500</p></div>
-                                <div class="item-remove"><p class="item-remove-text"><a href="#">Eliminar</a></p></div>
-                            </article>   
-                        </div>
-                        <div class="line"></div>
-                        <div class="item-row" >
-                            <article class="item-container">
-                                <div class="item-cart">
-                                    <img class="offer-img" src="/images/products/nike-blazer-low-2.jpg" alt="" />
-                                </div>
-                                <div class="item-cart-info">
-                                    <p class="product-name">NIKE BLAZER LOW '77 JUMBO</p>
-                                </div>
-                                <div class="add-item">
-                                    <p class="add-item-text"><i class="fa-solid fa-plus"></i><i class="fa-solid fa-minus"></i></p>
-                                </div>
-                                <div class="quantity-selector">
-                                    <div class="quantity-selector-box"><p class="quantity-text">Cantidad: 1</p></div>
-                                </div>
-                                <div class="item-price"><p class="item-price-p">$29.000</p></div>
-                                <div class="item-remove"><p class="item-remove-text"><a href="#">Eliminar</a></p></div>
-                            </article>   
-                        </div>
-                        <div class="line"></div>
-                        <div class="item-row" >
-                            <article class="item-container">
-                                <div class="item-cart">
-                                    <img class="offer-img" src="/images/products/nike-air-jordan-2.jpg" alt="" />
-                                </div>
-                                <div class="item-cart-info">
-                                    <p class="product-name">NIKE AIR JORDAN 1 RETRO HI OG "YELLOW TOE"</p>
-                                </div>
-                                <div class="add-item">
-                                    <p class="add-item-text"><i class="fa-solid fa-plus"></i><i class="fa-solid fa-minus"></i></p>
-                                </div>
-                                <div class="quantity-selector">
-                                    <div class="quantity-selector-box"><p class="quantity-text">Cantidad: 1</p></div>
-                                </div>
-                                <div class="item-price"><p class="item-price-p">$42.500</p></div>
-                                <div class="item-remove"><p class="item-remove-text"><a href="#">Eliminar</a></p></div>
-                            </article>   
-                        </div>
+                        
                         <div class="line"></div>
                         <div class="footer-container-cart">
                             <div class="ticket-shipping">
@@ -110,11 +74,14 @@
                             </div>
                             <div class="ticket-total">
                                 <p class="total-text">Total</p>
-                                <p class="total-price">$33500</p>
+                                <p class="total-price" id="total-price">$<%= totalPrice %></p>
                             </div>
                             <div class="button-container">
-                            <button class="btn-buy"><a href="/">Comprar</a></button>
-                            <button class="btn-back"><a href="/productDetail">Volver</a></button>
+                                <button type="button" class="btn-buy" id="buy-button">Comprar</button>
+                                <form action="/products/emptyCart" method="POST">
+                                  <button type="submit" class="btn-back">Vaciar</button>
+                                </form>
+                              </div>
                         </div>
                     </div>
                 </div>
@@ -122,5 +89,6 @@
         </section>
     </main>
     <%- include('../partials/footer'); %>
+    <script src="/js/cart.js"></script>
   </body>
 </html>

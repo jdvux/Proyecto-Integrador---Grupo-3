@@ -147,10 +147,9 @@
               </div>
 
               <div class="add-to-cart">
-                <button>
-                  <a href="/products/productCart"><p>AÑADIR AL CARRITO</p></a>
-                  <i class="fa-solid fa-arrow-right"></i>
-                </button>
+                <a href="/products/productCart/<%= products.id %>">
+                  <button>AÑADIR AL CARRITO <i class="fa-solid fa-arrow-right"></i></button>
+                </a>
               </div>
               <% if (locals.userLogged && locals.userLogged.user_type_id === 1) { %>
               <div class="edit-and-delete">
@@ -415,5 +414,6 @@
       </div>
     </main>
     <%- include('../partials/footer'); %>
+    <script src="/js/cart.js"></script>
   </body>
 </html>

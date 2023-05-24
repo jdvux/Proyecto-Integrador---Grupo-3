@@ -9,6 +9,8 @@ const authMiddleware = require('../middlewares/authMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 
 router.get('/productCart', guestMiddleware, productsController.productCart);
+router.get('/productCart/:id', productsController.addToCart);
+router.post('/emptyCart', productsController.emptyCart);
 
 router.get('/createProduct', adminMiddleware, productsController.create);
 router.post('/createProduct', uploadProducts.array('productImagesCreate'), createProductValidations, productsController.store);

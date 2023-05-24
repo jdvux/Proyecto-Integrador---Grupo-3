@@ -24,15 +24,63 @@ const productsController = {
   },
 
   productCart: (req, res) => {
-    Product.findAll(
-    {
-      include: ['images']
-    }
-    )
-      .then(products => {
-        res.render('products/cart', {products});
-      })
+    const cartProducts = req.session.cartProducts || [];
+    let totalPrice = 0;
+  
+    // Calcular el total sumando los precios de los productos en el carrito
+    cartProducts.forEach(product => {
+      totalPrice += product.price;
+    });
+  
+    res.render('products/cart', { cartProducts, totalPrice });
   },
+  
+  buyProducts: (req, res) => {
+    // Lógica para realizar la compra (puede ser almacenar en una base de datos, enviar un correo electrónico, etc.)
+  
+    // Vaciar el carrito después de la compra
+    req.session.cartProducts = [];
+  
+    // Mostrar un mensaje de agradecimiento
+    res.send('Gracias por tu compra');
+  },
+  
+  emptyCart: (req, res) => {
+    // Vaciar el carrito
+    req.session.cartProducts = [];
+  
+    res.redirect('/products/productCart'); // Redirigir a la página del carrito
+  },
+
+  // Agregar un producto al carrito
+  addToCart: (req, res) => {
+    const productId = req.params.id;
+  
+    // Buscar el producto por su ID y obtener los detalles, incluyendo las imágenes
+    Product.findByPk(productId, { include: ['images'] })
+      .then(product => {
+        if (!product) {
+          // Manejar el caso si el producto no se encuentra
+          return res.status(404).send('Producto no encontrado');
+        }
+  
+        // Obtener los productos almacenados en la sesión o inicializar un array vacío
+        const cartProducts = req.session.cartProducts || [];
+        // Agregar el nuevo producto al array
+        cartProducts.push(product);
+        
+        // Almacenar el array actualizado en la sesión
+        req.session.cartProducts = cartProducts;
+        
+        res.redirect('/products/productCart'); // Redirigir a la página del carrito
+      })
+      .catch(error => {
+        // Manejar cualquier error de búsqueda del producto
+        console.log(error);
+        res.status(500).send('Error al agregar el producto al carrito');
+      });
+  },
+  
   
   create: async(req, res) => {
     try {

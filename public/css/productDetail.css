@@ -132,6 +132,10 @@
     justify-content: center;
 }
 
+.add-to-cart a{
+    text-decoration: none;
+}
+
 .add-to-cart button{
     padding: 8px;
     border-radius: 10px;
