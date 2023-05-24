@@ -91,16 +91,17 @@ main {
     cursor: pointer;
 }
 
-.buttons button:hover{
+.button-form1 {
     background-color: #06771d;
-}
-
-.button-form1{
-    background-color: #284B63;
     color: white;
 }
 
-.button-form{
+.button-form {
+    background-color: #353535;
+    color: white;
+}
+
+.button-form2 {
     background-color: #e63946a6;
     color: white;
 }

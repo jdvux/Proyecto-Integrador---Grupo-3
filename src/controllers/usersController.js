@@ -45,9 +45,9 @@ const usersController = {
         
         try {
         let user = await User.findOne( {
-            //include: ['users_types', 'users-products'],
             where: {email: req.body.emailLogin}
         });
+
         req.session.userLogged = user;
         if (req.body.remember) {
             res.cookie('userLogged', 
@@ -57,34 +57,46 @@ const usersController = {
         res.redirect('profile');
         } catch (error) {
             console.log(error);
-        }
+        };
     },  
 
     profileView: (req, res) => {
         let user = req.session.userLogged;
+        let id = user.id;
         User.findAll({
-            where: {email: user.email}
-        })
+            where: { id }
+        });
+
         res.render('users/profile', { user });
     },
 
     profileChanges: async (req, res) => {
         try {
             let user = req.session.userLogged;
+            let id = user.id;
+
             await User.update({
                 name: req.body.userName,
                 last_name: req.body.userLastName,
-                avatar: req.file.filename || "admin-profile.png"
+                avatar: req.file || user.avatar
             }, {
-                where: {email: user.email}
+                where: { id }
             });
             
-            if (req.file && req.file.filename) {
-                user.name = req.body.userName,
-                user.last_name = req.body.userLastName,
-                user.avatar = req.file.filename
+            if (req.body.userLastName) {
+                user.last_name = req.body.userLastName;
             };
+            
+            if (req.body.userName) {
+                user.name = req.body.userName;
+            };
+
+            if (req.file && req.file.filename) {
+                user.avatar = req.file.filename;
+            };
+
             res.redirect('profile');
+
         } catch (error) {
             console.log(error);
         };
@@ -93,21 +105,21 @@ const usersController = {
     destroyUser: async(req, res) => {
         try {
             let user = req.session.userLogged;
+            let id = user.id;
     
             let deletedUser = await User.destroy({
-              where: {id: user.id}, 
+              where: { id }, 
               force: true
             });
-            console.log(user);
-              
-              return res.json({"mensaje": "se eliminó el usuario"})
-              
+
+            req.session.destroy();
+            res.clearCookie('userLogged');
+
+              return res.json({"mensaje": "se eliminó el usuario"});
             } catch (error) {
               console.log(error);
             };
     },
-
-
 
     processLogout: (req, res) => {
         req.session.destroy();

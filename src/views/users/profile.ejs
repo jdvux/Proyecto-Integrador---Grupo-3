@@ -9,11 +9,14 @@
       src="https://kit.fontawesome.com/7ea488e71c.js"
       crossorigin="anonymous"
     ></script>
+    <script src="/js/sweetalert2.js"></script>
+    <script src="/js/profileValidations.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/navAndFooter.css">
+    <link rel="stylesheet" href="/css/sweetalert2.css">
     <link rel="stylesheet" href="/css/profile.css">
     <link rel="icon" href="/images/logo_small_black.png">
     </head>
@@ -41,61 +44,78 @@
             <% if (user.UserTypeId == 1) { %>
               <input type="text" name="userType" placeholder="Tipo de Usuario" value="Admin" class="formTextInput" disabled>
             <% } else { %>
-              <input type="text" name="userType" placeholder="Tipo de Usuario" value="Estándar" class="formTextInput" disabled>
+              <input type="text" name="userType" placeholder="Tipo de Usuario" value="Estándar" class="formTextInput" >
             <% } %>
+
             <p>Datos personales</p>
-            <input type="text" name="userName" placeholder="Nombre  " value="<%= user.name %>" class="formTextInput" disabled>
-            <% if (locals.errors && locals.errors.userName) { %>
-              <p class="feedback"><%= errors.userName.msg%> </p>
-              <% } %>
-            <input type="text" name="userLastName" placeholder="Apellido" value="<%= user.last_name %>" class="formTextInput" disabled>
-            <% if (locals.errors && locals.errors.lastName) { %>
-              <p class="feedback"><%= errors.lastName.msg%> </p>
-              <% } %>
+            <input type="text" name="userName" placeholder="Nombre  " value="<%= user.name %>" class="formTextInput" id="userName">
+            
+            <input type="text" name="userLastName" placeholder="Apellido" value="<%= user.last_name %>" class="formTextInput" id="userLastName" >
+            
             <input type="password" name="userPassword" placeholder="Contraseña" value="<%= user.password %>" class="formTextInput" disabled>
-            <% if (locals.errors && locals.errors.userPassword) { %>
-              <p class="feedback"><%= errors.userPassword.msg%> </p>
-              <% } %>
+            
             <input type="email" name="userEmail" placeholder="Email" value="<%= user.email %>" class="formTextInput" disabled>
-            <% if (locals.errors && locals.errors.userEmail) { %>
-              <p class="feedback"><%= errors.userEmail.msg%> </p>
-              <% } %>
+            
           </div>
           <div class="buttons">
             <input type="submit" class="button-form1" value="Enviar">
             <input type="reset" class="button-form" value="Borrar">
-            <button class="button-form1" id="deleteButton">Eliminar</button>
+            <input type="submit" class="button-form2" id="deleteButton" value="Eliminar">
           </div>
         </div>
           </form>
     </main>
     <%- include('../partials/footer') %>
-    <script src="/js/profileValidations.js"></script>
     <script>
       const deleteButton = document.getElementById('deleteButton');
-    
-      deleteButton.addEventListener('click', () => {
-        const confirmation = confirm('¿Estás seguro de que deseas eliminar tu cuenta?');
-    
-        if (confirmation) {
-          // Envía una solicitud de eliminación al servidor
-          fetch('/users/profile/delete', {
-            method: 'DELETE',
-          })
-            .then(response => {
+      
+      deleteButton.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        let result = Swal.fire({
+          title: '¿Estás seguro de que deseas eliminar tu cuenta?',
+          icon: 'warning',
+          iconColor: '#353535',
+          background: '#FFFFFA',
+          showCancelButton: true,
+          confirmButtonColor: '#3C6E71',
+          cancelButtonColor: '#353535',
+          confirmButtonText: 'Sí, eliminar',
+          cancelButtonText: 'Cancelar',
+        }).then((result => {
+          if (result) {
+            fetch('/users/profile', {
+              method: 'DELETE'
+            }).then(response => {
               if (response.ok) {
-                // Redirecciona al inicio u otra página deseada después de la eliminación
                 window.location.href = '/';
               } else {
                 throw new Error('Error al eliminar la cuenta');
-              }
-            })
-            .catch(error => {
+              };
+            }).catch(error => {
               console.log(error);
-              alert('Error al eliminar la cuenta');
             });
-        }
+          };
+        }))
       });
+        
+        // // const confirmation = confirm('¿Estás seguro de que deseas eliminar tu cuenta?');
+        // // if (confirmation) {
+        // //   fetch('/users/profile/delete', {
+        // //     method: 'DELETE',
+        //   }).then(response => {
+        //       if (response.ok) {
+        //         window.location.href = '/';
+        //       } else {
+        //         throw new Error('Error al eliminar la cuenta');
+        //       };
+        //     })
+        //     .catch(error => {
+        //       console.log(error);
+        //       alert('Error al eliminar la cuenta');
+        //     });
+        // };
+      // });
     </script>
 </body>
 </html>
