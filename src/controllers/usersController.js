@@ -78,7 +78,7 @@ const usersController = {
             await User.update({
                 name: req.body.userName,
                 last_name: req.body.userLastName,
-                avatar: req.file || user.avatar
+                avatar: req.file.filename || user.avatar
             }, {
                 where: { id }
             });

@@ -4,15 +4,14 @@ window.addEventListener('DOMContentLoaded', () => {
         try {
             let name = document.getElementById('userName').value;
             let lastName = document.getElementById('userLastName').value;
-            let avatar = document.getElementById('avatar').files;
+            let avatar = document.getElementById('avatar');
+            let image = avatar.files
             let allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif|\.avif|\.webip|\.bmp)$/i;
             let filePath = avatar.value;
             let errors = document.getElementsByClassName('errors');
             let validForm = true;
 
-            console.log(name === '');
-  
-            if (avatar.length > 0 && !allowedExtensions.exec(filePath)) {
+            if (image.length > 0 && !allowedExtensions.exec(filePath)) {
                 validForm = false;
                 errors[0].innerHTML = 'El formato del archivo no es válido';
             };
