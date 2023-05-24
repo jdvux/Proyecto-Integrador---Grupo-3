@@ -15,7 +15,7 @@ Como referentes, podemos señalar a:
 🌐 https://trello.com/b/4J7FztP1/5to-sprint
 🌐 https://trello.com/b/i5kp8xa2/6to-sprint
 🌐 https://trello.com/b/8ya8wu9j/7mo-sprint
-
+🌐 https://trello.com/b/xno2qIYL/8vo-sprint
 
 ## Instalar dependencias
 npm install
@@ -27,6 +27,7 @@ express-validator
 cookie-parser
 nodemon
 express-session
+sweetalert2
 
 
 ## Iniciar el servidor

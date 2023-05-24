@@ -1,32 +1,31 @@
-window.addEventListener('load', () => {
+window.addEventListener('DOMContetLoaded', () => {
     const form = document.querySelector('form');
     form.addEventListener('submit', e => {
-        let name = document.getElementById('userName');
-        let lastName = document.getElementById('userLastName');
-        let avatar = document.getElementById('avatar');
-        let image = avatar.files;
+        let name = document.getElementById('userName').value
+        let lastName = document.getElementById('userLastName').value
+        let avatar = document.getElementById('avatar').files
         let allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif|\.avif|\.webip|\.bmp)$/i;
         let filePath = avatar.value;
         let errors = document.getElementsByClassName('errors');
         let validForm = true;
 
-        // if (name.value === '') {
-        //     validForm = false;
-        //     errors[1].innerHTML = 'Debes ingresar tu nombre'
-        // } else if (name.value.length < 2) {
-        //     validForm = false;
-        //     errors[1].innerHTML = 'El nombre debe tener al menos 2 caracteres';
-        // };
+        if (name === '') {
+            validForm = false;
+            errors[1].innerHTML = 'Debes ingresar tu nombre'
+        } else if (name.length < 2) {
+            validForm = false;
+            errors[1].innerHTML = 'El nombre debe tener al menos 2 caracteres';
+        };
 
-        // if (lastName.value === '') {
-        //     validForm = false;
-        //     errors[2].innerHTML = 'Debes ingresar tu apellido'
-        // } else if (lastName.value.length) {
-        //     validForm = false;
-        //     errors[2].innerHTML = 'El apellido debe tener al menos 2 caracteres'
-        // };
+        if (lastName === '') {
+            validForm = false;
+            errors[2].innerHTML = 'Debes ingresar tu apellido'
+        } else if (lastName.length < 2) {
+            validForm = false;
+            errors[2].innerHTML = 'El apellido debe tener al menos 2 caracteres'
+        };
  
-        if (image.length > 0 && !allowedExtensions.exec(filePath)) {
+        if (avatar.length > 0 && !allowedExtensions.exec(filePath)) {
             validForm = false;
             errors[0].innerHTML = 'El formato del archivo no es válido';
         };
