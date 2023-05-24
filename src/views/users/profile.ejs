@@ -49,8 +49,10 @@
 
             <p>Datos personales</p>
             <input type="text" name="userName" placeholder="Nombre  " value="<%= user.name %>" class="formTextInput" id="userName">
+            <div class="errors"></div>
             
             <input type="text" name="userLastName" placeholder="Apellido" value="<%= user.last_name %>" class="formTextInput" id="userLastName" >
+            <div class="errors"></div>
             
             <input type="password" name="userPassword" placeholder="Contraseña" value="<%= user.password %>" class="formTextInput" disabled>
             
