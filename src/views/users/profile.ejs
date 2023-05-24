@@ -64,11 +64,38 @@
           <div class="buttons">
             <input type="submit" class="button-form1" value="Enviar">
             <input type="reset" class="button-form" value="Borrar">
+            <button class="button-form1" id="deleteButton">Eliminar</button>
           </div>
         </div>
           </form>
     </main>
     <%- include('../partials/footer') %>
     <script src="/js/profileValidations.js"></script>
+    <script>
+      const deleteButton = document.getElementById('deleteButton');
+    
+      deleteButton.addEventListener('click', () => {
+        const confirmation = confirm('¿Estás seguro de que deseas eliminar tu cuenta?');
+    
+        if (confirmation) {
+          // Envía una solicitud de eliminación al servidor
+          fetch('/users/profile/delete', {
+            method: 'DELETE',
+          })
+            .then(response => {
+              if (response.ok) {
+                // Redirecciona al inicio u otra página deseada después de la eliminación
+                window.location.href = '/';
+              } else {
+                throw new Error('Error al eliminar la cuenta');
+              }
+            })
+            .catch(error => {
+              console.log(error);
+              alert('Error al eliminar la cuenta');
+            });
+        }
+      });
+    </script>
 </body>
 </html>

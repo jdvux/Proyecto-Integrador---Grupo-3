@@ -17,5 +17,6 @@ router.get('/logout', usersController.processLogout);
 
 router.get('/profile', guestMiddleware, usersController.profileView);
 router.put('/profile', uploadUsers.single('avatar'), usersController.profileChanges);
+router.delete('/profile/delete', usersController.destroyUser);
 
 module.exports = router;

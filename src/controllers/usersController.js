@@ -72,12 +72,16 @@ const usersController = {
         try {
             let user = req.session.userLogged;
             await User.update({
+                name: req.body.userName,
+                last_name: req.body.userLastName,
                 avatar: req.file.filename || "admin-profile.png"
             }, {
                 where: {email: user.email}
             });
             
             if (req.file && req.file.filename) {
+                user.name = req.body.userName,
+                user.last_name = req.body.userLastName,
                 user.avatar = req.file.filename
             };
             res.redirect('profile');
@@ -85,6 +89,25 @@ const usersController = {
             console.log(error);
         };
     },
+
+    destroyUser: async(req, res) => {
+        try {
+            let user = req.session.userLogged;
+    
+            let deletedUser = await User.destroy({
+              where: {id: user.id}, 
+              force: true
+            });
+            console.log(user);
+              
+              return res.json({"mensaje": "se eliminó el usuario"})
+              
+            } catch (error) {
+              console.log(error);
+            };
+    },
+
+
 
     processLogout: (req, res) => {
         req.session.destroy();
