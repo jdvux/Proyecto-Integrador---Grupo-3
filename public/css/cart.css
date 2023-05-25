@@ -153,10 +153,6 @@ form {
 width: 50%;
 }
 
-.button-container button {
-  cursor: pointer;
-}
-
 .back-form {
 margin-left: 2.5%;
 align-items: end;
