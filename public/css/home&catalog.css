@@ -205,6 +205,8 @@ main h1, main h2, main p {
 .third-and-fourth-collection{
     display: flex;
     width: 95%;
+    justify-content: center;
+    align-items: center;
 }
 
 .container-button-create{
