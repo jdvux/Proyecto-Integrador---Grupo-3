@@ -42,14 +42,12 @@
                                   <p class="product-name"><%= product.name %></p>
                                 </div>
                                 <div class="add-item">
-                                  <label for="add-item-button">
+                                  <button class="add-item-text" onclick="increaseQuantity('<%= product.id %>')">
                                     <i class="fa-solid fa-plus"></i>
-                                    <button class="add-item-button" id="add-item-button" onclick="increaseQuantity('<%= product.id %>')"></button>
-                                  </label>
-                                  <label for="remove-item-button">
+                                  </button>
+                                  <button onclick="decreaseQuantity('<%= product.id %>')">
                                     <i class="fa-solid fa-minus"></i>
-                                    <button onclick="decreaseQuantity('<%= product.id %>')" class="remove-item-button" id="remove-item-button"></button>
-                                  </label>
+                                  </button>
                                   </div>
                                   <div class="quantity-selector">
                                     <div class="quantity-selector-box" id="quantity-selector-box-<%= product.id %>">
