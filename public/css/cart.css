@@ -42,13 +42,17 @@ main p {
     font-size: 100%;
 }
 
-.fa-minus, .fa-plus {
-  width: 50%;
-  text-align: end;
-} 
-
 .item-cart, .item-cart-info, .add-item {
     width: 33.33%;
+}
+
+.add-item {
+  display: flex;
+  justify-content: end;
+}
+
+.add-item-button, .remove-item-button {
+  visibility: hidden; 
 }
 
 .quantity-selector, .item-price {
@@ -84,93 +88,91 @@ main p {
 }
 
 .line {
-    border-top: 1px solid #778da9;
-    height: 2px;
-    width: 100%;
-    padding: 0;
-    margin: 20px auto;
-  }
+  border-top: 1px solid #778da9;
+  height: 2px;
+  width: 100%;
+  padding: 0;
+  margin: 20px auto;
+}
 
-  .ticket-shipping, .ticket-total {
-    display: flex;
-  }
+.ticket-shipping, .ticket-total {
+  display: flex;
+}
 
-  .ticket-shipping p, .ticket-total p {
-    width: 50%;
-    margin-bottom: 10px;
-  }
+.ticket-shipping p, .ticket-total p {
+  width: 50%;
+  margin-bottom: 10px;
+}
 
-  .shipping-text {
-    font-weight: bold;
-  }
+.shipping-text {
+  font-weight: bold;
+}
 
-  .total-text {
-    font-weight: bold;
-  }
+.total-text {
+  font-weight: bold;
+}
 
-  .total-price {
-    text-align: end;
-    margin-right: 0;
-  }
+.total-price {
+  text-align: end;
+  margin-right: 0;
+}
 
-  .free-shipping-text {
-    text-align: end;
-    margin-right: 0;
-  }
+.free-shipping-text {
+  text-align: end;
+  margin-right: 0;
+}
 
-  .button-container {
-    display: flex;
-    width: 100%;
-  }
+.button-container {
+  display: flex;
+  width: 100%;
+}
 
-  .btn-buy {
-    display: inline-block;
-    text-align: center;
-    width: 50%;
-    line-height: 40px;
-    margin: 10px 0.35% 10px 0;
-    color: #07020D;
-    border: #778da9;
-    border-radius: 2px;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-    font-size: 95%;
-  }
+form {
+  width: 50%;
+}
 
-  .btn-back {
-    display: inline-block;
-    text-align: center;
-    width: 50%;
-    line-height: 40px;
-    margin: 10px 0 10px 0.35%;
-    color: #07020D;
-    border: #778da9;
-    border-radius: 2px;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-    font-size: 95%;
-  }
+.back-form {
+  margin-left: 2.5%;
+  align-items: end;
+}
 
-  .btn-buy:hover, .btn-back:hover {
-    background-color: #353535;
-    color: #f3f1f1;
-    transition: 300ms;
-  }
+#purhcase-form {
+  margin-right: 2.5%;
+}
 
-  button a {
-    text-decoration: none;
-    color: #07020D;
-  }
+.btn-buy, .btn-back {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  line-height: 40px;
+  margin: 10px 0.35% 10px 0;
+  color: #07020D;
+  border: #778da9;
+  border-radius: 2px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  font-size: 95%;
+}
 
-  .btn-buy:hover > a {
-    color: #f3f1f1;
-    transition: 300ms;
-  }
+.btn-buy:hover, .btn-back:hover {
+  background-color: #353535;
+  color: #f3f1f1;
+  transition: 300ms;  
+}
 
-  .btn-back:hover > a {
-    color: #f3f1f1;
-    transition: 300ms;
-  }
+button a {
+  text-decoration: none;
+  color: #07020D;
+}
+
+.btn-buy:hover > a, .btn-back:hover > a {
+  color: #f3f1f1;
+  transition: 300ms;
+}
+
+.back-form {
+  width: 50%;
+}
 
 /*MEDIA QUERIES*/
 

@@ -1,3 +1,7 @@
+* {
+  font-family: 'Roboto';
+}
+
 .swal2-popup.swal2-toast {
   box-sizing: border-box;
   grid-column: 1/4 !important;
