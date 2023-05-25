@@ -104,7 +104,8 @@ window.addEventListener('load', () => {
       confirmButtonText: 'Continuar',
     }).then((result => {
       if (result.isConfirmed) {
-        window.location.href = '/';
+        const form = document.getElementById('purchase-form');
+        form.submit()
       };
     }));
 };
