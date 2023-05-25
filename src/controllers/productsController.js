@@ -84,8 +84,8 @@ const productsController = {
   
   create: async(req, res) => {
     try {
-      const brands = await ProductBrands.findAll()
-      const categories = await ProductCategories.findAll()
+      const brands = await ProductBrands.findAll();
+      const categories = await ProductCategories.findAll();
       res.render('products/createProduct', {brands, categories});
     } catch (error) {
       console.log(error);
@@ -93,11 +93,15 @@ const productsController = {
     },
 
   store: async (req, res) => {
+    const brands = await ProductBrands.findAll();
+    const categories = await ProductCategories.findAll();
     let errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.render('products/createProduct', {
         errors: errors.mapped(), 
-        old: req.body
+        old: req.body,
+        categories, 
+        brands
       });
     }
     
