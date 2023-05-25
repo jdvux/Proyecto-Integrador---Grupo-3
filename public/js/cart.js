@@ -88,8 +88,6 @@ window.addEventListener('load', () => {
   function purchase() {
     // Obtener el contenedor del carrito
   const cartContainer = document.querySelector('.cart-container');
-  const button = querySelector.getElementById('buy-button');
-
   // Verificar si el carrito está vacío
   if (cartContainer.children.length === 0) {
     return; // Si el carrito está vacío, no hacer nada
@@ -105,7 +103,7 @@ window.addEventListener('load', () => {
       confirmButtonColor: '#3C6E71',
       confirmButtonText: 'Continuar',
     }).then((result => {
-      if (result) {
+      if (result.isConfirmed) {
         window.location.href = '/';
       };
     }));
