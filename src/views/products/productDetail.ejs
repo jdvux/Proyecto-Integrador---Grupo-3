@@ -84,10 +84,8 @@
 
               <div class="main-product-prices">
                 <div class="main-product-oldPrice">
-                  <% if (products.price_with_no_discount ===null) { %>
-                   
-                  <% }else{ %>
-                  <p>$<%=products.price_with_no_discount%></p>
+                  <% if (products.price_with_no_discount && products.price_with_no_discount !== '') { %>
+                    <p>$<%= products.price_with_no_discount %></p>
                   <% } %>
                 </div>
 

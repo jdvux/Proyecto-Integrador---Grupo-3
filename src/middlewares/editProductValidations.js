@@ -17,9 +17,7 @@ const editProductValidations = [
     body("productBrandEdit")
         .notEmpty().withMessage("Debes escoger una marca para el producto").bail(),
     
-    body("priceWithNoDiscount")
-        .isNumeric().withMessage("El precio original debe estar expresado en números").bail()
-        .isLength({ min: 5 }).withMessage("El precio original no puede ser menor a 10000"),
+    
         
     body("price")
         .isNumeric().withMessage("El precio en descuento debe estar expresado en números").bail()

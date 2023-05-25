@@ -24,11 +24,7 @@ const createProductValidations = [
     body("productBrandIdCreate")
     .notEmpty().withMessage("Debes escoger una marca para el producto").bail(),
         
-    body("priceWithNoDiscount")
-        .notEmpty().withMessage("Debes ingresar el precio del producto").bail()
-        .isNumeric().withMessage("El precio original debe estar expresado en números").bail()
-        .isLength({ min: 5 }).withMessage("El precio original no puede ser menor a 10000"),
-        
+
     body("price")
         .isNumeric().withMessage("El precio en descuento debe estar expresado en números").bail()
         .isLength({ min: 5 }).withMessage("El precio en descuento no puede ser menor a 10000").bail()

@@ -48,12 +48,6 @@ window.addEventListener('load', () => {
             errors[3].innerHTML = '';
         };
 
-        if (firstPrice.value == "") {
-            validForm = false;
-            errors[4].innerHTML = 'Debes indicar el precio original del producto'
-        } else {
-            errors[4].innerHTML = '';
-        };
 
         if (brandField.value == "Selecciona una opción" || brandField.value == "" || !brandField.value) {
             validForm = false;

@@ -51,8 +51,14 @@ main p {
   justify-content: end;
 }
 
+.fa-plus, .fa-minus {
+  cursor: pointer;
+}
+
 .add-item-button, .remove-item-button {
   visibility: hidden; 
+  cursor: pointer;
+  margin-left: 6px;
 }
 
 .quantity-selector, .item-price {
@@ -115,6 +121,7 @@ main p {
 .total-price {
   text-align: end;
   margin-right: 0;
+  font-weight: bold;
 }
 
 .free-shipping-text {
