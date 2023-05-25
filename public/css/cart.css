@@ -43,43 +43,6 @@ main p {
 }
 
 .item-cart, .item-cart-info, .add-item {
-<<<<<<< HEAD
-=======
-    width: 33.33%;
-}
-
-.add-item {
-  display: flex;
-  justify-content: end;
-  position: relative;
-}
-
-.fa-plus {
-  cursor: pointer;
-  position: absolute;
-  top: 20%;
-  right: 22%;
-}
-
-.fa-minus {
-  cursor: pointer;
-  position: absolute;
-  top: 20%;
-}
-
-.add-item-button, .remove-item-button {
-  background-color: transparent;
-  outline: none;
-  height: 25px;
-  width: 15%; 
-  cursor: pointer;
-  margin-left: 6px;
-  border: none;
-  z-index: 10;
-}
-
-.quantity-selector, .item-price {
->>>>>>> 24595bacc3094ac4f832e598ba25c575da12f9ce
   width: 33.33%;
 }
 
