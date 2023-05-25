@@ -147,48 +147,51 @@ const productsController = {
     }
   },
   
-  update: async(req, res) => {
+  update: async (req, res) => {
     let errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.render('products/editProduct', {
-        errors: errors.mapped(), 
+        errors: errors.mapped(),
         old: req.body
       });
     }
-
+  
     try {
       let productId = req.params.id;
       console.log(productId);
-      
-      await Product.update({
-        name: req.body.productNameEdit,
-        description: req.body.productDescriptionEdit,
-        size: req.body.productSizeEdit,
-        price: req.body.price,
-        price_with_no_discount: req.body.priceWithNoDiscount,
-        category_id: req.body.productCategoryEdit,
-        brand_id: req.body.productBrandEdit
-      },
-      {
-        where: {id: productId}
-      })
-      let newProduct = await Product.findByPk(productId)
-      console.log(newProduct);
-
-      if (req.files.value) {
-      const files = (req.files).map(file => ({  
-        name: file.filename,
-        product_id: newProduct.id
-      }));
-      let imageDestroy = await Image.destroy({
-        where: {
-          product_id: productId
+  
+      await Product.update(
+        {
+          name: req.body.productNameEdit,
+          description: req.body.productDescriptionEdit,
+          size: req.body.productSizeEdit,
+          price: req.body.price,
+          price_with_no_discount: req.body.priceWithNoDiscount,
+          category_id: req.body.productCategoryEdit,
+          brand_id: req.body.productBrandEdit
+        },
+        {
+          where: { id: productId }
         }
-      })
-      await Image.bulkCreate(files)
-    };
-      
-      res.redirect('/products')
+      );
+  
+      if (req.files && req.files.length > 0) {
+        // Eliminar las imágenes existentes
+        await Image.destroy({
+          where: {
+            product_id: productId
+          }
+        });
+  
+        // Crear las nuevas imágenes
+        const files = req.files.map(file => ({
+          name: file.filename,
+          product_id: productId
+        }));
+        await Image.bulkCreate(files);
+      }
+  
+      res.redirect('/products');
     } catch (error) {
       console.log(error);
     }
