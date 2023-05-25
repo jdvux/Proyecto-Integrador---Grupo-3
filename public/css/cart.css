@@ -49,16 +49,31 @@ main p {
 .add-item {
   display: flex;
   justify-content: end;
+  position: relative;
 }
 
-.fa-plus, .fa-minus {
+.fa-plus {
   cursor: pointer;
+  position: absolute;
+  top: 20%;
+  right: 22%;
+}
+
+.fa-minus {
+  cursor: pointer;
+  position: absolute;
+  top: 20%;
 }
 
 .add-item-button, .remove-item-button {
-  visibility: hidden; 
+  background-color: transparent;
+  outline: none;
+  height: 25px;
+  width: 15%; 
   cursor: pointer;
   margin-left: 6px;
+  border: none;
+  z-index: 10;
 }
 
 .quantity-selector, .item-price {
