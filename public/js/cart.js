@@ -88,9 +88,9 @@ window.addEventListener('load', () => {
   
   function purchase() {
     // Obtener el contenedor del carrito
-  const cartContainer = document.querySelector('.cart-container');
+  const cartContainer = document.querySelector('.item-row');
   // Verificar si el carrito está vacío
-  if (cartContainer.children.length === 0) {
+  if (cartContainer.children.length <= 1) {
     return; // Si el carrito está vacío, no hacer nada
   }
     // Realizar acciones necesarias para finalizar la compra
